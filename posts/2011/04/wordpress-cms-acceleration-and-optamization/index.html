@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="">	
+<head>
+	<meta charset="utf-8"/>
+	<title>WordPress CMS acceleration and optamization - Predrag TASEVSKI - Pece</title>	
+	<meta name="author" content="Predrag TASEVSKI - Pece">
+	
+
+	<meta name="description" content="PURPOSE The goal of this laboratory test is to evaluate speed-up solution for already mounted clean, by default wordpress CMS platform. The measures were made by custom script for Linux operating system, in our case the server side is Ubuntu server 10.04 LTS running on 32 bit system with ...">
+
+
+	<link rel="top" href="#" /><link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic,400italic,600italic|Source+Code+Pro' rel='stylesheet' type='text/css'></link>
+	<link rel="stylesheet" href="../../../../theme/css/main.css" type="text/css" />
+		
+
+</head>
+	
+<body>
+
+    <div class="container">
+	  
+	  <header role="banner">
+	    <div class="feeds">
+	    </div>
+	      <nav class="pages">
+			  <a href="../../../../pages/about-cv.html">About (CV)</a>
+-			  <a href="../../../../pages/publications.html">Publications</a>
+	      </nav>
+		<a href="../../../.." class="title">Predrag TASEVSKI - Pece</a>
+      </header>
+	
+	  <div class="wrapper">
+
+		  <div role="main" class="content">
+	<article class="full">
+			
+		<h1>WordPress CMS acceleration and optamization</h1>
+		
+<div class="metadata">
+  <time datetime="2011-04-10T00:00:00" pubdate>dim. 10 avril 2011</time>
+    <address class="vcard author">
+      by <a class="url fn" href="../../../../author/predrag-tasevski-pece.html">Predrag TASEVSKI - Pece</a>
+    </address>
+  in <a href="../../../../category/wordpress.html">wordpress</a>
+<p class="tags">tagged <a href="../../../../tag/acceleration.html">acceleration</a>, <a href="../../../../tag/optamization.html">optamization</a>, <a href="../../../../tag/simmulation-of-attacks-and-defence.html">simmulation of attacks and defence</a>, <a href="../../../../tag/wordpress.html">wordpress</a></p></div>		
+		<h1>PURPOSE</h1>
+<p>The goal of this laboratory test is to evaluate speed-up solution for already mounted clean, by default wordpress CMS platform. The measures were made by custom script for Linux operating system, in our case the server side is Ubuntu server 10.04 LTS running on 32 bit system with 512MB Ram and testing platform Fedora 14 for more details see section appendixes.</p>
+<p>The laboratory task is to assist anyone else to be able to perform optimization in easy meaner to their blog, homepage, magazine, etc. without any advantage of technical knowledge.</p>
+<p>Presenting stepwise solution with installing firstly wordpress optimization cache plugin, secondary installing PHP solution for increasing the acceleration performance of the server and changing the permalinks settings to the CMS platform for higher optimization. All of the above solutions are free open source, and are taking care of the low budget.</p>
+<p>In addition providing measurement results with different scenarios will help us to get wide picture of how affective was optimization.</p>
+<h1>METHODS</h1>
+<p>Optimization of the access to wordpress CMS platform is done in behalf of three different scenarios have been proved while performance is getting slightly higher. Test script is measuring the response time of the link provided and it is recording the results in a text file. Which contains the three attends respondent time of the server. For each method we will provide the results in analyses section.</p>
+<p>The following steps should be done on the server side.</p>
+<h2>METHOD 1</h2>
+<p>Installing procedure [WP-Super-Cache Installation], first method of wordpress plugin: WP Super Cache Version 0.9.9.9</p>
+<div class="highlight"><pre><span class="n">In</span> <span class="n">a</span> <span class="n">terminal</span> <span class="n">please</span> <span class="n">type</span> <span class="n">the</span> <span class="n">following</span> <span class="n">lines</span><span class="o">:</span>
+<span class="n">wget</span> <span class="o">-</span><span class="n">c</span> <span class="n">http</span><span class="o">:</span><span class="c1">//downloads.wordpress.org/plugin/wp-super-cache.0.9.9.9.zip</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">unzip</span>
+<span class="n">unzip</span> <span class="n">wp</span><span class="o">-</span><span class="n">super</span><span class="o">-</span><span class="n">cache</span><span class="mf">.0.9.9.9</span><span class="p">.</span><span class="n">zip</span>
+<span class="n">mv</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="p">[</span><span class="n">user</span><span class="p">]</span><span class="o">/</span><span class="n">wp</span><span class="o">-</span><span class="n">super</span><span class="o">-</span><span class="n">cache</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">wordpress</span><span class="o">/</span><span class="n">plugins</span>
+</pre></div>
+
+
+<p>In wordpress administration link: <a href="http://192.168.56.102/wordpress/wp-admin">http://192.168.56.102/wordpress/</a></p>
+<p><a href="http://192.168.56.102/wordpress/wp-admin" >wp-admin</a>, log in with the credentials, from the panel select <em>Plugins</em> -&gt; <em>WP-Super-Cache</em> -&gt; <em>Activate</em>. After the activation is done, go to <em>Settings</em> -&gt; <em>WP-Super-Cache</em>, on the first tab activate the cache by selecting the On cache and on the Advance tab select only the “(Recommended)” settings. After your done, select <em>Update Settings</em> and on the bottom of the page you can see a red text that needs to be copy in one of the files that is located on the server. Connect to your server by FTP client and locate the <em>.htaccess</em> file on the wordpress directory and open it and paste the following lines and save the file:</p>
+<div class="highlight"><pre><span class="cp"># BEGIN WPSuperCache &amp;lt;IfModule mod_rewrite.c&amp;gt;</span>
+<span class="n">RewriteEngine</span> <span class="n">On</span> <span class="n">RewriteBase</span> <span class="o">/</span><span class="n">wordpress</span><span class="o">/</span>
+<span class="n">AddDefaultCharset</span> <span class="n">UTF</span><span class="o">-</span><span class="mi">8</span>
+<span class="n">RewriteCond</span> <span class="o">%</span><span class="p">{</span><span class="n">REQUEST_URI</span><span class="p">}</span> <span class="o">!^</span><span class="p">.</span><span class="o">*</span><span class="p">[</span><span class="o">^/</span><span class="p">]</span><span class="err">$</span>
+<span class="n">RewriteCond</span> <span class="o">%</span><span class="p">{</span><span class="n">REQUEST_URI</span><span class="p">}</span> <span class="o">!^</span><span class="p">.</span><span class="err">*/</span><span class="o">/</span><span class="p">.</span><span class="o">*</span><span class="err">$</span> <span class="n">RewriteCond</span> <span class="o">%</span><span class="p">{</span><span class="n">REQUEST_METHOD</span><span class="p">}</span> <span class="o">!</span><span class="n">POST</span> <span class="n">RewriteCond</span> <span class="o">%</span><span class="p">{</span><span class="n">QUERY_STRING</span><span class="p">}</span> <span class="o">!</span><span class="p">.</span><span class="o">*=</span><span class="p">.</span><span class="o">*</span>
+<span class="n">RewriteCond</span> <span class="o">%</span><span class="p">{</span><span class="n">HTTP</span><span class="o">:</span><span class="n">Cookie</span><span class="p">}</span> <span class="o">!^</span><span class="p">.</span><span class="o">*</span><span class="p">(</span><span class="n">comment_author_</span><span class="o">|</span><span class="n">wordpress_logged_in</span><span class="o">|</span><span class="n">wp</span><span class="o">-</span><span class="n">postpass_</span><span class="p">).</span><span class="o">*</span><span class="err">$</span>
+<span class="n">RewriteCond</span> <span class="o">%</span><span class="p">{</span><span class="n">HTTP</span><span class="o">:</span><span class="n">X</span><span class="o">-</span><span class="n">Wap</span><span class="o">-</span><span class="n">Profile</span><span class="p">}</span> <span class="o">!^</span><span class="p">[</span><span class="n">a</span><span class="o">-</span><span class="n">z0</span><span class="o">-</span><span class="mi">9</span><span class="err">\</span><span class="s">&quot;]+ [NC]</span>
+<span class="n">RewriteCond</span> <span class="o">%</span><span class="p">{</span><span class="n">HTTP</span><span class="o">:</span><span class="n">Profile</span><span class="p">}</span> <span class="o">!^</span><span class="p">[</span><span class="n">a</span><span class="o">-</span><span class="n">z0</span><span class="o">-</span><span class="mi">9</span><span class="err">\</span><span class="s">&quot;]+ [NC]</span>
+<span class="n">RewriteCond</span> <span class="o">%</span><span class="p">{</span><span class="n">HTTP_USER_AGENT</span><span class="p">}</span> <span class="o">!^</span><span class="p">.</span><span class="o">*</span><span class="p">(</span><span class="mf">2.0</span><span class="err">\</span> <span class="n">MMP</span><span class="o">|</span><span class="mi">240</span><span class="n">x320</span><span class="o">|</span><span class="mi">400</span><span class="n">X240</span><span class="o">|</span><span class="n">AvantGo</span><span class="o">|</span><span class="n">BlackBerry</span><span class="o">|</span><span class="n">Blazer</span><span class="o">|</span> <span class="n">Cellphone</span><span class="o">|</span><span class="n">Danger</span><span class="o">|</span><span class="n">DoCoMo</span><span class="o">|</span><span class="n">Elaine</span><span class="o">/</span><span class="mf">3.0</span><span class="o">|</span><span class="n">Eu</span><span class="err">$</span> <span class="n">RewriteCond</span> <span class="o">%</span><span class="p">{</span><span class="n">HTTP_user_agent</span><span class="p">}</span> <span class="o">!^</span><span class="p">(</span><span class="n">w3c</span><span class="err">\</span> <span class="o">|</span><span class="n">w3c</span><span class="o">-|</span><span class="n">acs</span><span class="o">-|</span><span class="n">alav</span><span class="o">|</span><span class="n">alca</span><span class="o">|</span><span class="n">amoi</span><span class="o">|</span><span class="n">audi</span><span class="o">|</span><span class="n">avan</span><span class="o">|</span><span class="n">benq</span><span class="o">|</span><span class="n">bird</span><span class="o">|</span> <span class="n">blac</span><span class="o">|</span><span class="n">blaz</span><span class="o">|</span><span class="n">brew</span><span class="o">|</span><span class="n">cell</span><span class="o">|</span><span class="n">cldc</span><span class="o">|</span><span class="n">cmd</span><span class="o">-|</span><span class="n">dang</span><span class="o">|</span><span class="n">doco</span><span class="err">$</span> <span class="n">RewriteCond</span> <span class="o">%</span><span class="p">{</span><span class="n">HTTP</span><span class="o">:</span><span class="n">Accept</span><span class="o">-</span><span class="n">Encoding</span><span class="p">}</span> <span class="n">gzip</span> <span class="n">RewriteCond</span> <span class="o">%</span><span class="p">{</span><span class="n">DOCUMENT_ROOT</span><span class="p">}</span><span class="o">/</span><span class="n">wordpress</span><span class="o">/</span><span class="n">wp</span><span class="o">-</span><span class="n">content</span><span class="o">/</span><span class="n">cache</span><span class="o">/</span><span class="n">supercache</span><span class="o">/%</span> <span class="p">{</span><span class="n">HTTP_HOST</span><span class="p">}</span><span class="o">/</span><span class="n">wordpress</span><span class="o">/</span><span class="err">$</span><span class="mi">1</span><span class="o">/</span><span class="n">index</span><span class="p">.</span><span class="n">html</span><span class="p">.</span><span class="n">gz</span> <span class="o">-</span><span class="n">f</span> <span class="n">RewriteRule</span> <span class="o">^</span><span class="p">(.</span><span class="o">*</span><span class="p">)</span>
+<span class="s">&quot;/wordpress/wp-content/cache/supercache/%{HTTP_HOST}/wordpress/ $1/index.html.gz&quot;</span> <span class="p">[</span><span class="n">L</span><span class="p">]</span> <span class="n">RewriteCond</span> <span class="o">%</span><span class="p">{</span><span class="n">REQUEST_URI</span><span class="p">}</span> <span class="o">!^</span><span class="p">.</span><span class="o">*</span><span class="p">[</span><span class="o">^/</span><span class="p">]</span><span class="err">$</span>
+<span class="n">RewriteCond</span> <span class="o">%</span><span class="p">{</span><span class="n">REQUEST_URI</span><span class="p">}</span> <span class="o">!^</span><span class="p">.</span><span class="err">*/</span><span class="o">/</span><span class="p">.</span><span class="o">*</span><span class="err">$</span> <span class="n">RewriteCond</span> <span class="o">%</span><span class="p">{</span><span class="n">REQUEST_METHOD</span><span class="p">}</span> <span class="o">!</span><span class="n">POST</span> <span class="n">RewriteCond</span> <span class="o">%</span><span class="p">{</span><span class="n">QUERY_STRING</span><span class="p">}</span> <span class="o">!</span><span class="p">.</span><span class="o">*=</span><span class="p">.</span><span class="o">*</span>
+<span class="n">RewriteCond</span> <span class="o">%</span><span class="p">{</span><span class="n">HTTP</span><span class="o">:</span><span class="n">Cookie</span><span class="p">}</span> <span class="o">!^</span><span class="p">.</span><span class="o">*</span><span class="p">(</span><span class="n">comment_author_</span><span class="o">|</span><span class="n">wordpress_logged_in</span><span class="o">|</span><span class="n">wp</span><span class="o">-</span><span class="n">postpass_</span><span class="p">).</span><span class="o">*</span><span class="err">$</span>
+<span class="n">RewriteCond</span> <span class="o">%</span><span class="p">{</span><span class="n">HTTP</span><span class="o">:</span><span class="n">X</span><span class="o">-</span><span class="n">Wap</span><span class="o">-</span><span class="n">Profile</span><span class="p">}</span> <span class="o">!^</span><span class="p">[</span><span class="n">a</span><span class="o">-</span><span class="n">z0</span><span class="o">-</span><span class="mi">9</span><span class="err">\</span><span class="s">&quot;]+ [NC]</span>
+<span class="n">RewriteCond</span> <span class="o">%</span><span class="p">{</span><span class="n">HTTP</span><span class="o">:</span><span class="n">Profile</span><span class="p">}</span> <span class="o">!^</span><span class="p">[</span><span class="n">a</span><span class="o">-</span><span class="n">z0</span><span class="o">-</span><span class="mi">9</span><span class="err">\</span><span class="s">&quot;]+ [NC]</span>
+<span class="n">RewriteCond</span> <span class="o">%</span><span class="p">{</span><span class="n">HTTP_USER_AGENT</span><span class="p">}</span> <span class="o">!^</span><span class="p">.</span><span class="o">*</span><span class="p">(</span><span class="mf">2.0</span><span class="err">\</span> <span class="n">MMP</span><span class="o">|</span><span class="mi">240</span><span class="n">x320</span><span class="o">|</span><span class="mi">400</span><span class="n">X240</span><span class="o">|</span><span class="n">AvantGo</span><span class="o">|</span><span class="n">BlackBerry</span><span class="o">|</span><span class="n">Blazer</span><span class="o">|</span> <span class="n">Cellphone</span><span class="o">|</span><span class="n">Danger</span><span class="o">|</span><span class="n">DoCoMo</span><span class="o">|</span><span class="n">Elaine</span><span class="o">/</span><span class="mf">3.0</span><span class="o">|</span><span class="n">Eu</span><span class="err">$</span> <span class="n">RewriteCond</span> <span class="o">%</span><span class="p">{</span><span class="n">HTTP_user_agent</span><span class="p">}</span> <span class="o">!^</span><span class="p">(</span><span class="n">w3c</span><span class="err">\</span> <span class="o">|</span><span class="n">w3c</span><span class="o">-|</span><span class="n">acs</span><span class="o">-|</span><span class="n">alav</span><span class="o">|</span><span class="n">alca</span><span class="o">|</span><span class="n">amoi</span><span class="o">|</span><span class="n">audi</span><span class="o">|</span><span class="n">avan</span><span class="o">|</span><span class="n">benq</span><span class="o">|</span><span class="n">bird</span><span class="o">|</span> <span class="n">blac</span><span class="o">|</span><span class="n">blaz</span><span class="o">|</span><span class="n">brew</span><span class="o">|</span><span class="n">cell</span><span class="o">|</span><span class="n">cldc</span><span class="o">|</span><span class="n">cmd</span><span class="o">-|</span><span class="n">dang</span><span class="o">|</span><span class="n">doco</span><span class="err">$</span> <span class="n">RewriteCond</span> <span class="o">%</span><span class="p">{</span><span class="n">DOCUMENT_ROOT</span><span class="p">}</span><span class="o">/</span><span class="n">wordpress</span><span class="o">/</span><span class="n">wp</span><span class="o">-</span><span class="n">content</span><span class="o">/</span><span class="n">cache</span><span class="o">/</span><span class="n">supercache</span><span class="o">/%</span> <span class="p">{</span><span class="n">HTTP_HOST</span><span class="p">}</span><span class="o">/</span><span class="n">wordpress</span><span class="o">/</span><span class="err">$</span><span class="mi">1</span><span class="o">/</span><span class="n">index</span><span class="p">.</span><span class="n">html</span> <span class="o">-</span><span class="n">f</span> <span class="n">RewriteRule</span> <span class="o">^</span><span class="p">(.</span><span class="o">*</span><span class="p">)</span> <span class="s">&quot;/wordpress/wp-content/cache/supercache/%{HTTP_HOST}/wordpress/ $1/index.html&quot;</span> <span class="p">[</span><span class="n">L</span><span class="p">]</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">/</span><span class="n">IfModule</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span>
+<span class="cp"># END WPSuperCache</span>
+</pre></div>
+
+
+<h2>METHOD 2</h2>
+<p>The second approach is to install an PHP accelerator and optimizer [EAccelerator Installing from source]. The main goal is to increases the performance of PHP scripts by caching them in their compiled state. Which will augment the acceleration applied with method 1.</p>
+<p>Therefore, please follow the steps to install from source code eAccelerator [2].</p>
+<div class="highlight"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">php</span><span class="o">-</span><span class="n">dev</span>
+<span class="n">wget</span> <span class="o">-</span><span class="n">c</span> <span class="n">http</span><span class="o">:</span><span class="c1">//ignum.dl.sourceforge.net/project/eaccelerator/eaccelerator/eAccelerator%200.9.6.1/eaccelerator-0.9.6.1.tar.bz2</span>
+<span class="n">tar</span> <span class="n">xvfj</span> <span class="n">eaccelerator</span><span class="o">-</span><span class="mf">0.9.6.1</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">bz2</span>
+<span class="n">cd</span> <span class="n">eaccelerator</span><span class="o">-</span><span class="mf">0.9.6.1</span>
+<span class="n">phpize</span>
+<span class="p">.</span><span class="o">/</span><span class="n">configure</span>
+<span class="n">make</span>
+<span class="n">sudo</span> <span class="n">make</span> <span class="n">install</span>
+<span class="n">sudo</span> <span class="n">cp</span> <span class="o">/</span><span class="n">eaccelerator</span><span class="o">-</span><span class="mf">0.9.6.1</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">apache2</span><span class="o">/</span><span class="n">php</span><span class="p">.</span><span class="n">ini</span>
+<span class="n">sudo</span> <span class="n">mkdir</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">eaccelerator</span>
+<span class="n">sudo</span> <span class="n">chmod</span> <span class="mo">0777</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">eaccelerator</span>
+<span class="n">sudo</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="n">apache2</span> <span class="n">restart</span>
+</pre></div>
+
+
+<p>After you have completed the above steps it is good way to test the php if the eaccelerator is working and correctly installed. In any case, please create a file called <em>info.php</em> on your wordpress directory with the following code inside:</p>
+<div class="highlight"><pre><span class="cp">&lt;?php</span> <span class="nb">phpinfo</span><span class="p">();</span> <span class="o">&gt;</span>
+</pre></div>
+
+
+<p>Access the link to your server vie the link http://192.168.56.102/wordpress/info.php. If you see the configuration information and details of PHP, the quickest way is to search for eaccelerator, and if the result is positive, most lightly you have installed eaccelerator correctly.</p>
+<h2>METHOD 3</h2>
+<p>After we have completed the first and second methods it is time to grow the interactiveness of our wordpress project. Therefore, we will change setting to wordpress configuration where will speed-up the performance [Using Permalinks]. If can still add more optimization and acceleration applications, yet this laboratory report is performed only with three easy and maintained steps.</p>
+<p>Please log in to the wordpress administration panel, and on <em>Settings</em> -&gt; <em>Permalinks</em> select <em>Default</em>. After the step is done, then we need to edit the <em>.htaccess</em> file and add the following lines at the end of the file and please save it:</p>
+<div class="highlight"><pre><span class="cp"># BEGIN WordPress</span>
+<span class="n">IfModule</span> <span class="n">mod_rewrite</span><span class="p">.</span><span class="n">c</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span>
+<span class="n">RewriteRule</span> <span class="o">^</span><span class="n">index</span><span class="err">\</span><span class="p">.</span><span class="n">php</span><span class="err">$</span> <span class="o">-</span> <span class="p">[</span><span class="n">L</span><span class="p">]</span>
+<span class="n">RewriteCond</span> <span class="o">%</span><span class="p">{</span><span class="n">REQUEST_FILENAME</span><span class="p">}</span> <span class="o">!-</span><span class="n">f</span>
+<span class="n">RewriteCond</span> <span class="o">%</span><span class="p">{</span><span class="n">REQUEST_FILENAME</span><span class="p">}</span> <span class="o">!-</span><span class="n">d</span>
+<span class="n">RewriteRule</span> <span class="p">.</span> <span class="o">/</span><span class="n">wordpress</span><span class="o">/</span><span class="n">index</span><span class="p">.</span><span class="n">php</span> <span class="p">[</span><span class="n">L</span><span class="p">]</span>
+<span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">/</span><span class="n">IfModule</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span>
+<span class="cp"># END WordPress&lt;/pre&gt;</span>
+</pre></div>
+
+
+<h1>ANALYSIS</h1>
+<p>After completing each one of the method we should perform analysis of the system, were it will provide results of performance speed and can compare it if it is utter to improve the effectiveness of wordpress. Please refer to the appendix 3 to get the code of the script.</p>
+<p>Meanwhile the below show the results served pages per/second with three sets from the automatically created file from the custom script, named <em>results_lab2.txt</em>.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center">Set1</th>
+<th align="center">Set2</th>
+<th align="center">Set3</th>
+<th align="right">Avg</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>wordpress default</td>
+<td align="center">3.15</td>
+<td align="center">3.7</td>
+<td align="center">3.84</td>
+<td align="right">3.56</td>
+</tr>
+<tr>
+<td>WP WP-super-cache + eaccelerator</td>
+<td align="center">26.48</td>
+<td align="center">44.34</td>
+<td align="center">45.68</td>
+<td align="right">38.83</td>
+</tr>
+<tr>
+<td>WP WP-super-cache + eaccelerator</td>
+<td align="center">148.46</td>
+<td align="center">173.03</td>
+<td align="center">132.57</td>
+<td align="right">151.35</td>
+</tr>
+<tr>
+<td>.htaccess default permalink + wp-super-cache + eaccelerator</td>
+<td align="center">158.57</td>
+<td align="center">1734.11</td>
+<td align="center">117.03</td>
+<td align="right">136.57</td>
+</tr>
+</tbody>
+</table>
+<h1>CONCLUSION</h1>
+<p>From the analysis above we can see that performance has increased and wordpress project is more affectively respondent to our needs.</p>
+<p>Illustrations shows that wordpress as a default setting, clean installed and configure response with 3.15, 3.70 and 3.84 pages/per-second, which is not good enough to satisfaction. Similar to, after installation and configuration of wordpress plugin WP-Super-Cache we that notice that the performance slightly has grown but still the performance doesn’t satisfied higher. However after implying the second method, installing eaccelerator the results drastically increased. From the above illustration we can see that the different methods produce different set results. Thus increasing changes performing different methods vs sets of pages/per-second are specified in the illustration 1.</p>
+<p><img class="aligncenter size-medium wp-image-223" title="Illustration 1: Results methods vs page/per-second" src="http://predragtasevski.com/IMP/wpoptamization-300x160.png" alt="Results methods vs page/per-second" width="300" height="160"></p>
+<p>Finally the results were expected and demonstrating example how we can increase the addictiveness of wordpress performance and increase the respondent time pages view per/second.</p>
+<p>However, if we need to get higher effectiveness and response time for wordpress than should consider apply nginx[3] server and third party projects, applications to increase the optimization of wordpress. For instance good tutorial is on following blog [Howto hginx+php].</p>
+<h1>APPENDIXES</h1>
+<p>Appendix 1 is for installation process of Ubuntu Server 10.04 LTS and wordpress, mysql installation, other appendix 2 is for virtual machines configuration. The last appendix 4 is the custom script that will help us to perform the analysis of the system.</p>
+<h2>APPENDIX 1</h2>
+<ul>
+<li>Installation media: Ubuntu 10.04 LTS 32bit iso image;</li>
+<li>HW: Virtualbox, 1CPU 32bit, 512MB RAM, 8GB HD (dynamic allocation);</li>
+<li>NIC1 NAT;</li>
+<li>NIC2 host only (for ssh and http access from host);</li>
+<li>Language used in installation process: English and country Estonia;</li>
+<li>Keyboard Layout English;</li>
+<li>Hostname: pece</li>
+<li>Partition methods: Guided, use entire disk</li>
+<li>Username: pece</li>
+<li>no http proxy</li>
+<li>Default applications</li>
+<li>sudo apt-get install lamp phpmyadmin</li>
+<li>wget -c http://wordpress.org/latest.tar.gz</li>
+<li>tar xvjf latest.tar.gz</li>
+<li>sudo cp wordpress /var/www/wordpress</li>
+<li>sudo nano /var/www/wordpress/wp-config.php</li>
+<li>Change the settings to your needs</li>
+</ul>
+<h2>APPENDIX 2</h2>
+<p>Ubuntu Server 10.04 LTS 32bit – Server</p>
+<ul>
+<li>Base Memory: 512 MB</li>
+<li>Acceleration: VT-x/AMD-V, Nested Paging</li>
+<li>Display – Video memory: 12 MB</li>
+<li>Storage: SATA Controller, Port 0: 8 GB</li>
+<li>Network:<ul>
+<li>Adapter 1: Intel PRO/1000 MT Desktop (NAT)</li>
+<li>Adapter 2: Inter PRO/1000 MT Desktop (Host-only adapter, „VirtualBox Host-Only Enternet Adapter“)</li>
+</ul>
+</li>
+</ul>
+<p>Security Fedora 14 32 bit – Client
+- base Memory: 512 MB
+- Acceleration: VT-x/AMD-V, Nested Paging
+- Display – Video memory: 12 MB
+- Storage: SATA Controller, Port 0: 8 GB
+- Network:
+    - Adapter 1: Adapter 1: Parvirtualized Network (NAT)
+    - Adapter 2: Adapter 2: Inter PRO/1000 MT Desktop (Host-only adapter,„VirtualBox Host- Only Enternet Adapter“)</p></p>
+<h2>APPENDIX 3</h2>
+<p>File called lab2_test.sh. Content of the file:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></div></td><td class="code"><div class="highlight"><pre><span class="c">#!/bin/bash</span>
+<span class="c">#Author Margus Ernits</span>
+<span class="c">#License GPL</span>
+<span class="nv">CONCURENCY</span><span class="o">=</span>10
+<span class="nv">RESULTS_FILE</span><span class="o">=</span>results.txt
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$# </span>-ne 1 <span class="o">]</span>; <span class="k">then</span>
+<span class="nb">echo</span> <span class="s2">&quot;Use $0 http://yourwordpressIP/yourwordpresssite/&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;for example:&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;$0 http://192.168.56.102/wordpress/&quot;</span>
+<span class="nb">exit </span>1
+<span class="k">fi</span>
+<span class="nb">echo</span> <span class="s2">&quot;give name for this test&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;for example: wordpress with supercache&quot;</span>
+<span class="nb">read </span>TEST_NAME
+<span class="nb">test</span> -e <span class="k">${</span><span class="nv">RESULTS_FILE</span><span class="k">}</span> <span class="o">||</span> <span class="nb">echo</span> <span class="s2">&quot;Test Name,Set 1,Set 2,Set 3&quot;</span>&amp;gt;<span class="k">${</span><span class="nv">RESULTS_FILE</span><span class="k">}</span>
+<span class="nv">RESULTS</span><span class="o">=</span><span class="nv">$TEST_NAME</span>
+<span class="k">for </span>setno in <span class="k">$(</span>seq 1 3<span class="k">)</span>; <span class="k">do</span>
+<span class="nb">echo</span> <span class="s2">&quot;Set $setno ...&quot;</span>
+<span class="nv">SET_RESULT</span><span class="o">=</span><span class="k">$(</span>ab -c<span class="nv">$CONCURENCY</span> -n200 <span class="nv">$1</span>|grep <span class="s2">&quot;Requests per second:&quot;</span>|cut -f2
+-d:|cut -f1 -d<span class="s1">&#39;[&#39;</span><span class="k">)</span>
+<span class="nv">RESULTS</span><span class="o">=</span><span class="k">${</span><span class="nv">RESULTS</span><span class="k">}</span>,<span class="nv">$SET_RESULT</span>
+<span class="k">done</span>
+<span class="nb">echo</span> <span class="s2">&quot;$RESULTS&quot;</span>&amp;gt;&amp;gt;<span class="k">${</span><span class="nv">RESULTS_FILE</span><span class="k">}</span>
+<span class="nb">echo</span> <span class="s2">&quot;test: $TEST_NAME done&quot;</span>
+</pre></div>
+</td></tr></table>
+
+<h1>Bibliography</h1>
+<p>WP-Super-Cache Installation: WP, Installation, 2011, <a title="http://wordpress.org/extend/plugins/wp-super- cache/installation/" href="http://wordpress.org/extend/plugins/wp-super-%20cache/installation/" target="_blank">http://wordpress.org/extend/plugins/wp-super-cache/installation/</a></p>
+<p>EAccelerator Installing from source: eAccelerator project, Installation from source code, 2011, <a href="http://eaccelerator.net/wiki/InstallFromSource" target="_blank">http://eaccelerator.net/wiki/InstallFromSource</a></p>
+<p>Using Permalinks: WordPress, Using Permalinks, 2011, <a title="http://codex.wordpress.org/Using_Permalinks" href="http://codex.wordpress.org/Using_Permalinks"  target="_blank">http://codex.wordpress.org/Using_Permalinks</a></p>
+<p>Howto hginx+php: joneslee85, Howto nginx + php5 + mysql + phpmyadmin + ubuntu shortest setup, 2010, <a title="http://joneslee85.wordpress.com/2010/02/28/howto-nginx-php5-mysql-phpmyadmin-ubuntu-shortest-setup/" href="http://joneslee85.wordpress.com/2010/02/28/howto-nginx-php5-mysql-phpmyadmin-%20ubuntu-shortest-setup/" target="_blank">http://joneslee85.wordpress.com/2010/02/28/howto-nginx-php5-mysql-phpmyadmin-ubuntu-shortest-setup/</a></p>
+<h1>Footnotes</h1>
+<p>[1] WP Super Cache – <a href="http://wordpress.org/extend/plugins/wp-super-cache/</a></p>
+<p>[2] eAccelerator - <a href="http://eaccelerator.net/">http://eaccelerator.net/</a></p>
+<p>[3] Nginx Inc – http://nginx.net/</p>	
+
+	</article>
+
+    <p>
+	<a href="https://twitter.com/share" class="twitter-share-button" data-via="" data-lang="en" data-size="large" data-related="">Tweet</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	</p>
+
+
+		  </div>	
+		  
+		  <div class="sidebar">
+
+	        <nav>
+	          <h2>Categories</h2>
+	          <ul>
+	              <li ><a href="../../../../category/awareness.html">awareness</a></li>
+	              <li ><a href="../../../../category/camp.html">camp</a></li>
+	              <li ><a href="../../../../category/collectivistic.html">collectivistic</a></li>
+	              <li ><a href="../../../../category/company.html">company</a></li>
+	              <li ><a href="../../../../category/conference.html">conference</a></li>
+	              <li ><a href="../../../../category/cyber-crime.html">cyber crime</a></li>
+	              <li ><a href="../../../../category/cyber-security.html">cyber security</a></li>
+	              <li ><a href="../../../../category/cyberwar.html">cyberwar</a></li>
+	              <li ><a href="../../../../category/cyberwarfare.html">cyberwarfare</a></li>
+	              <li ><a href="../../../../category/digital-divide.html">digital divide</a></li>
+	              <li ><a href="../../../../category/hate-speech.html">hate speech</a></li>
+	              <li ><a href="../../../../category/hate-speechnetwork-security.html">hate speechnetwork security</a></li>
+	              <li ><a href="../../../../category/honeypot.html">honeypot</a></li>
+	              <li ><a href="../../../../category/human-communication.html">human communication</a></li>
+	              <li ><a href="../../../../category/human-computer-interaction.html">human computer interaction</a></li>
+	              <li ><a href="../../../../category/human-rights.html">human rights</a></li>
+	              <li ><a href="../../../../category/ids.html">IDS</a></li>
+	              <li ><a href="../../../../category/interview.html">interview</a></li>
+	              <li ><a href="../../../../category/leaks.html">leaks</a></li>
+	              <li ><a href="../../../../category/malware.html">malware</a></li>
+	              <li ><a href="../../../../category/network-security.html">network security</a></li>
+	              <li ><a href="../../../../category/password-attacks.html">password attacks</a></li>
+	              <li ><a href="../../../../category/regular-expression.html">regular expression</a></li>
+	              <li ><a href="../../../../category/research.html">research</a></li>
+	              <li ><a href="../../../../category/risk-assessment.html">risk assessment</a></li>
+	              <li ><a href="../../../../category/script-kiddie.html">script kiddie</a></li>
+	              <li ><a href="../../../../category/security-programing.html">security programing</a></li>
+	              <li ><a href="../../../../category/security-testing.html">security testing</a></li>
+	              <li ><a href="../../../../category/social-networks.html">social networks</a></li>
+	              <li ><a href="../../../../category/texworks.html">texworks</a></li>
+	              <li ><a href="../../../../category/thinkpad.html">thinkpad</a></li>
+	              <li ><a href="../../../../category/virtual-life.html">virtual life</a></li>
+	              <li ><a href="../../../../category/wireless-security.html">wireless security</a></li>
+	              <li class="active"><a href="../../../../category/wordpress.html">wordpress</a></li>
+	          </ul>
+	        </nav>
+
+	          <aside>
+	          <h2>Social</h2>
+			    <ul class="social">
+				  <li><a href="https://www.linkedin.com/in/tpredrag">Linkedin</a><i></i></li>
+				  <li><a href="https://twitter.com/stepcellwolf">Twitter</a><i></i></li>
+				  <li><a href="https://github.com/stepcellwolf/">Github</a><i></i></li>
+			    </ul>
+			  </aside>
+
+	          <aside>
+	            <h2>Blogroll</h2>
+	            <ul>
+	                <li><a href="http://getpelican.com/">Pelican</a></li>
+	                <li><a href="http://python.org/">Python.org</a></li>
+	                <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+	                <li><a href="#">You can modify those links in your config file</a></li>
+	            </ul>
+	          </aside>
+
+		  </div>
+
+	  </div>
+
+      <footer>
+		<p role="contentinfo">
+		  © 2013 Predrag TASEVSKI - Pece - Proudly powered by <a href="http://alexis.notmyidea.org/pelican/">pelican</a>. Theme <a href="https://github.com/fle/pelican-simplegrey">pelican-simplegrey</a>.
+    	</p>
+
+	  </footer>	
+
+	</div>
+	
+
+</body>
+</html>

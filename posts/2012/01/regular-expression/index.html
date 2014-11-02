@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="">	
+<head>
+	<meta charset="utf-8"/>
+	<title>Regular Expression - Predrag TASEVSKI - Pece</title>	
+	<meta name="author" content="Predrag TASEVSKI - Pece">
+	
+
+	<meta name="description" content="This post delivers solution of advance regular expression. In the following lines we describe the goal and the rules of the task, whereby follows with the working solution. Task Write a regular expression for matching the names which follow the following rules: Each name consists of one or more parts ...">
+
+
+	<link rel="top" href="#" /><link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic,400italic,600italic|Source+Code+Pro' rel='stylesheet' type='text/css'></link>
+	<link rel="stylesheet" href="../../../../theme/css/main.css" type="text/css" />
+		
+
+</head>
+	
+<body>
+
+    <div class="container">
+	  
+	  <header role="banner">
+	    <div class="feeds">
+	    </div>
+	      <nav class="pages">
+			  <a href="../../../../pages/about-cv.html">About (CV)</a>
+-			  <a href="../../../../pages/publications.html">Publications</a>
+	      </nav>
+		<a href="../../../.." class="title">Predrag TASEVSKI - Pece</a>
+      </header>
+	
+	  <div class="wrapper">
+
+		  <div role="main" class="content">
+	<article class="full">
+			
+		<h1>Regular Expression</h1>
+		
+<div class="metadata">
+  <time datetime="2012-01-16T00:00:00" pubdate>lun. 16 janvier 2012</time>
+    <address class="vcard author">
+      by <a class="url fn" href="../../../../author/predrag-tasevski-pece.html">Predrag TASEVSKI - Pece</a>
+    </address>
+  in <a href="../../../../category/regular-expression.html">regular expression</a>
+<p class="tags">tagged <a href="../../../../tag/grep.html">grep</a>, <a href="../../../../tag/log-mining.html">log mining</a>, <a href="../../../../tag/regular-expression.html">regular expression</a>, <a href="../../../../tag/linux.html">linux</a>, <a href="../../../../tag/unix.html">unix</a></p></div>		
+		<p>This post delivers solution of advance regular expression. In the following lines we&nbsp;describe&nbsp;the goal and the rules of the task, whereby follows with the working solution.</p>
+<h1>Task</h1>
+<p>Write a regular expression for matching the names which follow the following rules:</p>
+<ol>
+<li>Each name consists of one or more parts. If there are two or more parts, they are separated either with a single space (” “) or dash (“-”) character.</li>
+<li>Each name part must consist of letters only. The name part must begin with an upper-case letter which are followed by one or more lower-case letters. Each name part can &nbsp;have an optional prefix which begins with an upper-case letter, followed by one or more lower-case letters.</li>
+</ol>
+<h1>Solution</h1>
+<div class="highlight"><pre><span class="o">^</span><span class="p">([</span><span class="n">A</span><span class="o">-</span><span class="n">Z</span><span class="p">][</span><span class="n">a</span><span class="o">-</span><span class="n">z</span><span class="p">]</span><span class="o">+</span><span class="p">([</span><span class="n">A</span><span class="o">-</span><span class="n">Z</span><span class="p">][</span><span class="n">a</span><span class="o">-</span><span class="n">z</span><span class="p">]</span><span class="o">+</span><span class="p">)</span><span class="o">?</span><span class="p">(</span><span class="err">\</span><span class="n">s</span><span class="o">|-</span><span class="p">))</span><span class="o">*</span><span class="p">[</span><span class="n">A</span><span class="o">-</span><span class="n">Z</span><span class="p">][</span><span class="n">a</span><span class="o">-</span><span class="n">z</span><span class="p">]</span><span class="o">+</span><span class="p">([</span><span class="n">A</span><span class="o">-</span><span class="n">Z</span><span class="p">][</span><span class="n">a</span><span class="o">-</span><span class="n">z</span><span class="p">]</span><span class="o">+</span><span class="p">)</span><span class="o">?</span><span class="err">$</span>
+</pre></div>
+
+
+<p>For completing the task, we are dividing into several sub-tasks.</p>
+<p>Firstly, we had to find expression, which satisfies the first requirement of the&nbsp;task: representing one or more parts, which can be separated either with space&nbsp;(“ “) or dash (“-”). Thereby, we can represent space and dash with the following expression (\s|-).</p>
+<p>If the entry is just one legitimate part (without space or dash after), (\s|-) has 0&nbsp;occurrences. Yet the entry may consist of many legitimate parts divided by spaces or dashes. The expression should be (\s|-)*.</p>
+<p>As for the legitimate parts, we have to write expression considering second part of requirements.</p>
+<p>Legitimate part should consist of letters only, begin with (only one) uppercase letter and followed by one or more lowercase letters. Legitimate part can have prefix beginning with (only one) uppercase letter, followed by one or more lowercase&nbsp;letters.</p>
+<p>Therefore, <code>[A-Z][a-z]+</code> represents the entry which begins uppercase letter&nbsp;and is followed by one or more lower case letters. In addition, to represent prefix, which occurs either 0 or 1 time, we will have the following expression: <code>([A-Z][a-z]+)?</code>. Moreover, to represent the whole legitimate entry, we merge the two expressions&nbsp;(it does not matter whether prefix expression comes first) with: <code>[A-Z][a-z]+([A-Z][a-z]+)?</code>. Thus with this expression we go back to (\s|-)* where putting <code>[A-Z][a-z]+([A-Z][az]+)</code> into parentheses with (\s|-) and take * outside of parentheses (as this whole expression) legitimate part with either space or dash should be presented for 0 or&nbsp;more consecutive times.</p></p>
+<p><code>(([A-Z][a-z]+([A-Z][a-z]+)?(\s|-))*</code></p>
+<p>To be able to exclude entries, which end with “-”, we add expression of legitimate part. and add “^” and “$” respectively at the beginning and the end of expression, to mark the &nbsp;beginning and an end of the string.</p>
+<p><code>^(([A-Z][a-z]+([A-Z][a-z]+)?(|s|-))*([A-Z][a-z]+([A-Z][a-z]+)?$</code></p>
+<p>Finally, we have the whole expression we have to test it (we have to put the expression in quotation marks).
+<code>egrep ‘^([A-Z][a-z]+([A-Z][a-z]+)?(\s|-))*[A-Z][a-z]+([A-Z][a-z]+)?$’   file_name</code></p>
+<p>The above solution is written by: Predrag Tasevski and&nbsp;Mikheil Basilaia</p>	
+
+	</article>
+
+    <p>
+	<a href="https://twitter.com/share" class="twitter-share-button" data-via="" data-lang="en" data-size="large" data-related="">Tweet</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	</p>
+
+
+		  </div>	
+		  
+		  <div class="sidebar">
+
+	        <nav>
+	          <h2>Categories</h2>
+	          <ul>
+	              <li ><a href="../../../../category/awareness.html">awareness</a></li>
+	              <li ><a href="../../../../category/camp.html">camp</a></li>
+	              <li ><a href="../../../../category/collectivistic.html">collectivistic</a></li>
+	              <li ><a href="../../../../category/company.html">company</a></li>
+	              <li ><a href="../../../../category/conference.html">conference</a></li>
+	              <li ><a href="../../../../category/cyber-crime.html">cyber crime</a></li>
+	              <li ><a href="../../../../category/cyber-security.html">cyber security</a></li>
+	              <li ><a href="../../../../category/cyberwar.html">cyberwar</a></li>
+	              <li ><a href="../../../../category/cyberwarfare.html">cyberwarfare</a></li>
+	              <li ><a href="../../../../category/digital-divide.html">digital divide</a></li>
+	              <li ><a href="../../../../category/hate-speech.html">hate speech</a></li>
+	              <li ><a href="../../../../category/hate-speechnetwork-security.html">hate speechnetwork security</a></li>
+	              <li ><a href="../../../../category/honeypot.html">honeypot</a></li>
+	              <li ><a href="../../../../category/human-communication.html">human communication</a></li>
+	              <li ><a href="../../../../category/human-computer-interaction.html">human computer interaction</a></li>
+	              <li ><a href="../../../../category/human-rights.html">human rights</a></li>
+	              <li ><a href="../../../../category/ids.html">IDS</a></li>
+	              <li ><a href="../../../../category/interview.html">interview</a></li>
+	              <li ><a href="../../../../category/leaks.html">leaks</a></li>
+	              <li ><a href="../../../../category/malware.html">malware</a></li>
+	              <li ><a href="../../../../category/network-security.html">network security</a></li>
+	              <li ><a href="../../../../category/password-attacks.html">password attacks</a></li>
+	              <li class="active"><a href="../../../../category/regular-expression.html">regular expression</a></li>
+	              <li ><a href="../../../../category/research.html">research</a></li>
+	              <li ><a href="../../../../category/risk-assessment.html">risk assessment</a></li>
+	              <li ><a href="../../../../category/script-kiddie.html">script kiddie</a></li>
+	              <li ><a href="../../../../category/security-programing.html">security programing</a></li>
+	              <li ><a href="../../../../category/security-testing.html">security testing</a></li>
+	              <li ><a href="../../../../category/social-networks.html">social networks</a></li>
+	              <li ><a href="../../../../category/texworks.html">texworks</a></li>
+	              <li ><a href="../../../../category/thinkpad.html">thinkpad</a></li>
+	              <li ><a href="../../../../category/virtual-life.html">virtual life</a></li>
+	              <li ><a href="../../../../category/wireless-security.html">wireless security</a></li>
+	              <li ><a href="../../../../category/wordpress.html">wordpress</a></li>
+	          </ul>
+	        </nav>
+
+	          <aside>
+	          <h2>Social</h2>
+			    <ul class="social">
+				  <li><a href="https://www.linkedin.com/in/tpredrag">Linkedin</a><i></i></li>
+				  <li><a href="https://twitter.com/stepcellwolf">Twitter</a><i></i></li>
+				  <li><a href="https://github.com/stepcellwolf/">Github</a><i></i></li>
+			    </ul>
+			  </aside>
+
+	          <aside>
+	            <h2>Blogroll</h2>
+	            <ul>
+	                <li><a href="http://getpelican.com/">Pelican</a></li>
+	                <li><a href="http://python.org/">Python.org</a></li>
+	                <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+	                <li><a href="#">You can modify those links in your config file</a></li>
+	            </ul>
+	          </aside>
+
+		  </div>
+
+	  </div>
+
+      <footer>
+		<p role="contentinfo">
+		  © 2013 Predrag TASEVSKI - Pece - Proudly powered by <a href="http://alexis.notmyidea.org/pelican/">pelican</a>. Theme <a href="https://github.com/fle/pelican-simplegrey">pelican-simplegrey</a>.
+    	</p>
+
+	  </footer>	
+
+	</div>
+	
+
+</body>
+</html>

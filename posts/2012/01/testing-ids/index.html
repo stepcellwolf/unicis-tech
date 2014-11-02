@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="">	
+<head>
+	<meta charset="utf-8"/>
+	<title>Testing IDS - Predrag TASEVSKI - Pece</title>	
+	<meta name="author" content="Predrag TASEVSKI - Pece">
+	
+
+	<meta name="description" content="SCENARIO The objective of this laboratory test, scenario is to create a solution and instructions for testing an IDS^1 systems usefulness for detecting attacks against a wordpress site. In addition, a repeatable process to evaluate vendor claims. Whatever passive IDS system sample delivered as a VM or a dedicated ...">
+
+
+	<link rel="top" href="#" /><link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic,400italic,600italic|Source+Code+Pro' rel='stylesheet' type='text/css'></link>
+	<link rel="stylesheet" href="../../../../theme/css/main.css" type="text/css" />
+		
+
+</head>
+	
+<body>
+
+    <div class="container">
+	  
+	  <header role="banner">
+	    <div class="feeds">
+	    </div>
+	      <nav class="pages">
+			  <a href="../../../../pages/about-cv.html">About (CV)</a>
+-			  <a href="../../../../pages/publications.html">Publications</a>
+	      </nav>
+		<a href="../../../.." class="title">Predrag TASEVSKI - Pece</a>
+      </header>
+	
+	  <div class="wrapper">
+
+		  <div role="main" class="content">
+	<article class="full">
+			
+		<h1>Testing IDS</h1>
+		
+<div class="metadata">
+  <time datetime="2012-01-03T00:00:00" pubdate>mar. 03 janvier 2012</time>
+    <address class="vcard author">
+      by <a class="url fn" href="../../../../author/predrag-tasevski-pece.html">Predrag TASEVSKI - Pece</a>
+    </address>
+  in <a href="../../../../category/ids.html">IDS</a>
+<p class="tags">tagged <a href="../../../../tag/cyber-security.html">cyber security</a>, <a href="../../../../tag/ddos.html">DDoS</a>, <a href="../../../../tag/ids.html">ids</a>, <a href="../../../../tag/internet.html">internet</a>, <a href="../../../../tag/networking.html">networking</a>, <a href="../../../../tag/online.html">online</a>, <a href="../../../../tag/openvas.html">openvas</a>, <a href="../../../../tag/port-scan.html">port scan</a>, <a href="../../../../tag/snort.html">snort</a>, <a href="../../../../tag/syn-flood.html">SYN flood</a>, <a href="../../../../tag/testing-ids.html">testing ids</a>, <a href="../../../../tag/vulnerability-scanning.html">vulnerability scanning</a></p></div>		
+		<h1>SCENARIO</h1>
+<p>The objective of this laboratory test, scenario is to create a solution and instructions for testing an IDS^1 systems usefulness for detecting attacks against a wordpress site. In addition, a repeatable process to evaluate vendor claims. Whatever passive IDS system sample delivered as a VM or a dedicated box. Creating the IDS system itself is out of scope.</p>
+<p>The process must be detailed enough so that somebody else can get the same results when applying that. The “other person” is expected to have IT knowledge sufficient to install and run a Linux desktop. Budget requirements: Modest – 2 machines + a tester (Joe) + networking equipment to connect the two machines and an IDS together. The process must test at least the following attacks:
+- Port scan
+- SYN flood
+- “Regular” DoS overwhelming attack (Ab)</p>
+<p>Optionally the process may test:
+- slowloris/pyloris
+- Apache Range header DoS vulnerability <a href="http://httpd.apache.org/security/CVE-011-3192.txt" target="_blank">http://httpd.apache.org/security/CVE-011-3192.txt </a>
+- An attack targeting any other fairly recent (not older than 3-4 years) known vulnerability that could in theory apply to the target system (wordpress server)</p>
+<p>However the competition rules are: The highest number of attacks evaluated. Limits:
+- Each attack must be relevant eg. if it attacks IIS it’s NOT relevant. If it attacks Windows RPC it’s not relevant. If it attacks some other CMS eg. Drupal it’s NOT relevant. * Basically equivalent attacks count as one (different port scanners for example).
+- You must be able to explain in broad terms what the attack does eg: attacks the vulnerability #X in Apache server If the #attacks is equal.</p>
+<p>Lab instaractions:</p>
+<p>Install 3 VM-s: Attacker IDS and Target</p>
+1. Make sure all VM-s have two network adapters: NAT and Host-Only.
+2. Install Snort and it’s GUI called “acidbase” on IDS <a href="https://help.ubuntu.com/community/SnortIDS" target="_blank">https://help.ubuntu.com/community/SnortIDS</a>.
+3. Install Apache, Mysql and WordPress on Target.
+4. Execute an attack on Attacker towards the IP address on the Host Only network.
+5. Take notice of the results displayed on Acid console.
+6. Reset counters, move on to next attack.</p>
+<p>Additionally, illustration 1 describes the overview of above scenario
+<img class="size-full wp-image-349" title="Illustration 1: Lab 5 Illustration of Scenario" src="http://predragtasevski.com/imp/ids1.png"  width="650" height="255"></a>
+Illustration 1: Lab 5 Illustration of Scenario</p>
+<p>Firstly, setup procedure of snort, secondly available proposals and thirdly illustrating the results and the functionality of proposals. Finally, closing this laboratory report with conclusion. In addition, appendixes is configuration of VM’s – Virtual Machines.</p>
+<h1>SETUP of SNORT</h1>
+<p>To setup snort in a right way, that will work for the second Host only network please following the instruction link provided with a full description and configuration of snort [SNORT2].</p>
+<p>After completing the setup and configuration to run snort on the second interface use the following command:
+<code>snort -c /etc/snort/snort/conf -i eth1</code></p>
+<h1>PROPOSALS</h1>
+<p>In total three proposals and each one is highlighted in the next sub-sections.</p>
+<h2>PROPOSAL 1</h2>
+<p>Full instructions
+1. Set up IDS (Snort) and WordPress on the first PC
+2. Install Ubuntu server on the second PC . Then install all attacking tools there:
+```wget enos.itcollege.ee/~avein/lab4i.sh 
+sudo sh lab4i.sh</p>
+<div class="highlight"><pre><span class="n">After</span> <span class="n">that</span> <span class="n">you</span> <span class="n">should</span> <span class="n">have</span><span class="o">:</span>
+<span class="o">-</span> <span class="err">```</span><span class="n">ab</span><span class="p">.</span><span class="n">sh</span><span class="err">```</span> <span class="err">–</span> <span class="n">DoS</span> <span class="n">attack</span> <span class="n">script</span> <span class="err">–</span> <span class="n">uses</span> <span class="n">ab</span> <span class="n">to</span> <span class="n">generate</span> <span class="n">traffic</span> <span class="n">flood</span>
+<span class="o">-</span> <span class="err">```</span><span class="n">apachekiller</span><span class="p">.</span><span class="n">pl</span><span class="err">```</span> <span class="err">–</span> <span class="n">Apachekiller</span> <span class="n">attack</span> <span class="n">script</span> <span class="n">More</span> <span class="n">info</span><span class="o">:</span> <span class="n">http</span><span class="o">:</span><span class="c1">//www.hackersgarage.com/apache-killer-denial-of-service-flaw-in-apache-webserver.html</span>
+<span class="o">-</span> <span class="err">```</span><span class="n">README</span><span class="p">.</span><span class="n">txt</span><span class="err">```</span> <span class="err">–</span> <span class="n">extra</span> <span class="n">instructions</span>
+<span class="o">-</span> <span class="err">```</span><span class="n">scan</span><span class="p">.</span><span class="n">sh</span><span class="err">```</span> <span class="o">-</span> <span class="n">Port</span> <span class="n">scanning</span> <span class="n">script</span> <span class="o">-</span> <span class="n">uses</span> <span class="n">nmap</span>
+<span class="o">-</span> <span class="err">```</span><span class="n">sloworis</span><span class="p">.</span><span class="n">pl</span><span class="err">```</span> <span class="o">-</span> <span class="n">Sloworis</span> <span class="n">attack</span> <span class="n">script</span> <span class="n">More</span> <span class="n">info</span><span class="o">:</span> <span class="n">http</span><span class="o">:</span><span class="c1">//ha.ckers.org/slowloris/</span>
+<span class="o">-</span> <span class="err">```</span><span class="n">synf</span><span class="p">.</span><span class="n">sh</span><span class="err">```</span> <span class="o">-</span> <span class="n">syn</span> <span class="n">flood</span> <span class="n">attack</span> <span class="n">script</span> <span class="o">-</span> <span class="n">uses</span> <span class="n">hping3</span>
+
+<span class="mf">3.</span> <span class="n">Start</span> <span class="n">your</span> <span class="n">IDS</span><span class="o">/</span><span class="n">wordpress</span> <span class="n">server</span> <span class="n">and</span> <span class="n">the</span> <span class="n">server</span> <span class="n">with</span> <span class="n">attack</span> <span class="n">tools</span><span class="p">.</span> 
+<span class="mf">4.</span> <span class="n">Run</span> <span class="n">each</span> <span class="n">attack</span> <span class="n">tool</span> <span class="n">ONE</span> <span class="n">AT</span> <span class="n">A</span> <span class="n">TIME</span> <span class="p">(</span><span class="n">targeting</span> <span class="n">the</span> <span class="n">wordpress</span><span class="o">/</span><span class="n">IDS</span> <span class="n">server</span> <span class="n">of</span> <span class="n">course</span><span class="p">)</span> <span class="p">.</span> <span class="n">Monitor</span> <span class="n">the</span> <span class="n">logs</span><span class="o">/</span><span class="n">notifications</span> <span class="n">on</span> <span class="n">yours</span> <span class="n">IDS</span> <span class="n">system</span> <span class="p">(</span><span class="n">SNORT</span><span class="p">)</span> <span class="n">and</span> <span class="n">check</span> <span class="n">whether</span> <span class="n">wordpress</span> <span class="n">site</span> <span class="n">is</span> <span class="n">still</span> <span class="n">accessible</span><span class="p">.</span> <span class="n">Let</span> <span class="n">each</span> <span class="n">attack</span> <span class="n">tool</span> <span class="n">run</span> <span class="mi">2</span> <span class="n">minutes</span><span class="p">,</span> <span class="n">then</span> <span class="n">stop</span> <span class="n">the</span> <span class="n">attack</span> <span class="n">by</span> <span class="n">pressing</span> <span class="n">CTRL</span><span class="o">+</span><span class="n">C</span> <span class="n">on</span> <span class="n">the</span> <span class="n">terminal</span> <span class="n">window</span> <span class="n">where</span> <span class="n">the</span> <span class="n">attack</span> <span class="n">tool</span> <span class="n">is</span> <span class="n">running</span><span class="p">.</span> <span class="n">The</span> <span class="n">only</span> <span class="n">exeption</span> <span class="n">is</span> <span class="n">port</span> <span class="n">scan</span><span class="o">-</span> <span class="n">its</span> <span class="n">better</span> <span class="n">to</span> <span class="n">wait</span> <span class="n">until</span> <span class="n">it</span> <span class="n">finishes</span><span class="p">.</span> <span class="n">After</span> <span class="n">each</span> <span class="n">attack</span> <span class="n">save</span> <span class="n">the</span> <span class="n">IDS</span> <span class="n">log</span> <span class="n">and</span> <span class="n">wait</span> <span class="n">atlest</span> <span class="mi">5</span> <span class="n">minutes</span> <span class="n">before</span> <span class="n">trying</span> <span class="n">next</span> <span class="n">tool</span> <span class="p">(</span><span class="n">to</span> <span class="n">give</span> <span class="n">server</span> <span class="n">time</span> <span class="n">to</span> <span class="n">recover</span><span class="p">).</span> <span class="n">Best</span> <span class="n">practice</span> <span class="n">is</span> <span class="n">to</span> <span class="n">manually</span> <span class="n">check</span> <span class="k">if</span> <span class="n">the</span> <span class="n">server</span> <span class="n">load</span> <span class="n">is</span> <span class="n">at</span> <span class="n">normal</span> <span class="p">(</span><span class="n">one</span> <span class="n">can</span> <span class="n">use</span> <span class="n">htop</span> <span class="k">for</span> <span class="n">that</span><span class="p">).</span>
+
+<span class="n">a</span><span class="p">)</span> <span class="n">To</span> <span class="n">run</span> <span class="n">DoS</span> <span class="n">attack</span><span class="o">:</span>
+<span class="err">```</span><span class="n">sh</span> <span class="n">ab</span><span class="p">.</span><span class="n">sh</span> <span class="p">{</span><span class="n">target</span><span class="p">}</span> <span class="n">eg</span> <span class="n">sh</span> <span class="n">ab</span><span class="p">.</span><span class="n">sh</span> <span class="mf">192.168.56.101</span><span class="err">```</span>
+
+<span class="n">b</span><span class="p">)</span> <span class="n">For</span> <span class="n">port</span> <span class="n">scan</span><span class="o">:</span>
+<span class="err">```</span><span class="n">sh</span> <span class="n">scan</span><span class="p">.</span><span class="n">sh</span> <span class="p">{</span><span class="n">target</span> <span class="n">IP</span><span class="p">}</span> <span class="n">eg</span> <span class="n">sh</span> <span class="n">scan</span><span class="p">.</span><span class="n">sh</span> <span class="mf">192.168.56.101</span><span class="err">```</span>
+
+<span class="n">c</span><span class="p">)</span> <span class="n">For</span> <span class="n">Syn</span> <span class="n">flood</span> <span class="p">(</span><span class="n">with</span> <span class="n">hping3</span><span class="p">)</span>
+<span class="err">```</span><span class="n">sh</span> <span class="n">synf</span><span class="p">.</span><span class="n">sh</span> <span class="p">{</span><span class="n">target</span><span class="p">}</span> <span class="n">eg</span> <span class="n">synf</span><span class="p">.</span><span class="n">sh</span> <span class="mf">192.168.56.101</span><span class="o">/</span><span class="n">wordpress</span><span class="err">```</span>
+
+<span class="n">d</span><span class="p">)</span> <span class="n">For</span> <span class="n">Sloworis</span> <span class="n">attack</span><span class="o">:</span>
+<span class="err">```</span><span class="n">perl</span> <span class="n">slowloris</span><span class="p">.</span><span class="n">pl</span> <span class="o">-</span><span class="n">dns</span> <span class="p">{</span><span class="n">target</span><span class="p">}</span> <span class="n">eg</span> <span class="n">perl</span> <span class="n">sloworis</span><span class="p">.</span><span class="n">pl</span> <span class="o">-</span><span class="n">dns</span> <span class="mf">192.168.56.101</span><span class="o">/</span><span class="n">wordpress</span><span class="err">```</span>
+
+<span class="n">e</span><span class="p">)</span> <span class="n">For</span> <span class="n">Apachekiller</span> <span class="n">attack</span><span class="o">:</span>
+<span class="err">```</span><span class="n">perl</span> <span class="n">apachekiller</span><span class="p">.</span><span class="n">pl</span> <span class="p">{</span><span class="n">target</span> <span class="n">IP</span><span class="p">}</span> <span class="n">eg</span> <span class="n">perl</span> <span class="n">apachekiller</span><span class="p">.</span><span class="n">pl</span> <span class="mf">192.168.56.101</span><span class="err">```</span>
+
+<span class="cp">## PROPOSAL 2</span>
+
+<span class="cp">### Intro</span>
+
+<span class="n">For</span> <span class="n">this</span> <span class="n">scenario</span> <span class="n">we</span> <span class="n">need</span> <span class="n">to</span> <span class="n">run</span> <span class="n">several</span> <span class="n">different</span> <span class="n">attacks</span> <span class="n">and</span> <span class="n">scans</span> <span class="n">to</span> <span class="n">be</span> <span class="n">able</span> <span class="n">to</span> <span class="n">compare</span> <span class="n">the</span> <span class="n">results</span> <span class="n">with</span> <span class="n">different</span> <span class="n">IDS</span> <span class="n">setups</span> <span class="n">and</span> <span class="n">rulesets</span><span class="p">.</span> <span class="n">We</span> <span class="n">might</span> <span class="n">also</span> <span class="n">want</span> <span class="n">to</span> <span class="n">test</span> <span class="n">it</span> <span class="n">with</span> <span class="n">legitimate</span> <span class="n">traffic</span> <span class="n">to</span> <span class="n">see</span> <span class="n">that</span> <span class="n">we</span> <span class="n">dont</span> <span class="n">get</span> <span class="nb">false</span> <span class="n">positives</span> <span class="n">in</span> <span class="n">our</span> <span class="n">alarms</span><span class="p">.</span> <span class="n">We</span> <span class="n">dont</span> <span class="n">have</span> <span class="n">that</span> <span class="n">much</span> <span class="n">legitimate</span> <span class="n">traffic</span> <span class="n">possibilities</span> <span class="n">with</span> <span class="mi">1</span> <span class="n">blog</span> <span class="n">on</span> <span class="n">our</span> <span class="n">servers</span> <span class="n">right</span> <span class="n">now</span><span class="p">,</span> <span class="n">but</span> <span class="k">if</span> <span class="n">we</span> <span class="n">start</span> <span class="n">tweaking</span> <span class="n">the</span> <span class="n">IDS</span> <span class="nb">false</span> <span class="n">positives</span> <span class="n">becomes</span> <span class="n">an</span> <span class="n">important</span> <span class="n">metric</span> <span class="n">and</span> <span class="n">we</span> <span class="n">might</span> <span class="n">want</span> <span class="n">to</span> <span class="n">test</span> <span class="n">normal</span> <span class="n">usage</span> <span class="n">and</span> <span class="n">create</span> <span class="n">traffic</span> <span class="n">to</span> <span class="n">run</span> <span class="n">with</span> <span class="n">tcpreplay</span> <span class="k">for</span> <span class="n">example</span><span class="p">.</span> <span class="n">My</span> <span class="n">proposal</span> <span class="n">is</span> <span class="n">to</span> <span class="n">test</span> <span class="n">the</span> <span class="n">IDS</span> <span class="n">with</span> <span class="n">pytbull</span> <span class="n">running</span> <span class="n">on</span> <span class="n">BackTrack</span><span class="p">.</span> <span class="n">Pytbull</span> <span class="n">is</span> <span class="n">IDS</span> <span class="n">testing</span> <span class="n">framework</span> <span class="n">and</span> <span class="n">BackTrack</span> <span class="n">a</span> <span class="n">Linux</span> <span class="n">ditribution</span><span class="p">.</span> <span class="n">I</span> <span class="n">will</span> <span class="n">assume</span> <span class="n">that</span> <span class="n">we</span> <span class="n">have</span> <span class="n">WordPress</span> <span class="n">server</span> <span class="n">with</span> <span class="n">running</span> <span class="k">default</span> <span class="n">Snort</span> <span class="n">set</span> <span class="n">up</span> <span class="n">on</span> <span class="n">it</span> <span class="n">and</span> <span class="n">working</span><span class="p">.</span> <span class="n">No</span> <span class="n">extensive</span> <span class="n">testing</span> <span class="n">has</span> <span class="n">been</span> <span class="n">done</span> <span class="n">with</span> <span class="n">different</span> <span class="n">snort</span> <span class="n">setups</span> <span class="n">so</span> <span class="n">we</span> <span class="n">might</span> <span class="n">have</span> <span class="n">to</span> <span class="n">tune</span> <span class="n">the</span> <span class="n">methods</span><span class="p">,</span> <span class="n">but</span> <span class="n">basic</span> <span class="n">things</span> <span class="n">should</span> <span class="n">be</span> <span class="n">covered</span><span class="p">.</span>
+
+<span class="cp">### DL and install BackTrack</span>
+
+<span class="o">-</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">&quot;http://www.backtrack-linux.org/downloads/&quot;</span> <span class="n">target</span><span class="o">=</span><span class="s">&quot;_blank&quot;</span><span class="o">&gt;</span><span class="n">backtrack</span><span class="o">-</span><span class="n">linux</span><span class="p">.</span><span class="n">org</span><span class="o">/</span><span class="n">downloads</span><span class="o">/&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+
+<span class="n">Install</span> <span class="n">it</span> <span class="n">rather</span> <span class="n">than</span> <span class="n">running</span> <span class="n">a</span> <span class="n">live</span> <span class="n">version</span> <span class="k">for</span> <span class="n">this</span> <span class="n">scenario</span><span class="p">.</span> <span class="n">Boot</span> <span class="n">it</span> <span class="n">up</span> <span class="n">in</span> <span class="k">default</span> <span class="n">mode</span><span class="p">,</span> <span class="n">start</span> <span class="n">GUI</span> <span class="n">and</span> <span class="n">launch</span> <span class="n">installation</span> <span class="n">from</span> <span class="n">desktop</span><span class="p">.</span> <span class="n">Default</span> <span class="n">login</span> <span class="n">root</span> <span class="o">/</span> <span class="n">toor</span><span class="p">.</span> <span class="n">Standard</span> <span class="n">setup</span> <span class="n">comes</span> <span class="n">with</span> <span class="n">pytbull</span> <span class="n">and</span> <span class="n">several</span> <span class="n">pieces</span> <span class="n">of</span> <span class="n">software</span> <span class="n">the</span> <span class="n">IDS</span> <span class="n">test</span><span class="o">-</span><span class="n">system</span> <span class="n">depends</span> <span class="n">on</span> <span class="n">like</span> <span class="n">nmap</span><span class="p">,</span> <span class="n">hping3</span><span class="p">,</span> <span class="n">nikto</span> <span class="n">and</span> <span class="n">others</span><span class="p">.</span>
+
+<span class="cp">### Setup connections</span>
+
+<span class="n">Connect</span> <span class="n">the</span> <span class="n">machines</span> <span class="n">and</span> <span class="n">install</span> <span class="n">ftp</span> <span class="n">and</span> <span class="n">ssh</span> <span class="n">on</span> <span class="n">server</span><span class="p">.</span> <span class="n">We</span> <span class="n">need</span> <span class="n">ftp</span> <span class="n">to</span> <span class="n">get</span> <span class="n">snort</span> <span class="n">alert</span> <span class="n">files</span> <span class="n">and</span> <span class="n">ssh</span> <span class="n">to</span> <span class="n">run</span> <span class="n">attacks</span> <span class="n">against</span><span class="p">.</span>
+
+<span class="err">```</span><span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">vsftpd</span> <span class="n">openssh</span><span class="o">-</span><span class="n">server</span><span class="err">```</span>
+
+<span class="cp">### Setup pytbull</span>
+
+<span class="n">You</span> <span class="n">will</span> <span class="n">find</span> <span class="n">pytbull</span> <span class="n">from</span> <span class="err">```</span><span class="o">/</span><span class="n">pentest</span><span class="o">/</span><span class="n">enumeration</span><span class="o">/</span><span class="n">ids</span><span class="o">/</span><span class="n">pytbull</span><span class="o">/</span><span class="err">```</span> <span class="n">or</span> <span class="n">Applications</span> <span class="o">-&gt;</span> <span class="n">BackTrack</span> <span class="o">-&gt;</span> <span class="n">Information</span> <span class="n">Gathering</span> <span class="o">-&gt;</span> <span class="n">Network</span> <span class="n">Analysis</span> <span class="o">-&gt;</span> <span class="n">IDS</span> <span class="n">IPS</span> <span class="n">Identification</span> <span class="o">-&gt;</span> <span class="n">pytbull</span> <span class="n">when</span> <span class="n">using</span> <span class="n">the</span> <span class="n">GUI</span><span class="p">.</span> <span class="n">Change</span> <span class="n">the</span> <span class="n">configuration</span> <span class="n">file</span> <span class="n">values</span> <span class="n">to</span> <span class="n">have</span> <span class="n">correct</span> <span class="n">connection</span> <span class="n">information</span><span class="p">,</span> <span class="n">user</span> <span class="n">credentials</span> <span class="n">and</span> <span class="n">locations</span> <span class="n">of</span> <span class="n">dependencies</span><span class="p">.</span> <span class="n">Here</span> <span class="n">you</span> <span class="n">also</span> <span class="n">select</span> <span class="n">which</span> <span class="n">test</span> <span class="n">modules</span> <span class="n">out</span> <span class="n">of</span> <span class="n">the</span> <span class="mi">9</span> <span class="n">available</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="n">run</span><span class="p">.</span> <span class="n">ClientSideAttacks</span> <span class="n">needs</span> <span class="n">extra</span> <span class="n">configuration</span><span class="p">.</span>
+</pre></div>
+
+
+<p>cd /pentest/enumeration/ids/pytbull/ 
+gedit config.cfg
+Example conf file: http://www.tud.ttu.ee/~t061780/attacks/config.cfg
+Now get custom DoS module to have hping SYN flood and ApacheBench DoS tests covered.
+cd modules
+mv denialOfService.py denialOfService.py-backup
+wget http://www.tud.ttu.ee/~t061780/attacks/denialOfService.py
+You may want to refer to Pytbull documentation</p>
+<div class="highlight"><pre><span class="cp">### Run</span>
+
+<span class="err">```</span><span class="o">/</span><span class="n">pentest</span><span class="o">/</span><span class="n">enumeration</span><span class="o">/</span><span class="n">ids</span><span class="o">/</span><span class="n">pytbull</span><span class="o">/</span><span class="n">pytbull</span> <span class="o">-</span><span class="n">t</span> <span class="n">WP</span><span class="o">/</span><span class="n">Snort</span> <span class="n">server</span> <span class="n">IP</span><span class="p">;</span><span class="err">```</span>
+
+<span class="n">If</span> <span class="n">everything</span> <span class="n">works</span> <span class="n">you</span> <span class="n">will</span> <span class="n">find</span> <span class="n">html</span> <span class="n">report</span> <span class="n">file</span> <span class="n">under</span> <span class="o">/</span><span class="n">reports</span><span class="p">.</span> <span class="n">If</span> <span class="n">you</span> <span class="n">have</span> <span class="n">problems</span> <span class="n">add</span> <span class="o">-</span><span class="n">d</span> <span class="n">on</span> <span class="n">run</span> <span class="k">for</span> <span class="n">debugging</span><span class="p">.</span>
+
+<span class="cp">###(optional) Slowloris</span>
+
+<span class="n">To</span> <span class="n">have</span> <span class="n">slowloris</span> <span class="n">attack</span> <span class="n">test</span> <span class="k">for</span> <span class="n">pytbull</span> <span class="n">we</span> <span class="n">need</span> <span class="n">to</span> <span class="n">get</span> <span class="n">custom</span> <span class="n">slowloris</span> <span class="n">that</span> <span class="n">allows</span> <span class="n">to</span> <span class="n">set</span> <span class="n">how</span> <span class="n">many</span> <span class="n">packets</span> <span class="n">to</span> <span class="n">send</span> <span class="n">because</span> <span class="n">we</span> <span class="n">dont</span> <span class="n">want</span> <span class="n">the</span> <span class="n">tests</span> <span class="n">to</span> <span class="n">run</span> <span class="n">forever</span><span class="p">.</span> <span class="n">I</span> <span class="n">added</span> <span class="n">argument</span> <span class="n">s</span> <span class="n">that</span> <span class="n">tells</span> <span class="n">the</span> <span class="n">script</span> <span class="n">to</span> <span class="n">stop</span> <span class="n">after</span> <span class="n">we</span> <span class="n">have</span> <span class="n">sent</span> <span class="n">s</span> <span class="n">packets</span><span class="p">.</span>
+</pre></div>
+
+
+<p>cd /pentest/stressing
+wget www.tud.ttu.ee/~t061780/attacks/slowloris.pl
+Slowloris attack has been written into DoS module,  you have to uncomment it. Lines 47-52.
+gedit /pentest/enumeration/ids/pytbull/modules/denialOfService.py</p>
+<div class="highlight"><pre><span class="err">##</span> <span class="nx">PROPOSAL</span> <span class="mi">3</span>
+
+<span class="nb">For</span> <span class="nx">this</span> <span class="nx">proposal</span> <span class="nx">I</span> <span class="nx">will</span> <span class="nx">suggest</span> <span class="k">to</span> <span class="nx">use</span> <span class="nb">open</span> <span class="nb">source</span> <span class="nx">tool</span> <span class="nx">OpenVas</span> <span class="nb">for</span> <span class="nx">vulnerability</span> <span class="nx">scanning</span><span class="p">,</span> <span class="k">to</span> <span class="nx">test</span> <span class="nx">our</span> <span class="nx">IDS</span> <span class="nx">system.</span> <span class="nx">It</span> <span class="nb">contains</span> <span class="nx">many</span> <span class="nx">security</span> <span class="nx">tools</span> <span class="nx">integrated.</span> <span class="nx">The</span> <span class="nx">security</span> <span class="ow">and</span> <span class="nx">analysis</span> <span class="nx">tools</span> <span class="nx">are</span><span class="p">:</span> <span class="nx">Nikto</span><span class="p">,</span> <span class="nx">nmap</span><span class="p">,</span> <span class="nx">ike</span><span class="na">-scan</span><span class="p">,</span> <span class="nx">snmpwalk</span><span class="p">,</span> <span class="nx">amap</span><span class="p">,</span> <span class="nx">ldapsearch</span><span class="p">,</span> <span class="nx">SLAD</span> <span class="p">(</span><span class="nx">John</span><span class="na">-the-Ripper</span><span class="p">,</span> <span class="nx">Chkrootkit</span><span class="p">,</span> <span class="nx">LSOF</span><span class="p">,</span> <span class="nx">ClamAV</span><span class="p">,</span> <span class="nx">Tripwire</span><span class="p">,</span> <span class="nx">TIGER</span><span class="p">,</span> <span class="nx">logwatch</span><span class="p">,</span> <span class="nx">trapwatch</span><span class="p">,</span> <span class="nx">lm</span><span class="na">-sensors</span><span class="p">,</span> <span class="nx">snort</span> <span class="ow">and</span> <span class="nx">ovaldi</span><span class="p">),</span> <span class="nx">pnscan</span><span class="p">,</span> <span class="nx">portbunny</span><span class="p">,</span> <span class="nx">strobe</span><span class="p">,</span> <span class="nx">w3af</span><span class="p">,</span> <span class="nx">etc.</span>
+
+<span class="nx">Instructions</span> <span class="nx">of</span> <span class="nx">installation</span> <span class="nb">process</span><span class="p">,</span> <span class="nb">for</span> <span class="nx">further</span> <span class="nx">more</span> <span class="nx">information</span> <span class="nx">please</span> <span class="nx">refer</span> <span class="k">to</span> <span class="o">&lt;</span><span class="nx">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;http://www.openvas.org/setup-and-start.html&quot;</span> <span class="n">target</span><span class="o">=</span><span class="s2">&quot;_blank&quot;</span><span class="o">&gt;</span><span class="nx">http</span><span class="p">:</span><span class="c1">//www.openvas.org/setup-and-start.html&lt;/a&gt;</span>
+
+<span class="err">###</span> <span class="nb">Step</span> <span class="mi">1</span><span class="p">:</span> <span class="nx">Configure</span> <span class="nx">OBS</span> <span class="nx">Repository</span>
+<span class="sb">``</span><span class="err">`</span><span class="nx">sudo</span> <span class="nx">apt</span><span class="na">-get</span> <span class="na">-y</span> <span class="nb">install</span> <span class="nx">python</span><span class="na">-software-properties</span>
+<span class="nx">sudo</span> <span class="nb">add</span><span class="na">-apt-repository</span> <span class="s2">&quot;deb http://download.opensuse.org/repositories/security:/OpenVAS:STABLE:/v4/xUbuntu_10.04/./&quot;</span>
+<span class="nx">sudo</span> <span class="nx">apt</span><span class="na">-key</span> <span class="nx">adv</span> <span class="o">--</span><span class="nx">keyserver</span> <span class="nx">hkp</span><span class="p">:</span><span class="c1">//keys.gnupg.net --recv-keys BED1E87979EAFD54 </span>
+<span class="nx">sudo</span> <span class="nx">apt</span><span class="na">-get</span> <span class="nx">update</span>
+</pre></div>
+
+
+<h3>Step 2: Quick-Install OpenVAS</h3>
+<div class="highlight"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">greenbone</span><span class="o">-</span><span class="n">security</span><span class="o">-</span><span class="n">assistant</span> <span class="n">gsd</span> <span class="n">openvas</span><span class="o">-</span><span class="n">cli</span> <span class="n">openvas</span><span class="o">-</span><span class="n">manager</span> <span class="n">openvas</span><span class="o">-</span><span class="n">scanner</span> <span class="n">openvas</span><span class="o">-</span><span class="n">administrator</span> <span class="n">sqlite3</span> <span class="n">xsltproc</span>
+</pre></div>
+
+
+<h3>Step 3: Quick-Start OpenVAS</h3>
+<p>(copy and paste whole block, during first time you will be asked to set a password for user “admin”)</p>
+<div class="highlight"><pre><span class="n">test</span> <span class="o">-</span><span class="n">e</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">openvas</span><span class="o">/</span><span class="n">CA</span><span class="o">/</span><span class="n">cacert</span><span class="p">.</span><span class="n">pem</span> <span class="o">||</span> <span class="n">sudo</span> <span class="n">openvas</span><span class="o">-</span><span class="n">mkcert</span> <span class="o">-</span><span class="n">q</span>
+<span class="n">sudo</span> <span class="n">openvas</span><span class="o">-</span><span class="n">nvt</span><span class="o">-</span><span class="n">sync</span> <span class="n">test</span> <span class="o">-</span><span class="n">e</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">openvas</span><span class="o">/</span><span class="n">users</span><span class="o">/</span><span class="n">om</span> <span class="o">||</span> <span class="n">sudo</span> <span class="n">openvas</span><span class="o">-</span><span class="n">mkcert</span><span class="o">-</span><span class="n">client</span> <span class="o">-</span><span class="n">n</span> <span class="n">om</span> <span class="o">-</span><span class="n">i</span> <span class="n">sudo</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="n">openvas</span><span class="o">-</span><span class="n">manager</span> <span class="n">stop</span>
+<span class="n">sudo</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="n">openvas</span><span class="o">-</span><span class="n">scanner</span> <span class="n">stop</span>
+<span class="n">sudo</span> <span class="n">openvassd</span>
+<span class="n">sudo</span> <span class="n">openvasmd</span> <span class="o">--</span><span class="n">migrate</span>
+<span class="n">sudo</span> <span class="n">openvasmd</span> <span class="o">--</span><span class="n">rebuild</span>
+<span class="n">sudo</span> <span class="n">killall</span> <span class="n">openvassd</span>
+<span class="n">sleep</span> <span class="mi">15</span>
+<span class="n">sudo</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="n">openvas</span><span class="o">-</span><span class="n">scanner</span> <span class="n">start</span>
+<span class="n">sudo</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="n">openvas</span><span class="o">-</span><span class="n">manager</span> <span class="n">start</span>
+<span class="n">sudo</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="n">openvas</span><span class="o">-</span><span class="n">administrator</span> <span class="n">restart</span>
+<span class="n">sudo</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="n">greenbone</span><span class="o">-</span><span class="n">security</span><span class="o">-</span><span class="n">assistant</span> <span class="n">restart</span>
+<span class="n">test</span> <span class="o">-</span><span class="n">e</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">openvas</span><span class="o">/</span><span class="n">users</span><span class="o">/</span><span class="n">admin</span> <span class="o">||</span> <span class="n">sudo</span> <span class="n">openvasad</span> <span class="o">-</span><span class="n">c</span> <span class="n">add_user</span> <span class="o">-</span><span class="n">n</span> <span class="n">admin</span> <span class="o">-</span><span class="n">r</span> <span class="n">Admin</span>
+</pre></div>
+
+
+<h3>Step 4: Log into OpenVAS as “admin”</h3>
+<p>Open <code>https://localhost:9392/</code> or start <code>“gsd”</code> on a command line as a regular user (not as root!). Optional we can use and the Slowloris and Pyloris DoS attacks.</p>
+<p>Download link for Slowloris is: <a href="http://ha.ckers.org/slowloris/slowloris.pl" target="_blank">http://ha.ckers.org/slowloris/slowloris.pl</a></p>
+<p>The above solution and tool will help us to check and test our IDS system usefulness. It tests the following attacks: Port scan, SYN flood, DoS, etc. The results are presented with nice GUI interface. For more info about the project please refer to <a href="http://www.openvas.org/" target="_blank">www.openvas.org</a>.</p>
+<h1>RESULTS</h1>
+<p>After executing the above proposal we will highlight the results. Nevertheless, only the Proposal 1 was able to run the test. Others two, Proposal 2 and Proposal 3 were unsuccessful of installation process and configuration and to run the attacks. Moreover, the result are presented from the total amount of reports, registered alerts in the snort. This is done by help of web interface of Basic Analysis and Security Engine in addition Analysis Console for Intrusion Databases (ACID) project tool [ACID]. Therefore, the result from the Proposal 1 and from the rest are highlighted below:</p>
+<ul>
+<li>Proposal 1</li>
+<li>DoS – registered alerts: 2;</li>
+<li>Port scan : 8;</li>
+<li>synf.sh: 1344;</li>
+<li>slowloris.pl: 1782;</li>
+<li>
+<p>apachekiller.pl: not working;</p>
+</li>
+<li>
+<p>Proposal 2</p>
+</li>
+<li>
+<p>pytbull: 0, the message was: Error: FTP error, 550 failed to open file.</p>
+</li>
+<li>
+<p>Proposal 3</p>
+</li>
+<li>Too complicated to be configured and installed. The instructions and the procedures should be more easy. After few hours of configuring and test, tweaks are is still not working. Yet there are many good tutorials how to configure OpenVAS please refer [OpenVas1] and [OpenVas2].</li>
+</ul>
+<h1>CONCLUSION</h1>
+<p>Primarily, setting-up IDS, the Snort, it is not an easy task to complete. On the other hand, configuring, installing, etc. the testing tools for IDS system is even more complicated. Therefore, the Proposal 1 has the best solution and installation process of the test tools. Despite, that it was the only one that worked. Finally, recommendation for the IDS solutions and in addition to the penetrating tools to test the usefulness of IDS has to be more simple and stepwise solution. However, the above scenario and proposals are great tools and solutions for a future reader.</p>
+<h1>APPENDIXES</h1>
+<p>Appendix 1 is the configuration of the attacker virtual machine, in more detail Blacktrack distribution. Secondly, Appendix 2 is the ubuntu wordpress configuration server and additional is the configuration and setup process and refer links of IDS Snort virtual machine.</p>
+<h2>APPENDIX 1</h2>
+<ul>
+<li>Installation media: Black Track 5 GNOME 32bit iso image;</li>
+<li>HW: Virtualbox, 1CPU 32bit, 512MB RAM, 8GB HD (dynamic allocation);</li>
+<li>NIC1 NAT;</li>
+<li>NIC2 host only (for ssh and http access from host);</li>
+<li>Downloadable link: <a href="http://www.backtrack-linux.org/downloads/" target="_blank">http://www.backtrack-linux.org/downloads/</a></li>
+</ul>
+<h2>APPENDIX 2</h2>
+<ul>
+<li>Installation media: Ubuntu 10.04 32bit iso image;</li>
+<li>HW: Virtualbox, 1CPU 32bit, 512MB RAM, 8GB HD (dynamic allocation);</li>
+<li>NIC1 NAT;</li>
+<li>NIC2 host only (for ssh and http access from host);</li>
+<li>Language used in installation process: English and country Estonia;</li>
+<li>Keyboard Layout English;</li>
+<li>Hostname: pece</li>
+<li>Partition methods: Guided, use entire disk</li>
+<li>Username: pece</li>
+<li>no http proxy</li>
+<li>Default applications</li>
+</ul>
+<div class="highlight"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">lamp</span> <span class="n">phpmyadmin</span>
+<span class="n">wget</span> <span class="o">-</span><span class="n">c</span> <span class="n">http</span><span class="o">:</span><span class="c1">//wordpress.org/latest.tar.gz</span>
+<span class="n">tar</span> <span class="n">xvjf</span> <span class="n">latest</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span>
+<span class="n">sudo</span> <span class="n">cp</span> <span class="n">wordpress</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">wordpress</span>
+<span class="n">sudo</span> <span class="n">nano</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">wordpress</span><span class="o">/</span><span class="n">wp</span><span class="o">-</span><span class="n">config</span><span class="p">.</span><span class="n">php</span><span class="o">&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</pre></div>
+
+
+<p>Change the settings to your needs.</p>
+<h2>APPENDIX 3</h2></h2>
+<ul>
+<li>Installation media: Ubuntu 10.04 32bit iso image;<br></li>
+<li>HW: Virtualbox, 1CPU 32bit, 512MB RAM, 8GB HD (dynamic allocation);<br></li>
+<li>NIC1 NAT;<br></li>
+<li>NIC2 host only (for ssh and http access from host);<br></li>
+<li>Language used in installation process: English and country Estonia;<br></li>
+<li>Keyboard Layout English;<br></li>
+<li>Hostname: pece<br></li>
+<li>Partition methods: Guided, use entire disk<br></li>
+<li>Username: pece<br></li>
+<li>no http proxy<br></li>
+<li>Default applications<br></li>
+<li>Snort configuration and installation refer to [SNORT1] in addition, please refer to [SNORT2].</li>
+</ul>
+<h1>Bibliography</h1>
+<p>SNORT2: Nick Moore, Snort 2.8.4.1 Ubuntu 9 Installation Guide, June 2009, <a href="http://www.snort.org/assets/113/Snort_2.8.4.1_Ubuntu.pdf" target="_blank">http://www.snort.org/assets/113/Snort_2.8.4.1_Ubuntu.pdf</a></p>
+<p>ACID: Basic Analysis and Security Engine, Welcome to the Basic Analysis and Security Engine (BASE) project, 2008, <a href="http://base.secureideas.net/about.php" target="_blank"> http://base.secureideas.net/about.php</a></p>
+<p>OpenVas1: NA, Backtrack 5- OpenVas Tutorial, NA, <a href="http://www.ehacking.net/2011/06/backtrack-5-openvas-tutorial.html" target="_blank">http://www.ehacking.net/2011/06/backtrack-5-openvas-tutorial.html</a></p>
+<p>OpenVas2: BackTrack Linux, Getting started with OpenVas, June 2011, <a href="http://www.backtrack-linux.org/wiki/index.php/OpenVas"  target="_blank">http://www.backtrack-linux.org/wiki/index.php/OpenVas</a></p>
+<p>SNORT1: kat-amsterdam, SnortIDS, December 2010, <a href="https://help.ubuntu.com/community/SnortIDS" target="_blank">https://help.ubuntu.com/community/SnortIDS</a></p>
+<p>[1] IDS – Intrusion detection system</p>	
+
+	</article>
+
+    <p>
+	<a href="https://twitter.com/share" class="twitter-share-button" data-via="" data-lang="en" data-size="large" data-related="">Tweet</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	</p>
+
+
+		  </div>	
+		  
+		  <div class="sidebar">
+
+	        <nav>
+	          <h2>Categories</h2>
+	          <ul>
+	              <li ><a href="../../../../category/awareness.html">awareness</a></li>
+	              <li ><a href="../../../../category/camp.html">camp</a></li>
+	              <li ><a href="../../../../category/collectivistic.html">collectivistic</a></li>
+	              <li ><a href="../../../../category/company.html">company</a></li>
+	              <li ><a href="../../../../category/conference.html">conference</a></li>
+	              <li ><a href="../../../../category/cyber-crime.html">cyber crime</a></li>
+	              <li ><a href="../../../../category/cyber-security.html">cyber security</a></li>
+	              <li ><a href="../../../../category/cyberwar.html">cyberwar</a></li>
+	              <li ><a href="../../../../category/cyberwarfare.html">cyberwarfare</a></li>
+	              <li ><a href="../../../../category/digital-divide.html">digital divide</a></li>
+	              <li ><a href="../../../../category/hate-speech.html">hate speech</a></li>
+	              <li ><a href="../../../../category/hate-speechnetwork-security.html">hate speechnetwork security</a></li>
+	              <li ><a href="../../../../category/honeypot.html">honeypot</a></li>
+	              <li ><a href="../../../../category/human-communication.html">human communication</a></li>
+	              <li ><a href="../../../../category/human-computer-interaction.html">human computer interaction</a></li>
+	              <li ><a href="../../../../category/human-rights.html">human rights</a></li>
+	              <li class="active"><a href="../../../../category/ids.html">IDS</a></li>
+	              <li ><a href="../../../../category/interview.html">interview</a></li>
+	              <li ><a href="../../../../category/leaks.html">leaks</a></li>
+	              <li ><a href="../../../../category/malware.html">malware</a></li>
+	              <li ><a href="../../../../category/network-security.html">network security</a></li>
+	              <li ><a href="../../../../category/password-attacks.html">password attacks</a></li>
+	              <li ><a href="../../../../category/regular-expression.html">regular expression</a></li>
+	              <li ><a href="../../../../category/research.html">research</a></li>
+	              <li ><a href="../../../../category/risk-assessment.html">risk assessment</a></li>
+	              <li ><a href="../../../../category/script-kiddie.html">script kiddie</a></li>
+	              <li ><a href="../../../../category/security-programing.html">security programing</a></li>
+	              <li ><a href="../../../../category/security-testing.html">security testing</a></li>
+	              <li ><a href="../../../../category/social-networks.html">social networks</a></li>
+	              <li ><a href="../../../../category/texworks.html">texworks</a></li>
+	              <li ><a href="../../../../category/thinkpad.html">thinkpad</a></li>
+	              <li ><a href="../../../../category/virtual-life.html">virtual life</a></li>
+	              <li ><a href="../../../../category/wireless-security.html">wireless security</a></li>
+	              <li ><a href="../../../../category/wordpress.html">wordpress</a></li>
+	          </ul>
+	        </nav>
+
+	          <aside>
+	          <h2>Social</h2>
+			    <ul class="social">
+				  <li><a href="https://www.linkedin.com/in/tpredrag">Linkedin</a><i></i></li>
+				  <li><a href="https://twitter.com/stepcellwolf">Twitter</a><i></i></li>
+				  <li><a href="https://github.com/stepcellwolf/">Github</a><i></i></li>
+			    </ul>
+			  </aside>
+
+	          <aside>
+	            <h2>Blogroll</h2>
+	            <ul>
+	                <li><a href="http://getpelican.com/">Pelican</a></li>
+	                <li><a href="http://python.org/">Python.org</a></li>
+	                <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+	                <li><a href="#">You can modify those links in your config file</a></li>
+	            </ul>
+	          </aside>
+
+		  </div>
+
+	  </div>
+
+      <footer>
+		<p role="contentinfo">
+		  © 2013 Predrag TASEVSKI - Pece - Proudly powered by <a href="http://alexis.notmyidea.org/pelican/">pelican</a>. Theme <a href="https://github.com/fle/pelican-simplegrey">pelican-simplegrey</a>.
+    	</p>
+
+	  </footer>	
+
+	</div>
+	
+
+</body>
+</html>

@@ -1,442 +1,131 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="">	
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="IT risk" />
+	<meta charset="utf-8"/>
+	<title>IT risk - Predrag TASEVSKI - Pece</title>	
+	<meta name="author" content="Predrag TASEVSKI - Pece">
+	
 
-    <title>IT risk - PredragTASEVSKI.com</title>
+	<link rel="top" href="#" /><link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic,400italic,600italic|Source+Code+Pro' rel='stylesheet' type='text/css'></link>
+	<link rel="stylesheet" href="../theme/css/main.css" type="text/css" />
+		
 
-        <link rel="stylesheet" href="http://predragtasevski.com/theme/css/bootstrap.min.css" type="text/css"/>
-    <link href="http://predragtasevski.com/theme/css/font-awesome.min.css" rel="stylesheet">
-    
-    <link href="http://predragtasevski.com/theme/css/pygments/native.css" rel="stylesheet">
-    
-    <link href="/theme/css/pelican-twitchy.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    
-    <!-- Feeds -->
 </head>
-<body data-spy="scroll" data-target="#scrollspy">
-    <div id="wrapper">
-        <!-- Sidebar -->
-        <div id="sidebar-wrapper-small">
-            <ul id="accordion-small" class="sidebar-nav sidebar-nav-small">
-                <li>
-        <a href="http://predragtasevski.com" title="PredragTASEVSKI.com" class="collapsed">
-            <span class="glyphicon glyphicon-home"></span>
-        </a>
-    </li>
-                <li class="nav-divider"></li>
-                <li>
-        <a href="http://predragtasevski.com/archives.html" title="Recent Articles" class="collapsed">
-            <span class="glyphicon glyphicon-th-list"></span>
-        </a>
-    </li>
-                
-                <li class="nav-divider"></li>
-                <li>
-                    <a data-toggle="collapse" data-parent="#accordion-small" href="#collapse-social-small" title="Social" class="collapsed">
-                        <i class="fa fa-users padding-small"></i>
-                    </a>
-                </li>
-                <li class="panel anti-panel"><ul id="collapse-social-small" class="collapse ">
-                    <li>
-                        <a href="#" title="Another social link"><i class="fa fa-another-social-link-square fa-lg padding-small"></i></a>
-                    </li>
-                    <li>
-                        <a href="#" title="You can add links in your config file"><i class="fa fa-you-can-add-links-in-your-config-file-square fa-lg padding-small"></i></a>
-                    </li>
-                </ul></li>
-                <li class="nav-divider"></li>
-                <li>
-        <a href="#" title="Back to top" class="collapsed">
-            <span class="fa fa-arrow-up"></span>
-        </a>
-    </li>
-            </ul>
-        </div>
-        <div id="sidebar-wrapper">
-            <ul id="accordion" class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="http://predragtasevski.com/">
-                            <span class="glyphicon glyphicon-home padding-small"></span>
-                            PredragTASEVSKI.com
-                    </a>
-                </li>
-                    <li>
-                        <a href="http://predragtasevski.com/archives.html">
-                            <span class="glyphicon glyphicon-th-list padding-small"></span>
-                            Recent Articles
-                        </a>
-                    </li>
-                <li class="nav-divider"></li>
-                <li>
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-social">
-                        <i class="fa fa-users padding-small"></i>
-                        Social
-                    </a>
-                </li>
-                <li class="panel anti-panel"><ul id="collapse-social" class="sidebar_submenu collapse ">
-                    <li>
-                        <a href="#" title="Another social link">
-                            <i class="fa fa-another-social-link-square fa-lg padding-small"></i>
-                            Another social link
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" title="You can add links in your config file">
-                            <i class="fa fa-you-can-add-links-in-your-config-file-square fa-lg padding-small"></i>
-                            You can add links in your config file
-                        </a>
-                    </li>
-                </ul></li>
-                
-                <li class="nav-divider"></li>
-                <li>
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-pages">
-                        <i class="fa fa-folder-open padding-small"></i>
-                        Pages
-                    </a>
-                </li>
-                <li class="panel anti-panel"><ul id="collapse-pages" class="sidebar_submenu collapse ">
-                    <li>
-                        <a href="http://predragtasevski.com/pages/about.html">
-                            <i class="fa fa-file-text padding-small"></i>
-                            About
-                        </a>
-                    </li>
-                </ul></li>
-                
-                <li class="nav-divider"></li>
-                <li>
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-categories">
-                        <i class="fa fa-folder-open padding-small"></i>
-                        Categories
-                    </a>
-                </li>
-                <li class="panel anti-panel"><ul id="collapse-categories" class="sidebar_submenu collapse ">
-                    <li >
-                        <a href="http://predragtasevski.com/category/awareness.html">
-                            <i class="fa fa-folder-open padding-small"></i>
-                            awareness
-                            <span class="badge pull-right categorybadge">1</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="http://predragtasevski.com/category/camp.html">
-                            <i class="fa fa-folder-open padding-small"></i>
-                            camp
-                            <span class="badge pull-right categorybadge">1</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="http://predragtasevski.com/category/collectivistic.html">
-                            <i class="fa fa-folder-open padding-small"></i>
-                            collectivistic
-                            <span class="badge pull-right categorybadge">1</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="http://predragtasevski.com/category/company.html">
-                            <i class="fa fa-folder-open padding-small"></i>
-                            company
-                            <span class="badge pull-right categorybadge">1</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="http://predragtasevski.com/category/conference.html">
-                            <i class="fa fa-folder-open padding-small"></i>
-                            conference
-                            <span class="badge pull-right categorybadge">4</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="http://predragtasevski.com/category/cyber-crime.html">
-                            <i class="fa fa-folder-open padding-small"></i>
-                            cyber crime
-                            <span class="badge pull-right categorybadge">1</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="http://predragtasevski.com/category/cyber-security.html">
-                            <i class="fa fa-folder-open padding-small"></i>
-                            cyber security
-                            <span class="badge pull-right categorybadge">5</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="http://predragtasevski.com/category/cyberwar.html">
-                            <i class="fa fa-folder-open padding-small"></i>
-                            cyberwar
-                            <span class="badge pull-right categorybadge">1</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="http://predragtasevski.com/category/cyberwarfare.html">
-                            <i class="fa fa-folder-open padding-small"></i>
-                            cyberwarfare
-                            <span class="badge pull-right categorybadge">1</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="http://predragtasevski.com/category/digital-divide.html">
-                            <i class="fa fa-folder-open padding-small"></i>
-                            digital divide
-                            <span class="badge pull-right categorybadge">2</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="http://predragtasevski.com/category/hate-speech.html">
-                            <i class="fa fa-folder-open padding-small"></i>
-                            hate speech
-                            <span class="badge pull-right categorybadge">1</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="http://predragtasevski.com/category/hate-speechnetwork-security.html">
-                            <i class="fa fa-folder-open padding-small"></i>
-                            hate speechnetwork security
-                            <span class="badge pull-right categorybadge">1</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="http://predragtasevski.com/category/honeypot.html">
-                            <i class="fa fa-folder-open padding-small"></i>
-                            honeypot
-                            <span class="badge pull-right categorybadge">1</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="http://predragtasevski.com/category/human-communication.html">
-                            <i class="fa fa-folder-open padding-small"></i>
-                            human communication
-                            <span class="badge pull-right categorybadge">1</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="http://predragtasevski.com/category/human-computer-interaction.html">
-                            <i class="fa fa-folder-open padding-small"></i>
-                            human computer interaction
-                            <span class="badge pull-right categorybadge">1</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="http://predragtasevski.com/category/human-rights.html">
-                            <i class="fa fa-folder-open padding-small"></i>
-                            human rights
-                            <span class="badge pull-right categorybadge">1</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="http://predragtasevski.com/category/ids.html">
-                            <i class="fa fa-folder-open padding-small"></i>
-                            IDS
-                            <span class="badge pull-right categorybadge">2</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="http://predragtasevski.com/category/interview.html">
-                            <i class="fa fa-folder-open padding-small"></i>
-                            interview
-                            <span class="badge pull-right categorybadge">2</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="http://predragtasevski.com/category/leaks.html">
-                            <i class="fa fa-folder-open padding-small"></i>
-                            leaks
-                            <span class="badge pull-right categorybadge">1</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="http://predragtasevski.com/category/malware.html">
-                            <i class="fa fa-folder-open padding-small"></i>
-                            malware
-                            <span class="badge pull-right categorybadge">4</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="http://predragtasevski.com/category/network-security.html">
-                            <i class="fa fa-folder-open padding-small"></i>
-                            network security
-                            <span class="badge pull-right categorybadge">1</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="http://predragtasevski.com/category/password-attacks.html">
-                            <i class="fa fa-folder-open padding-small"></i>
-                            password attacks
-                            <span class="badge pull-right categorybadge">1</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="http://predragtasevski.com/category/regular-expression.html">
-                            <i class="fa fa-folder-open padding-small"></i>
-                            regular expression
-                            <span class="badge pull-right categorybadge">1</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="http://predragtasevski.com/category/research.html">
-                            <i class="fa fa-folder-open padding-small"></i>
-                            research
-                            <span class="badge pull-right categorybadge">1</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="http://predragtasevski.com/category/risk-assessment.html">
-                            <i class="fa fa-folder-open padding-small"></i>
-                            risk assessment
-                            <span class="badge pull-right categorybadge">2</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="http://predragtasevski.com/category/script-kiddie.html">
-                            <i class="fa fa-folder-open padding-small"></i>
-                            script kiddie
-                            <span class="badge pull-right categorybadge">1</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="http://predragtasevski.com/category/security-programing.html">
-                            <i class="fa fa-folder-open padding-small"></i>
-                            security programing
-                            <span class="badge pull-right categorybadge">1</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="http://predragtasevski.com/category/security-testing.html">
-                            <i class="fa fa-folder-open padding-small"></i>
-                            security testing
-                            <span class="badge pull-right categorybadge">1</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="http://predragtasevski.com/category/social-networks.html">
-                            <i class="fa fa-folder-open padding-small"></i>
-                            social networks
-                            <span class="badge pull-right categorybadge">1</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="http://predragtasevski.com/category/texworks.html">
-                            <i class="fa fa-folder-open padding-small"></i>
-                            texworks
-                            <span class="badge pull-right categorybadge">1</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="http://predragtasevski.com/category/thinkpad.html">
-                            <i class="fa fa-folder-open padding-small"></i>
-                            thinkpad
-                            <span class="badge pull-right categorybadge">1</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="http://predragtasevski.com/category/virtual-life.html">
-                            <i class="fa fa-folder-open padding-small"></i>
-                            virtual life
-                            <span class="badge pull-right categorybadge">1</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="http://predragtasevski.com/category/wireless-security.html">
-                            <i class="fa fa-folder-open padding-small"></i>
-                            wireless security
-                            <span class="badge pull-right categorybadge">2</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="http://predragtasevski.com/category/wordpress.html">
-                            <i class="fa fa-folder-open padding-small"></i>
-                            wordpress
-                            <span class="badge pull-right categorybadge">1</span>
-                        </a>
-                    </li>
-                </ul></li>
-                
-            </ul>
-        </div>
-        <!-- /#sidebar-wrapper -->
-        <!-- open/close sidebar -->
-        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">
-            <span id="right-arrow" class="glyphicon glyphicon-chevron-right"  title="expand sidebar"></span>
-            <span id="left-arrow" class="glyphicon glyphicon-chevron-left" title="minimize sidebar"></span>
-        </a>
-       <!-- /open/close sidebar -->
+	
+<body>
 
-        <!-- Page Content -->
-        <div id="page-content-wrapper">
-            <div class="container">
-<div class="row">
-    <div class="col-lg-12">
-        <header class="page-header">
-            <h1>Latest Articles featuring IT risk</h1>
-        </header>
-    </div>
+    <div class="container">
+	  
+	  <header role="banner">
+	    <div class="feeds">
+	    </div>
+	      <nav class="pages">
+			  <a href="../pages/about-cv.html">About (CV)</a>
+-			  <a href="../pages/publications.html">Publications</a>
+	      </nav>
+		<a href=".." class="title">Predrag TASEVSKI - Pece</a>
+      </header>
+	
+	  <div class="wrapper">
+
+		  <div role="main" class="content">
+
+<h1>Post tagged: IT risk</h1>
+
+<article class="summary">
+<div class="metadata">
+  <time datetime="2014-03-22T00:00:00" pubdate>sam. 22 mars 2014</time>
+    <address class="vcard author">
+      by <a class="url fn" href="../author/predrag-tasevski-pece.html">Predrag TASEVSKI - Pece</a>
+    </address>
+  in <a href="../category/risk-assessment.html">risk assessment</a>
+<p class="tags">tagged <a href="../tag/risk-assessment.html">risk assessment</a>, <a href="../tag/risk-management.html">risk management</a>, <a href="../tag/cyber-risk.html">cyber risk</a>, <a href="../tag/it-risk.html">IT risk</a></p></div>  <div>
+    <h2>
+      <a href="../posts/2014/03/what-is-risk-assessment/" rel="bookmark" title="Permalink to What is Risk Assessment?">What is Risk Assessment?</a>
+    </h2>
+    <p><p>This post intention is to deliver to the readers an introduction to risk assessment. Please bear in mind, that the author is conducting research in this field, therefore in few months there will be more articles about cyber-risk and so forth. Nevertheless, hope that the below will guide you, and ...</p></p>
+  </div>
+</article>
+<div class="pagination">
+    Page 1 / 1
 </div>
-<div class="row">
-    <div class="col-lg-12">
-            <article>
-                <h2>
-                    <a href="http://predragtasevski.com/what-is-risk-assessment.html">What is Risk Assessment?</a>
-                    <small>
-<footer class="post-info">
-    <div id="publish-info" class="publish-info-block">
-        <span class="published">
-            <i class="fa fa-calendar padding-small"></i><time datetime="2014-03-22T00:00:00"> sam. 22 mars 2014</time>
-        </span>
-        <span class="category">
-            <i class="fa fa-folder-open padding-small"></i><a href="http://predragtasevski.com/category/risk-assessment.html">risk assessment</a>
-        </span>
-        <span class="tags">
-            <i class="fa fa-tags padding-small"></i>
-            <a href="http://predragtasevski.com/tag/risk-assessment.html">risk assessment</a> /             <a href="http://predragtasevski.com/tag/risk-management.html">risk management</a> /             <a href="http://predragtasevski.com/tag/cyber-risk.html">cyber risk</a> /             <a href="http://predragtasevski.com/tag/it-risk.html">IT risk</a>        </span>
-    </div>
-</footer><!-- /.post-info -->                    </small>
-                </h2>
-                <div class="summary">
-                    <p>This post intention is to deliver to the readers an introduction to risk assessment. Please bear in mind, that the author is conducting research in this field, therefore in few months there will be more articles about cyber-risk and so forth. Nevertheless, hope that the below will guide you, and ...</p>
-                </div>
-            </article>
-    </div>
-</div>
-            </div>
-<footer>
-    <div class="container-fluid">
-        <hr>
-        <div class="row">
-            <div class="col-xs-4 text-left">
-                
-            </div>
-            <div class="col-xs-8 text-right">
-                <p>Built using <a href="http://docs.getpelican.com/en/latest">Pelican</a>, <a href="getbootstrap.com">Bootstrap3</a> and the <a href="https://github.com/ingwinlu/pelican-twitchy">pelican-twitchy</a> theme.</p>
-                <p>&copy; 2014 Predrag TASEVSKI - Pece</p>
-            </div>
-        </div>
-    </div>
-</footer>        </div>
-        <!-- /#page-content-wrapper -->
-    </div>
-    <!-- /#wrapper -->
-    <!-- jQuery Version 1.11.0 -->
-    <script src="/theme/js/jquery-1.11.0.js"></script>
-    <!-- Bootstrap Core JavaScript -->
-    <script src="/theme/js/bootstrap.min.js"></script>
-    <!-- Menu Toggle Script -->
-    <script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-    </script>
+
+		  </div>	
+		  
+		  <div class="sidebar">
+
+	        <nav>
+	          <h2>Categories</h2>
+	          <ul>
+	              <li ><a href="../category/awareness.html">awareness</a></li>
+	              <li ><a href="../category/camp.html">camp</a></li>
+	              <li ><a href="../category/collectivistic.html">collectivistic</a></li>
+	              <li ><a href="../category/company.html">company</a></li>
+	              <li ><a href="../category/conference.html">conference</a></li>
+	              <li ><a href="../category/cyber-crime.html">cyber crime</a></li>
+	              <li ><a href="../category/cyber-security.html">cyber security</a></li>
+	              <li ><a href="../category/cyberwar.html">cyberwar</a></li>
+	              <li ><a href="../category/cyberwarfare.html">cyberwarfare</a></li>
+	              <li ><a href="../category/digital-divide.html">digital divide</a></li>
+	              <li ><a href="../category/hate-speech.html">hate speech</a></li>
+	              <li ><a href="../category/hate-speechnetwork-security.html">hate speechnetwork security</a></li>
+	              <li ><a href="../category/honeypot.html">honeypot</a></li>
+	              <li ><a href="../category/human-communication.html">human communication</a></li>
+	              <li ><a href="../category/human-computer-interaction.html">human computer interaction</a></li>
+	              <li ><a href="../category/human-rights.html">human rights</a></li>
+	              <li ><a href="../category/ids.html">IDS</a></li>
+	              <li ><a href="../category/interview.html">interview</a></li>
+	              <li ><a href="../category/leaks.html">leaks</a></li>
+	              <li ><a href="../category/malware.html">malware</a></li>
+	              <li ><a href="../category/network-security.html">network security</a></li>
+	              <li ><a href="../category/password-attacks.html">password attacks</a></li>
+	              <li ><a href="../category/regular-expression.html">regular expression</a></li>
+	              <li ><a href="../category/research.html">research</a></li>
+	              <li ><a href="../category/risk-assessment.html">risk assessment</a></li>
+	              <li ><a href="../category/script-kiddie.html">script kiddie</a></li>
+	              <li ><a href="../category/security-programing.html">security programing</a></li>
+	              <li ><a href="../category/security-testing.html">security testing</a></li>
+	              <li ><a href="../category/social-networks.html">social networks</a></li>
+	              <li ><a href="../category/texworks.html">texworks</a></li>
+	              <li ><a href="../category/thinkpad.html">thinkpad</a></li>
+	              <li ><a href="../category/virtual-life.html">virtual life</a></li>
+	              <li ><a href="../category/wireless-security.html">wireless security</a></li>
+	              <li ><a href="../category/wordpress.html">wordpress</a></li>
+	          </ul>
+	        </nav>
+
+	          <aside>
+	          <h2>Social</h2>
+			    <ul class="social">
+				  <li><a href="https://www.linkedin.com/in/tpredrag">Linkedin</a><i></i></li>
+				  <li><a href="https://twitter.com/stepcellwolf">Twitter</a><i></i></li>
+				  <li><a href="https://github.com/stepcellwolf/">Github</a><i></i></li>
+			    </ul>
+			  </aside>
+
+	          <aside>
+	            <h2>Blogroll</h2>
+	            <ul>
+	                <li><a href="http://getpelican.com/">Pelican</a></li>
+	                <li><a href="http://python.org/">Python.org</a></li>
+	                <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+	                <li><a href="#">You can modify those links in your config file</a></li>
+	            </ul>
+	          </aside>
+
+		  </div>
+
+	  </div>
+
+      <footer>
+		<p role="contentinfo">
+		  © 2013 Predrag TASEVSKI - Pece - Proudly powered by <a href="http://alexis.notmyidea.org/pelican/">pelican</a>. Theme <a href="https://github.com/fle/pelican-simplegrey">pelican-simplegrey</a>.
+    	</p>
+
+	  </footer>	
+
+	</div>
+	
+
 </body>
 </html>

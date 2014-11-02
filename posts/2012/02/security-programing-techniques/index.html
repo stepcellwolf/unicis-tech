@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="">	
+<head>
+	<meta charset="utf-8"/>
+	<title>Security Programing Techniques - Predrag TASEVSKI - Pece</title>	
+	<meta name="author" content="Predrag TASEVSKI - Pece">
+	
+
+	<meta name="description" content="INTRODUCTION The main goal of this post is to introduce the reader with the security programing techniques into deferent program languages and operating system security models. The post is introducing four following topics: Session storage’s in Ruby on Rail Parameterized statements into Java with JDBC, C# with ASP.NET ...">
+
+
+	<link rel="top" href="#" /><link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic,400italic,600italic|Source+Code+Pro' rel='stylesheet' type='text/css'></link>
+	<link rel="stylesheet" href="../../../../theme/css/main.css" type="text/css" />
+		
+
+</head>
+	
+<body>
+
+    <div class="container">
+	  
+	  <header role="banner">
+	    <div class="feeds">
+	    </div>
+	      <nav class="pages">
+			  <a href="../../../../pages/about-cv.html">About (CV)</a>
+-			  <a href="../../../../pages/publications.html">Publications</a>
+	      </nav>
+		<a href="../../../.." class="title">Predrag TASEVSKI - Pece</a>
+      </header>
+	
+	  <div class="wrapper">
+
+		  <div role="main" class="content">
+	<article class="full">
+			
+		<h1>Security Programing Techniques</h1>
+		
+<div class="metadata">
+  <time datetime="2012-02-21T00:00:00" pubdate>mar. 21 février 2012</time>
+    <address class="vcard author">
+      by <a class="url fn" href="../../../../author/predrag-tasevski-pece.html">Predrag TASEVSKI - Pece</a>
+    </address>
+  in <a href="../../../../category/security-programing.html">security programing</a>
+<p class="tags">tagged <a href="../../../../tag/aspnet.html">ASP.NET</a>, <a href="../../../../tag/bash.html">bash</a>, <a href="../../../../tag/c.html">C#</a>, <a href="../../../../tag/cyber-security.html">cyber security</a>, <a href="../../../../tag/hql.html">HQL</a>, <a href="../../../../tag/java.html">java</a>, <a href="../../../../tag/jdbc.html">JDBC</a>, <a href="../../../../tag/perl.html">Perl</a>, <a href="../../../../tag/php5.html">PHP5</a>, <a href="../../../../tag/python.html">python</a>, <a href="../../../../tag/ruby-on-rail.html">Ruby on Rail</a>, <a href="../../../../tag/security.html">security</a>, <a href="../../../../tag/security-model.html">security model</a>, <a href="../../../../tag/unix.html">Unix</a>, <a href="../../../../tag/windows-7.html">windows 7</a></p></div>		
+		<h1>INTRODUCTION</h1>
+<p>The main goal of this post is to introduce the reader with the security programing techniques into deferent  program languages and operating system security models. The post is introducing four following topics:</p>
+<ol>
+<li>Session storage’s in Ruby on Rail</li>
+<li>Parameterized statements into Java with JDBC, C# with ASP.NET, PHP5, php-mysqli, Perl, Python and Hibernate Query Language (HQL)</li>
+<li>Unix permission model, Unix ACL and Windows 7 security model</li>
+<li>Finding all the security vulnerabilities in bash script</li>
+</ol>
+<p>Each topic will be divided into own section, where at the end of each topic we stated the reference and additional reading material. The source code, scrips and the additional task were given by the lecture. However this will help the readers and people interesting into programing for further work and involvement with the above topics.</p>
+<h1>1. Session storage’s in Ruby on Rail</h1>
+<p>Session in Rails is a hash-like structure which allows you to store data across requests. Sessions can hold any kind of data object (with some limitations) because they store data using Data Marshalling.Session in rails it is not a hash. Session creates new instant of session in every time new user visit the site. Recommendation is to not store large objects in a session and critical data should not be stored in session.Rails way of
+implementing session is: </p>
+<ol>
+<li>session_id is a 32 hex character MD5 hash based upon time, random number and constant string. It is stored in cookie at client browser. Rails provides transparent support for session_id.</li>
+<li>Session storage discussed below.</li>
+</ol>
+<p>Ruby on Rails provides with many session storage option:</p>
+<ol>
+<li>PStore – it implements a file based persistence mechanism based on a Hash. User code can store hierarchies of Ruby objects (values) into the data store file by name (keys). An object hierarchy may be just a single object. User code may later read values back from the data store or even update data, as needed. The files that are stored are usually located in the tmp/sessions folder for the Rails app. The main downside of using the PStore is that you will have to do some session-pruning periodically because performance decreases as the number of sessions stored increases.</li>
+<li>ActiveRecordStore – keeps the session id and hash in a database table and saves and retrieves the hash on every request.</li>
+<li>CookieStore – it saves the session hash directly in a cookie on the client-side. The server retrieves the session hash from the cookie and eliminates the need for a session id. Cookie-based sessions are just faster to retrieve and process than hitting the file-system on every request, were it was previously. Cookies are generally limited to 4K in size. While not an issue for most (proper) usage of the session, this could be a legitimate limit for some scenarios. If your application abuses the session, you’ll need to decide on a different session store that are available. The cookie has a SHA512 fingerprint attached and is hashed with a secret stored up on the server and there are, however, derivatives of CookieStore which encrypt the session hash, so the client cannot see it.</li>
+<li>DRbStore – it store uses distributed Ruby to store a user’s session data. The performance is great, but it requires a bit more setup than the other stores.</li>
+<li>FileStore – This store keeps the fragments on the hard disk instead of in memory. It works well if you have a lot of file storage and have outgrown the MemoryStore.</li>
+<li>MemoryStore – keeps your session data in server memory. It keeps the fragments in your application’s memory, which can potentially take up a lot of memory on your server. It is used by default, but it is hard to manage and scale if your application becomes popular.</li>
+</ol>
+<p><strong>Note:</strong> Ruby on Rail CookieStore is available only in edge rails. PStore is the default option for stable release, whereas its CookieStore as default for edge rails.</p>
+<h2>Reference</h2>
+<p>Ruby On Rails Security Guide, From: <a href="http://guides.rubyonrails.org/security.html" target="_blank">http://guides.rubyonrails.org/security.html</a></p>
+<p>Sessions and cookies in Ruby on Rails, From: <a href="http://www.quarkruby.com/2007/10/21/%20sessions-and-cookies-in-ruby-on-rails#sstorage" target="_blank">http://www.quarkruby.com/2007/10/21/sessions-and-cookies-in-ruby-on-rails#sstorage</a></p>
+<p>What’s New in Edge Rails: Cookie Based Sessions are the New Default, From: <a href="http://ryandaigle.com/articles/2007/2/21/what-s-new-in-edge-rails-cookie-based-sessions" target="_blank">http://ryandaigle.com/articles/2007/2/21/what-s-new-in-edge-rails-cookie-based-sessions</a></p>
+<h1>2. Parameterized statements into Java with JDBC, C# with ASP.NET, PHP5, php-mysqli, Perl, Python and Hibernate Query Language (HQL)</h1>
+<p>For this task we will take a look at the parameterized statement API-s and we will find out and document how much does each of them protect against the following possible misuses of SQL statements:</p>
+<ul>
+<li>String injection (quotes, double quotes)</li>
+<li>SQL statement injection (expression syntax etc)</li>
+<li>Out of range integers</li>
+<li>Blind SQL injection</li>
+</ul>
+<h2>Java with JDBC</h2>
+<div class="highlight"><pre><span class="n">PreparedStatement</span> <span class="n">prep</span> <span class="o">=</span>
+<span class="n">conn</span><span class="p">.</span><span class="n">prepareStatement</span><span class="p">(</span><span class="s">&quot;SELECT * FROM</span>
+<span class="n">USERS</span>
+<span class="n">WHERE</span> <span class="n">USERNAME</span><span class="o">=?</span> <span class="n">AND</span> <span class="n">PASSWORD</span><span class="o">=?</span><span class="s">&quot;);</span>
+<span class="n">prep</span><span class="p">.</span><span class="n">setString</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">username</span><span class="p">);</span>
+<span class="n">prep</span><span class="p">.</span><span class="n">setString</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">password</span><span class="p">);</span>
+<span class="n">prep</span><span class="p">.</span><span class="n">executeQuery</span><span class="p">();</span>
+</pre></div>
+
+
+<p>There are no possibilities of string injection because of the filtering the statements. It enables users’ input to be initially filtered instead&nbsp; of directly embedding it in the SQL statements. In this example is that the each parameter is a scalar, not a table, where the user input is then assigned (bound) to a parameter. It is a good idea if the character range is limited. Another thing that can be done to avoid SQL injection is to convert numeric values to integers before parsing them into the SQL statement. Or using ISNUMERIC to verify that they are integers.</p>
+<h2>C# with ASP.NET</h2>
+<div class="highlight"><pre><span class="n">using</span> <span class="p">(</span><span class="n">SqlCommand</span> <span class="n">myCommand</span> <span class="o">=</span>
+<span class="n">new</span> <span class="n">SqlCommand</span><span class="p">(</span><span class="s">&quot;SELECT * FROM USERS</span>
+<span class="n">WHERE</span>
+<span class="n">USERNAME</span><span class="o">=</span><span class="err">@</span><span class="n">user</span> <span class="n">AND</span>
+<span class="n">PASSWORD</span><span class="o">=</span><span class="n">HASHBYTES</span><span class="p">(</span><span class="err">’</span><span class="n">SHA1</span><span class="err">’</span><span class="p">,</span> <span class="err">@</span><span class="n">pwd</span><span class="p">)</span><span class="s">&quot;,</span>
+<span class="n">myConnection</span><span class="p">))</span>
+<span class="p">{</span>
+<span class="n">myCommand</span><span class="p">.</span><span class="n">Parameters</span><span class="p">.</span><span class="n">AddWithValue</span><span class="p">(</span><span class="s">&quot;@user&quot;</span><span class="p">,</span>
+<span class="n">user</span><span class="p">);</span>
+<span class="n">myCommand</span><span class="p">.</span><span class="n">Parameters</span><span class="p">.</span><span class="n">AddWithValue</span><span class="p">(</span><span class="s">&quot;@pwd&quot;</span><span class="p">,</span>
+<span class="n">pass</span><span class="p">);</span>
+<span class="n">myConnection</span><span class="p">.</span><span class="n">Open</span><span class="p">();</span>
+<span class="n">SqlDataReader</span> <span class="n">myReader</span> <span class="o">=</span>
+<span class="n">myCommand</span><span class="p">.</span><span class="n">ExecuteReader</span><span class="p">();</span>
+<span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>The placeholder – @user and the hashbyte value of password @pws – has become part&nbsp; if the hardcoded SQL. At runtime, the value provided by the querystring is passed to the database along with the hardcoded SQL, and the database will check the Username and password field as it attempts to bind the parameter value to it. This ensures a level of strong typing. If the parameter value is not the right type for the database field (a string, or numeric that’s out of range for the field type), the database will be unable to convert it to the right type and will reject it. If the target field datatype is a string (char, nvarchar etc), the parameter value will be “stringified” automatically, which includes escaping single quotes. It will not form part of the SQL statement to be executed.</p>
+<h2>PHP5</h2>
+<div class="highlight"><pre><span class="err">$</span><span class="n">db</span> <span class="o">=</span> <span class="n">new</span> <span class="n">PDO</span><span class="p">(</span><span class="err">’</span><span class="n">pgsql</span><span class="o">:</span><span class="n">dbname</span><span class="o">=</span><span class="n">database</span><span class="err">’</span><span class="p">);</span>
+<span class="err">$</span><span class="n">stmt</span> <span class="o">=</span> <span class="err">$</span><span class="n">db</span><span class="o">-</span><span class="n">prepare</span><span class="p">(</span><span class="s">&quot;SELECT priv FROM testUsers WHERE username=:username AND password=:password&quot;</span><span class="p">);</span>
+<span class="err">$</span><span class="n">stmt</span><span class="o">-</span><span class="n">bindParam</span><span class="p">(</span><span class="err">’</span><span class="o">:</span><span class="n">username</span><span class="err">’</span><span class="p">,</span> <span class="err">$</span><span class="n">user</span><span class="p">);</span>
+<span class="err">$</span><span class="n">stmt</span><span class="o">-</span><span class="n">bindParam</span><span class="p">(</span><span class="err">’</span><span class="o">:</span><span class="n">password</span><span class="err">’</span><span class="p">,</span> <span class="err">$</span><span class="n">pass</span><span class="p">);</span>
+<span class="err">$</span><span class="n">stmt</span><span class="o">-</span><span class="n">execute</span><span class="p">();</span>
+</pre></div>
+
+
+<p>In this example to protect against SQL injection, it is used an input not directly to be&nbsp; embedded in SQL statements. Instead, it is used an parameterized statements (preferred), or user input must be carefully escaped or filtered. This example shows and parameterized example/statement in php v. 5 and PDO database to protect from SQL injections and blind SQL injections.</p>
+<h2>PHP-MySQLi</h2>
+<div class="highlight"><pre><span class="err">$</span><span class="n">db</span> <span class="o">=</span> <span class="n">new</span> <span class="n">mysqli</span><span class="p">(</span><span class="s">&quot;host&quot;</span><span class="p">,</span> <span class="s">&quot;user&quot;</span><span class="p">,</span> <span class="s">&quot;pass&quot;</span><span class="p">,</span>
+<span class="s">&quot;database&quot;</span><span class="p">);</span>
+<span class="err">$</span><span class="n">stmt</span> <span class="o">=</span> <span class="err">$</span><span class="n">db</span> <span class="o">-</span> <span class="n">prepare</span><span class="p">(</span><span class="s">&quot;SELECT priv FROM testUsers WHERE username=? AND password=?&quot;</span><span class="p">);</span>
+<span class="err">$</span><span class="n">stmt</span> <span class="o">-</span>  <span class="n">bind_param</span><span class="p">(</span><span class="s">&quot;ss&quot;</span><span class="p">,</span> <span class="err">$</span><span class="n">user</span><span class="p">,</span> <span class="err">$</span><span class="n">pass</span><span class="p">);</span>
+<span class="err">$</span><span class="n">stmt</span> <span class="o">-</span> <span class="n">execute</span><span class="p">();</span>
+</pre></div>
+
+
+<p>Same as above but this time it is used the vendor-specific methods; for instance, using the mysqli extension for MySQL 4.1 and create parameterized statements to protect from the SQL injection.</p>
+<h2>Perl</h2>
+<div class="highlight"><pre><span class="k">use</span> <span class="n">DBI</span><span class="p">;</span>
+<span class="k">my</span> <span class="nv">$db</span> <span class="o">=</span> <span class="n">DBI</span><span class="o">-</span>
+<span class="nb">connect</span><span class="p">(</span><span class="err">’</span><span class="n">DBI:mysql:mydatabase:host</span><span class="err">’</span><span class="p">,</span> <span class="err">’</span><span class="n">login</span><span class="err">’</span><span class="p">,</span> <span class="err">’</span><span class="n">password</span><span class="err">’</span><span class="p">);</span>
+<span class="nv">$statment</span> <span class="o">=</span> <span class="nv">$db</span><span class="o">-&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">amp</span><span class="p">;</span><span class="n">amp</span><span class="p">;</span><span class="n">amp</span><span class="p">;</span><span class="n">amp</span><span class="p">;</span><span class="ow">gt</span><span class="p">;</span><span class="n">prepare</span><span class="p">(</span><span class="s">&quot;UPDATE players SET name = ?, score = ?, active = ? WHERE jerseyNum = ?&quot;</span><span class="p">);</span>
+<span class="nv">$rows_affected</span> <span class="o">=</span> <span class="nv">$statment</span><span class="o">-&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">amp</span><span class="p">;</span><span class="n">amp</span><span class="p">;</span><span class="n">amp</span><span class="p">;</span><span class="n">amp</span><span class="p">;</span><span class="ow">gt</span><span class="p">;</span><span class="n">execute</span><span class="p">(</span><span class="s">&quot;Smith, Steve&quot;</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="err">’</span><span class="n">true</span><span class="err">’</span><span class="p">,</span> <span class="mi">99</span><span class="p">);</span>
+</pre></div>
+
+
+<p>Automatically “sanitize” input to parameterized SQL statements to avoid the catastrophic&nbsp; database attacks.</p>
+<h2>Python</h2>
+<div class="highlight"><pre><span class="n">import</span> <span class="n">sqlite3</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="p">.</span><span class="n">connect</span><span class="p">(</span><span class="err">’</span><span class="o">:</span><span class="n">memory</span><span class="o">:</span><span class="err">’</span><span class="p">)</span>
+<span class="n">db</span><span class="p">.</span><span class="n">execute</span><span class="p">(</span><span class="err">’</span><span class="n">update</span> <span class="n">players</span> <span class="n">set</span> <span class="n">name</span><span class="o">=:</span><span class="n">name</span><span class="p">,</span> <span class="n">score</span><span class="o">=:</span><span class="n">score</span><span class="p">,</span>
+<span class="n">active</span><span class="o">=:</span><span class="n">active</span> <span class="n">where</span> <span class="n">jerseyNum</span><span class="o">=:</span><span class="n">num</span><span class="err">’</span><span class="p">,</span> <span class="p">{</span><span class="err">’</span><span class="n">num</span><span class="err">’</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span> <span class="err">’</span><span class="n">name</span><span class="err">’</span><span class="o">:</span> <span class="err">’</span><span class="n">John</span> <span class="n">Doe</span><span class="err">’</span><span class="p">,</span> <span class="err">’</span><span class="n">active</span><span class="err">’</span><span class="o">:</span> <span class="n">False</span><span class="p">,</span> <span class="err">’</span><span class="n">score</span><span class="err">’</span><span class="o">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">})</span>
+</pre></div>
+
+
+<p>It is parameterized statement with an example of named placeholders. Which insure to avoid the SQL injections and database attacks.</p>
+<h2>Hibernate Query Language (HQL)</h2>
+<div class="highlight"><pre><span class="n">Query</span> <span class="n">safeHQLQuery</span> <span class="o">=</span> <span class="n">session</span><span class="p">.</span><span class="n">createQuery</span><span class="p">(</span>
+<span class="s">&quot;from Inventory where productID=:productid&quot;</span><span class="p">);</span>
+<span class="n">safeHQLQuery</span><span class="p">.</span><span class="n">setParameter</span><span class="p">(</span><span class="s">&quot;productid&quot;</span><span class="p">,</span> <span class="n">userSuppliedParameter</span><span class="p">);</span>
+</pre></div>
+
+
+<p>Unsafe example: Query unsafeHQLQuery = session.createQuery(“from Inventory where productID=’”+userSuppliedParameter+”‘”); The example from left it’s used prepared statement approach because all the SQL code stays within the application. This makes your application relatively database independent. However, other options allow you to store all the SQL code in the database itself, which has both security and non-security advantages and the approach is called Stored Procedure</p>
+<h1>3. Unix permission model, Unix ACL and Windows 7 security model</h1>
+<p>In this topic we will describe two security set-ups that can not be expressed with traditional Unix permission model, UNIX ACL and Windows 7 security model.</p>
+<h2>Unix permission model</h2>
+<ul>
+<li>Giving an different permission to different users in the same group</li>
+<li>Read and write permission/access to all groups, which gives and access to the ‘private files’, and you can gain access through a root account by an unwanted user, which brings and complete breach of the system</li>
+</ul>
+<h2>Unix ACL- enabled permission model</h2>
+<ul>
+<li>If the user has permission over the file, he can read/write and delete it, which brings that it is not possible to give ‘some’ permission to the user.</li>
+<li>ACL’s are not very portable and are very hard to maintain. For instance good example is transferring of files with ACL’s between different of Unix systems is an exercise for brave person, even if the both file systems support them. Which brings a difficulty to maintain for existing files for instance backup, restore, copying, etc.</li>
+</ul>
+<h2>Windows 7 security model</h2>
+<ul>
+<li>As a standard user you can perform an action that requires administrator privileges by the UAC(User Access Control), which is controlled by the Admin Approval Mode. It can be turn off and on. Every time when you need to gain an access of the administration privileges it will be prompt a dialog box to gain and provide the password for an access. Therefore in the medium settings with any malware could turn it off.</li>
+<li>And the settings of the UAC are in medium mode not off, still brings an opportunity to being turn off by the malware.</li>
+</ul>
+<h1>4. Finding all the security vulnerabilities in bash script</h1>
+<p>In this topic we will find all the possible vulnerabilities into the following bash script:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre></div></td><td class="code"><div class="highlight"><pre><span class="c">#!/bin/sh</span>
+<span class="c"># remove files with name pattern matching regexp</span>
+<span class="k">if</span> <span class="o">[</span> x<span class="nv">$1</span> <span class="o">=</span> x <span class="o">]</span>; <span class="k">then</span>
+<span class="c"># if [[ x$1 = x ]]</span>
+<span class="nb">echo</span> -n <span class="s2">&quot;Please enter directory name: &quot;</span>
+<span class="nb">read </span>dir
+<span class="k">else</span>
+<span class="nv">dir</span><span class="o">=</span><span class="nv">$1</span>
+<span class="k">fi</span>
+<span class="k">if</span> <span class="o">[</span> x<span class="nv">$2</span> <span class="o">=</span> x <span class="o">]</span>; <span class="k">then</span>
+<span class="c"># if [[ x$2 = x ]]</span>
+<span class="nb">echo</span> -n <span class="s2">&quot;Please enter pattern: &quot;</span>
+<span class="nb">read </span>pattern
+<span class="k">else</span>
+<span class="nv">pattern</span><span class="o">=</span><span class="nv">$2</span>
+<span class="k">fi</span>
+find <span class="nv">$dir</span> &amp;amp;amp;amp;amp;amp;gt; /tmp/listing
+<span class="c"># can use &amp;amp;amp;amp;amp;amp;gt;&amp;amp;amp;amp;amp;amp;gt; or print the output first before</span>
+<span class="nv">cmd</span><span class="o">=</span><span class="s1">&#39;rm `grep &#39;</span><span class="nv">$pattern</span><span class="s1">&#39; /tmp/listing`&#39;</span> <span class="c">#+the command is execute</span>
+<span class="nb">echo</span> <span class="s2">&quot;Running command $cmd&quot;</span>
+<span class="nb">eval</span> <span class="nv">$cmd</span> //it converts string in <span class="nb">command</span>
+rm /tmp/listing
+<span class="nb">exit </span>0
+</pre></div>
+</td></tr></table>
+
+<p>We should avoid temporary file, instead we should use pipes [2]. We should avoid eval [2].</p>
+<p>Using the double brackets, instead of single one <code>[[... ]]</code> it is comment on the script above [1]. $REPLY can be used to read the previous value of the dir and pattern variable [1]. We can use instead of find, while read contracture (loop) [1]. Find – can be set with a cycle, for or while to check the validation of the file and the directory/path, also comment on the script or using <code>“$pattern” /tmp/listing</code> [1]. No sensitization of the input, the user can put any value and therefore, execute any command to create another command. As we can see above the script it looks like that it is security vulnerable. If we want to implement the security in the script we should implement the above changes into the script.</p>
+<h2>Reference</h2>
+<p>[1] Mendel Cooper, 30 April 2011. Advanced Bash-Scripting Guide; An in-depth exploration of the art of shell scripting. Retrieved from: <a href="http://tldp.org/LDP/abs/html/index.html" target="_blank">http://tldp.org/LDP/abs/html/index.html</a></p>
+<p>[2] Lecture 8 slides Scripting, Meelis Roos. Retrieved from file: 08-scripting.pdf</p>	
+
+	</article>
+
+    <p>
+	<a href="https://twitter.com/share" class="twitter-share-button" data-via="" data-lang="en" data-size="large" data-related="">Tweet</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	</p>
+
+
+		  </div>	
+		  
+		  <div class="sidebar">
+
+	        <nav>
+	          <h2>Categories</h2>
+	          <ul>
+	              <li ><a href="../../../../category/awareness.html">awareness</a></li>
+	              <li ><a href="../../../../category/camp.html">camp</a></li>
+	              <li ><a href="../../../../category/collectivistic.html">collectivistic</a></li>
+	              <li ><a href="../../../../category/company.html">company</a></li>
+	              <li ><a href="../../../../category/conference.html">conference</a></li>
+	              <li ><a href="../../../../category/cyber-crime.html">cyber crime</a></li>
+	              <li ><a href="../../../../category/cyber-security.html">cyber security</a></li>
+	              <li ><a href="../../../../category/cyberwar.html">cyberwar</a></li>
+	              <li ><a href="../../../../category/cyberwarfare.html">cyberwarfare</a></li>
+	              <li ><a href="../../../../category/digital-divide.html">digital divide</a></li>
+	              <li ><a href="../../../../category/hate-speech.html">hate speech</a></li>
+	              <li ><a href="../../../../category/hate-speechnetwork-security.html">hate speechnetwork security</a></li>
+	              <li ><a href="../../../../category/honeypot.html">honeypot</a></li>
+	              <li ><a href="../../../../category/human-communication.html">human communication</a></li>
+	              <li ><a href="../../../../category/human-computer-interaction.html">human computer interaction</a></li>
+	              <li ><a href="../../../../category/human-rights.html">human rights</a></li>
+	              <li ><a href="../../../../category/ids.html">IDS</a></li>
+	              <li ><a href="../../../../category/interview.html">interview</a></li>
+	              <li ><a href="../../../../category/leaks.html">leaks</a></li>
+	              <li ><a href="../../../../category/malware.html">malware</a></li>
+	              <li ><a href="../../../../category/network-security.html">network security</a></li>
+	              <li ><a href="../../../../category/password-attacks.html">password attacks</a></li>
+	              <li ><a href="../../../../category/regular-expression.html">regular expression</a></li>
+	              <li ><a href="../../../../category/research.html">research</a></li>
+	              <li ><a href="../../../../category/risk-assessment.html">risk assessment</a></li>
+	              <li ><a href="../../../../category/script-kiddie.html">script kiddie</a></li>
+	              <li class="active"><a href="../../../../category/security-programing.html">security programing</a></li>
+	              <li ><a href="../../../../category/security-testing.html">security testing</a></li>
+	              <li ><a href="../../../../category/social-networks.html">social networks</a></li>
+	              <li ><a href="../../../../category/texworks.html">texworks</a></li>
+	              <li ><a href="../../../../category/thinkpad.html">thinkpad</a></li>
+	              <li ><a href="../../../../category/virtual-life.html">virtual life</a></li>
+	              <li ><a href="../../../../category/wireless-security.html">wireless security</a></li>
+	              <li ><a href="../../../../category/wordpress.html">wordpress</a></li>
+	          </ul>
+	        </nav>
+
+	          <aside>
+	          <h2>Social</h2>
+			    <ul class="social">
+				  <li><a href="https://www.linkedin.com/in/tpredrag">Linkedin</a><i></i></li>
+				  <li><a href="https://twitter.com/stepcellwolf">Twitter</a><i></i></li>
+				  <li><a href="https://github.com/stepcellwolf/">Github</a><i></i></li>
+			    </ul>
+			  </aside>
+
+	          <aside>
+	            <h2>Blogroll</h2>
+	            <ul>
+	                <li><a href="http://getpelican.com/">Pelican</a></li>
+	                <li><a href="http://python.org/">Python.org</a></li>
+	                <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+	                <li><a href="#">You can modify those links in your config file</a></li>
+	            </ul>
+	          </aside>
+
+		  </div>
+
+	  </div>
+
+      <footer>
+		<p role="contentinfo">
+		  © 2013 Predrag TASEVSKI - Pece - Proudly powered by <a href="http://alexis.notmyidea.org/pelican/">pelican</a>. Theme <a href="https://github.com/fle/pelican-simplegrey">pelican-simplegrey</a>.
+    	</p>
+
+	  </footer>	
+
+	</div>
+	
+
+</body>
+</html>

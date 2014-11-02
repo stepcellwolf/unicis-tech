@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="">	
+<head>
+	<meta charset="utf-8"/>
+	<title>Clever solution by making site more resilient by optimization - Predrag TASEVSKI - Pece</title>	
+	<meta name="author" content="Predrag TASEVSKI - Pece">
+	
+
+	<meta name="description" content="PURPOSE & SCENARIO The objective of this laboratory test, scenario is to make explore alternative “clever” solutions (as opposed to making the site more resilient by optimizing it) to protect your site against attacks. Moreover, DDoS [1] attacks, malicious code, etc. Therefore, we need to develop countermeasures for the working attacks ...">
+
+
+	<link rel="top" href="#" /><link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic,400italic,600italic|Source+Code+Pro' rel='stylesheet' type='text/css'></link>
+	<link rel="stylesheet" href="../../../../theme/css/main.css" type="text/css" />
+		
+
+</head>
+	
+<body>
+
+    <div class="container">
+	  
+	  <header role="banner">
+	    <div class="feeds">
+	    </div>
+	      <nav class="pages">
+			  <a href="../../../../pages/about-cv.html">About (CV)</a>
+-			  <a href="../../../../pages/publications.html">Publications</a>
+	      </nav>
+		<a href="../../../.." class="title">Predrag TASEVSKI - Pece</a>
+      </header>
+	
+	  <div class="wrapper">
+
+		  <div role="main" class="content">
+	<article class="full">
+			
+		<h1>Clever solution by making site more resilient by optimization</h1>
+		
+<div class="metadata">
+  <time datetime="2012-03-23T00:00:00" pubdate>ven. 23 mars 2012</time>
+    <address class="vcard author">
+      by <a class="url fn" href="../../../../author/predrag-tasevski-pece.html">Predrag TASEVSKI - Pece</a>
+    </address>
+  in <a href="../../../../category/cyber-security.html">cyber security</a>
+<p class="tags">tagged <a href="../../../../tag/ab.html">ab</a>, <a href="../../../../tag/attacks.html">attacks</a>, <a href="../../../../tag/clever-solution.html">clever solution</a>, <a href="../../../../tag/cyber-security.html">cyber security</a>, <a href="../../../../tag/ddos.html">DDoS</a>, <a href="../../../../tag/internet.html">internet</a>, <a href="../../../../tag/jmeter.html">jmeter</a>, <a href="../../../../tag/malicious-code.html">malicious code</a>, <a href="../../../../tag/wordpress.html">wordpress</a></p></div>		
+		<h1>PURPOSE &amp; SCENARIO</h1>
+<p>The objective of this laboratory test, scenario is to make explore alternative “clever” solutions (as opposed to making the site more resilient by optimizing it) to protect your site against attacks. Moreover, DDoS [1] attacks, malicious code, etc.</p>
+<p>Therefore, we need to develop countermeasures for the <strong>working</strong> attacks simulated with a standard DoS attack from a single IP address (performed with AB [2] or Jmeter). Limitations for this scenarios is highlighted:</p>
+<ul>
+<li>No additional hardware can be used</li>
+<li>The wordpress installation can not be optimized: no caching plugins, no reverse-proxy (varnish, squid etc)</li>
+<li>No reactive measures that automatically block incoming traffic: the site must respond to at least some of the requests coming from the attacker at all times</li>
+<li>The countermeasures must not have negative effects on “normal usage pattern”. Normal usage pattern is defined as:<ul>
+<li>Bursts of 10 connections per IP address in 1 second</li>
+<li>Page load times not over 10 seconds</li>
+</ul>
+</li>
+<li>Normal usage must be possible from the same IP address that the attack originated from after a 20 second delay maximum.</li>
+</ul>
+<p>In addition, we have to make much of the rules for the scenario. Rules as follow: Fresh installation of the latest version of Ubuntu Server and the most recent WordPress as of 20.10.2011. First priority: No normal usage pattern connections can be dropped! Second priority: service speed of normal connections. Defined by number of connections / second (easy to measure). Third priority: How fast after the attack is stopped, the site can be accessed from the attacking IP again.</p>
+<p>Each test and measured results will be exposed in to Test section. Whereas, the process of installation of clever solution and attacking scripts will be provided in to Appendixes section.</p>
+<p>Finally, the measurement results will be compared with the first state without attack and any security solutions applied. Alternatively, providing measurement results with one solution and attack will help us to identify the most beneficial security solution. Therefore, in Conclusion section comparison results will be highlighted.</p>
+<h1>TESTS</h1>
+<p>Because of requirements of our scenario we need to display the results before security solution is applied and attacker performance. For this purpose we are going to use an AB script to display the response time of the server:</p>
+<p><code>ab -t 10 -n 10 -c 10 http://192.168.56.102/wordpress/</code></p>
+<p>The above script provides detail information, yet only important is Request per second. Thus, with an fresh installation and without any security solution, it provided with result of 3.95 [#/sec]. With other word, 3.95 number of request per second. After applying different security solution and performing an attack to the server, results will be divers.</p>
+<p>In addition, test were done by two different virtual environment machines. One is for testing results and the other one is to perform attack with the following script:</p>
+<p><code>ab -n 100 -c 10 http://192.168.56.102/wordpress/</code></p>
+<h2>TEST 1</h2>
+<p>First test is to install libapache2-mod-evasive [libapache2-mod-evasive]. Where, mod_evasive is an evasive maneuvers module for Apache is to provide some protection in the event of an HTTP DoS or DDoS attack or brute force attack. It is also designed to be a detection tool, and can be easily configured to talk to ipchains, firewalls, routers, and etcetera.</p>
+<p>The process of installation and configuration refer to the Appendix 1.</p>
+<p>After completed the installation and configuration process it is time to test the security solution and to highlight the results. Before performing the attack the results were somehow, lower then, before installing the mod-evasive, 2.06 number request per second. When we start the attack and in same time analysis the server responded with timeout. The conclusion is that mod-evasive it is not enough solution.</p>
+<h2>TEST 2</h2>
+<p>From previous test we can see that the solution was not enough clever for our needs. The server somehow was dead. However, we are going to install now <code>mod_security</code> module for apache, with side of previous test. For more detail information of installation process and configuration refer to Appendix 2 or to the following source [mod_security].</p>
+<h1>CONCLUSION</h1>
+<p>There are three points that we should consider and to see which proposal was more accurate and it did the job that was required in the scenario.</p>
+<p>In conclusion, the above proposals are nice and good example to have an view of how and with what tools we should perform script kiddie techniques. How to shutdown access to a server. On the whole, it show as how to use tools and methods of measuring the bandwidth of network and how to limit the transfer in comfortable way.</p>
+<h1>APPENDIXES</h1>
+<p>Appendix 1 is connected with the Method 1, which highlighted points are illustration on what information we should check, to clarify that the virtual environment has limitation of the network interface. Where Appendix 2 is for installation process of Ubuntu Server 10.04 LTS and wordpress, mysql installation.</p>
+<h2>APPENDIX 1</h2>
+<p>Installation process:
+<code>sudo apt-get install libapache2-mod-evasive</code>
+Configuration process is followed and gather from the following source [Evasive Module], for addition proposal please refer to[Blacklist]:</p>
+<div class="highlight"><pre><span class="n">sudo</span> <span class="n">mkdir</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">apache2</span><span class="o">/</span><span class="n">mod_evasive</span>
+<span class="n">sudo</span> <span class="n">chown</span> <span class="n">www</span><span class="o">-</span><span class="n">data</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">apache2</span><span class="o">/</span><span class="n">mod_evasive</span>
+</pre></div>
+
+
+<p>Afterwards, create its configuration file with a default content, with the following command:</p>
+<div class="highlight"><pre><span class="n">sudo</span> <span class="n">nano</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">apache2</span><span class="o">/</span><span class="n">apache2</span><span class="p">.</span><span class="n">conf</span> 
+<span class="n">IfModule</span> <span class="n">mod_evasive20</span><span class="p">.</span><span class="n">c</span><span class="p">;</span>
+<span class="n">DOSHashTableSize</span> <span class="mi">3097</span>
+<span class="n">DOSPageCount</span> <span class="mi">2</span>
+<span class="n">DOSSiteCount</span> <span class="mi">50</span>
+<span class="n">DOSPageInterval</span> <span class="mi">1</span>
+<span class="n">DOSSiteInterval</span> <span class="mi">1</span>
+<span class="n">DOSBlockingPeriod</span> <span class="mi">10</span>
+<span class="n">DOSLogDir</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">apache2</span><span class="o">/</span><span class="n">mod_evasive</span>
+<span class="n">DOSEmailNotify</span> <span class="n">root</span><span class="err">@</span><span class="n">localhost</span>
+<span class="n">DOSWhitelist</span> <span class="mf">127.0.0.1</span>
+<span class="n">DOSSystemCommand</span> <span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">quot</span><span class="p">;</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">iptables</span> <span class="o">-</span><span class="n">I</span> <span class="n">INPUT</span> <span class="o">-</span><span class="n">p</span> <span class="n">tcp</span> <span class="o">--</span><span class="n">dport</span> <span class="mi">80</span> <span class="o">-</span><span class="n">s</span> <span class="o">%</span><span class="n">s</span> <span class="o">-</span><span class="n">j</span> <span class="n">DROP</span>
+<span class="o">/</span><span class="n">IfModule</span><span class="p">;</span>
+</pre></div>
+
+
+<p>The above changes to take effect please restart the apache service by:</p>
+<p><code>sudo service apache2 restart</code></p>
+<p>You can test whether it works using a script included in the deb package:</p>
+<p><code>perl /usr/share/doc/libapache2-mod-evasive/examples/test.pl</code></p>
+<h2>APPENDIX 2</h2>
+<p>Installation and configuration of mod_security:</p>
+<p><code>apt-get install libapache2-modsecurity /etc/init.d/apache2 force-reload</code></p>
+<ul>
+<li>Installation media: Ubuntu 11.10 32bit iso image;</li>
+<li>HW: Virtualbox, 1CPU 32bit, 512MB RAM, 8GB HD (dynamic allocation);</li>
+<li>NIC1 NAT;</li>
+<li>NIC2 host only (for ssh and http access from host);</li>
+<li>Language used in installation process: English and country Estonia;</li>
+<li>Keyboard Layout English;</li>
+<li>no http proxy</li>
+<li>Default applications</li>
+<li><code>sudo apt-get install lamp phpmyadmin</code></li>
+<li><code>wget -c http://wordpress.org/latest.tar.gz</code></li>
+<li><code>tar xvjf latest.tar.gz</code></li>
+<li><code>sudo cp wordpress /var/www/wordpress</code></li>
+<li><code>sudo nano /var/www/wordpress/wp-config.php</code></li>
+<li>Change the settings to your needs</li>
+</ul>
+<h1>Bibliography</h1>
+<p>[libapache2-mod-evasive] Canonical Ltd., Package: libapache2-mod-evasive (1.10.1-1), 2011, <a href="http://packages.ubuntu.com/hardy/libapache2-mod-evasive"  target="_blank">http://packages.ubuntu.com/hardy/libapache2-mod-evasive</a></p>
+<p>[modsecurity] How to Forge, Secure Your Apache With mod_security, 2006, <a href="http://www.howtoforge.com/apache_mod_security" target="_blank">http://www.howtoforge.com/apache_mod_security</a></p>
+<p>[Evasive Module] Deep Logic, Inc., Apache Evasive Maneuvers Module, 2005, <a href="http://fossies.org/unix/www/apache_httpd_modules/mod_evasive_1.10.1.tar.gz:t/mod_evasive/README"  target="_blank">http://fossies.org/unix/www/apache_httpd_modules/mod_evasive_1.10.1.tar.gz:t/mod_evasive/README</a></p>
+<p>[Blacklist] Jeff Starr, Eight Ways to Blacklist with Apache’s mod_rewrite, Feb 2009, <a href="http://perishablepress.com/press/2009/02/03/eight-ways-to-blacklist-with-apaches-mod_rewrite/" target="_blank">http://perishablepress.com/press/2009/02/03/eight-ways-to-blacklist-with-apaches-mod_rewrite/</a></p>
+<h1>Footnotes</h1>
+<p>[1] DDoS – Denial-of-service attack</p>
+<p>[2] AB - <a  href="http://httpd.apache.org/docs/2.0/programs/ab.html" target="_blank">http://httpd.apache.org/docs/2.0/programs/ab.html</a></p>	
+
+	</article>
+
+    <p>
+	<a href="https://twitter.com/share" class="twitter-share-button" data-via="" data-lang="en" data-size="large" data-related="">Tweet</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	</p>
+
+
+		  </div>	
+		  
+		  <div class="sidebar">
+
+	        <nav>
+	          <h2>Categories</h2>
+	          <ul>
+	              <li ><a href="../../../../category/awareness.html">awareness</a></li>
+	              <li ><a href="../../../../category/camp.html">camp</a></li>
+	              <li ><a href="../../../../category/collectivistic.html">collectivistic</a></li>
+	              <li ><a href="../../../../category/company.html">company</a></li>
+	              <li ><a href="../../../../category/conference.html">conference</a></li>
+	              <li ><a href="../../../../category/cyber-crime.html">cyber crime</a></li>
+	              <li class="active"><a href="../../../../category/cyber-security.html">cyber security</a></li>
+	              <li ><a href="../../../../category/cyberwar.html">cyberwar</a></li>
+	              <li ><a href="../../../../category/cyberwarfare.html">cyberwarfare</a></li>
+	              <li ><a href="../../../../category/digital-divide.html">digital divide</a></li>
+	              <li ><a href="../../../../category/hate-speech.html">hate speech</a></li>
+	              <li ><a href="../../../../category/hate-speechnetwork-security.html">hate speechnetwork security</a></li>
+	              <li ><a href="../../../../category/honeypot.html">honeypot</a></li>
+	              <li ><a href="../../../../category/human-communication.html">human communication</a></li>
+	              <li ><a href="../../../../category/human-computer-interaction.html">human computer interaction</a></li>
+	              <li ><a href="../../../../category/human-rights.html">human rights</a></li>
+	              <li ><a href="../../../../category/ids.html">IDS</a></li>
+	              <li ><a href="../../../../category/interview.html">interview</a></li>
+	              <li ><a href="../../../../category/leaks.html">leaks</a></li>
+	              <li ><a href="../../../../category/malware.html">malware</a></li>
+	              <li ><a href="../../../../category/network-security.html">network security</a></li>
+	              <li ><a href="../../../../category/password-attacks.html">password attacks</a></li>
+	              <li ><a href="../../../../category/regular-expression.html">regular expression</a></li>
+	              <li ><a href="../../../../category/research.html">research</a></li>
+	              <li ><a href="../../../../category/risk-assessment.html">risk assessment</a></li>
+	              <li ><a href="../../../../category/script-kiddie.html">script kiddie</a></li>
+	              <li ><a href="../../../../category/security-programing.html">security programing</a></li>
+	              <li ><a href="../../../../category/security-testing.html">security testing</a></li>
+	              <li ><a href="../../../../category/social-networks.html">social networks</a></li>
+	              <li ><a href="../../../../category/texworks.html">texworks</a></li>
+	              <li ><a href="../../../../category/thinkpad.html">thinkpad</a></li>
+	              <li ><a href="../../../../category/virtual-life.html">virtual life</a></li>
+	              <li ><a href="../../../../category/wireless-security.html">wireless security</a></li>
+	              <li ><a href="../../../../category/wordpress.html">wordpress</a></li>
+	          </ul>
+	        </nav>
+
+	          <aside>
+	          <h2>Social</h2>
+			    <ul class="social">
+				  <li><a href="https://www.linkedin.com/in/tpredrag">Linkedin</a><i></i></li>
+				  <li><a href="https://twitter.com/stepcellwolf">Twitter</a><i></i></li>
+				  <li><a href="https://github.com/stepcellwolf/">Github</a><i></i></li>
+			    </ul>
+			  </aside>
+
+	          <aside>
+	            <h2>Blogroll</h2>
+	            <ul>
+	                <li><a href="http://getpelican.com/">Pelican</a></li>
+	                <li><a href="http://python.org/">Python.org</a></li>
+	                <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+	                <li><a href="#">You can modify those links in your config file</a></li>
+	            </ul>
+	          </aside>
+
+		  </div>
+
+	  </div>
+
+      <footer>
+		<p role="contentinfo">
+		  © 2013 Predrag TASEVSKI - Pece - Proudly powered by <a href="http://alexis.notmyidea.org/pelican/">pelican</a>. Theme <a href="https://github.com/fle/pelican-simplegrey">pelican-simplegrey</a>.
+    	</p>
+
+	  </footer>	
+
+	</div>
+	
+
+</body>
+</html>

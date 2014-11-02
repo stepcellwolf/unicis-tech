@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="">	
+<head>
+	<meta charset="utf-8"/>
+	<title>Texworks 0.5r952, error libpoppler-qt4.so.3, Ubuntu 12.04 - Predrag TASEVSKI - Pece</title>	
+	<meta name="author" content="Predrag TASEVSKI - Pece">
+	
+
+	<meta name="description" content="I had to use the texworks to do some changes in my LaTeX CV template, and in the previous version of Ubuntu I had not issues at all. But unfortunately in the new latest version of Ubuntu 12.04 LTS (Precise Pangolin) I had to do some tricks to get ...">
+
+
+	<link rel="top" href="#" /><link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic,400italic,600italic|Source+Code+Pro' rel='stylesheet' type='text/css'></link>
+	<link rel="stylesheet" href="../../../../theme/css/main.css" type="text/css" />
+		
+
+</head>
+	
+<body>
+
+    <div class="container">
+	  
+	  <header role="banner">
+	    <div class="feeds">
+	    </div>
+	      <nav class="pages">
+			  <a href="../../../../pages/about-cv.html">About (CV)</a>
+-			  <a href="../../../../pages/publications.html">Publications</a>
+	      </nav>
+		<a href="../../../.." class="title">Predrag TASEVSKI - Pece</a>
+      </header>
+	
+	  <div class="wrapper">
+
+		  <div role="main" class="content">
+	<article class="full">
+			
+		<h1>Texworks 0.5r952, error libpoppler-qt4.so.3, Ubuntu 12.04</h1>
+		
+<div class="metadata">
+  <time datetime="2012-06-19T00:00:00" pubdate>mar. 19 juin 2012</time>
+    <address class="vcard author">
+      by <a class="url fn" href="../../../../author/predrag-tasevski-pece.html">Predrag TASEVSKI - Pece</a>
+    </address>
+  in <a href="../../../../category/texworks.html">texworks</a>
+<p class="tags">tagged <a href="../../../../tag/libpoppler.html">libpoppler</a>, <a href="../../../../tag/texworks.html">texworks</a>, <a href="../../../../tag/ubuntu.html">ubuntu</a></p></div>		
+		<p>I had to use the texworks to do some changes in my LaTeX CV template, and in the previous version of Ubuntu I had not issues at all. But unfortunately in the new latest version of Ubuntu 12.04 LTS (Precise Pangolin) I had to do some tricks to get it started. It is therefore, I will provide the readers and solution of how to fix this issue. But before we continue I would like to mention that this issue has never been posted before, anywhere else.</p>
+<p>Installation of <a title="Texworks" href="http://tug.org/texworks/" target="_blank"> Texworks </a></p>
+<p>In the shell command we install the texworks with the following script:</p>
+<p><code>sudo apt-get install texworks</code></p>
+<h1>Issue / Error</h1>
+<p>After the installation is finished, then if we try to run the program from Unity or even from the terminal, it will give us an error:&lt;</p>
+<div class="highlight"><pre><span class="n">texworks</span><span class="o">:</span> <span class="n">error</span> <span class="k">while</span> <span class="n">loading</span> <span class="n">shared</span> <span class="n">libraries</span><span class="o">:</span> <span class="n">libpoppler</span><span class="o">-</span><span class="n">qt4</span><span class="o">.</span><span class="na">so</span><span class="o">.</span><span class="mi">3</span><span class="o">:</span> <span class="n">cannot</span> <span class="n">open</span> <span class="n">shared</span> <span class="n">object</span> <span class="n">file</span><span class="o">:</span> <span class="n">No</span> <span class="n">such</span> <span class="n">file</span> <span class="n">or</span> <span class="n">directory</span><span class="err">```</span>
+
+<span class="n">So</span> <span class="n">now</span> <span class="n">we</span> <span class="n">know</span> <span class="n">that</span> <span class="n">there</span> <span class="k">is</span> <span class="n">some</span> <span class="n">issue</span> <span class="k">with</span> <span class="n">the</span> <span class="err">```</span><span class="n">libpoppler</span><span class="o">-</span><span class="n">qt4</span><span class="err">```</span> <span class="n">library</span><span class="o">.</span> <span class="n">To</span> <span class="n">determine</span> <span class="k">if</span> <span class="n">we</span> <span class="n">miss</span> <span class="n">any</span> <span class="n">other</span> <span class="n">dependency</span> <span class="n">libraries</span> <span class="n">we</span> <span class="n">can</span> <span class="n">double</span> <span class="n">check</span> <span class="k">with</span> <span class="n">the</span> <span class="n">following</span> <span class="n">command</span><span class="o">:</span>
+
+<span class="err">```</span><span class="n">ldd</span> <span class="sr">/usr/bin/</span><span class="n">texworks</span><span class="err">```</span>
+
+<span class="n">And</span> <span class="n">the</span> <span class="n">following</span> <span class="n">output</span> <span class="n">should</span> <span class="n">look</span> <span class="n">like</span> <span class="k">this</span><span class="o">:</span>
+</pre></div>
+
+
+<p>linux-gate.so.1 = (0xb76f2000)
+libhunspell-1.3.so.0 =&gt; /usr/lib/i386-linux-gnu/libhunspell-1.3.so.0 (0xb7682000)
+libpoppler-qt4.so.3 =&gt; not found
+libz.so.1 =&gt; /lib/i386-linux-gnu/libz.so.1 (0xb766b000)
+libQtDBus.so.4 =&gt; /usr/lib/i386-linux-gnu/libQtDBus.so.4 (0xb75eb000)
+libQtScript.so.4 =&gt; /usr/lib/i386-linux-gnu/libQtScript.so.4 (0xb7367000)
+libQtScriptTools.so.4 =&gt; /usr/lib/i386-linux-gnu/libQtScriptTools.so.4 (0xb72b2000)
+libQtXml.so.4 =&gt; /usr/lib/i386-linux-gnu/libQtXml.so.4 (0xb7272000)
+libQtGui.so.4 =&gt; /usr/lib/i386-linux-gnu/libQtGui.so.4 (0xb679e000)
+libQtCore.so.4 =&gt; /usr/lib/i386-linux-gnu/libQtCore.so.4 (0xb64c1000)
+libpthread.so.0 =&gt; /lib/i386-linux-gnu/libpthread.so.0 (0xb64a6000)
+libstdc++.so.6 =&gt; /usr/lib/i386-linux-gnu/libstdc++.so.6 (0xb63c1000)
+libgcc_s.so.1 =&gt; /lib/i386-linux-gnu/libgcc_s.so.1 (0xb63a3000)
+libc.so.6 =&gt; /lib/i386-linux-gnu/libc.so.6 (0xb61fd000)
+libdbus-1.so.3 =&gt; /lib/i386-linux-gnu/libdbus-1.so.3 (0xb61b4000)
+libm.so.6 =&gt; /lib/i386-linux-gnu/libm.so.6 (0xb6188000)
+libfontconfig.so.1 =&gt; /usr/lib/i386-linux-gnu/libfontconfig.so.1 (0xb6154000)
+libaudio.so.2 =&gt; /usr/lib/i386-linux-gnu/libaudio.so.2 (0xb613b000)
+libglib-2.0.so.0 =&gt; /lib/i386-linux-gnu/libglib-2.0.so.0 (0xb6041000)
+libpng12.so.0 =&gt; /lib/i386-linux-gnu/libpng12.so.0 (0xb6017000)
+libfreetype.so.6 =&gt; /usr/lib/i386-linux-gnu/libfreetype.so.6 (0xb5f7d000)
+libgobject-2.0.so.0 =&gt; /usr/lib/i386-linux-gnu/libgobject-2.0.so.0 (0xb5f2e000)
+libSM.so.6 =&gt; /usr/lib/i386-linux-gnu/libSM.so.6 (0xb5f25000)
+libICE.so.6 =&gt; /usr/lib/i386-linux-gnu/libICE.so.6 (0xb5f0a000)
+libXi.so.6 =&gt; /usr/lib/i386-linux-gnu/libXi.so.6 (0xb5efa000)
+libXrender.so.1 =&gt; /usr/lib/i386-linux-gnu/libXrender.so.1 (0xb5ef0000)
+libXext.so.6 =&gt; /usr/lib/i386-linux-gnu/libXext.so.6 (0xb5ede000)
+libX11.so.6 =&gt; /usr/lib/i386-linux-gnu/libX11.so.6 (0xb5daa000)
+libdl.so.2 =&gt; /lib/i386-linux-gnu/libdl.so.2 (0xb5da4000)
+librt.so.1 =&gt; /lib/i386-linux-gnu/librt.so.1 (0xb5d9b000)
+/lib/ld-linux.so.2 (0xb76f3000)
+libexpat.so.1 =&gt; /lib/i386-linux-gnu/libexpat.so.1 (0xb5d71000)
+libXt.so.6 =&gt; /usr/lib/i386-linux-gnu/libXt.so.6 (0xb5d15000)
+libXau.so.6 =&gt; /usr/lib/i386-linux-gnu/libXau.so.6 (0xb5d11000)
+libpcre.so.3 =&gt; /lib/i386-linux-gnu/libpcre.so.3 (0xb5cd4000)
+libffi.so.6 =&gt; /usr/lib/i386-linux-gnu/libffi.so.6 (0xb5ccd000)
+libuuid.so.1 =&gt; /lib/i386-linux-gnu/libuuid.so.1 (0xb5cc7000)
+libxcb.so.1 =&gt; /usr/lib/i386-linux-gnu/libxcb.so.1 (0xb5ca6000)
+libXdmcp.so.6 =&gt; /usr/lib/i386-linux-gnu/libXdmcp.so.6 (0xb5c9e000)</p>
+<div class="highlight"><pre><span class="n">Where</span> <span class="n">we</span> <span class="n">can</span> <span class="n">see</span> <span class="n">from</span> <span class="n">the</span> <span class="n">above</span> <span class="n">output</span> <span class="n">that</span> <span class="n">the</span> <span class="err">```</span><span class="n">libpoppler</span><span class="o">-</span><span class="n">qt4</span><span class="p">.</span><span class="n">so</span><span class="mf">.3</span> <span class="o">=</span> <span class="n">not</span> <span class="n">found</span> <span class="err">```</span> <span class="n">is</span> <span class="n">missing</span><span class="p">.</span>
+
+<span class="n">The</span> <span class="n">best</span> <span class="n">way</span> <span class="n">to</span> <span class="n">solve</span> <span class="n">this</span> <span class="n">issue</span><span class="p">,</span> <span class="n">first</span> <span class="n">we</span> <span class="n">have</span> <span class="n">to</span> <span class="n">locate</span> <span class="n">where</span> <span class="n">are</span> <span class="n">the</span> <span class="n">other</span> <span class="n">libraries</span> <span class="n">of</span> <span class="n">QT4</span><span class="p">.</span> <span class="n">This</span> <span class="n">is</span> <span class="n">very</span> <span class="n">simple</span> <span class="n">approach</span><span class="p">,</span> <span class="n">because</span> <span class="n">the</span> <span class="n">other</span> <span class="n">libraries</span> <span class="n">links</span><span class="p">,</span> <span class="n">location</span> <span class="n">is</span> <span class="n">provided</span> <span class="n">from</span> <span class="n">the</span> <span class="n">above</span> <span class="n">output</span><span class="p">.</span> <span class="n">Therefore</span><span class="p">,</span> <span class="n">we</span> <span class="n">can</span> <span class="n">see</span> <span class="n">that</span> <span class="n">in</span> <span class="n">the</span> <span class="n">path</span> <span class="err">```</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">i386</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">gnu</span><span class="o">/</span><span class="err">```</span> <span class="n">there</span> <span class="n">is</span> <span class="n">an</span> <span class="n">library</span> <span class="n">called</span><span class="o">:</span> <span class="err">```</span><span class="n">libpoppler</span><span class="o">-</span><span class="n">qt4</span><span class="p">.</span><span class="n">so</span><span class="mf">.4</span><span class="err">```</span><span class="p">.</span>
+
+<span class="cp"># Resolution</span>
+
+<span class="n">From</span> <span class="n">the</span> <span class="n">above</span> <span class="n">output</span><span class="p">,</span> <span class="n">and</span> <span class="n">the</span> <span class="n">path</span> <span class="n">that</span> <span class="n">we</span> <span class="n">have</span> <span class="n">found</span> <span class="n">of</span> <span class="n">the</span> <span class="n">missing</span> <span class="n">library</span><span class="p">,</span> <span class="n">there</span> <span class="n">is</span> <span class="n">an</span> <span class="n">simple</span> <span class="n">and</span> <span class="n">easy</span> <span class="n">way</span> <span class="n">of</span> <span class="n">fixing</span> <span class="n">this</span> <span class="n">issue</span><span class="p">,</span> <span class="n">shown</span> <span class="n">below</span><span class="p">.</span>
+
+<span class="n">Therefore</span><span class="p">,</span> <span class="n">in</span> <span class="n">the</span> <span class="n">terminal</span> <span class="n">we</span> <span class="n">can</span> <span class="n">make</span> <span class="n">an</span> <span class="n">soft</span> <span class="n">link</span> <span class="n">with</span> <span class="n">the</span> <span class="n">missing</span> <span class="n">library</span> <span class="n">from</span> <span class="n">the</span> <span class="n">already</span> <span class="n">existing</span> <span class="n">one</span><span class="p">,</span> <span class="n">with</span> <span class="n">the</span> <span class="n">following</span><span class="o">:</span>
+
+<span class="err">```</span><span class="n">sudo</span> <span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">i386</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">gnu</span><span class="o">/</span><span class="n">libpoppler</span><span class="o">-</span><span class="n">qt4</span><span class="p">.</span><span class="n">so</span><span class="mf">.4</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">i386</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">gnu</span><span class="o">/</span><span class="n">libpoppler</span><span class="o">-</span><span class="n">qt4</span><span class="p">.</span><span class="n">so</span><span class="mf">.3</span><span class="err">```</span>
+
+<span class="n">And</span> <span class="n">now</span> <span class="n">the</span> <span class="n">texworks</span> <span class="n">works</span> <span class="n">perfectly</span><span class="o">!</span>
+
+<span class="cp"># Details</span>
+</pre></div>
+
+
+<p>$ texworks --version
+TeXworks 0.5r952 (Debian)
+Copyright (C) 2007-2011 Jonathan Kew, Stefan LÃ¶ffler 
+License GPLv2+: GNU GPL (version 2 or later) http://gnu.org/licenses/gpl.html
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+```</p>
+<p>Also this bug/issue has been reported in&nbsp; <a title="Launchpad Bug" href="https://bugs.launchpad.net/ubuntu/+source/texworks/+bug/1015193" target="_blank">Launchpad.net</a>.</p>	
+
+	</article>
+
+    <p>
+	<a href="https://twitter.com/share" class="twitter-share-button" data-via="" data-lang="en" data-size="large" data-related="">Tweet</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	</p>
+
+
+		  </div>	
+		  
+		  <div class="sidebar">
+
+	        <nav>
+	          <h2>Categories</h2>
+	          <ul>
+	              <li ><a href="../../../../category/awareness.html">awareness</a></li>
+	              <li ><a href="../../../../category/camp.html">camp</a></li>
+	              <li ><a href="../../../../category/collectivistic.html">collectivistic</a></li>
+	              <li ><a href="../../../../category/company.html">company</a></li>
+	              <li ><a href="../../../../category/conference.html">conference</a></li>
+	              <li ><a href="../../../../category/cyber-crime.html">cyber crime</a></li>
+	              <li ><a href="../../../../category/cyber-security.html">cyber security</a></li>
+	              <li ><a href="../../../../category/cyberwar.html">cyberwar</a></li>
+	              <li ><a href="../../../../category/cyberwarfare.html">cyberwarfare</a></li>
+	              <li ><a href="../../../../category/digital-divide.html">digital divide</a></li>
+	              <li ><a href="../../../../category/hate-speech.html">hate speech</a></li>
+	              <li ><a href="../../../../category/hate-speechnetwork-security.html">hate speechnetwork security</a></li>
+	              <li ><a href="../../../../category/honeypot.html">honeypot</a></li>
+	              <li ><a href="../../../../category/human-communication.html">human communication</a></li>
+	              <li ><a href="../../../../category/human-computer-interaction.html">human computer interaction</a></li>
+	              <li ><a href="../../../../category/human-rights.html">human rights</a></li>
+	              <li ><a href="../../../../category/ids.html">IDS</a></li>
+	              <li ><a href="../../../../category/interview.html">interview</a></li>
+	              <li ><a href="../../../../category/leaks.html">leaks</a></li>
+	              <li ><a href="../../../../category/malware.html">malware</a></li>
+	              <li ><a href="../../../../category/network-security.html">network security</a></li>
+	              <li ><a href="../../../../category/password-attacks.html">password attacks</a></li>
+	              <li ><a href="../../../../category/regular-expression.html">regular expression</a></li>
+	              <li ><a href="../../../../category/research.html">research</a></li>
+	              <li ><a href="../../../../category/risk-assessment.html">risk assessment</a></li>
+	              <li ><a href="../../../../category/script-kiddie.html">script kiddie</a></li>
+	              <li ><a href="../../../../category/security-programing.html">security programing</a></li>
+	              <li ><a href="../../../../category/security-testing.html">security testing</a></li>
+	              <li ><a href="../../../../category/social-networks.html">social networks</a></li>
+	              <li class="active"><a href="../../../../category/texworks.html">texworks</a></li>
+	              <li ><a href="../../../../category/thinkpad.html">thinkpad</a></li>
+	              <li ><a href="../../../../category/virtual-life.html">virtual life</a></li>
+	              <li ><a href="../../../../category/wireless-security.html">wireless security</a></li>
+	              <li ><a href="../../../../category/wordpress.html">wordpress</a></li>
+	          </ul>
+	        </nav>
+
+	          <aside>
+	          <h2>Social</h2>
+			    <ul class="social">
+				  <li><a href="https://www.linkedin.com/in/tpredrag">Linkedin</a><i></i></li>
+				  <li><a href="https://twitter.com/stepcellwolf">Twitter</a><i></i></li>
+				  <li><a href="https://github.com/stepcellwolf/">Github</a><i></i></li>
+			    </ul>
+			  </aside>
+
+	          <aside>
+	            <h2>Blogroll</h2>
+	            <ul>
+	                <li><a href="http://getpelican.com/">Pelican</a></li>
+	                <li><a href="http://python.org/">Python.org</a></li>
+	                <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+	                <li><a href="#">You can modify those links in your config file</a></li>
+	            </ul>
+	          </aside>
+
+		  </div>
+
+	  </div>
+
+      <footer>
+		<p role="contentinfo">
+		  © 2013 Predrag TASEVSKI - Pece - Proudly powered by <a href="http://alexis.notmyidea.org/pelican/">pelican</a>. Theme <a href="https://github.com/fle/pelican-simplegrey">pelican-simplegrey</a>.
+    	</p>
+
+	  </footer>	
+
+	</div>
+	
+
+</body>
+</html>
