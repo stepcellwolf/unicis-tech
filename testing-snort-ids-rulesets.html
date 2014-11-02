@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Predrag TASEVSKI - Pece" />
+        <meta name="keywords" content="cyber security,DDoS,ids,internet,networking,online,Port scan,snort,snort rules,SYN flood,testing ids,vulnerability scanning" />
+        <meta name="description" content="SCENARIO The objective of this laboratory test, scenario is to create a solution and instructions for testing an IDS1 systems usefulness for detecting attacks against a wordpress site. In addition, we have to develop/download/find/whatever a SNORT configuration (rulesets, preprocessors, whatever) that performs better than the default ..." />
+
+    <title>Testing SNORT – IDS rulesets - PredragTASEVSKI.com</title>
+
+        <link rel="stylesheet" href="http://predragtasevski.com/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="http://predragtasevski.com/theme/css/font-awesome.min.css" rel="stylesheet">
+    
+    <link href="http://predragtasevski.com/theme/css/pygments/native.css" rel="stylesheet">
+    
+    <link href="/theme/css/pelican-twitchy.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Feeds -->
+</head>
+<body data-spy="scroll" data-target="#scrollspy">
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper-small">
+            <ul id="accordion-small" class="sidebar-nav sidebar-nav-small">
+                <li>
+        <a href="http://predragtasevski.com" title="PredragTASEVSKI.com" class="collapsed">
+            <span class="glyphicon glyphicon-home"></span>
+        </a>
+    </li>
+                <li class="nav-divider"></li>
+                <li>
+        <a href="http://predragtasevski.com/archives.html" title="Recent Articles" class="collapsed">
+            <span class="glyphicon glyphicon-th-list"></span>
+        </a>
+    </li>
+                
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion-small" href="#collapse-social-small" title="Social" class="collapsed">
+                        <i class="fa fa-users padding-small"></i>
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-social-small" class="collapse ">
+                    <li>
+                        <a href="#" title="Another social link"><i class="fa fa-another-social-link-square fa-lg padding-small"></i></a>
+                    </li>
+                    <li>
+                        <a href="#" title="You can add links in your config file"><i class="fa fa-you-can-add-links-in-your-config-file-square fa-lg padding-small"></i></a>
+                    </li>
+                </ul></li>
+                <li class="nav-divider"></li>
+                <li>
+        <a href="#" title="Back to top" class="collapsed">
+            <span class="fa fa-arrow-up"></span>
+        </a>
+    </li>
+            </ul>
+        </div>
+        <div id="sidebar-wrapper">
+            <ul id="accordion" class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="http://predragtasevski.com/">
+                            <span class="glyphicon glyphicon-home padding-small"></span>
+                            PredragTASEVSKI.com
+                    </a>
+                </li>
+                    <li>
+                        <a href="http://predragtasevski.com/archives.html">
+                            <span class="glyphicon glyphicon-th-list padding-small"></span>
+                            Recent Articles
+                        </a>
+                    </li>
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-social">
+                        <i class="fa fa-users padding-small"></i>
+                        Social
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-social" class="sidebar_submenu collapse ">
+                    <li>
+                        <a href="#" title="Another social link">
+                            <i class="fa fa-another-social-link-square fa-lg padding-small"></i>
+                            Another social link
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="You can add links in your config file">
+                            <i class="fa fa-you-can-add-links-in-your-config-file-square fa-lg padding-small"></i>
+                            You can add links in your config file
+                        </a>
+                    </li>
+                </ul></li>
+                
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-pages">
+                        <i class="fa fa-folder-open padding-small"></i>
+                        Pages
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-pages" class="sidebar_submenu collapse ">
+                    <li>
+                        <a href="http://predragtasevski.com/pages/about.html">
+                            <i class="fa fa-file-text padding-small"></i>
+                            About
+                        </a>
+                    </li>
+                </ul></li>
+                
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-categories">
+                        <i class="fa fa-folder-open padding-small"></i>
+                        Categories
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-categories" class="sidebar_submenu collapse ">
+                    <li >
+                        <a href="http://predragtasevski.com/category/awareness.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            awareness
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/camp.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            camp
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/collectivistic.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            collectivistic
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/company.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            company
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/conference.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            conference
+                            <span class="badge pull-right categorybadge">4</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/cyber-crime.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            cyber crime
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/cyber-security.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            cyber security
+                            <span class="badge pull-right categorybadge">5</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/cyberwar.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            cyberwar
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/cyberwarfare.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            cyberwarfare
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/digital-divide.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            digital divide
+                            <span class="badge pull-right categorybadge">2</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/hate-speech.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            hate speech
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/hate-speechnetwork-security.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            hate speechnetwork security
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/honeypot.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            honeypot
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/human-communication.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            human communication
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/human-computer-interaction.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            human computer interaction
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/human-rights.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            human rights
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="http://predragtasevski.com/category/ids.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            IDS
+                            <span class="badge pull-right categorybadge">2</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/interview.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            interview
+                            <span class="badge pull-right categorybadge">2</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/leaks.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            leaks
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/malware.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            malware
+                            <span class="badge pull-right categorybadge">4</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/network-security.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            network security
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/password-attacks.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            password attacks
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/regular-expression.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            regular expression
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/research.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            research
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/risk-assessment.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            risk assessment
+                            <span class="badge pull-right categorybadge">2</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/script-kiddie.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            script kiddie
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/security-programing.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            security programing
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/security-testing.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            security testing
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/social-networks.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            social networks
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/texworks.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            texworks
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/thinkpad.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            thinkpad
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/virtual-life.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            virtual life
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/wireless-security.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            wireless security
+                            <span class="badge pull-right categorybadge">2</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/wordpress.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            wordpress
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                </ul></li>
+                
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+        <!-- open/close sidebar -->
+        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">
+            <span id="right-arrow" class="glyphicon glyphicon-chevron-right"  title="expand sidebar"></span>
+            <span id="left-arrow" class="glyphicon glyphicon-chevron-left" title="minimize sidebar"></span>
+        </a>
+       <!-- /open/close sidebar -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container">
+<section id="content">
+    <article>
+        <div class="row">
+            <div class="col-lg-12">
+                <header class="page-header">
+                    <h1>
+                        <a href="http://predragtasevski.com/testing-snort-ids-rulesets.html"
+                           rel="bookmark"
+                           title="Permalink to Testing SNORT – IDS rulesets">
+                            Testing SNORT – IDS rulesets
+                        </a>
+                        <small>
+<footer class="post-info">
+    <div id="publish-info" class="publish-info-block">
+        <span class="published">
+            <i class="fa fa-calendar padding-small"></i><time datetime="2012-03-13T00:00:00"> mar. 13 mars 2012</time>
+        </span>
+        <span class="category">
+            <i class="fa fa-folder-open padding-small"></i><a href="http://predragtasevski.com/category/ids.html">IDS</a>
+        </span>
+        <span class="tags">
+            <i class="fa fa-tags padding-small"></i>
+            <a href="http://predragtasevski.com/tag/cyber-security.html">cyber security</a> /             <a href="http://predragtasevski.com/tag/ddos.html">DDoS</a> /             <a href="http://predragtasevski.com/tag/ids.html">ids</a> /             <a href="http://predragtasevski.com/tag/internet.html">internet</a> /             <a href="http://predragtasevski.com/tag/networking.html">networking</a> /             <a href="http://predragtasevski.com/tag/online.html">online</a> /             <a href="http://predragtasevski.com/tag/port-scan.html">Port scan</a> /             <a href="http://predragtasevski.com/tag/snort.html">snort</a> /             <a href="http://predragtasevski.com/tag/snort-rules.html">snort rules</a> /             <a href="http://predragtasevski.com/tag/syn-flood.html">SYN flood</a> /             <a href="http://predragtasevski.com/tag/testing-ids.html">testing ids</a> /             <a href="http://predragtasevski.com/tag/vulnerability-scanning.html">vulnerability scanning</a>        </span>
+    </div>
+</footer><!-- /.post-info -->                        </small>
+                    </h1>
+                </header>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="entry-content">
+                    <h1>SCENARIO</h1>
+<p>The objective of this laboratory test, scenario is to create a solution and instructions for testing an IDS<sup>1</sup> systems usefulness for detecting attacks against a wordpress site. In addition, we have to develop/download/find/whatever a SNORT configuration (rulesets, preprocessors, whatever) that performs better than the default configuration in previous post. By better we mean:</p>
+<ul>
+<li>Less false positives</li>
+<li>Less false negatives</li>
+<li>The objectives are contradictory so the rule of thumb is one false negative per 10 false positives eg. solution with 10 false positives and 2 false negatives is better than the solution with 100 false positives and 1 false negatives, but the solution with 10 false positives and 1 false negative is better than the solution with 1 false positive and 2 false negatives.</li>
+<li>Attack is defined by a single invocation of all the test scripts in a row.</li>
+</ul>
+<p>Meanwhile, the new rules have to be able to detect not only the default attacks that are set to a default snort configuration, yet they have to be able to detect SQL injection, brute force password, apache killer script, pytbull, etc. Furthermore, in figure 1 we are illustrating the scenario.</p>
+<p><img class="size-full wp-image-355" title="Illustration 1: Illustration of Scenario" src="http://predragtasevski.com/imp/snort_rules.png" width="539" height="281">
+Illustration 1: Illustration of Scenario</p>
+<p>Therefore, in the proposal section we will present two proposals that have been submitted due to this laboratory test and additionally in result section we will highlighted the identification numbers made by snort set new rules. In section appendixes we will provide you with more details configuration procedures, configuration of VM’s – Virtual Machines, attacks, etc.</p>
+<p>Finally, closing with an conclusion and the results of best set of rules made of the proposals.</p>
+<h1>SETUP of SNORT</h1>
+<p>To setup snort in a right way, that will work for the second Host only network please following the instruction link provided with a full description and configuration of snort [SNORT2].</p>
+<h1>PROPOSALS</h1>
+<p>In total two proposals are presented in next sub-sections.</p>
+<h2>PROPOSAL 1</h2>
+<p>Add <a href="http://www.tud.ttu.ee/~t061780/attacks/robert.rules"  target="_blank">http://www.tud.ttu.ee/~t061780/attacks/robert.rules</a> to your Snort. On your Snort machine:</p>
+<div class="highlight"><pre><span class="n">cd</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">snort</span><span class="o">/</span><span class="n">rules</span>
+<span class="n">wget</span> <span class="n">http</span><span class="o">:</span><span class="c1">//www.tud.ttu.ee/~t061780/attacks/robert.rules</span>
+</pre></div>
+
+
+<p>Now you have the rules, add them to your snort conf file (default /etc/snort/snort.conf). To do that inser:</p>
+<p><code>include $RULE_PATH/robert.rules"</code> somewhere with rest of the rules after line 800. Run Snort and test.</p>
+<h2>PROPOSAL 2</h2>
+<p>Add the following rules: <a href="http://predragtasevski.com/src/predrag.rules" target="_blank">http://predragtasevski.com/src/predrag.rules</a>. To be able to insert the snort rules in to the snort file please double check where it is located. You can find the location with the following command: find / -name snort.conf Before you continue please change the IP address to your server address on line number #6, example alert tcp any any -&gt; 192.168.56.X where x is your octet. Then to add the following rules at the conf file do the following command:</p>
+<p><code>cat predrag.rules &amp;amp;amp;amp;amp;amp;gt;&amp;amp;amp;amp;amp;amp;gt; snort.conf</code></p>
+<p>Now it is time to start or restart snort. It should work.</p>
+<h1>RESULTS</h1>
+<p>After executing the above proposal we will highlight the results into the table bellow. Result are presented from the total amount of reports, registered alerts in the snort. This is done by help of web interface of Basic Analysis and Security Engine in addition Analysis Console for Intrusion Databases (ACID) project tool [ACID]. Therefore, the result from the proposals are highlighted below:</p>
+<table>
+<thead>
+<tr>
+<th align="right">Attack performed</th>
+<th align="center">Proposal number</th>
+<th align="center">Baseline Total number of Alerts</th>
+<th align="center">Total number of Alerts</th>
+<th align="right">Unique Alerts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">SQL injection</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="right">SQL injection</td>
+<td align="center">2</td>
+<td align="center">0</td>
+<td align="center">52</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right">Pytbull – evasion</td>
+<td align="center">1</td>
+<td align="center">N/A</td>
+<td align="center">128</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="right">SQL injection + nmap</td>
+<td align="center">Combine both</td>
+<td align="center">N/A</td>
+<td align="center">36</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="right">Pytbull</td>
+<td align="center">Combine both</td>
+<td align="center">N/A</td>
+<td align="center">844</td>
+<td align="right">7</td>
+</tr>
+</tbody>
+</table>
+<p>Table 1: Details of total report numbers of alerts made by SNORT and the different proposal rule sets. Details of the attacks conducted in the table are presented in appendixes section.</p>
+<p>Additionally, figure 2 is presenting the pine chart of the total number alerts recognized by Snort.</p>
+<p><img class="size-full wp-image-357" title="Illustration 2: Total number of Alerts" src="http://predragtasevski.com/imp/snort11.png"  width="547" height="323">
+Illustration 2: Total number of Alerts.</p>
+<p>Secondly, figure 3 is representing the pine chart of total number of unique alerts recognized by Snort.</p>
+<p><img class="size-full wp-image-358" title="Illustration 3: Total number of Unique Alerts" src="http://predragtasevski.com/imp/snort2.png"  width="550" height="323">
+Illustration 3: Total number of Unique Alerts</p>
+<h1>CONCLUSION</h1>
+<p>From the above results we came to conclusion that the new applied rules were successful and were able to recognize alerts more then the default rule set of Snort. Meanwhile, only proposal 2 was able to recognized an SQL injections without any additional tweaking. Although proposal 1 was still useful, on the other hand the best solution is when we combine the both rule sets proposals. Then the Snort is able to recognized an significant number of total alerts and additionally for our laboratory report more interesting is unique total number alerts.</p>
+<p>Closing, even the default Snort rules configuration is good, yet when you tweak it by
+your own needs, you will have much better IDS system for your network. In future it should be recommended always refer to [snort_rules], to gather more available advance Snort rules, made by experts. Where will help you to configure and setup Snort IDS system to detecting attacks against a wordpress site, etc.</p>
+<h1>APPENDIXES</h1>
+<p>Appendix 1 is the configuration of the attacker virtual machine, in more detail Blacktrack 5 distribution. Secondly, Appendix 2 is the ubuntu wordpress configuration server and additional is the configuration and setup process and refer links of IDS Snort virtual machine. Appendix 4, 5 and 6 are providing brief details about the attacks that were conducted during this laboratory test.</p>
+<h1>APPENDIX 1</h1>
+<ul>
+<li>Installation media: Black Track 5 GNOME 32bit iso image;</li>
+<li>HW: Virtualbox, 1CPU 32bit, 512MB RAM, 8GB HD (dynamic allocation);</li>
+<li>NIC1 NAT;</li>
+<li>NIC2 host only (for ssh and http access from host);</li>
+<li>Downloadable link: <a href="http://www.backtrack-linux.org/downloads/" target="_blank">http://www.backtrack-linux.org/downloads/</a></li>
+</ul>
+<h1>APPENDIX 2</h2></h1>
+<ul>
+<li>Installation media: Ubuntu 10.04 32bit iso image;</li>
+<li>HW: Virtualbox, 1CPU 32bit, 512MB RAM, 8GB HD (dynamic allocation);</li>
+<li>NIC1 NAT;</li>
+<li>NIC2 host only (for ssh and http access from host);</li>
+<li>Language used in installation process: English and country Estonia;</li>
+<li>Keyboard Layout English;</li>
+<li>Hostname: pece</li>
+<li>Partition methods: Guided, use entire disk</li>
+<li>Username: pece</li>
+<li>no http proxy</li>
+<li>Default applications</li>
+</ul>
+<div class="highlight"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">lamp</span> <span class="n">phpmyadmin</span>
+<span class="n">wget</span> <span class="o">-</span><span class="n">c</span> <span class="n">http</span><span class="o">:</span><span class="c1">//wordpress.org/latest.tar.gz</span>
+<span class="n">tar</span> <span class="n">xvjf</span> <span class="n">latest</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span>
+<span class="n">sudo</span> <span class="n">cp</span> <span class="n">wordpress</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">wordpress</span>
+<span class="n">sudo</span> <span class="n">nano</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">wordpress</span><span class="o">/</span><span class="n">wp</span><span class="o">-</span><span class="n">config</span><span class="p">.</span><span class="n">php</span> <span class="n">Change</span> <span class="n">the</span> <span class="n">settings</span> <span class="n">to</span> <span class="n">your</span> <span class="n">needs</span>
+</pre></div>
+
+
+<h1>APPENDIX 3</h1>
+<ul>
+<li>Installation media: Ubuntu 10.04 32bit iso image;</li>
+<li>HW: Virtualbox, 1CPU 32bit, 512MB RAM, 8GB HD (dynamic allocation);</li>
+<li>NIC1 NAT;</li>
+<li>NIC2 host only (for ssh and http access from host);</li>
+<li>Language used in installation process: English and country Estonia;</li>
+<li>Keyboard Layout English;</li>
+<li>Hostname: pece</li>
+<li>Partition methods: Guided, use entire disk</li>
+<li>Username: pece</li>
+<li>no http proxy</li>
+<li>Default applications</li>
+<li>Snort configuration and installation refer to [SNORT1] in addition, please refer to [SNORT2].</li>
+</ul>
+<h1>APPENDIX 4</h1>
+<p>Here we test typical SQL- injection in URLs
+Commands used:</p>
+<div class="highlight"><pre><span class="n">wget</span> <span class="s">&quot;http://192.168.56.101/?p=1&#39;%20OR%20&#39;1&#39;=&#39;1&quot;</span>
+<span class="n">wget</span> <span class="s">&quot;http://192.168.56.101/?p=1&#39;%20AND%201=(SELECT%20COUNT(*)%20FROM%20tabname);%20—&quot;</span>
+</pre></div>
+
+
+<p>Snort by default does not detect this, where in applying the proposal 2 rules, it did detect.</p>
+<h1>APPENDIX 5</h1>
+<p>To test Snort and acidbase, perform a portscan of the Snort host.</p>
+<p><code>sudo nmap -p1-65535 -sV -sS -O 192.168.56.102</code></p>
+<h1>APPENDIX 6</h1>
+<p>To setup pytbull it is a bit of pain, yet if you follow the rules and the documentation it will work like shark. For documentation please refer to [pytbull_doc].</p>
+<h1>Bibliography</h1>
+<p>[SNORT2] Nick Moore, Snort 2.8.4.1 Ubuntu 9 Installation Guide, June 2009, <a href="http://www.snort.org/assets/113/Snort_2.8.4.1_Ubuntu.pdf"  target="_blank">http://www.snort.org/assets/113/Snort_2.8.4.1_Ubuntu.pdf</a></p>
+<p>[ACID] Basic Analysis and Security Engine, Welcome to the Basic Analysis and Security Engine (BASE) project , 2008,<a href="http://base.secureideas.net/about.php"  target="_blank"> http://base.secureideas.net/about.php</a></p>
+<p>[snort_rules] <a href="http://rules.emergingthreats.net/open/snort-2.9.0/rules/"  target="_blank">http://rules.emergingthreats.net/open/snort-2.9.0/rules/</a></p>
+<p>[SNORT1] kat-amsterdam, SnortIDS, December 2010, <a href="https://help.ubuntu.com/community/SnortIDS" target="_blank">https://help.ubuntu.com/community/SnortIDS</a></p>
+<p>[pytbull_doc] Sébastien Damaye, Official documentation for pytbull v1.3 -, 2011, <a href="http://pytbull.sourceforge.net/index.php?page=documentation"  target="_blank">http://pytbull.sourceforge.net/index.php?page=documentation</a></p>
+<p>[1] IDS – Intrusion detection system</p>
+                </div>
+                <footer class="text-right">
+                    <p>- Predrag TASEVSKI - Pece</p>
+                </footer>
+            </div>
+        </div>
+    </article>
+</section>
+            </div>
+<footer>
+    <div class="container-fluid">
+        <hr>
+        <div class="row">
+            <div class="col-xs-4 text-left">
+                
+            </div>
+            <div class="col-xs-8 text-right">
+                <p>Built using <a href="http://docs.getpelican.com/en/latest">Pelican</a>, <a href="getbootstrap.com">Bootstrap3</a> and the <a href="https://github.com/ingwinlu/pelican-twitchy">pelican-twitchy</a> theme.</p>
+                <p>&copy; 2014 Predrag TASEVSKI - Pece</p>
+            </div>
+        </div>
+    </div>
+</footer>        </div>
+        <!-- /#page-content-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery Version 1.11.0 -->
+    <script src="/theme/js/jquery-1.11.0.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/theme/js/bootstrap.min.js"></script>
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+
+<!-- disqus -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = ''; // required: replace example with your forum shortname
+
+            var disqus_identifier = 'testing-snort-ids-rulesets';
+        var disqus_url = 'http://predragtasevski.com/testing-snort-ids-rulesets.html';
+
+    var disqus_config = function () {
+        this.language = "en";
+    };
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+<!-- /disqus --></body>
+</html>
