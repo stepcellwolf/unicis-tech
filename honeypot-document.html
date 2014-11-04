@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Predrag TASEVSKI - Pece" />
+        <meta name="keywords" content="honeypot document,cyber security,honeypot" />
+        <meta name="description" content="INTRODUCTION The main goal of laboratory report is to identify possible leaked/stolen information, documents from our system without recognising that attacker had an access. Thus access of the document will inform us immediately with the information of the burglar. The report should highlight the following aspects: Constructed an document ..." />
+
+    <title>Honeypot document - PredragTASEVSKI.com</title>
+
+        <link rel="stylesheet" href="http://predragtasevski.com/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="http://predragtasevski.com/theme/css/font-awesome.min.css" rel="stylesheet">
+    
+    <link href="http://predragtasevski.com/theme/css/pygments/native.css" rel="stylesheet">
+    
+    <link href="/theme/css/pelican-twitchy.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Feeds -->
+</head>
+<body data-spy="scroll" data-target="#scrollspy">
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper-small">
+            <ul id="accordion-small" class="sidebar-nav sidebar-nav-small">
+                <li>
+        <a href="http://predragtasevski.com" title="PredragTASEVSKI.com" class="collapsed">
+            <span class="glyphicon glyphicon-home"></span>
+        </a>
+    </li>
+                <li class="nav-divider"></li>
+                <li>
+        <a href="http://predragtasevski.com/archives.html" title="Recent Articles" class="collapsed">
+            <span class="glyphicon glyphicon-th-list"></span>
+        </a>
+    </li>
+                
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion-small" href="#collapse-social-small" title="Social" class="collapsed">
+                        <i class="fa fa-users padding-small"></i>
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-social-small" class="collapse ">
+                    <li>
+                        <a href="#" title="Another social link"><i class="fa fa-another-social-link-square fa-lg padding-small"></i></a>
+                    </li>
+                    <li>
+                        <a href="#" title="You can add links in your config file"><i class="fa fa-you-can-add-links-in-your-config-file-square fa-lg padding-small"></i></a>
+                    </li>
+                </ul></li>
+                <li class="nav-divider"></li>
+                <li>
+        <a href="#" title="Back to top" class="collapsed">
+            <span class="fa fa-arrow-up"></span>
+        </a>
+    </li>
+            </ul>
+        </div>
+        <div id="sidebar-wrapper">
+            <ul id="accordion" class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="http://predragtasevski.com/">
+                            <span class="glyphicon glyphicon-home padding-small"></span>
+                            PredragTASEVSKI.com
+                    </a>
+                </li>
+                    <li>
+                        <a href="http://predragtasevski.com/archives.html">
+                            <span class="glyphicon glyphicon-th-list padding-small"></span>
+                            Recent Articles
+                        </a>
+                    </li>
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-social">
+                        <i class="fa fa-users padding-small"></i>
+                        Social
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-social" class="sidebar_submenu collapse ">
+                    <li>
+                        <a href="#" title="Another social link">
+                            <i class="fa fa-another-social-link-square fa-lg padding-small"></i>
+                            Another social link
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="You can add links in your config file">
+                            <i class="fa fa-you-can-add-links-in-your-config-file-square fa-lg padding-small"></i>
+                            You can add links in your config file
+                        </a>
+                    </li>
+                </ul></li>
+                
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-pages">
+                        <i class="fa fa-folder-open padding-small"></i>
+                        Pages
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-pages" class="sidebar_submenu collapse ">
+                    <li>
+                        <a href="http://predragtasevski.com/pages/about.html">
+                            <i class="fa fa-file-text padding-small"></i>
+                            About
+                        </a>
+                    </li>
+                </ul></li>
+                
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-categories">
+                        <i class="fa fa-folder-open padding-small"></i>
+                        Categories
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-categories" class="sidebar_submenu collapse ">
+                    <li >
+                        <a href="http://predragtasevski.com/category/awareness.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            awareness
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/camp.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            camp
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/collectivistic.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            collectivistic
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/company.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            company
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/conference.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            conference
+                            <span class="badge pull-right categorybadge">4</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/cyber-crime.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            cyber crime
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/cyber-security.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            cyber security
+                            <span class="badge pull-right categorybadge">5</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/cyberwar.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            cyberwar
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/cyberwarfare.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            cyberwarfare
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/digital-divide.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            digital divide
+                            <span class="badge pull-right categorybadge">2</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/hate-speech.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            hate speech
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/hate-speechnetwork-security.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            hate speechnetwork security
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="http://predragtasevski.com/category/honeypot.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            honeypot
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/human-communication.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            human communication
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/human-computer-interaction.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            human computer interaction
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/human-rights.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            human rights
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/ids.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            IDS
+                            <span class="badge pull-right categorybadge">2</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/interview.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            interview
+                            <span class="badge pull-right categorybadge">2</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/leaks.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            leaks
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/malware.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            malware
+                            <span class="badge pull-right categorybadge">4</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/network-security.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            network security
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/password-attacks.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            password attacks
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/regular-expression.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            regular expression
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/research.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            research
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/risk-assessment.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            risk assessment
+                            <span class="badge pull-right categorybadge">2</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/script-kiddie.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            script kiddie
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/security-programing.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            security programing
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/security-testing.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            security testing
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/social-networks.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            social networks
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/texworks.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            texworks
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/thinkpad.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            thinkpad
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/virtual-life.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            virtual life
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/wireless-security.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            wireless security
+                            <span class="badge pull-right categorybadge">2</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/wordpress.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            wordpress
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                </ul></li>
+                
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+        <!-- open/close sidebar -->
+        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">
+            <span id="right-arrow" class="glyphicon glyphicon-chevron-right"  title="expand sidebar"></span>
+            <span id="left-arrow" class="glyphicon glyphicon-chevron-left" title="minimize sidebar"></span>
+        </a>
+       <!-- /open/close sidebar -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container">
+<section id="content">
+    <article>
+        <div class="row">
+            <div class="col-lg-12">
+                <header class="page-header">
+                    <h1>
+                        <a href="http://predragtasevski.com/honeypot-document.html"
+                           rel="bookmark"
+                           title="Permalink to Honeypot document">
+                            Honeypot document
+                        </a>
+                        <small>
+<footer class="post-info">
+    <div id="publish-info" class="publish-info-block">
+        <span class="published">
+            <i class="fa fa-calendar padding-small"></i><time datetime="2012-02-16T00:00:00"> jeu. 16 février 2012</time>
+        </span>
+        <span class="category">
+            <i class="fa fa-folder-open padding-small"></i><a href="http://predragtasevski.com/category/honeypot.html">honeypot</a>
+        </span>
+        <span class="tags">
+            <i class="fa fa-tags padding-small"></i>
+            <a href="http://predragtasevski.com/tag/honeypot-document.html">honeypot document</a> /             <a href="http://predragtasevski.com/tag/cyber-security.html">cyber security</a> /             <a href="http://predragtasevski.com/tag/honeypot.html">honeypot</a>        </span>
+    </div>
+</footer><!-- /.post-info -->                        </small>
+                    </h1>
+                </header>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="entry-content">
+                    <h1>INTRODUCTION</h1>
+<p>The main goal of laboratory report is to identify possible leaked/stolen information, documents from our system without recognising that attacker had an access. Thus access of the document will inform us immediately with the information of the burglar. The report should highlight the following aspects:</p>
+<ul>
+<li>Constructed an document as non malicious code, for instance honey document that will help us to track from where, who, information about the system, etc. is using our document.</li>
+<li>Detail description of process, how did we build the document and the idea behind the tracking system.</li>
+<li>Description of needed infrastructure that is tracking the document.</li>
+</ul>
+<p>The laboratory report is created by a team of 7 members. Where each member had own task to accomplish. Moreover, to be more contingent the unknown person has gain access to our computer/laptop. Thereby he is looking for interesting name of file, folder, etc. that most likely will have a content of interesting data, information for his purpose. After he downloaded file/folder from our system the intruder will open this file in his system assuming that contains very important personal/corporate information. However, by opening this file/folder, document it will send us immediately leaked information about his system to our server and additionally an e-mail. This process and procedures that are behind the honeypot document, or with other words trap set to detect, deflect, or in some manner counteract attempts at unauthorized use of information systems [1] is described in following sections. Furthermore, the coding of the honeypot document is done in HTML file with additional java script queries, where detail information and construction are displayed in Honeypot section. Meanwhile in Appendix section we provide the code of the honeypot document and additional what is the leaked/collected information of the intruder system, with other word, content illustration of mail and server logs.</p>
+<p>Finally the conclusion made of the laboratory report will be concise in summary section.</p>
+<h1>HONEYPOT IDEA</h1>
+<p>HTML file We can name the file online banking or etc. cause it is html and it is more convincing way that the attacker will assume that this is an not only a online banking link but yet an the stored cookies and other leaked information. The honeypot file has inline javascript that will collect as much information as it can from the users browser, make it into a JSON object and create a request to our server using that information. The request will return an image, so nothing will be broken, however on our server we decode the information and send ourselves an alert email, that someone has accessed that document and where the accessing came from. There is also an image embedded that requests it from our server- these requests are logged and we see the IP address of the opener. This is as a backup in case the user doesn’t allow javascript to execute.</p>
+<p><strong>How we lure an attacker into trap</strong></p>
+<p>To discover the identity of attacker and get information, she/he has to open html file. Besides setting up honeypot from technical point of view, we have to make document attractive. On our system all the documents will be protected by (different) passwords. We can have same password for files with same extensions (for example, for PDFs or for MS Word documents). In html file, we store these passwords. The name of html document should be corresponding (“file passwords” for example). Attacker will need additional time to crack the passwords, so we are offering easy, quick way to get over additional obstacles. Actually, in html file passwords should be correct not no make the attacker suspicious. Attacker may be suspicious why we stored this kind of information in html file, but it can be explained with the following reasons: a) to open html (with notepad or browser for example) is quicker than opening .pdf and .doc (by Adobe Reader and MS Word respectively) b) html has different extension (.html) that PDF or MS Word documents, so it has different icon in GUI. If you put a lot of different files in a folder, html is much easier to find with a glance among PDFs and DOCs.</p>
+<p><strong>What information we get</strong></p>
+<p>The honeypot is scripted to give us the following information about the attacker: first of all IP address. Time, hen the attacker accessed the honeypot file. Except that, we also get information about user agent, OS, language and other details about attacker’s system. For this concrete task that should be enough. The script is configurable to get some additional information too. As our plan is to simply gather information on our infiltrator, it is essential to avoid being malicious with our code. It will not alter target’s system or bypass any restrictions of it. The solution will not announce itself and will be as stealthy as possible.
+The information is sent to mail. For the example of sent e-mail, please refer to Appendix 2.</p>
+<h1>HONEYPOT INFRASTRUCTURE</h1>
+<p>We need a Web server running PHP. The PHP script will collect the JSON data received<br>
+from the attacker, format it nicely and send via email to people who will process it. If<br>
+JavaScript is not enabled on the attacker’s side we rely on the fact that a picture is<br>
+accessed from the honeypot html file. The server has to serve this image and the request<br>
+for it of course appears in the web server access logs. This information again is processed by the same PHP script mentioned above and forwarded to analysts. Another alternative way to inform security personnel about this honeypot image being accessed is the Simple Event Corelator (SEC) written by Risto Vaarandi [2]. This software is freely available under GPL license. We could write a rule for SEC that would monitor the web server access log file for the specific image file request and send an email with the IP address from which the image was accessed. The rule that is used for SEC can be found in Appendix 3. The content we are looking for in the log file may look like this:
+
+```192.168.1.34 - - [07/Dec/2011:19:16:07 +0200] "GET /honey.png HTTP/1.1" 200 1932```
+
+# SUMMARY
+
+Nowadays the most common vector in unauthorized access into the system is followed by stealing important data, either is from personal computer or corporate network. Therefore, solution of implementing a trap for detecting, and deflecting the attacker of collecting valuable information is important. This laboratory report consists solution for future detection, by creating an honeypot document that will help us to collect data from the attacker. The document it self it is not an malicious code, likewise does not corrupt or infect the attacker system. Solution provided above is designed with an simple infrastructure which help us to identify identity of attacker in different operation system.
+
+Moreover, the honeypot document provides us an information of what is the attacker or user of this document operation system, which browser he is using, what plugins are installed in the browser and additional the time of accessing the file and attached IP address. Thereby, by identifying the above information will guide us in further steps. For instance by identifying his IP address we can find his location, ISP, etc. However, is this above provided information enough? The answer to the question is simple, indeed it is, cause we don’t need more. The idea in this laboratory is not to find or assail the attacker, but it is just to identify, and realize that someone had an unauthorized access to the system and to distinguish his identity. Consequently, from the above we can conclude that we rather gather the information from the attacker then to attack him back.
+
+# APPENDICES
+
+Appendix 1 is the HTML and Java script code presented and in addition in Appendix 2 we present the e-mail received after the attacker has open the document. SEC are described in Appendix 3.
+
+# Appendix 1
+
+HTML + Java script code presented below:
+
+
+wzxhzdk:0
+
+
+## Appendix 2
+
+What we receive via email:
+
+
+wzxhzdk:1
+
+
+## Appendix 3
+
+SEC rule file for web server log monitoring (will work only for IPv4). Alerts the root user via email and suppresses alerts for one hours for the same IP address
+
+
+wzxhzdk:2
+
+
+# Bibliography
+
+[1] Wikipedia, Honeypot (computing), 4 December 2011, <a href="http://en.wikipedia.org/wiki/Honeypot_(computing)" target="_blank">http://en.wikipedia.org/wiki/Honeypot_(computing)</a>
+
+[2] Risto Vaarandi, SEC man page, NA, <a href="/web/20120310213401/http://simple-evcorr.sourceforge.net/man.html"  target="_blank">http://simple-evcorr.sourceforge.net/man.html</a>
+
+The above post is written by: Predrag Tasevski, Robert Pallas, Kuuno Pärnoja, Mikheil Basilaia, Karl Düüna, Roman Stepanenko and Heliand Dema.
+                </div>
+                <footer class="text-right">
+                    <p>- Predrag TASEVSKI - Pece</p>
+                </footer>
+            </div>
+        </div>
+    </article>
+</section>
+            </div>
+<footer>
+    <div class="container-fluid">
+        <hr>
+        <div class="row">
+            <div class="col-xs-4 text-left">
+                
+            </div>
+            <div class="col-xs-8 text-right">
+                <p>Built using <a href="http://docs.getpelican.com/en/latest">Pelican</a>, <a href="getbootstrap.com">Bootstrap3</a> and the <a href="https://github.com/ingwinlu/pelican-twitchy">pelican-twitchy</a> theme.</p>
+                <p>&copy; 2014 Predrag TASEVSKI - Pece</p>
+            </div>
+        </div>
+    </div>
+</footer>        </div>
+        <!-- /#page-content-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery Version 1.11.0 -->
+    <script src="/theme/js/jquery-1.11.0.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/theme/js/bootstrap.min.js"></script>
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+
+<!-- disqus -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = ''; // required: replace example with your forum shortname
+
+            var disqus_identifier = 'honeypot-document';
+        var disqus_url = 'http://predragtasevski.com/honeypot-document.html';
+
+    var disqus_config = function () {
+        this.language = "en";
+    };
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+<!-- /disqus --></body>
+</html>

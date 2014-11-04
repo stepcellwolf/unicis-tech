@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Predrag TASEVSKI - Pece" />
+        <meta name="keywords" content="attacks,cyber security,DDoS,external IP,Internet Protocol addressing systems,IP addresses,malware,online,report abuse,security,security risk" />
+        <meta name="description" content="PURPOSE The main goal of laboratory report is to identify the responsibilities for the IP addresses below and how we can make connection to them. IP addresses are randomly chosen by the lecture. IP addresses: 1. 69.163.171.238 2. 31.44.184.101 3. 188.72.228.69 ..." />
+
+    <title>IP Responsibility and abuse reporting procedure - PredragTASEVSKI.com</title>
+
+        <link rel="stylesheet" href="http://predragtasevski.com/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="http://predragtasevski.com/theme/css/font-awesome.min.css" rel="stylesheet">
+    
+    <link href="http://predragtasevski.com/theme/css/pygments/native.css" rel="stylesheet">
+    
+    <link href="/theme/css/pelican-twitchy.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Feeds -->
+</head>
+<body data-spy="scroll" data-target="#scrollspy">
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper-small">
+            <ul id="accordion-small" class="sidebar-nav sidebar-nav-small">
+                <li>
+        <a href="http://predragtasevski.com" title="PredragTASEVSKI.com" class="collapsed">
+            <span class="glyphicon glyphicon-home"></span>
+        </a>
+    </li>
+                <li class="nav-divider"></li>
+                <li>
+        <a href="http://predragtasevski.com/archives.html" title="Recent Articles" class="collapsed">
+            <span class="glyphicon glyphicon-th-list"></span>
+        </a>
+    </li>
+                
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion-small" href="#collapse-social-small" title="Social" class="collapsed">
+                        <i class="fa fa-users padding-small"></i>
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-social-small" class="collapse ">
+                    <li>
+                        <a href="#" title="Another social link"><i class="fa fa-another-social-link-square fa-lg padding-small"></i></a>
+                    </li>
+                    <li>
+                        <a href="#" title="You can add links in your config file"><i class="fa fa-you-can-add-links-in-your-config-file-square fa-lg padding-small"></i></a>
+                    </li>
+                </ul></li>
+                <li class="nav-divider"></li>
+                <li>
+        <a href="#" title="Back to top" class="collapsed">
+            <span class="fa fa-arrow-up"></span>
+        </a>
+    </li>
+            </ul>
+        </div>
+        <div id="sidebar-wrapper">
+            <ul id="accordion" class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="http://predragtasevski.com/">
+                            <span class="glyphicon glyphicon-home padding-small"></span>
+                            PredragTASEVSKI.com
+                    </a>
+                </li>
+                    <li>
+                        <a href="http://predragtasevski.com/archives.html">
+                            <span class="glyphicon glyphicon-th-list padding-small"></span>
+                            Recent Articles
+                        </a>
+                    </li>
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-social">
+                        <i class="fa fa-users padding-small"></i>
+                        Social
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-social" class="sidebar_submenu collapse ">
+                    <li>
+                        <a href="#" title="Another social link">
+                            <i class="fa fa-another-social-link-square fa-lg padding-small"></i>
+                            Another social link
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="You can add links in your config file">
+                            <i class="fa fa-you-can-add-links-in-your-config-file-square fa-lg padding-small"></i>
+                            You can add links in your config file
+                        </a>
+                    </li>
+                </ul></li>
+                
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-pages">
+                        <i class="fa fa-folder-open padding-small"></i>
+                        Pages
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-pages" class="sidebar_submenu collapse ">
+                    <li>
+                        <a href="http://predragtasevski.com/pages/about.html">
+                            <i class="fa fa-file-text padding-small"></i>
+                            About
+                        </a>
+                    </li>
+                </ul></li>
+                
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-categories">
+                        <i class="fa fa-folder-open padding-small"></i>
+                        Categories
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-categories" class="sidebar_submenu collapse ">
+                    <li >
+                        <a href="http://predragtasevski.com/category/awareness.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            awareness
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/camp.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            camp
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/collectivistic.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            collectivistic
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/company.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            company
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/conference.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            conference
+                            <span class="badge pull-right categorybadge">4</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/cyber-crime.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            cyber crime
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="http://predragtasevski.com/category/cyber-security.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            cyber security
+                            <span class="badge pull-right categorybadge">5</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/cyberwar.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            cyberwar
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/cyberwarfare.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            cyberwarfare
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/digital-divide.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            digital divide
+                            <span class="badge pull-right categorybadge">2</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/hate-speech.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            hate speech
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/hate-speechnetwork-security.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            hate speechnetwork security
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/honeypot.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            honeypot
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/human-communication.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            human communication
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/human-computer-interaction.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            human computer interaction
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/human-rights.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            human rights
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/ids.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            IDS
+                            <span class="badge pull-right categorybadge">2</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/interview.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            interview
+                            <span class="badge pull-right categorybadge">2</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/leaks.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            leaks
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/malware.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            malware
+                            <span class="badge pull-right categorybadge">4</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/network-security.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            network security
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/password-attacks.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            password attacks
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/regular-expression.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            regular expression
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/research.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            research
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/risk-assessment.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            risk assessment
+                            <span class="badge pull-right categorybadge">2</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/script-kiddie.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            script kiddie
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/security-programing.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            security programing
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/security-testing.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            security testing
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/social-networks.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            social networks
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/texworks.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            texworks
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/thinkpad.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            thinkpad
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/virtual-life.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            virtual life
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/wireless-security.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            wireless security
+                            <span class="badge pull-right categorybadge">2</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/wordpress.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            wordpress
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                </ul></li>
+                
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+        <!-- open/close sidebar -->
+        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">
+            <span id="right-arrow" class="glyphicon glyphicon-chevron-right"  title="expand sidebar"></span>
+            <span id="left-arrow" class="glyphicon glyphicon-chevron-left" title="minimize sidebar"></span>
+        </a>
+       <!-- /open/close sidebar -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container">
+<section id="content">
+    <article>
+        <div class="row">
+            <div class="col-lg-12">
+                <header class="page-header">
+                    <h1>
+                        <a href="http://predragtasevski.com/ip-responsibility-and-abuse-reporting-procedure.html"
+                           rel="bookmark"
+                           title="Permalink to IP Responsibility and abuse reporting procedure">
+                            IP Responsibility and abuse reporting procedure
+                        </a>
+                        <small>
+<footer class="post-info">
+    <div id="publish-info" class="publish-info-block">
+        <span class="published">
+            <i class="fa fa-calendar padding-small"></i><time datetime="2011-03-11T00:00:00"> ven. 11 mars 2011</time>
+        </span>
+        <span class="category">
+            <i class="fa fa-folder-open padding-small"></i><a href="http://predragtasevski.com/category/cyber-security.html">cyber security</a>
+        </span>
+        <span class="tags">
+            <i class="fa fa-tags padding-small"></i>
+            <a href="http://predragtasevski.com/tag/attacks.html">attacks</a> /             <a href="http://predragtasevski.com/tag/cyber-security.html">cyber security</a> /             <a href="http://predragtasevski.com/tag/ddos.html">DDoS</a> /             <a href="http://predragtasevski.com/tag/external-ip.html">external IP</a> /             <a href="http://predragtasevski.com/tag/internet-protocol-addressing-systems.html">Internet Protocol addressing systems</a> /             <a href="http://predragtasevski.com/tag/ip-addresses.html">IP addresses</a> /             <a href="http://predragtasevski.com/tag/malware.html">malware</a> /             <a href="http://predragtasevski.com/tag/online.html">online</a> /             <a href="http://predragtasevski.com/tag/report-abuse.html">report abuse</a> /             <a href="http://predragtasevski.com/tag/security.html">security</a> /             <a href="http://predragtasevski.com/tag/security-risk.html">security risk</a>        </span>
+    </div>
+</footer><!-- /.post-info -->                        </small>
+                    </h1>
+                </header>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="entry-content">
+                    <h1>PURPOSE</h1>
+<p>The main goal of laboratory report is to identify the responsibilities for the IP addresses below and how we can make connection to them. IP addresses are randomly chosen by the lecture.</p>
+<p>IP addresses:
+1. 69.163.171.238
+2. 31.44.184.101
+3. 188.72.228.69</p>
+<p>External IP that is used for purpose of this test is following: 193.40.244.0/255 1. The  ISP that provides this network is EENet2. Organization that is behind is Tallinn Technical University, Estonia. City location is Tallinn and the region is Harjumaa. The phone number of my ISP is: +372 73<strong><em>*</em>. The e-mail we should report abuse are: first persons that is in charge: Viktor Borisevitch (e-mail: </strong>tor at cc.ttu.ee and phone number: +372-2-<strong><em>*46) and Andres Lepp (e-mail: l</em></strong> at cc.ttu.ee and phone number: +372 6 <strong>*</strong>55). In addition, if we wont to submit an abuse we should use both persons of network administration and then we can submit and security incident on the following ISP e-mail: turvas@eeenet.ee [RIPE NCC].</p>
+<p>All in all, Method 1 and Appendix 1 describes the website, tools and application that are used to conduct this laboratory report. In addition, Method 2 and Appendix 2 will introduce website tools and databases where we can check if following IP’s have been reported before as abuse and security risk. Both methods are represented with answer and consequences confront in the result section.</p>
+<p>Finally the conclusion made of all collected data will be concise in conclusion section of this report.</p>
+<h1>METHODS</h1>
+<p>First method describes and demonstrates web tools that have been used to collect the needed information from the stated IP’s addresses. Second method is pointing out website tools and databases that can be applied if the IP has been reported previously as a abuse, spam or security threat.</p>
+<h2>METHOD 1</h2>
+<p>Firstly, we need to collect as much as we can details about the IP address. In Appendix 1 is showing the wholly information of the IP’s, contact details, organization name, address, location, state, country, technicians contact, abuse phone number, abuse e-mail, etc.</p>
+<p>Depending on the location of IP we should make sure that not only we know the ISP or abuse contact details, but we should know national CERT 3 agency that is in charge too. Therefore, to collect the information we have used different web sites, agencies: [RIPENCC, LACNIC, AfriNIC, APNIC, ARIN]. The above reference are agencies collected from IANA4. Authority responsible for global coordination of the Internet Protocol addressing systems [IANA].</p>
+<p>Moreover, to have more details about the route of the IP’s we are using command prompt in Windows 7 with the following command, where the results are presented in Appendix 2 section:</p>
+<div class="highlight"><pre><span class="n">tracert</span> <span class="p">[</span><span class="mf">0.0.0.0</span><span class="p">]</span>
+<span class="n">To</span> <span class="n">illustrate</span><span class="p">,</span> <span class="n">the</span> <span class="n">details</span> <span class="n">information</span> <span class="n">are</span> <span class="n">presented</span> <span class="n">in</span> <span class="n">Result</span> <span class="mi">1</span> <span class="n">section</span><span class="p">.</span>
+</pre></div>
+
+
+<h2>METHOD 2</h2>
+<p>After we have collected the wholly information about the concrete IP proposals, we should check if in addition those IP’s previously have been reported as abused, spam or security threat. To complete the following method we need to check concrete database system that is offering following service. First that crossed on web is [MalwareURL] which is dedicated to fighting malware, trojans and a multitude of other web-related threats. In addition, we can check if the IP addresses are listed in anti-spam databases. With other words blacklist check [MyIPAddress].</p>
+<h1>RESULTS</h1>
+<p>Results from Method 1 are presented in Result 1, further Method 2 is presented in Result 2.</p>
+<h1>RESULT 1</h1>
+<p>For each IP are presented only the most important data details that we need to collect for our goal. In addition, full description and details are presented in Appendix 1. The tables bellow are illustrating the most important information that we should look-for. In addition, the highlighted lines are indicating the abuse e-mail box that should be send mail too.</p>
+<div class="highlight"><pre><span class="mf">69.163.171.238</span>
+<span class="nl">OrgName:</span> <span class="n">New</span> <span class="n">Dream</span> <span class="n">Network</span><span class="p">,</span> <span class="n">LLC</span>
+<span class="nl">Address:</span> <span class="mi">417</span> <span class="n">Associated</span> <span class="n">Rd</span><span class="p">.</span>
+<span class="nl">Address:</span> <span class="n">PMB</span> <span class="err">#</span><span class="mi">257</span>
+<span class="nl">City:</span> <span class="n">Brea</span>
+<span class="nl">StateProv:</span> <span class="n">CA</span>
+<span class="nl">PostalCode:</span> <span class="mi">92821</span>
+<span class="nl">Country:</span> <span class="n">US</span>
+<span class="cp">#technician in charge</span>
+<span class="nl">OrgTechName:</span> <span class="n">Nagel</span><span class="p">,</span> <span class="n">Mark</span>
+<span class="nl">OrgTechPhone:</span> <span class="o">+</span><span class="mi">1</span><span class="o">-</span><span class="mi">714</span><span class="o">-</span><span class="mi">706</span><span class="o">-</span><span class="mi">4182</span>
+<span class="nl">OrgTechEmail:</span> <span class="n">mna47</span><span class="o">-</span><span class="n">arin</span> <span class="n">at</span> <span class="n">dreamhost</span><span class="p">.</span><span class="n">com</span>
+<span class="cp">#abuse in charge</span>
+<span class="nl">OrgAbuseName:</span> <span class="n">DreamHost</span> <span class="n">Abuse</span> <span class="n">Team</span>
+<span class="nl">OrgAbusePhone:</span> <span class="o">+</span><span class="mi">1</span><span class="o">-</span><span class="mi">714</span><span class="o">-</span><span class="mi">706</span><span class="o">-</span><span class="mi">4182</span>
+<span class="nl">OrgAbuseEmail:</span> <span class="n">abuse</span><span class="o">&amp;</span><span class="n">nbsp</span><span class="p">;</span> <span class="n">at</span> <span class="n">dreamhost</span><span class="p">.</span><span class="n">com</span>
+<span class="n">Table</span> <span class="mi">1</span>
+<span class="mf">31.44.184.101</span>
+<span class="nl">person:</span> <span class="n">Chris</span> <span class="n">Burns</span>
+<span class="nl">address:</span> <span class="n">Building</span> <span class="mi">4</span><span class="o">&gt;</span>
+<span class="nl">address:</span> <span class="n">City</span> <span class="n">West</span> <span class="n">Office</span> <span class="n">Park</span>
+<span class="nl">address:</span> <span class="n">Gelderd</span> <span class="n">Road</span>
+<span class="nl">address:</span> <span class="n">Leeds</span> <span class="n">LS12</span> <span class="mi">6L</span><span class="n">X</span>
+<span class="nl">address:</span> <span class="n">England</span>
+<span class="nl">phone:</span> <span class="o">+</span><span class="mi">44</span><span class="o">-</span><span class="mi">208</span><span class="o">-</span><span class="mi">901</span><span class="o">-</span><span class="mi">2332</span>
+<span class="cp">#abuse e-mail: </span>
+<span class="n">abuse</span><span class="o">-</span><span class="n">mailbox</span><span class="o">:</span> <span class="n">abuse</span> <span class="n">at</span> <span class="n">laveconetworks</span><span class="p">.</span><span class="n">co</span><span class="p">.</span><span class="n">uk</span>
+<span class="n">Table</span> <span class="mi">2</span>
+<span class="mf">88.72.228.69</span>
+<span class="nl">role:</span> <span class="n">Mannesmann</span> <span class="n">Arcor</span> <span class="n">Network</span> <span class="n">Operation</span> <span class="n">Center</span>
+<span class="nl">address:</span> <span class="n">Arcor</span> <span class="n">AG</span> <span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span> <span class="n">Co</span><span class="p">.</span> <span class="n">KG</span>
+<span class="nl">address:</span> <span class="n">Department</span> <span class="n">TBS</span>
+<span class="nl">address:</span> <span class="n">Otto</span><span class="o">-</span><span class="n">Volger</span><span class="o">-</span><span class="n">Str</span><span class="p">.</span> <span class="mi">19</span>
+<span class="nl">address:</span> <span class="n">D</span><span class="o">-</span><span class="mi">65843</span> <span class="n">Sulzbach</span><span class="o">/</span><span class="n">Ts</span><span class="p">.</span>
+<span class="nl">address:</span> <span class="n">Germany</span>
+<span class="nl">phone:</span> <span class="o">+</span><span class="mi">49</span> <span class="mi">6196</span> <span class="mi">523</span> <span class="mi">0864</span>
+<span class="cp">#abuse e-mail</span>
+<span class="n">abuse</span><span class="o">-</span><span class="n">mailbox</span><span class="o">:</span> <span class="n">abuse</span> <span class="n">at</span> <span class="n">arcor</span><span class="o">-</span><span class="n">ip</span><span class="p">.</span><span class="n">de</span>
+<span class="n">Table</span> <span class="mi">3</span>
+</pre></div>
+
+
+<p>However, now that we know the abuse e-mail, phone number and contact person details, still is this information enough for us. If we look in details all of the IP’s are from different countries. Therefore we need to find what is the national CERT agency contact details. First table is based in USA, therefore we need to use their reporting system, which is locate in the following link: <a href="http://www.us-cert.gov/" target="_blank">http://www.us-cert.gov/</a> . Second table is UK, the national CERT agency link: <a href="http://www.ukcert.org.uk/" target="_blank">www.ukcert.org.uk</a>. Third table is based in Germany, the CERT agency link: <a href="http://www.cert-verbund.de/" target="_blank">http://www.cert-verbund.de/</a>.</p>
+<p>From the routing trace we can conclude that the first IP and the third respond and it did not miss route trace, where in the second IP, 31.44.184.101 there is miss route trace.</p>
+<p>That is why we will run this IP address to Method 2. Despite the fact, still we will run the rest of IP’s in the Method 2, to be trusted that are not in the abuse list.</p>
+<h2>RESULT 2</h2>
+<p>Next step is to attempt to search the IP address to check if they have been previously report as a abuse, trojan, malware, security threat, etc.</p>
+<p>To check and verify the security status we are using the service available [MalwareURL]. Where results for 69.163.171.238 and 88.72.228.69 are with status that have not been previously reported as abuse. On the other hand, 31.44.184.101 IP address is detected as an security threat before. More details are presented in Appendix 3. Where is demonstrating that the <code>/404.php?type=stats&amp;amp;affid=531&amp;amp;subid=03&amp;amp;iruns</code> has been reported as malicious URL and it is in a blacklist of Google, MyWOT, etc.</p>
+<p>Not only that it is listed in the malware database list, but also if we double check on service [MyIPAddress] that the 31.44.184.101 IP address is listed in few blacklist which is assess by DNSBL5.</p>
+<h1>CONCLUSION</h1>
+<p>In conclusion, I would like to reiterate that the concrete IP’s that we analysis in this report are demonstrating the process and methods that should be done in future to detect, report abuse, malware, threat, trojan, security risk, etc. Where we should gather the detail information, and to whom to turn the abuse. To be precise that are not in blacklist, spam list, etc.</p>
+<p>In spite of following IP’s: 69.163.171.238 and 88.72.228.69, from performing methods and delivering results are safe and secure, still think can be exploited in easy manners. The opposite, IP address 31.44.184.101 it has been already report infected as malicious code from few blacklist providers. When checking the DNS, host name is linking to UK company that deals with IP Transit. For further information please check the following link: <a href="http://www.laveconetworks.co.uk/" target="_blank">http://www.laveconetworks.co.uk/</a>.</p>
+<p>In general, hope that laboratory report and the analyse will help to anyone else to guide them for future use.</p>
+<h1>APPENDIXES</h1>
+<p>Appendix 1 is list of details collected from service. Appendix 2 is trace route details. Where Appendix 3 is the result collected from the black list database.</p>
+<p>Because of large content please download [<a href="http://predragtasevski.com/pdf/Predrag_Tasevski_Lab3_Report_IP_responsibility.pdf" target="_blank">PDF</a>]</p>
+<h1>Bibliography</h1>
+<p>RIPE NCC: RIPE NCC, Data &amp; Tools, 2011, <a href="https://www.ripe.net/data-tools" target="_blank">https://www.ripe.net/data-tools</a></p>
+<p>LACNIC: Internet Address Registry for Latin America and the Caribbean, REGISTRATION SERVICES , <a href="http://lacnic.net/cgi-bin/lacnic/whois?lg=EN" target="_blank">http://lacnic.net/cgi-bin/lacnic/whois?lg=EN</a></p>
+<p>AfriNIC: AfriNIC LTD, Query the AfriNIC Whois Database, 2011, href="http://www.afrinic.net/cgi-bin/whois" target="_blank"&gt;http://www.afrinic.net/cgi-bin/whois</a></p>
+<p>APNIC: APNIC, APNIC – Query the APNIC Whois Database, 2011, <a href="http://wq.apnic.net/apnic-bin/whois.pl"  target="_blank">http://wq.apnic.net/apnic-bin/whois.pl</a></p>
+<p>ARIN: ARIN, WHOIS-RWS, 2011, <a href="http://whois.arin.net/" target="_blank">http://whois.arin.net</a></p>
+<p>IANA: IANA, Number Resources, 2011, <a href="http://www.iana.org/numbers/" target="_blank">http://www.iana.org/numbers/</a></p>
+<p>MalwareURL: The MalwareURL Team, The MalwareURL Team, 2011, <a href="http://www.malwareurl.com/" target="_blank">http://www.malwareurl.com</a></p>
+<p>MyIPAddress: What Is My IP Address, Blacklist Check, 2011, <a href="http://whatismyipaddress.com/blacklist-check" target="_blank">http://whatismyipaddress.com/blacklist-check</a></p>
+<h1>Footnotes:</h1>
+<p>[1] I will not show my own IP address</p>
+<p>[2] EENet – <a href="http://www.eenet.ee/EENet/" target="_blank">http://www.eenet.ee/EENet/</a></p>
+<p>[3] CERT – Computer Emergency Response Team</p>
+<p>[4] IANA – Internet Assigned Numbers Authority – <a href="http://www.iana.org/" target="_blank">http://www.iana.org/</a></p>
+<p>[5] DNSBL – Domain Name System Blacklist</p>
+<ul>
+<li>Changed on purpose, not to disclose the exposure</li>
+</ul>
+                </div>
+                <footer class="text-right">
+                    <p>- Predrag TASEVSKI - Pece</p>
+                </footer>
+            </div>
+        </div>
+    </article>
+</section>
+            </div>
+<footer>
+    <div class="container-fluid">
+        <hr>
+        <div class="row">
+            <div class="col-xs-4 text-left">
+                
+            </div>
+            <div class="col-xs-8 text-right">
+                <p>Built using <a href="http://docs.getpelican.com/en/latest">Pelican</a>, <a href="getbootstrap.com">Bootstrap3</a> and the <a href="https://github.com/ingwinlu/pelican-twitchy">pelican-twitchy</a> theme.</p>
+                <p>&copy; 2014 Predrag TASEVSKI - Pece</p>
+            </div>
+        </div>
+    </div>
+</footer>        </div>
+        <!-- /#page-content-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery Version 1.11.0 -->
+    <script src="/theme/js/jquery-1.11.0.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/theme/js/bootstrap.min.js"></script>
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+
+<!-- disqus -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = ''; // required: replace example with your forum shortname
+
+            var disqus_identifier = 'ip-responsibility-and-abuse-reporting-procedure';
+        var disqus_url = 'http://predragtasevski.com/ip-responsibility-and-abuse-reporting-procedure.html';
+
+    var disqus_config = function () {
+        this.language = "en";
+    };
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+<!-- /disqus --></body>
+</html>

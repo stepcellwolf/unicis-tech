@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Predrag TASEVSKI - Pece" />
+        <meta name="keywords" content="ASP.NET,bash,C#,cyber security,HQL,java,JDBC,Perl,PHP5,python,Ruby on Rail,security,security model,Unix,windows 7" />
+        <meta name="description" content="INTRODUCTION The main goal of this post is to introduce the reader with the security programing techniques into deferent program languages and operating system security models. The post is introducing four following topics: Session storage’s in Ruby on Rail Parameterized statements into Java with JDBC, C# with ASP.NET ..." />
+
+    <title>Security Programing Techniques - PredragTASEVSKI.com</title>
+
+        <link rel="stylesheet" href="http://predragtasevski.com/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="http://predragtasevski.com/theme/css/font-awesome.min.css" rel="stylesheet">
+    
+    <link href="http://predragtasevski.com/theme/css/pygments/native.css" rel="stylesheet">
+    
+    <link href="/theme/css/pelican-twitchy.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Feeds -->
+</head>
+<body data-spy="scroll" data-target="#scrollspy">
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper-small">
+            <ul id="accordion-small" class="sidebar-nav sidebar-nav-small">
+                <li>
+        <a href="http://predragtasevski.com" title="PredragTASEVSKI.com" class="collapsed">
+            <span class="glyphicon glyphicon-home"></span>
+        </a>
+    </li>
+                <li class="nav-divider"></li>
+                <li>
+        <a href="http://predragtasevski.com/archives.html" title="Recent Articles" class="collapsed">
+            <span class="glyphicon glyphicon-th-list"></span>
+        </a>
+    </li>
+                
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion-small" href="#collapse-social-small" title="Social" class="collapsed">
+                        <i class="fa fa-users padding-small"></i>
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-social-small" class="collapse ">
+                    <li>
+                        <a href="#" title="Another social link"><i class="fa fa-another-social-link-square fa-lg padding-small"></i></a>
+                    </li>
+                    <li>
+                        <a href="#" title="You can add links in your config file"><i class="fa fa-you-can-add-links-in-your-config-file-square fa-lg padding-small"></i></a>
+                    </li>
+                </ul></li>
+                <li class="nav-divider"></li>
+                <li>
+        <a href="#" title="Back to top" class="collapsed">
+            <span class="fa fa-arrow-up"></span>
+        </a>
+    </li>
+            </ul>
+        </div>
+        <div id="sidebar-wrapper">
+            <ul id="accordion" class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="http://predragtasevski.com/">
+                            <span class="glyphicon glyphicon-home padding-small"></span>
+                            PredragTASEVSKI.com
+                    </a>
+                </li>
+                    <li>
+                        <a href="http://predragtasevski.com/archives.html">
+                            <span class="glyphicon glyphicon-th-list padding-small"></span>
+                            Recent Articles
+                        </a>
+                    </li>
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-social">
+                        <i class="fa fa-users padding-small"></i>
+                        Social
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-social" class="sidebar_submenu collapse ">
+                    <li>
+                        <a href="#" title="Another social link">
+                            <i class="fa fa-another-social-link-square fa-lg padding-small"></i>
+                            Another social link
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="You can add links in your config file">
+                            <i class="fa fa-you-can-add-links-in-your-config-file-square fa-lg padding-small"></i>
+                            You can add links in your config file
+                        </a>
+                    </li>
+                </ul></li>
+                
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-pages">
+                        <i class="fa fa-folder-open padding-small"></i>
+                        Pages
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-pages" class="sidebar_submenu collapse ">
+                    <li>
+                        <a href="http://predragtasevski.com/pages/about.html">
+                            <i class="fa fa-file-text padding-small"></i>
+                            About
+                        </a>
+                    </li>
+                </ul></li>
+                
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-categories">
+                        <i class="fa fa-folder-open padding-small"></i>
+                        Categories
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-categories" class="sidebar_submenu collapse ">
+                    <li >
+                        <a href="http://predragtasevski.com/category/awareness.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            awareness
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/camp.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            camp
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/collectivistic.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            collectivistic
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/company.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            company
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/conference.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            conference
+                            <span class="badge pull-right categorybadge">4</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/cyber-crime.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            cyber crime
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/cyber-security.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            cyber security
+                            <span class="badge pull-right categorybadge">5</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/cyberwar.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            cyberwar
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/cyberwarfare.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            cyberwarfare
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/digital-divide.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            digital divide
+                            <span class="badge pull-right categorybadge">2</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/hate-speech.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            hate speech
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/hate-speechnetwork-security.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            hate speechnetwork security
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/honeypot.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            honeypot
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/human-communication.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            human communication
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/human-computer-interaction.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            human computer interaction
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/human-rights.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            human rights
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/ids.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            IDS
+                            <span class="badge pull-right categorybadge">2</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/interview.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            interview
+                            <span class="badge pull-right categorybadge">2</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/leaks.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            leaks
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/malware.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            malware
+                            <span class="badge pull-right categorybadge">4</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/network-security.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            network security
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/password-attacks.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            password attacks
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/regular-expression.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            regular expression
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/research.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            research
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/risk-assessment.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            risk assessment
+                            <span class="badge pull-right categorybadge">2</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/script-kiddie.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            script kiddie
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="http://predragtasevski.com/category/security-programing.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            security programing
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/security-testing.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            security testing
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/social-networks.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            social networks
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/texworks.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            texworks
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/thinkpad.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            thinkpad
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/virtual-life.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            virtual life
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/wireless-security.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            wireless security
+                            <span class="badge pull-right categorybadge">2</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://predragtasevski.com/category/wordpress.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            wordpress
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                </ul></li>
+                
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+        <!-- open/close sidebar -->
+        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">
+            <span id="right-arrow" class="glyphicon glyphicon-chevron-right"  title="expand sidebar"></span>
+            <span id="left-arrow" class="glyphicon glyphicon-chevron-left" title="minimize sidebar"></span>
+        </a>
+       <!-- /open/close sidebar -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container">
+<section id="content">
+    <article>
+        <div class="row">
+            <div class="col-lg-12">
+                <header class="page-header">
+                    <h1>
+                        <a href="http://predragtasevski.com/security-programing-techniques.html"
+                           rel="bookmark"
+                           title="Permalink to Security Programing Techniques">
+                            Security Programing Techniques
+                        </a>
+                        <small>
+<footer class="post-info">
+    <div id="publish-info" class="publish-info-block">
+        <span class="published">
+            <i class="fa fa-calendar padding-small"></i><time datetime="2012-02-21T00:00:00"> mar. 21 février 2012</time>
+        </span>
+        <span class="category">
+            <i class="fa fa-folder-open padding-small"></i><a href="http://predragtasevski.com/category/security-programing.html">security programing</a>
+        </span>
+        <span class="tags">
+            <i class="fa fa-tags padding-small"></i>
+            <a href="http://predragtasevski.com/tag/aspnet.html">ASP.NET</a> /             <a href="http://predragtasevski.com/tag/bash.html">bash</a> /             <a href="http://predragtasevski.com/tag/c.html">C#</a> /             <a href="http://predragtasevski.com/tag/cyber-security.html">cyber security</a> /             <a href="http://predragtasevski.com/tag/hql.html">HQL</a> /             <a href="http://predragtasevski.com/tag/java.html">java</a> /             <a href="http://predragtasevski.com/tag/jdbc.html">JDBC</a> /             <a href="http://predragtasevski.com/tag/perl.html">Perl</a> /             <a href="http://predragtasevski.com/tag/php5.html">PHP5</a> /             <a href="http://predragtasevski.com/tag/python.html">python</a> /             <a href="http://predragtasevski.com/tag/ruby-on-rail.html">Ruby on Rail</a> /             <a href="http://predragtasevski.com/tag/security.html">security</a> /             <a href="http://predragtasevski.com/tag/security-model.html">security model</a> /             <a href="http://predragtasevski.com/tag/unix.html">Unix</a> /             <a href="http://predragtasevski.com/tag/windows-7.html">windows 7</a>        </span>
+    </div>
+</footer><!-- /.post-info -->                        </small>
+                    </h1>
+                </header>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="entry-content">
+                    <h1>INTRODUCTION</h1>
+<p>The main goal of this post is to introduce the reader with the security programing techniques into deferent  program languages and operating system security models. The post is introducing four following topics:</p>
+<ol>
+<li>Session storage’s in Ruby on Rail</li>
+<li>Parameterized statements into Java with JDBC, C# with ASP.NET, PHP5, php-mysqli, Perl, Python and Hibernate Query Language (HQL)</li>
+<li>Unix permission model, Unix ACL and Windows 7 security model</li>
+<li>Finding all the security vulnerabilities in bash script</li>
+</ol>
+<p>Each topic will be divided into own section, where at the end of each topic we stated the reference and additional reading material. The source code, scrips and the additional task were given by the lecture. However this will help the readers and people interesting into programing for further work and involvement with the above topics.</p>
+<h1>1. Session storage’s in Ruby on Rail</h1>
+<p>Session in Rails is a hash-like structure which allows you to store data across requests. Sessions can hold any kind of data object (with some limitations) because they store data using Data Marshalling.Session in rails it is not a hash. Session creates new instant of session in every time new user visit the site. Recommendation is to not store large objects in a session and critical data should not be stored in session.Rails way of
+implementing session is: </p>
+<ol>
+<li>session_id is a 32 hex character MD5 hash based upon time, random number and constant string. It is stored in cookie at client browser. Rails provides transparent support for session_id.</li>
+<li>Session storage discussed below.</li>
+</ol>
+<p>Ruby on Rails provides with many session storage option:</p>
+<ol>
+<li>PStore – it implements a file based persistence mechanism based on a Hash. User code can store hierarchies of Ruby objects (values) into the data store file by name (keys). An object hierarchy may be just a single object. User code may later read values back from the data store or even update data, as needed. The files that are stored are usually located in the tmp/sessions folder for the Rails app. The main downside of using the PStore is that you will have to do some session-pruning periodically because performance decreases as the number of sessions stored increases.</li>
+<li>ActiveRecordStore – keeps the session id and hash in a database table and saves and retrieves the hash on every request.</li>
+<li>CookieStore – it saves the session hash directly in a cookie on the client-side. The server retrieves the session hash from the cookie and eliminates the need for a session id. Cookie-based sessions are just faster to retrieve and process than hitting the file-system on every request, were it was previously. Cookies are generally limited to 4K in size. While not an issue for most (proper) usage of the session, this could be a legitimate limit for some scenarios. If your application abuses the session, you’ll need to decide on a different session store that are available. The cookie has a SHA512 fingerprint attached and is hashed with a secret stored up on the server and there are, however, derivatives of CookieStore which encrypt the session hash, so the client cannot see it.</li>
+<li>DRbStore – it store uses distributed Ruby to store a user’s session data. The performance is great, but it requires a bit more setup than the other stores.</li>
+<li>FileStore – This store keeps the fragments on the hard disk instead of in memory. It works well if you have a lot of file storage and have outgrown the MemoryStore.</li>
+<li>MemoryStore – keeps your session data in server memory. It keeps the fragments in your application’s memory, which can potentially take up a lot of memory on your server. It is used by default, but it is hard to manage and scale if your application becomes popular.</li>
+</ol>
+<p><strong>Note:</strong> Ruby on Rail CookieStore is available only in edge rails. PStore is the default option for stable release, whereas its CookieStore as default for edge rails.</p>
+<h2>Reference</h2>
+<p>Ruby On Rails Security Guide, From: <a href="http://guides.rubyonrails.org/security.html" target="_blank">http://guides.rubyonrails.org/security.html</a></p>
+<p>Sessions and cookies in Ruby on Rails, From: <a href="http://www.quarkruby.com/2007/10/21/%20sessions-and-cookies-in-ruby-on-rails#sstorage" target="_blank">http://www.quarkruby.com/2007/10/21/sessions-and-cookies-in-ruby-on-rails#sstorage</a></p>
+<p>What’s New in Edge Rails: Cookie Based Sessions are the New Default, From: <a href="http://ryandaigle.com/articles/2007/2/21/what-s-new-in-edge-rails-cookie-based-sessions" target="_blank">http://ryandaigle.com/articles/2007/2/21/what-s-new-in-edge-rails-cookie-based-sessions</a></p>
+<h1>2. Parameterized statements into Java with JDBC, C# with ASP.NET, PHP5, php-mysqli, Perl, Python and Hibernate Query Language (HQL)</h1>
+<p>For this task we will take a look at the parameterized statement API-s and we will find out and document how much does each of them protect against the following possible misuses of SQL statements:</p>
+<ul>
+<li>String injection (quotes, double quotes)</li>
+<li>SQL statement injection (expression syntax etc)</li>
+<li>Out of range integers</li>
+<li>Blind SQL injection</li>
+</ul>
+<h2>Java with JDBC</h2>
+<div class="highlight"><pre><span class="n">PreparedStatement</span> <span class="n">prep</span> <span class="o">=</span>
+<span class="n">conn</span><span class="p">.</span><span class="n">prepareStatement</span><span class="p">(</span><span class="s">&quot;SELECT * FROM</span>
+<span class="n">USERS</span>
+<span class="n">WHERE</span> <span class="n">USERNAME</span><span class="o">=?</span> <span class="n">AND</span> <span class="n">PASSWORD</span><span class="o">=?</span><span class="s">&quot;);</span>
+<span class="n">prep</span><span class="p">.</span><span class="n">setString</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">username</span><span class="p">);</span>
+<span class="n">prep</span><span class="p">.</span><span class="n">setString</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">password</span><span class="p">);</span>
+<span class="n">prep</span><span class="p">.</span><span class="n">executeQuery</span><span class="p">();</span>
+</pre></div>
+
+
+<p>There are no possibilities of string injection because of the filtering the statements. It enables users’ input to be initially filtered instead&nbsp; of directly embedding it in the SQL statements. In this example is that the each parameter is a scalar, not a table, where the user input is then assigned (bound) to a parameter. It is a good idea if the character range is limited. Another thing that can be done to avoid SQL injection is to convert numeric values to integers before parsing them into the SQL statement. Or using ISNUMERIC to verify that they are integers.</p>
+<h2>C# with ASP.NET</h2>
+<div class="highlight"><pre><span class="n">using</span> <span class="p">(</span><span class="n">SqlCommand</span> <span class="n">myCommand</span> <span class="o">=</span>
+<span class="n">new</span> <span class="n">SqlCommand</span><span class="p">(</span><span class="s">&quot;SELECT * FROM USERS</span>
+<span class="n">WHERE</span>
+<span class="n">USERNAME</span><span class="o">=</span><span class="err">@</span><span class="n">user</span> <span class="n">AND</span>
+<span class="n">PASSWORD</span><span class="o">=</span><span class="n">HASHBYTES</span><span class="p">(</span><span class="err">’</span><span class="n">SHA1</span><span class="err">’</span><span class="p">,</span> <span class="err">@</span><span class="n">pwd</span><span class="p">)</span><span class="s">&quot;,</span>
+<span class="n">myConnection</span><span class="p">))</span>
+<span class="p">{</span>
+<span class="n">myCommand</span><span class="p">.</span><span class="n">Parameters</span><span class="p">.</span><span class="n">AddWithValue</span><span class="p">(</span><span class="s">&quot;@user&quot;</span><span class="p">,</span>
+<span class="n">user</span><span class="p">);</span>
+<span class="n">myCommand</span><span class="p">.</span><span class="n">Parameters</span><span class="p">.</span><span class="n">AddWithValue</span><span class="p">(</span><span class="s">&quot;@pwd&quot;</span><span class="p">,</span>
+<span class="n">pass</span><span class="p">);</span>
+<span class="n">myConnection</span><span class="p">.</span><span class="n">Open</span><span class="p">();</span>
+<span class="n">SqlDataReader</span> <span class="n">myReader</span> <span class="o">=</span>
+<span class="n">myCommand</span><span class="p">.</span><span class="n">ExecuteReader</span><span class="p">();</span>
+<span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>The placeholder – @user and the hashbyte value of password @pws – has become part&nbsp; if the hardcoded SQL. At runtime, the value provided by the querystring is passed to the database along with the hardcoded SQL, and the database will check the Username and password field as it attempts to bind the parameter value to it. This ensures a level of strong typing. If the parameter value is not the right type for the database field (a string, or numeric that’s out of range for the field type), the database will be unable to convert it to the right type and will reject it. If the target field datatype is a string (char, nvarchar etc), the parameter value will be “stringified” automatically, which includes escaping single quotes. It will not form part of the SQL statement to be executed.</p>
+<h2>PHP5</h2>
+<div class="highlight"><pre><span class="err">$</span><span class="n">db</span> <span class="o">=</span> <span class="n">new</span> <span class="n">PDO</span><span class="p">(</span><span class="err">’</span><span class="n">pgsql</span><span class="o">:</span><span class="n">dbname</span><span class="o">=</span><span class="n">database</span><span class="err">’</span><span class="p">);</span>
+<span class="err">$</span><span class="n">stmt</span> <span class="o">=</span> <span class="err">$</span><span class="n">db</span><span class="o">-</span><span class="n">prepare</span><span class="p">(</span><span class="s">&quot;SELECT priv FROM testUsers WHERE username=:username AND password=:password&quot;</span><span class="p">);</span>
+<span class="err">$</span><span class="n">stmt</span><span class="o">-</span><span class="n">bindParam</span><span class="p">(</span><span class="err">’</span><span class="o">:</span><span class="n">username</span><span class="err">’</span><span class="p">,</span> <span class="err">$</span><span class="n">user</span><span class="p">);</span>
+<span class="err">$</span><span class="n">stmt</span><span class="o">-</span><span class="n">bindParam</span><span class="p">(</span><span class="err">’</span><span class="o">:</span><span class="n">password</span><span class="err">’</span><span class="p">,</span> <span class="err">$</span><span class="n">pass</span><span class="p">);</span>
+<span class="err">$</span><span class="n">stmt</span><span class="o">-</span><span class="n">execute</span><span class="p">();</span>
+</pre></div>
+
+
+<p>In this example to protect against SQL injection, it is used an input not directly to be&nbsp; embedded in SQL statements. Instead, it is used an parameterized statements (preferred), or user input must be carefully escaped or filtered. This example shows and parameterized example/statement in php v. 5 and PDO database to protect from SQL injections and blind SQL injections.</p>
+<h2>PHP-MySQLi</h2>
+<div class="highlight"><pre><span class="err">$</span><span class="n">db</span> <span class="o">=</span> <span class="n">new</span> <span class="n">mysqli</span><span class="p">(</span><span class="s">&quot;host&quot;</span><span class="p">,</span> <span class="s">&quot;user&quot;</span><span class="p">,</span> <span class="s">&quot;pass&quot;</span><span class="p">,</span>
+<span class="s">&quot;database&quot;</span><span class="p">);</span>
+<span class="err">$</span><span class="n">stmt</span> <span class="o">=</span> <span class="err">$</span><span class="n">db</span> <span class="o">-</span> <span class="n">prepare</span><span class="p">(</span><span class="s">&quot;SELECT priv FROM testUsers WHERE username=? AND password=?&quot;</span><span class="p">);</span>
+<span class="err">$</span><span class="n">stmt</span> <span class="o">-</span>  <span class="n">bind_param</span><span class="p">(</span><span class="s">&quot;ss&quot;</span><span class="p">,</span> <span class="err">$</span><span class="n">user</span><span class="p">,</span> <span class="err">$</span><span class="n">pass</span><span class="p">);</span>
+<span class="err">$</span><span class="n">stmt</span> <span class="o">-</span> <span class="n">execute</span><span class="p">();</span>
+</pre></div>
+
+
+<p>Same as above but this time it is used the vendor-specific methods; for instance, using the mysqli extension for MySQL 4.1 and create parameterized statements to protect from the SQL injection.</p>
+<h2>Perl</h2>
+<div class="highlight"><pre><span class="k">use</span> <span class="n">DBI</span><span class="p">;</span>
+<span class="k">my</span> <span class="nv">$db</span> <span class="o">=</span> <span class="n">DBI</span><span class="o">-</span>
+<span class="nb">connect</span><span class="p">(</span><span class="err">’</span><span class="n">DBI:mysql:mydatabase:host</span><span class="err">’</span><span class="p">,</span> <span class="err">’</span><span class="n">login</span><span class="err">’</span><span class="p">,</span> <span class="err">’</span><span class="n">password</span><span class="err">’</span><span class="p">);</span>
+<span class="nv">$statment</span> <span class="o">=</span> <span class="nv">$db</span><span class="o">-&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">amp</span><span class="p">;</span><span class="n">amp</span><span class="p">;</span><span class="n">amp</span><span class="p">;</span><span class="n">amp</span><span class="p">;</span><span class="ow">gt</span><span class="p">;</span><span class="n">prepare</span><span class="p">(</span><span class="s">&quot;UPDATE players SET name = ?, score = ?, active = ? WHERE jerseyNum = ?&quot;</span><span class="p">);</span>
+<span class="nv">$rows_affected</span> <span class="o">=</span> <span class="nv">$statment</span><span class="o">-&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">amp</span><span class="p">;</span><span class="n">amp</span><span class="p">;</span><span class="n">amp</span><span class="p">;</span><span class="n">amp</span><span class="p">;</span><span class="ow">gt</span><span class="p">;</span><span class="n">execute</span><span class="p">(</span><span class="s">&quot;Smith, Steve&quot;</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="err">’</span><span class="n">true</span><span class="err">’</span><span class="p">,</span> <span class="mi">99</span><span class="p">);</span>
+</pre></div>
+
+
+<p>Automatically “sanitize” input to parameterized SQL statements to avoid the catastrophic&nbsp; database attacks.</p>
+<h2>Python</h2>
+<div class="highlight"><pre><span class="n">import</span> <span class="n">sqlite3</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="p">.</span><span class="n">connect</span><span class="p">(</span><span class="err">’</span><span class="o">:</span><span class="n">memory</span><span class="o">:</span><span class="err">’</span><span class="p">)</span>
+<span class="n">db</span><span class="p">.</span><span class="n">execute</span><span class="p">(</span><span class="err">’</span><span class="n">update</span> <span class="n">players</span> <span class="n">set</span> <span class="n">name</span><span class="o">=:</span><span class="n">name</span><span class="p">,</span> <span class="n">score</span><span class="o">=:</span><span class="n">score</span><span class="p">,</span>
+<span class="n">active</span><span class="o">=:</span><span class="n">active</span> <span class="n">where</span> <span class="n">jerseyNum</span><span class="o">=:</span><span class="n">num</span><span class="err">’</span><span class="p">,</span> <span class="p">{</span><span class="err">’</span><span class="n">num</span><span class="err">’</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span> <span class="err">’</span><span class="n">name</span><span class="err">’</span><span class="o">:</span> <span class="err">’</span><span class="n">John</span> <span class="n">Doe</span><span class="err">’</span><span class="p">,</span> <span class="err">’</span><span class="n">active</span><span class="err">’</span><span class="o">:</span> <span class="n">False</span><span class="p">,</span> <span class="err">’</span><span class="n">score</span><span class="err">’</span><span class="o">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">})</span>
+</pre></div>
+
+
+<p>It is parameterized statement with an example of named placeholders. Which insure to avoid the SQL injections and database attacks.</p>
+<h2>Hibernate Query Language (HQL)</h2>
+<div class="highlight"><pre><span class="n">Query</span> <span class="n">safeHQLQuery</span> <span class="o">=</span> <span class="n">session</span><span class="p">.</span><span class="n">createQuery</span><span class="p">(</span>
+<span class="s">&quot;from Inventory where productID=:productid&quot;</span><span class="p">);</span>
+<span class="n">safeHQLQuery</span><span class="p">.</span><span class="n">setParameter</span><span class="p">(</span><span class="s">&quot;productid&quot;</span><span class="p">,</span> <span class="n">userSuppliedParameter</span><span class="p">);</span>
+</pre></div>
+
+
+<p>Unsafe example: Query unsafeHQLQuery = session.createQuery(“from Inventory where productID=’”+userSuppliedParameter+”‘”); The example from left it’s used prepared statement approach because all the SQL code stays within the application. This makes your application relatively database independent. However, other options allow you to store all the SQL code in the database itself, which has both security and non-security advantages and the approach is called Stored Procedure</p>
+<h1>3. Unix permission model, Unix ACL and Windows 7 security model</h1>
+<p>In this topic we will describe two security set-ups that can not be expressed with traditional Unix permission model, UNIX ACL and Windows 7 security model.</p>
+<h2>Unix permission model</h2>
+<ul>
+<li>Giving an different permission to different users in the same group</li>
+<li>Read and write permission/access to all groups, which gives and access to the ‘private files’, and you can gain access through a root account by an unwanted user, which brings and complete breach of the system</li>
+</ul>
+<h2>Unix ACL- enabled permission model</h2>
+<ul>
+<li>If the user has permission over the file, he can read/write and delete it, which brings that it is not possible to give ‘some’ permission to the user.</li>
+<li>ACL’s are not very portable and are very hard to maintain. For instance good example is transferring of files with ACL’s between different of Unix systems is an exercise for brave person, even if the both file systems support them. Which brings a difficulty to maintain for existing files for instance backup, restore, copying, etc.</li>
+</ul>
+<h2>Windows 7 security model</h2>
+<ul>
+<li>As a standard user you can perform an action that requires administrator privileges by the UAC(User Access Control), which is controlled by the Admin Approval Mode. It can be turn off and on. Every time when you need to gain an access of the administration privileges it will be prompt a dialog box to gain and provide the password for an access. Therefore in the medium settings with any malware could turn it off.</li>
+<li>And the settings of the UAC are in medium mode not off, still brings an opportunity to being turn off by the malware.</li>
+</ul>
+<h1>4. Finding all the security vulnerabilities in bash script</h1>
+<p>In this topic we will find all the possible vulnerabilities into the following bash script:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre></div></td><td class="code"><div class="highlight"><pre><span class="c">#!/bin/sh</span>
+<span class="c"># remove files with name pattern matching regexp</span>
+<span class="k">if</span> <span class="o">[</span> x<span class="nv">$1</span> <span class="o">=</span> x <span class="o">]</span>; <span class="k">then</span>
+<span class="c"># if [[ x$1 = x ]]</span>
+<span class="nb">echo</span> -n <span class="s2">&quot;Please enter directory name: &quot;</span>
+<span class="nb">read </span>dir
+<span class="k">else</span>
+<span class="nv">dir</span><span class="o">=</span><span class="nv">$1</span>
+<span class="k">fi</span>
+<span class="k">if</span> <span class="o">[</span> x<span class="nv">$2</span> <span class="o">=</span> x <span class="o">]</span>; <span class="k">then</span>
+<span class="c"># if [[ x$2 = x ]]</span>
+<span class="nb">echo</span> -n <span class="s2">&quot;Please enter pattern: &quot;</span>
+<span class="nb">read </span>pattern
+<span class="k">else</span>
+<span class="nv">pattern</span><span class="o">=</span><span class="nv">$2</span>
+<span class="k">fi</span>
+find <span class="nv">$dir</span> &amp;amp;amp;amp;amp;amp;gt; /tmp/listing
+<span class="c"># can use &amp;amp;amp;amp;amp;amp;gt;&amp;amp;amp;amp;amp;amp;gt; or print the output first before</span>
+<span class="nv">cmd</span><span class="o">=</span><span class="s1">&#39;rm `grep &#39;</span><span class="nv">$pattern</span><span class="s1">&#39; /tmp/listing`&#39;</span> <span class="c">#+the command is execute</span>
+<span class="nb">echo</span> <span class="s2">&quot;Running command $cmd&quot;</span>
+<span class="nb">eval</span> <span class="nv">$cmd</span> //it converts string in <span class="nb">command</span>
+rm /tmp/listing
+<span class="nb">exit </span>0
+</pre></div>
+</td></tr></table>
+
+<p>We should avoid temporary file, instead we should use pipes [2]. We should avoid eval [2].</p>
+<p>Using the double brackets, instead of single one <code>[[... ]]</code> it is comment on the script above [1]. $REPLY can be used to read the previous value of the dir and pattern variable [1]. We can use instead of find, while read contracture (loop) [1]. Find – can be set with a cycle, for or while to check the validation of the file and the directory/path, also comment on the script or using <code>“$pattern” /tmp/listing</code> [1]. No sensitization of the input, the user can put any value and therefore, execute any command to create another command. As we can see above the script it looks like that it is security vulnerable. If we want to implement the security in the script we should implement the above changes into the script.</p>
+<h2>Reference</h2>
+<p>[1] Mendel Cooper, 30 April 2011. Advanced Bash-Scripting Guide; An in-depth exploration of the art of shell scripting. Retrieved from: <a href="http://tldp.org/LDP/abs/html/index.html" target="_blank">http://tldp.org/LDP/abs/html/index.html</a></p>
+<p>[2] Lecture 8 slides Scripting, Meelis Roos. Retrieved from file: 08-scripting.pdf</p>
+                </div>
+                <footer class="text-right">
+                    <p>- Predrag TASEVSKI - Pece</p>
+                </footer>
+            </div>
+        </div>
+    </article>
+</section>
+            </div>
+<footer>
+    <div class="container-fluid">
+        <hr>
+        <div class="row">
+            <div class="col-xs-4 text-left">
+                
+            </div>
+            <div class="col-xs-8 text-right">
+                <p>Built using <a href="http://docs.getpelican.com/en/latest">Pelican</a>, <a href="getbootstrap.com">Bootstrap3</a> and the <a href="https://github.com/ingwinlu/pelican-twitchy">pelican-twitchy</a> theme.</p>
+                <p>&copy; 2014 Predrag TASEVSKI - Pece</p>
+            </div>
+        </div>
+    </div>
+</footer>        </div>
+        <!-- /#page-content-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery Version 1.11.0 -->
+    <script src="/theme/js/jquery-1.11.0.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/theme/js/bootstrap.min.js"></script>
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+
+<!-- disqus -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = ''; // required: replace example with your forum shortname
+
+            var disqus_identifier = 'security-programing-techniques';
+        var disqus_url = 'http://predragtasevski.com/security-programing-techniques.html';
+
+    var disqus_config = function () {
+        this.language = "en";
+    };
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+<!-- /disqus --></body>
+</html>
