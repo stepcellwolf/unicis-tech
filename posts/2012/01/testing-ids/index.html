@@ -14,7 +14,7 @@
 
         <meta name="author" content="Predrag TASEVSKI - Pece" />
         <meta name="keywords" content="cyber security,DDoS,ids,internet,networking,online,openvas,port scan,snort,SYN flood,testing ids,vulnerability scanning" />
-        <meta name="description" content="SCENARIO The objective of this laboratory test, scenario is to create a solution and instructions for testing an IDS\^1 systems usefulness for detecting attacks against a wordpress site. In addition, a repeatable process to evaluate vendor claims. Whatever passive IDS system sample delivered as a VM or a dedicated ..." />
+        <meta name="description" content="SCENARIO The objective of this laboratory test, scenario is to create a solution and instructions for testing an IDS^1 systems usefulness for detecting attacks against a wordpress site. In addition, a repeatable process to evaluate vendor claims. Whatever passive IDS system sample delivered as a VM or a dedicated ..." />
 
     <!-- Enable latex plugin -->
 
@@ -32,8 +32,8 @@
               title="Predrag TASEVSKI - Pece ATOM Feed"/>
 
 
-        <link href="../../../../feeds/category/misc.atom.xml" type="application/atom+xml" rel="alternate"
-              title="Predrag TASEVSKI - Pece misc ATOM Feed"/>
+        <link href="../../../../feeds/category/IDS.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Predrag TASEVSKI - Pece IDS ATOM Feed"/>
 
 </head>
 <body>
@@ -70,8 +70,8 @@ Predrag TASEVSKI - Pece            </a>
                          <li><a href="../../../../pages/talks.html">
                              Talks
                           </a></li>
-                         <li><a href="../../../../pages/teachings.html">
-                             Teachings
+                         <li><a href="../../../../pages/teaching.html">
+                             Teaching
                           </a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -136,227 +136,160 @@ Predrag TASEVSKI - Pece            </a>
 </footer><!-- /.post-info -->                    </div>
                 </div>
                 <h1>SCENARIO</h1>
-</p>
-
-<p>The objective of this laboratory test, scenario is to create a solution
-and instructions for testing an IDS\^1 systems usefulness for detecting
-attacks against a wordpress site. In addition, a repeatable process to
-evaluate vendor claims. Whatever passive IDS system sample delivered as
-a VM or a dedicated box. Creating the IDS system itself is out of scope.</p>
-</p>
-
-<p>The process must be detailed enough so that somebody else can get the
-same results when applying that. The “other person” is expected to have
-IT knowledge sufficient to install and run a Linux desktop. Budget
-requirements: Modest – 2 machines + a tester (Joe) + networking
-equipment to connect the two machines and an IDS together. The process
-must test at least the following attacks:</p>
-<ul>
-<li>
-<p>Port scan</p>
-</li>
-<li>
-<p>SYN flood</p>
-</li>
-<li>
-<p>“Regular” DoS overwhelming attack (Ab)</p>
-</li>
-</ul>
-</p>
-
-<p>Optionally the process may test:</p>
-<ul>
-<li>
-<p>slowloris/pyloris</p>
-</li>
-<li>
-<p>Apache Range header DoS vulnerability
-<a href="http://httpd.apache.org/security/CVE-011-3192.txt">http://httpd.apache.org/security/CVE-011-3192.txt</a></p>
-</li>
-<li>
-<p>An attack targeting any other fairly recent (not older than 3-4 years)
-known vulnerability that could in theory apply to the target system
-(wordpress server)</p>
-</li>
-</ul>
-</p>
-
-<p>However the competition rules are: The highest number of attacks
-evaluated. Limits:</p>
-<ul>
-<li>
-<p>Each attack must be relevant eg. if it attacks IIS it’s NOT relevant.
-If it attacks Windows RPC it’s not relevant. If it attacks some other
-CMS eg. Drupal it’s NOT relevant. * Basically equivalent attacks count
-as one (different port scanners for example).</p>
-</li>
-<li>
-<p>You must be able to explain in broad terms what the attack does eg:
-attacks the vulnerability #X in Apache server If the #attacks is
-equal.</p>
-</li>
-</ul>
-</p>
-
+<p>The objective of this laboratory test, scenario is to create a solution and instructions for testing an IDS^1 systems usefulness for detecting attacks against a wordpress site. In addition, a repeatable process to evaluate vendor claims. Whatever passive IDS system sample delivered as a VM or a dedicated box. Creating the IDS system itself is out of scope.</p>
+<p>The process must be detailed enough so that somebody else can get the same results when applying that. The “other person” is expected to have IT knowledge sufficient to install and run a Linux desktop. Budget requirements: Modest – 2 machines + a tester (Joe) + networking equipment to connect the two machines and an IDS together. The process must test at least the following attacks:
+- Port scan
+- SYN flood
+- “Regular” DoS overwhelming attack (Ab)</p>
+<p>Optionally the process may test:
+- slowloris/pyloris
+- Apache Range header DoS vulnerability <a href="http://httpd.apache.org/security/CVE-011-3192.txt" target="_blank">http://httpd.apache.org/security/CVE-011-3192.txt </a>
+- An attack targeting any other fairly recent (not older than 3-4 years) known vulnerability that could in theory apply to the target system (wordpress server)</p>
+<p>However the competition rules are: The highest number of attacks evaluated. Limits:
+- Each attack must be relevant eg. if it attacks IIS it’s NOT relevant. If it attacks Windows RPC it’s not relevant. If it attacks some other CMS eg. Drupal it’s NOT relevant. * Basically equivalent attacks count as one (different port scanners for example).
+- You must be able to explain in broad terms what the attack does eg: attacks the vulnerability #X in Apache server If the #attacks is equal.</p>
 <p>Lab instaractions:</p>
-</p>
-
 <p>Install 3 VM-s: Attacker IDS and Target</p>
-<p></p>
-​1. Make sure all VM-s have two network adapters: NAT and Host-Only.</p>
-<p>​2. Install Snort and it’s GUI called “acidbase” on IDS
-<a href="https://help.ubuntu.com/community/SnortIDS">https://help.ubuntu.com/community/SnortIDS</a>.</p>
-<p>​3. Install Apache, Mysql and WordPress on Target.</p>
-<p>​4. Execute an attack on Attacker towards the IP address on the Host
-Only network.</p>
-<p>​5. Take notice of the results displayed on Acid console.</p>
-<p>​6. Reset counters, move on to next attack.</p>
-</p>
-
+1. Make sure all VM-s have two network adapters: NAT and Host-Only.
+2. Install Snort and it’s GUI called “acidbase” on IDS <a href="https://help.ubuntu.com/community/SnortIDS" target="_blank">https://help.ubuntu.com/community/SnortIDS</a>.
+3. Install Apache, Mysql and WordPress on Target.
+4. Execute an attack on Attacker towards the IP address on the Host Only network.
+5. Take notice of the results displayed on Acid console.
+6. Reset counters, move on to next attack.</p>
 <p>Additionally, illustration 1 describes the overview of above scenario</p>
-</p>
+<iframe src="https://www.flickr.com/photos/29569957@N00/15700931785/in/set-72157648705077048/player/" width="320" height="126" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
 
 <p>Illustration 1: Lab 5 Illustration of Scenario</p>
-</p>
-
-<p>Firstly, setup procedure of snort, secondly available proposals and
-thirdly illustrating the results and the functionality of proposals.
-Finally, closing this laboratory report with conclusion. In addition,
-appendixes is configuration of VM’s – Virtual Machines.</p>
-</p>
-
+<p>Firstly, setup procedure of snort, secondly available proposals and thirdly illustrating the results and the functionality of proposals. Finally, closing this laboratory report with conclusion. In addition, appendixes is configuration of VM’s – Virtual Machines.</p>
 <h1>SETUP of SNORT</h1>
-</p>
-
-<p>To setup snort in a right way, that will work for the second Host only
-network please following the instruction link provided with a full
-description and configuration of snort [SNORT2].</p>
-</p>
-
-<p>After completing the setup and configuration to run snort on the second
-interface use the following command:</p>
-<p><code>snort -c /etc/snort/snort/conf -i eth1</code></p>
-</p>
-
+<p>To setup snort in a right way, that will work for the second Host only network please following the instruction link provided with a full description and configuration of snort [SNORT2].</p>
+<p>After completing the setup and configuration to run snort on the second interface use the following command:
+<code>snort -c /etc/snort/snort/conf -i eth1</code></p>
 <h1>PROPOSALS</h1>
-</p>
-
-<p>In total three proposals and each one is highlighted in the next
-sub-sections.</p>
-</p>
-
+<p>In total three proposals and each one is highlighted in the next sub-sections.</p>
 <h2>PROPOSAL 1</h2>
-</p>
+<p>Full instructions
+1. Set up IDS (Snort) and WordPress on the first PC
+2. Install Ubuntu server on the second PC . Then install all attacking tools there:
+```wget enos.itcollege.ee/~avein/lab4i.sh 
+sudo sh lab4i.sh</p>
+<div class="highlight"><pre><span class="n">After</span> <span class="n">that</span> <span class="n">you</span> <span class="n">should</span> <span class="n">have</span><span class="o">:</span>
+<span class="o">-</span> <span class="err">```</span><span class="n">ab</span><span class="p">.</span><span class="n">sh</span><span class="err">```</span> <span class="err">–</span> <span class="n">DoS</span> <span class="n">attack</span> <span class="n">script</span> <span class="err">–</span> <span class="n">uses</span> <span class="n">ab</span> <span class="n">to</span> <span class="n">generate</span> <span class="n">traffic</span> <span class="n">flood</span>
+<span class="o">-</span> <span class="err">```</span><span class="n">apachekiller</span><span class="p">.</span><span class="n">pl</span><span class="err">```</span> <span class="err">–</span> <span class="n">Apachekiller</span> <span class="n">attack</span> <span class="n">script</span> <span class="n">More</span> <span class="n">info</span><span class="o">:</span> <span class="n">http</span><span class="o">:</span><span class="c1">//www.hackersgarage.com/apache-killer-denial-of-service-flaw-in-apache-webserver.html</span>
+<span class="o">-</span> <span class="err">```</span><span class="n">README</span><span class="p">.</span><span class="n">txt</span><span class="err">```</span> <span class="err">–</span> <span class="n">extra</span> <span class="n">instructions</span>
+<span class="o">-</span> <span class="err">```</span><span class="n">scan</span><span class="p">.</span><span class="n">sh</span><span class="err">```</span> <span class="o">-</span> <span class="n">Port</span> <span class="n">scanning</span> <span class="n">script</span> <span class="o">-</span> <span class="n">uses</span> <span class="n">nmap</span>
+<span class="o">-</span> <span class="err">```</span><span class="n">sloworis</span><span class="p">.</span><span class="n">pl</span><span class="err">```</span> <span class="o">-</span> <span class="n">Sloworis</span> <span class="n">attack</span> <span class="n">script</span> <span class="n">More</span> <span class="n">info</span><span class="o">:</span> <span class="n">http</span><span class="o">:</span><span class="c1">//ha.ckers.org/slowloris/</span>
+<span class="o">-</span> <span class="err">```</span><span class="n">synf</span><span class="p">.</span><span class="n">sh</span><span class="err">```</span> <span class="o">-</span> <span class="n">syn</span> <span class="n">flood</span> <span class="n">attack</span> <span class="n">script</span> <span class="o">-</span> <span class="n">uses</span> <span class="n">hping3</span>
 
-<p>Full instructions</p>
-<p>​1. Set up IDS (Snort) and WordPress on the first PC</p>
-<p>​2. Install Ubuntu server on the second PC . Then install all attacking
-tools there:</p>
-<p>```wget enos.itcollege.ee/\~avein/lab4i.sh</p>
-<p>sudo sh lab4i.sh</p>
-</p>
+<span class="mf">3.</span> <span class="n">Start</span> <span class="n">your</span> <span class="n">IDS</span><span class="o">/</span><span class="n">wordpress</span> <span class="n">server</span> <span class="n">and</span> <span class="n">the</span> <span class="n">server</span> <span class="n">with</span> <span class="n">attack</span> <span class="n">tools</span><span class="p">.</span> 
+<span class="mf">4.</span> <span class="n">Run</span> <span class="n">each</span> <span class="n">attack</span> <span class="n">tool</span> <span class="n">ONE</span> <span class="n">AT</span> <span class="n">A</span> <span class="n">TIME</span> <span class="p">(</span><span class="n">targeting</span> <span class="n">the</span> <span class="n">wordpress</span><span class="o">/</span><span class="n">IDS</span> <span class="n">server</span> <span class="n">of</span> <span class="n">course</span><span class="p">)</span> <span class="p">.</span> <span class="n">Monitor</span> <span class="n">the</span> <span class="n">logs</span><span class="o">/</span><span class="n">notifications</span> <span class="n">on</span> <span class="n">yours</span> <span class="n">IDS</span> <span class="n">system</span> <span class="p">(</span><span class="n">SNORT</span><span class="p">)</span> <span class="n">and</span> <span class="n">check</span> <span class="n">whether</span> <span class="n">wordpress</span> <span class="n">site</span> <span class="n">is</span> <span class="n">still</span> <span class="n">accessible</span><span class="p">.</span> <span class="n">Let</span> <span class="n">each</span> <span class="n">attack</span> <span class="n">tool</span> <span class="n">run</span> <span class="mi">2</span> <span class="n">minutes</span><span class="p">,</span> <span class="n">then</span> <span class="n">stop</span> <span class="n">the</span> <span class="n">attack</span> <span class="n">by</span> <span class="n">pressing</span> <span class="n">CTRL</span><span class="o">+</span><span class="n">C</span> <span class="n">on</span> <span class="n">the</span> <span class="n">terminal</span> <span class="n">window</span> <span class="n">where</span> <span class="n">the</span> <span class="n">attack</span> <span class="n">tool</span> <span class="n">is</span> <span class="n">running</span><span class="p">.</span> <span class="n">The</span> <span class="n">only</span> <span class="n">exeption</span> <span class="n">is</span> <span class="n">port</span> <span class="n">scan</span><span class="o">-</span> <span class="n">its</span> <span class="n">better</span> <span class="n">to</span> <span class="n">wait</span> <span class="n">until</span> <span class="n">it</span> <span class="n">finishes</span><span class="p">.</span> <span class="n">After</span> <span class="n">each</span> <span class="n">attack</span> <span class="n">save</span> <span class="n">the</span> <span class="n">IDS</span> <span class="n">log</span> <span class="n">and</span> <span class="n">wait</span> <span class="n">atlest</span> <span class="mi">5</span> <span class="n">minutes</span> <span class="n">before</span> <span class="n">trying</span> <span class="n">next</span> <span class="n">tool</span> <span class="p">(</span><span class="n">to</span> <span class="n">give</span> <span class="n">server</span> <span class="n">time</span> <span class="n">to</span> <span class="n">recover</span><span class="p">).</span> <span class="n">Best</span> <span class="n">practice</span> <span class="n">is</span> <span class="n">to</span> <span class="n">manually</span> <span class="n">check</span> <span class="k">if</span> <span class="n">the</span> <span class="n">server</span> <span class="n">load</span> <span class="n">is</span> <span class="n">at</span> <span class="n">normal</span> <span class="p">(</span><span class="n">one</span> <span class="n">can</span> <span class="n">use</span> <span class="n">htop</span> <span class="k">for</span> <span class="n">that</span><span class="p">).</span>
 
-<div class="highlight">
+<span class="n">a</span><span class="p">)</span> <span class="n">To</span> <span class="n">run</span> <span class="n">DoS</span> <span class="n">attack</span><span class="o">:</span>
+<span class="err">```</span><span class="n">sh</span> <span class="n">ab</span><span class="p">.</span><span class="n">sh</span> <span class="p">{</span><span class="n">target</span><span class="p">}</span> <span class="n">eg</span> <span class="n">sh</span> <span class="n">ab</span><span class="p">.</span><span class="n">sh</span> <span class="mf">192.168.56.101</span><span class="err">```</span>
 
-    After that you should have:- ```ab.sh``` – DoS attack script – uses ab to generate traffic flood- ```apachekiller.pl``` – Apachekiller attack script More info: http://www.hackersgarage.com/apache-killer-denial-of-service-flaw-in-apache-webserver.html- ```README.txt``` – extra instructions- ```scan.sh``` - Port scanning script - uses nmap- ```sloworis.pl``` - Sloworis attack script More info: http://ha.ckers.org/slowloris/- ```synf.sh``` - syn flood attack script - uses hping33. Start your IDS/wordpress server and the server with attack tools. 4. Run each attack tool ONE AT A TIME (targeting the wordpress/IDS server of course) . Monitor the logs/notifications on yours IDS system (SNORT) and check whether wordpress site is still accessible. Let each attack tool run 2 minutes, then stop the attack by pressing CTRL+C on the terminal window where the attack tool is running. The only exeption is port scan- its better to wait until it finishes. After each attack save the IDS log and wait atlest 5 minutes before trying next tool (to give server time to recover). Best practice is to manually check if the server load is at normal (one can use htop for that).a) To run DoS attack:```sh ab.sh {target} eg sh ab.sh 192.168.56.101```b) For port scan:```sh scan.sh {target IP} eg sh scan.sh 192.168.56.101```c) For Syn flood (with hping3)```sh synf.sh {target} eg synf.sh 192.168.56.101/wordpress```d) For Sloworis attack:```perl slowloris.pl -dns {target} eg perl sloworis.pl -dns 192.168.56.101/wordpress```e) For Apachekiller attack:```perl apachekiller.pl {target IP} eg perl apachekiller.pl 192.168.56.101```## PROPOSAL 2### IntroFor this scenario we need to run several different attacks and scans to be able to compare the results with different IDS setups and rulesets. We might also want to test it with legitimate traffic to see that we dont get false positives in our alarms. We dont have that much legitimate traffic possibilities with 1 blog on our servers right now, but if we start tweaking the IDS false positives becomes an important metric and we might want to test normal usage and create traffic to run with tcpreplay for example. My proposal is to test the IDS with pytbull running on BackTrack. Pytbull is IDS testing framework and BackTrack a Linux ditribution. I will assume that we have WordPress server with running default Snort set up on it and working. No extensive testing has been done with different snort setups so we might have to tune the methods, but basic things should be covered.### DL and install BackTrack- <a href="http://www.backtrack-linux.org/downloads/" target="_blank">backtrack-linux.org/downloads/</a>Install it rather than running a live version for this scenario. Boot it up in default mode, start GUI and launch installation from desktop. Default login root / toor. Standard setup comes with pytbull and several pieces of software the IDS test-system depends on like nmap, hping3, nikto and others.### Setup connectionsConnect the machines and install ftp and ssh on server. We need ftp to get snort alert files and ssh to run attacks against.```apt-get install vsftpd openssh-server```### Setup pytbullYou will find pytbull from ```/pentest/enumeration/ids/pytbull/``` or Applications -> BackTrack -> Information Gathering -> Network Analysis -> IDS IPS Identification -> pytbull when using the GUI. Change the configuration file values to have correct connection information, user credentials and locations of dependencies. Here you also select which test modules out of the 9 available you want to run. ClientSideAttacks needs extra configuration.
+<span class="n">b</span><span class="p">)</span> <span class="n">For</span> <span class="n">port</span> <span class="n">scan</span><span class="o">:</span>
+<span class="err">```</span><span class="n">sh</span> <span class="n">scan</span><span class="p">.</span><span class="n">sh</span> <span class="p">{</span><span class="n">target</span> <span class="n">IP</span><span class="p">}</span> <span class="n">eg</span> <span class="n">sh</span> <span class="n">scan</span><span class="p">.</span><span class="n">sh</span> <span class="mf">192.168.56.101</span><span class="err">```</span>
 
-</div>
+<span class="n">c</span><span class="p">)</span> <span class="n">For</span> <span class="n">Syn</span> <span class="n">flood</span> <span class="p">(</span><span class="n">with</span> <span class="n">hping3</span><span class="p">)</span>
+<span class="err">```</span><span class="n">sh</span> <span class="n">synf</span><span class="p">.</span><span class="n">sh</span> <span class="p">{</span><span class="n">target</span><span class="p">}</span> <span class="n">eg</span> <span class="n">synf</span><span class="p">.</span><span class="n">sh</span> <span class="mf">192.168.56.101</span><span class="o">/</span><span class="n">wordpress</span><span class="err">```</span>
 
-</p>
+<span class="n">d</span><span class="p">)</span> <span class="n">For</span> <span class="n">Sloworis</span> <span class="n">attack</span><span class="o">:</span>
+<span class="err">```</span><span class="n">perl</span> <span class="n">slowloris</span><span class="p">.</span><span class="n">pl</span> <span class="o">-</span><span class="n">dns</span> <span class="p">{</span><span class="n">target</span><span class="p">}</span> <span class="n">eg</span> <span class="n">perl</span> <span class="n">sloworis</span><span class="p">.</span><span class="n">pl</span> <span class="o">-</span><span class="n">dns</span> <span class="mf">192.168.56.101</span><span class="o">/</span><span class="n">wordpress</span><span class="err">```</span>
 
-<p>cd /pentest/enumeration/ids/pytbull/</p>
-<p>gedit config.cfg</p>
-<p>Example conf file: http://www.tud.ttu.ee/\~t061780/attacks/config.cfg</p>
-<p>Now get custom DoS module to have hping SYN flood and ApacheBench DoS
-tests covered.</p>
-<p>cd modules</p>
-<p>mv denialOfService.py denialOfService.py-backup</p>
-<p>wget http://www.tud.ttu.ee/\~t061780/attacks/denialOfService.py</p>
-<p>You may want to refer to Pytbull documentation</p>
-</p>
+<span class="n">e</span><span class="p">)</span> <span class="n">For</span> <span class="n">Apachekiller</span> <span class="n">attack</span><span class="o">:</span>
+<span class="err">```</span><span class="n">perl</span> <span class="n">apachekiller</span><span class="p">.</span><span class="n">pl</span> <span class="p">{</span><span class="n">target</span> <span class="n">IP</span><span class="p">}</span> <span class="n">eg</span> <span class="n">perl</span> <span class="n">apachekiller</span><span class="p">.</span><span class="n">pl</span> <span class="mf">192.168.56.101</span><span class="err">```</span>
 
-<div class="highlight">
+<span class="cp">## PROPOSAL 2</span>
 
-    ### Run```/pentest/enumeration/ids/pytbull/pytbull -t WP/Snort server IP;```If everything works you will find html report file under /reports. If you have problems add -d on run for debugging.###(optional) SlowlorisTo have slowloris attack test for pytbull we need to get custom slowloris that allows to set how many packets to send because we dont want the tests to run forever. I added argument s that tells the script to stop after we have sent s packets.
+<span class="cp">### Intro</span>
 
-</div>
+<span class="n">For</span> <span class="n">this</span> <span class="n">scenario</span> <span class="n">we</span> <span class="n">need</span> <span class="n">to</span> <span class="n">run</span> <span class="n">several</span> <span class="n">different</span> <span class="n">attacks</span> <span class="n">and</span> <span class="n">scans</span> <span class="n">to</span> <span class="n">be</span> <span class="n">able</span> <span class="n">to</span> <span class="n">compare</span> <span class="n">the</span> <span class="n">results</span> <span class="n">with</span> <span class="n">different</span> <span class="n">IDS</span> <span class="n">setups</span> <span class="n">and</span> <span class="n">rulesets</span><span class="p">.</span> <span class="n">We</span> <span class="n">might</span> <span class="n">also</span> <span class="n">want</span> <span class="n">to</span> <span class="n">test</span> <span class="n">it</span> <span class="n">with</span> <span class="n">legitimate</span> <span class="n">traffic</span> <span class="n">to</span> <span class="n">see</span> <span class="n">that</span> <span class="n">we</span> <span class="n">dont</span> <span class="n">get</span> <span class="nb">false</span> <span class="n">positives</span> <span class="n">in</span> <span class="n">our</span> <span class="n">alarms</span><span class="p">.</span> <span class="n">We</span> <span class="n">dont</span> <span class="n">have</span> <span class="n">that</span> <span class="n">much</span> <span class="n">legitimate</span> <span class="n">traffic</span> <span class="n">possibilities</span> <span class="n">with</span> <span class="mi">1</span> <span class="n">blog</span> <span class="n">on</span> <span class="n">our</span> <span class="n">servers</span> <span class="n">right</span> <span class="n">now</span><span class="p">,</span> <span class="n">but</span> <span class="k">if</span> <span class="n">we</span> <span class="n">start</span> <span class="n">tweaking</span> <span class="n">the</span> <span class="n">IDS</span> <span class="nb">false</span> <span class="n">positives</span> <span class="n">becomes</span> <span class="n">an</span> <span class="n">important</span> <span class="n">metric</span> <span class="n">and</span> <span class="n">we</span> <span class="n">might</span> <span class="n">want</span> <span class="n">to</span> <span class="n">test</span> <span class="n">normal</span> <span class="n">usage</span> <span class="n">and</span> <span class="n">create</span> <span class="n">traffic</span> <span class="n">to</span> <span class="n">run</span> <span class="n">with</span> <span class="n">tcpreplay</span> <span class="k">for</span> <span class="n">example</span><span class="p">.</span> <span class="n">My</span> <span class="n">proposal</span> <span class="n">is</span> <span class="n">to</span> <span class="n">test</span> <span class="n">the</span> <span class="n">IDS</span> <span class="n">with</span> <span class="n">pytbull</span> <span class="n">running</span> <span class="n">on</span> <span class="n">BackTrack</span><span class="p">.</span> <span class="n">Pytbull</span> <span class="n">is</span> <span class="n">IDS</span> <span class="n">testing</span> <span class="n">framework</span> <span class="n">and</span> <span class="n">BackTrack</span> <span class="n">a</span> <span class="n">Linux</span> <span class="n">ditribution</span><span class="p">.</span> <span class="n">I</span> <span class="n">will</span> <span class="n">assume</span> <span class="n">that</span> <span class="n">we</span> <span class="n">have</span> <span class="n">WordPress</span> <span class="n">server</span> <span class="n">with</span> <span class="n">running</span> <span class="k">default</span> <span class="n">Snort</span> <span class="n">set</span> <span class="n">up</span> <span class="n">on</span> <span class="n">it</span> <span class="n">and</span> <span class="n">working</span><span class="p">.</span> <span class="n">No</span> <span class="n">extensive</span> <span class="n">testing</span> <span class="n">has</span> <span class="n">been</span> <span class="n">done</span> <span class="n">with</span> <span class="n">different</span> <span class="n">snort</span> <span class="n">setups</span> <span class="n">so</span> <span class="n">we</span> <span class="n">might</span> <span class="n">have</span> <span class="n">to</span> <span class="n">tune</span> <span class="n">the</span> <span class="n">methods</span><span class="p">,</span> <span class="n">but</span> <span class="n">basic</span> <span class="n">things</span> <span class="n">should</span> <span class="n">be</span> <span class="n">covered</span><span class="p">.</span>
 
-</p>
+<span class="cp">### DL and install BackTrack</span>
 
-<p>cd /pentest/stressing</p>
-<p>wget www.tud.ttu.ee/\~t061780/attacks/slowloris.pl</p>
-<p>Slowloris attack has been written into DoS module, you have to uncomment
-it. Lines 47-52.</p>
-<p>gedit /pentest/enumeration/ids/pytbull/modules/denialOfService.py</p>
-</p>
+<span class="o">-</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">&quot;http://www.backtrack-linux.org/downloads/&quot;</span> <span class="n">target</span><span class="o">=</span><span class="s">&quot;_blank&quot;</span><span class="o">&gt;</span><span class="n">backtrack</span><span class="o">-</span><span class="n">linux</span><span class="p">.</span><span class="n">org</span><span class="o">/</span><span class="n">downloads</span><span class="o">/&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
 
-<div class="highlight">
+<span class="n">Install</span> <span class="n">it</span> <span class="n">rather</span> <span class="n">than</span> <span class="n">running</span> <span class="n">a</span> <span class="n">live</span> <span class="n">version</span> <span class="k">for</span> <span class="n">this</span> <span class="n">scenario</span><span class="p">.</span> <span class="n">Boot</span> <span class="n">it</span> <span class="n">up</span> <span class="n">in</span> <span class="k">default</span> <span class="n">mode</span><span class="p">,</span> <span class="n">start</span> <span class="n">GUI</span> <span class="n">and</span> <span class="n">launch</span> <span class="n">installation</span> <span class="n">from</span> <span class="n">desktop</span><span class="p">.</span> <span class="n">Default</span> <span class="n">login</span> <span class="n">root</span> <span class="o">/</span> <span class="n">toor</span><span class="p">.</span> <span class="n">Standard</span> <span class="n">setup</span> <span class="n">comes</span> <span class="n">with</span> <span class="n">pytbull</span> <span class="n">and</span> <span class="n">several</span> <span class="n">pieces</span> <span class="n">of</span> <span class="n">software</span> <span class="n">the</span> <span class="n">IDS</span> <span class="n">test</span><span class="o">-</span><span class="n">system</span> <span class="n">depends</span> <span class="n">on</span> <span class="n">like</span> <span class="n">nmap</span><span class="p">,</span> <span class="n">hping3</span><span class="p">,</span> <span class="n">nikto</span> <span class="n">and</span> <span class="n">others</span><span class="p">.</span>
 
-    ## PROPOSAL 3For this proposal I will suggest to use open source tool OpenVas for vulnerability scanning, to test our IDS system. It contains many security tools integrated. The security and analysis tools are: Nikto, nmap, ike-scan, snmpwalk, amap, ldapsearch, SLAD (John-the-Ripper, Chkrootkit, LSOF, ClamAV, Tripwire, TIGER, logwatch, trapwatch, lm-sensors, snort and ovaldi), pnscan, portbunny, strobe, w3af, etc.Instructions of installation process, for further more information please refer to <a href="http://www.openvas.org/setup-and-start.html" target="_blank">http://www.openvas.org/setup-and-start.html</a>### Step 1: Configure OBS Repository```sudo apt-get -y install python-software-propertiessudo add-apt-repository "deb http://download.opensuse.org/repositories/security:/OpenVAS:STABLE:/v4/xUbuntu_10.04/./"sudo apt-key adv --keyserver hkp://keys.gnupg.net --recv-keys BED1E87979EAFD54 sudo apt-get update
+<span class="cp">### Setup connections</span>
 
-</div>
+<span class="n">Connect</span> <span class="n">the</span> <span class="n">machines</span> <span class="n">and</span> <span class="n">install</span> <span class="n">ftp</span> <span class="n">and</span> <span class="n">ssh</span> <span class="n">on</span> <span class="n">server</span><span class="p">.</span> <span class="n">We</span> <span class="n">need</span> <span class="n">ftp</span> <span class="n">to</span> <span class="n">get</span> <span class="n">snort</span> <span class="n">alert</span> <span class="n">files</span> <span class="n">and</span> <span class="n">ssh</span> <span class="n">to</span> <span class="n">run</span> <span class="n">attacks</span> <span class="n">against</span><span class="p">.</span>
 
-</p>
+<span class="err">```</span><span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">vsftpd</span> <span class="n">openssh</span><span class="o">-</span><span class="n">server</span><span class="err">```</span>
+
+<span class="cp">### Setup pytbull</span>
+
+<span class="n">You</span> <span class="n">will</span> <span class="n">find</span> <span class="n">pytbull</span> <span class="n">from</span> <span class="err">```</span><span class="o">/</span><span class="n">pentest</span><span class="o">/</span><span class="n">enumeration</span><span class="o">/</span><span class="n">ids</span><span class="o">/</span><span class="n">pytbull</span><span class="o">/</span><span class="err">```</span> <span class="n">or</span> <span class="n">Applications</span> <span class="o">-&gt;</span> <span class="n">BackTrack</span> <span class="o">-&gt;</span> <span class="n">Information</span> <span class="n">Gathering</span> <span class="o">-&gt;</span> <span class="n">Network</span> <span class="n">Analysis</span> <span class="o">-&gt;</span> <span class="n">IDS</span> <span class="n">IPS</span> <span class="n">Identification</span> <span class="o">-&gt;</span> <span class="n">pytbull</span> <span class="n">when</span> <span class="n">using</span> <span class="n">the</span> <span class="n">GUI</span><span class="p">.</span> <span class="n">Change</span> <span class="n">the</span> <span class="n">configuration</span> <span class="n">file</span> <span class="n">values</span> <span class="n">to</span> <span class="n">have</span> <span class="n">correct</span> <span class="n">connection</span> <span class="n">information</span><span class="p">,</span> <span class="n">user</span> <span class="n">credentials</span> <span class="n">and</span> <span class="n">locations</span> <span class="n">of</span> <span class="n">dependencies</span><span class="p">.</span> <span class="n">Here</span> <span class="n">you</span> <span class="n">also</span> <span class="n">select</span> <span class="n">which</span> <span class="n">test</span> <span class="n">modules</span> <span class="n">out</span> <span class="n">of</span> <span class="n">the</span> <span class="mi">9</span> <span class="n">available</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="n">run</span><span class="p">.</span> <span class="n">ClientSideAttacks</span> <span class="n">needs</span> <span class="n">extra</span> <span class="n">configuration</span><span class="p">.</span>
+</pre></div>
+
+
+<p>cd /pentest/enumeration/ids/pytbull/ 
+gedit config.cfg
+Example conf file: http://www.tud.ttu.ee/~t061780/attacks/config.cfg
+Now get custom DoS module to have hping SYN flood and ApacheBench DoS tests covered.
+cd modules
+mv denialOfService.py denialOfService.py-backup
+wget http://www.tud.ttu.ee/~t061780/attacks/denialOfService.py
+You may want to refer to Pytbull documentation</p>
+<div class="highlight"><pre><span class="cp">### Run</span>
+
+<span class="err">```</span><span class="o">/</span><span class="n">pentest</span><span class="o">/</span><span class="n">enumeration</span><span class="o">/</span><span class="n">ids</span><span class="o">/</span><span class="n">pytbull</span><span class="o">/</span><span class="n">pytbull</span> <span class="o">-</span><span class="n">t</span> <span class="n">WP</span><span class="o">/</span><span class="n">Snort</span> <span class="n">server</span> <span class="n">IP</span><span class="p">;</span><span class="err">```</span>
+
+<span class="n">If</span> <span class="n">everything</span> <span class="n">works</span> <span class="n">you</span> <span class="n">will</span> <span class="n">find</span> <span class="n">html</span> <span class="n">report</span> <span class="n">file</span> <span class="n">under</span> <span class="o">/</span><span class="n">reports</span><span class="p">.</span> <span class="n">If</span> <span class="n">you</span> <span class="n">have</span> <span class="n">problems</span> <span class="n">add</span> <span class="o">-</span><span class="n">d</span> <span class="n">on</span> <span class="n">run</span> <span class="k">for</span> <span class="n">debugging</span><span class="p">.</span>
+
+<span class="cp">###(optional) Slowloris</span>
+
+<span class="n">To</span> <span class="n">have</span> <span class="n">slowloris</span> <span class="n">attack</span> <span class="n">test</span> <span class="k">for</span> <span class="n">pytbull</span> <span class="n">we</span> <span class="n">need</span> <span class="n">to</span> <span class="n">get</span> <span class="n">custom</span> <span class="n">slowloris</span> <span class="n">that</span> <span class="n">allows</span> <span class="n">to</span> <span class="n">set</span> <span class="n">how</span> <span class="n">many</span> <span class="n">packets</span> <span class="n">to</span> <span class="n">send</span> <span class="n">because</span> <span class="n">we</span> <span class="n">dont</span> <span class="n">want</span> <span class="n">the</span> <span class="n">tests</span> <span class="n">to</span> <span class="n">run</span> <span class="n">forever</span><span class="p">.</span> <span class="n">I</span> <span class="n">added</span> <span class="n">argument</span> <span class="n">s</span> <span class="n">that</span> <span class="n">tells</span> <span class="n">the</span> <span class="n">script</span> <span class="n">to</span> <span class="n">stop</span> <span class="n">after</span> <span class="n">we</span> <span class="n">have</span> <span class="n">sent</span> <span class="n">s</span> <span class="n">packets</span><span class="p">.</span>
+</pre></div>
+
+
+<p>cd /pentest/stressing
+wget www.tud.ttu.ee/~t061780/attacks/slowloris.pl
+Slowloris attack has been written into DoS module,  you have to uncomment it. Lines 47-52.
+gedit /pentest/enumeration/ids/pytbull/modules/denialOfService.py</p>
+<div class="highlight"><pre><span class="err">##</span> <span class="nx">PROPOSAL</span> <span class="mi">3</span>
+
+<span class="nb">For</span> <span class="nx">this</span> <span class="nx">proposal</span> <span class="nx">I</span> <span class="nx">will</span> <span class="nx">suggest</span> <span class="k">to</span> <span class="nx">use</span> <span class="nb">open</span> <span class="nb">source</span> <span class="nx">tool</span> <span class="nx">OpenVas</span> <span class="nb">for</span> <span class="nx">vulnerability</span> <span class="nx">scanning</span><span class="p">,</span> <span class="k">to</span> <span class="nx">test</span> <span class="nx">our</span> <span class="nx">IDS</span> <span class="nx">system.</span> <span class="nx">It</span> <span class="nb">contains</span> <span class="nx">many</span> <span class="nx">security</span> <span class="nx">tools</span> <span class="nx">integrated.</span> <span class="nx">The</span> <span class="nx">security</span> <span class="ow">and</span> <span class="nx">analysis</span> <span class="nx">tools</span> <span class="nx">are</span><span class="p">:</span> <span class="nx">Nikto</span><span class="p">,</span> <span class="nx">nmap</span><span class="p">,</span> <span class="nx">ike</span><span class="na">-scan</span><span class="p">,</span> <span class="nx">snmpwalk</span><span class="p">,</span> <span class="nx">amap</span><span class="p">,</span> <span class="nx">ldapsearch</span><span class="p">,</span> <span class="nx">SLAD</span> <span class="p">(</span><span class="nx">John</span><span class="na">-the-Ripper</span><span class="p">,</span> <span class="nx">Chkrootkit</span><span class="p">,</span> <span class="nx">LSOF</span><span class="p">,</span> <span class="nx">ClamAV</span><span class="p">,</span> <span class="nx">Tripwire</span><span class="p">,</span> <span class="nx">TIGER</span><span class="p">,</span> <span class="nx">logwatch</span><span class="p">,</span> <span class="nx">trapwatch</span><span class="p">,</span> <span class="nx">lm</span><span class="na">-sensors</span><span class="p">,</span> <span class="nx">snort</span> <span class="ow">and</span> <span class="nx">ovaldi</span><span class="p">),</span> <span class="nx">pnscan</span><span class="p">,</span> <span class="nx">portbunny</span><span class="p">,</span> <span class="nx">strobe</span><span class="p">,</span> <span class="nx">w3af</span><span class="p">,</span> <span class="nx">etc.</span>
+
+<span class="nx">Instructions</span> <span class="nx">of</span> <span class="nx">installation</span> <span class="nb">process</span><span class="p">,</span> <span class="nb">for</span> <span class="nx">further</span> <span class="nx">more</span> <span class="nx">information</span> <span class="nx">please</span> <span class="nx">refer</span> <span class="k">to</span> <span class="o">&lt;</span><span class="nx">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;http://www.openvas.org/setup-and-start.html&quot;</span> <span class="n">target</span><span class="o">=</span><span class="s2">&quot;_blank&quot;</span><span class="o">&gt;</span><span class="nx">http</span><span class="p">:</span><span class="c1">//www.openvas.org/setup-and-start.html&lt;/a&gt;</span>
+
+<span class="err">###</span> <span class="nb">Step</span> <span class="mi">1</span><span class="p">:</span> <span class="nx">Configure</span> <span class="nx">OBS</span> <span class="nx">Repository</span>
+<span class="sb">``</span><span class="err">`</span><span class="nx">sudo</span> <span class="nx">apt</span><span class="na">-get</span> <span class="na">-y</span> <span class="nb">install</span> <span class="nx">python</span><span class="na">-software-properties</span>
+<span class="nx">sudo</span> <span class="nb">add</span><span class="na">-apt-repository</span> <span class="s2">&quot;deb http://download.opensuse.org/repositories/security:/OpenVAS:STABLE:/v4/xUbuntu_10.04/./&quot;</span>
+<span class="nx">sudo</span> <span class="nx">apt</span><span class="na">-key</span> <span class="nx">adv</span> <span class="o">--</span><span class="nx">keyserver</span> <span class="nx">hkp</span><span class="p">:</span><span class="c1">//keys.gnupg.net --recv-keys BED1E87979EAFD54 </span>
+<span class="nx">sudo</span> <span class="nx">apt</span><span class="na">-get</span> <span class="nx">update</span>
+</pre></div>
+
 
 <h3>Step 2: Quick-Install OpenVAS</h3>
-</p>
+<div class="highlight"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">greenbone</span><span class="o">-</span><span class="n">security</span><span class="o">-</span><span class="n">assistant</span> <span class="n">gsd</span> <span class="n">openvas</span><span class="o">-</span><span class="n">cli</span> <span class="n">openvas</span><span class="o">-</span><span class="n">manager</span> <span class="n">openvas</span><span class="o">-</span><span class="n">scanner</span> <span class="n">openvas</span><span class="o">-</span><span class="n">administrator</span> <span class="n">sqlite3</span> <span class="n">xsltproc</span>
+</pre></div>
 
-<div class="highlight">
-
-    sudo apt-get -y install greenbone-security-assistant gsd openvas-cli openvas-manager openvas-scanner openvas-administrator sqlite3 xsltproc
-
-</div>
-
-</p>
 
 <h3>Step 3: Quick-Start OpenVAS</h3>
-</p>
+<p>(copy and paste whole block, during first time you will be asked to set a password for user “admin”)</p>
+<div class="highlight"><pre><span class="n">test</span> <span class="o">-</span><span class="n">e</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">openvas</span><span class="o">/</span><span class="n">CA</span><span class="o">/</span><span class="n">cacert</span><span class="p">.</span><span class="n">pem</span> <span class="o">||</span> <span class="n">sudo</span> <span class="n">openvas</span><span class="o">-</span><span class="n">mkcert</span> <span class="o">-</span><span class="n">q</span>
+<span class="n">sudo</span> <span class="n">openvas</span><span class="o">-</span><span class="n">nvt</span><span class="o">-</span><span class="n">sync</span> <span class="n">test</span> <span class="o">-</span><span class="n">e</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">openvas</span><span class="o">/</span><span class="n">users</span><span class="o">/</span><span class="n">om</span> <span class="o">||</span> <span class="n">sudo</span> <span class="n">openvas</span><span class="o">-</span><span class="n">mkcert</span><span class="o">-</span><span class="n">client</span> <span class="o">-</span><span class="n">n</span> <span class="n">om</span> <span class="o">-</span><span class="n">i</span> <span class="n">sudo</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="n">openvas</span><span class="o">-</span><span class="n">manager</span> <span class="n">stop</span>
+<span class="n">sudo</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="n">openvas</span><span class="o">-</span><span class="n">scanner</span> <span class="n">stop</span>
+<span class="n">sudo</span> <span class="n">openvassd</span>
+<span class="n">sudo</span> <span class="n">openvasmd</span> <span class="o">--</span><span class="n">migrate</span>
+<span class="n">sudo</span> <span class="n">openvasmd</span> <span class="o">--</span><span class="n">rebuild</span>
+<span class="n">sudo</span> <span class="n">killall</span> <span class="n">openvassd</span>
+<span class="n">sleep</span> <span class="mi">15</span>
+<span class="n">sudo</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="n">openvas</span><span class="o">-</span><span class="n">scanner</span> <span class="n">start</span>
+<span class="n">sudo</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="n">openvas</span><span class="o">-</span><span class="n">manager</span> <span class="n">start</span>
+<span class="n">sudo</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="n">openvas</span><span class="o">-</span><span class="n">administrator</span> <span class="n">restart</span>
+<span class="n">sudo</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="n">greenbone</span><span class="o">-</span><span class="n">security</span><span class="o">-</span><span class="n">assistant</span> <span class="n">restart</span>
+<span class="n">test</span> <span class="o">-</span><span class="n">e</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">openvas</span><span class="o">/</span><span class="n">users</span><span class="o">/</span><span class="n">admin</span> <span class="o">||</span> <span class="n">sudo</span> <span class="n">openvasad</span> <span class="o">-</span><span class="n">c</span> <span class="n">add_user</span> <span class="o">-</span><span class="n">n</span> <span class="n">admin</span> <span class="o">-</span><span class="n">r</span> <span class="n">Admin</span>
+</pre></div>
 
-<p>(copy and paste whole block, during first time you will be asked to set
-a password for user “admin”)</p>
-</p>
-
-<div class="highlight">
-
-    test -e /var/lib/openvas/CA/cacert.pem || sudo openvas-mkcert -qsudo openvas-nvt-sync test -e /var/lib/openvas/users/om || sudo openvas-mkcert-client -n om -i sudo /etc/init.d/openvas-manager stopsudo /etc/init.d/openvas-scanner stopsudo openvassdsudo openvasmd --migratesudo openvasmd --rebuildsudo killall openvassdsleep 15sudo /etc/init.d/openvas-scanner startsudo /etc/init.d/openvas-manager startsudo /etc/init.d/openvas-administrator restartsudo /etc/init.d/greenbone-security-assistant restarttest -e /var/lib/openvas/users/admin || sudo openvasad -c add_user -n admin -r Admin
-
-</div>
-
-</p>
 
 <h3>Step 4: Log into OpenVAS as “admin”</h3>
-</p>
-
-<p>Open <code>https://localhost:9392/</code> or start <code>“gsd”</code> on a command line as a
-regular user (not as root!). Optional we can use and the Slowloris and
-Pyloris DoS attacks.</p>
-</p>
-
-<p>Download link for Slowloris is:
-<a href="http://ha.ckers.org/slowloris/slowloris.pl">http://ha.ckers.org/slowloris/slowloris.pl</a></p>
-</p>
-
-<p>The above solution and tool will help us to check and test our IDS
-system usefulness. It tests the following attacks: Port scan, SYN flood,
-DoS, etc. The results are presented with nice GUI interface. For more
-info about the project please refer to
-<a href="http://www.openvas.org/">www.openvas.org</a>.</p>
-</p>
-
+<p>Open <code>https://localhost:9392/</code> or start <code>“gsd”</code> on a command line as a regular user (not as root!). Optional we can use and the Slowloris and Pyloris DoS attacks.</p>
+<p>Download link for Slowloris is: <a href="http://ha.ckers.org/slowloris/slowloris.pl" target="_blank">http://ha.ckers.org/slowloris/slowloris.pl</a></p>
+<p>The above solution and tool will help us to check and test our IDS system usefulness. It tests the following attacks: Port scan, SYN flood, DoS, etc. The results are presented with nice GUI interface. For more info about the project please refer to <a href="http://www.openvas.org/" target="_blank">www.openvas.org</a>.</p>
 <h1>RESULTS</h1>
-</p>
-
-<p>After executing the above proposal we will highlight the results.
-Nevertheless, only the Proposal 1 was able to run the test. Others two,
-Proposal 2 and Proposal 3 were unsuccessful of installation process and
-configuration and to run the attacks. Moreover, the result are presented
-from the total amount of reports, registered alerts in the snort. This
-is done by help of web interface of Basic Analysis and Security Engine
-in addition Analysis Console for Intrusion Databases (ACID) project tool
-[ACID]. Therefore, the result from the Proposal 1 and from the rest are
-highlighted below:</p>
-</p>
-
+<p>After executing the above proposal we will highlight the results. Nevertheless, only the Proposal 1 was able to run the test. Others two, Proposal 2 and Proposal 3 were unsuccessful of installation process and configuration and to run the attacks. Moreover, the result are presented from the total amount of reports, registered alerts in the snort. This is done by help of web interface of Basic Analysis and Security Engine in addition Analysis Console for Intrusion Databases (ACID) project tool [ACID]. Therefore, the result from the Proposal 1 and from the rest are highlighted below:</p>
 <ul>
 <li>Proposal 1</li>
 <li>DoS – registered alerts: 2;</li>
@@ -364,71 +297,32 @@ highlighted below:</p>
 <li>synf.sh: 1344;</li>
 <li>slowloris.pl: 1782;</li>
 <li>
-</p>
-
 <p>apachekiller.pl: not working;</p>
-<p></p>
-<p>
--   </p></p>
-<p>Proposal 2</p>
-<p></p>
-<p>
--   </p></p>
-<p>pytbull: 0, the message was: Error: FTP error, 550 failed to open
-file.</p>
-<p></p>
-<p>
--   </p></p>
-<p>Proposal 3</p>
-<p></p>
-<p>
--   Too complicated to be configured and installed. The instructions and
-the procedures should be more easy. After few hours of configuring
-and test, tweaks are is still not working. Yet there are many good
-tutorials how to configure OpenVAS please refer [OpenVas1] and
-[OpenVas2].</p>
 </li>
+<li>
+<p>Proposal 2</p>
+</li>
+<li>
+<p>pytbull: 0, the message was: Error: FTP error, 550 failed to open file.</p>
+</li>
+<li>
+<p>Proposal 3</p>
+</li>
+<li>Too complicated to be configured and installed. The instructions and the procedures should be more easy. After few hours of configuring and test, tweaks are is still not working. Yet there are many good tutorials how to configure OpenVAS please refer [OpenVas1] and [OpenVas2].</li>
 </ul>
-</p>
-
 <h1>CONCLUSION</h1>
-</p>
-
-<p>Primarily, setting-up IDS, the Snort, it is not an easy task to
-complete. On the other hand, configuring, installing, etc. the testing
-tools for IDS system is even more complicated. Therefore, the Proposal 1
-has the best solution and installation process of the test tools.
-Despite, that it was the only one that worked. Finally, recommendation
-for the IDS solutions and in addition to the penetrating tools to test
-the usefulness of IDS has to be more simple and stepwise solution.
-However, the above scenario and proposals are great tools and solutions
-for a future reader.</p>
-</p>
-
+<p>Primarily, setting-up IDS, the Snort, it is not an easy task to complete. On the other hand, configuring, installing, etc. the testing tools for IDS system is even more complicated. Therefore, the Proposal 1 has the best solution and installation process of the test tools. Despite, that it was the only one that worked. Finally, recommendation for the IDS solutions and in addition to the penetrating tools to test the usefulness of IDS has to be more simple and stepwise solution. However, the above scenario and proposals are great tools and solutions for a future reader.</p>
 <h1>APPENDIXES</h1>
-</p>
-
-<p>Appendix 1 is the configuration of the attacker virtual machine, in more
-detail Blacktrack distribution. Secondly, Appendix 2 is the ubuntu
-wordpress configuration server and additional is the configuration and
-setup process and refer links of IDS Snort virtual machine.</p>
-</p>
-
+<p>Appendix 1 is the configuration of the attacker virtual machine, in more detail Blacktrack distribution. Secondly, Appendix 2 is the ubuntu wordpress configuration server and additional is the configuration and setup process and refer links of IDS Snort virtual machine.</p>
 <h2>APPENDIX 1</h2>
-</p>
-
 <ul>
 <li>Installation media: Black Track 5 GNOME 32bit iso image;</li>
 <li>HW: Virtualbox, 1CPU 32bit, 512MB RAM, 8GB HD (dynamic allocation);</li>
 <li>NIC1 NAT;</li>
 <li>NIC2 host only (for ssh and http access from host);</li>
-<li>Downloadable link: <a href="http://www.backtrack-linux.org/downloads/">http://www.backtrack-linux.org/downloads/</a></li>
+<li>Downloadable link: <a href="http://www.backtrack-linux.org/downloads/" target="_blank">http://www.backtrack-linux.org/downloads/</a></li>
 </ul>
-</p>
-
 <h2>APPENDIX 2</h2>
-</p>
-
 <ul>
 <li>Installation media: Ubuntu 10.04 32bit iso image;</li>
 <li>HW: Virtualbox, 1CPU 32bit, 512MB RAM, 8GB HD (dynamic allocation);</li>
@@ -442,65 +336,37 @@ setup process and refer links of IDS Snort virtual machine.</p>
 <li>no http proxy</li>
 <li>Default applications</li>
 </ul>
-</p>
+<div class="highlight"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">lamp</span> <span class="n">phpmyadmin</span>
+<span class="n">wget</span> <span class="o">-</span><span class="n">c</span> <span class="n">http</span><span class="o">:</span><span class="c1">//wordpress.org/latest.tar.gz</span>
+<span class="n">tar</span> <span class="n">xvjf</span> <span class="n">latest</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span>
+<span class="n">sudo</span> <span class="n">cp</span> <span class="n">wordpress</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">wordpress</span>
+<span class="n">sudo</span> <span class="n">nano</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">wordpress</span><span class="o">/</span><span class="n">wp</span><span class="o">-</span><span class="n">config</span><span class="p">.</span><span class="n">php</span><span class="o">&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</pre></div>
 
-<div class="highlight">
-
-    sudo apt-get install lamp phpmyadminwget -c http://wordpress.org/latest.tar.gztar xvjf latest.tar.gzsudo cp wordpress /var/www/wordpresssudo nano /var/www/wordpress/wp-config.php</pre>
-
-</div>
-
-</p>
 
 <p>Change the settings to your needs.</p>
-</p>
-
-<h2>APPENDIX 3</h2>
-<p></h2>
-</p></p>
+<h2>APPENDIX 3</h2></h2>
 <ul>
-<li>Installation media: Ubuntu 10.04 32bit iso image;  </li>
-<li>HW: Virtualbox, 1CPU 32bit, 512MB RAM, 8GB HD (dynamic allocation);  </li>
-<li>NIC1 NAT;  </li>
-<li>NIC2 host only (for ssh and http access from host);  </li>
-<li>Language used in installation process: English and country Estonia;  </li>
-<li>Keyboard Layout English;  </li>
-<li>Hostname: pece  </li>
-<li>Partition methods: Guided, use entire disk  </li>
-<li>Username: pece  </li>
-<li>no http proxy  </li>
-<li>Default applications  </li>
-<li>Snort configuration and installation refer to [SNORT1] in addition,
-    please refer to [SNORT2].</li>
+<li>Installation media: Ubuntu 10.04 32bit iso image;<br></li>
+<li>HW: Virtualbox, 1CPU 32bit, 512MB RAM, 8GB HD (dynamic allocation);<br></li>
+<li>NIC1 NAT;<br></li>
+<li>NIC2 host only (for ssh and http access from host);<br></li>
+<li>Language used in installation process: English and country Estonia;<br></li>
+<li>Keyboard Layout English;<br></li>
+<li>Hostname: pece<br></li>
+<li>Partition methods: Guided, use entire disk<br></li>
+<li>Username: pece<br></li>
+<li>no http proxy<br></li>
+<li>Default applications<br></li>
+<li>Snort configuration and installation refer to [SNORT1] in addition, please refer to [SNORT2].</li>
 </ul>
-</p>
-
 <h1>Bibliography</h1>
-</p>
-
-<p>SNORT2: Nick Moore, Snort 2.8.4.1 Ubuntu 9 Installation Guide, June
-2009, <a href="http://www.snort.org/assets/113/Snort_2.8.4.1_Ubuntu.pdf">http://www.snort.org/assets/113/Snort_2.8.4.1_Ubuntu.pdf</a></p>
-</p>
-
-<p>ACID: Basic Analysis and Security Engine, Welcome to the Basic Analysis
-and Security Engine (BASE) project, 2008,
-<a href="http://base.secureideas.net/about.php">http://base.secureideas.net/about.php</a></p>
-</p>
-
-<p>OpenVas1: NA, Backtrack 5- OpenVas Tutorial, NA,
-<a href="http://www.ehacking.net/2011/06/backtrack-5-openvas-tutorial.html">http://www.ehacking.net/2011/06/backtrack-5-openvas-tutorial.html</a></p>
-</p>
-
-<p>OpenVas2: BackTrack Linux, Getting started with OpenVas, June 2011,
-<a href="http://www.backtrack-linux.org/wiki/index.php/OpenVas">http://www.backtrack-linux.org/wiki/index.php/OpenVas</a></p>
-</p>
-
-<p>SNORT1: kat-amsterdam, SnortIDS, December 2010,
-<a href="https://help.ubuntu.com/community/SnortIDS">https://help.ubuntu.com/community/SnortIDS</a></p>
-</p>
-
+<p>SNORT2: Nick Moore, Snort 2.8.4.1 Ubuntu 9 Installation Guide, June 2009, <a href="http://www.snort.org/assets/113/Snort_2.8.4.1_Ubuntu.pdf" target="_blank">http://www.snort.org/assets/113/Snort_2.8.4.1_Ubuntu.pdf</a></p>
+<p>ACID: Basic Analysis and Security Engine, Welcome to the Basic Analysis and Security Engine (BASE) project, 2008, <a href="http://base.secureideas.net/about.php" target="_blank"> http://base.secureideas.net/about.php</a></p>
+<p>OpenVas1: NA, Backtrack 5- OpenVas Tutorial, NA, <a href="http://www.ehacking.net/2011/06/backtrack-5-openvas-tutorial.html" target="_blank">http://www.ehacking.net/2011/06/backtrack-5-openvas-tutorial.html</a></p>
+<p>OpenVas2: BackTrack Linux, Getting started with OpenVas, June 2011, <a href="http://www.backtrack-linux.org/wiki/index.php/OpenVas"  target="_blank">http://www.backtrack-linux.org/wiki/index.php/OpenVas</a></p>
+<p>SNORT1: kat-amsterdam, SnortIDS, December 2010, <a href="https://help.ubuntu.com/community/SnortIDS" target="_blank">https://help.ubuntu.com/community/SnortIDS</a></p>
 <p>[1] IDS – Intrusion detection system</p>
-</p>
             </div>
             <!-- /.entry-content -->
     <hr/>
@@ -558,22 +424,22 @@ and Security Engine (BASE) project, 2008,
                 <li class="list-group-item"><a href="../../../../"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                     <ul class="list-group " id="tags">
                         <li class="list-group-item tag-1">
-                            <a href="../../../../tag/cyber-security/">
-                                cyber security
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-1">
                             <a href="../../../../tag/internet/">
                                 internet
                             </a>
                         </li>
                         <li class="list-group-item tag-1">
-                            <a href="../../../../tag/security/">
+                            <a href="../../../../tag/security.html">
                                 security
                             </a>
                         </li>
                         <li class="list-group-item tag-1">
-                            <a href="../../../../tag/online/">
+                            <a href="../../../../tag/cyber-security/">
+                                cyber security
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-1">
+                            <a href="../../../../tag/online.html">
                                 online
                             </a>
                         </li>
@@ -583,23 +449,23 @@ and Security Engine (BASE) project, 2008,
                             </a>
                         </li>
                         <li class="list-group-item tag-2">
+                            <a href="../../../../tag/malware.html">
+                                malware
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-2">
+                            <a href="../../../../tag/network.html">
+                                network
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-2">
                             <a href="../../../../tag/macedonia/">
                                 macedonia
                             </a>
                         </li>
                         <li class="list-group-item tag-2">
-                            <a href="../../../../tag/ddos/">
+                            <a href="../../../../tag/ddos.html">
                                 DDoS
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-2">
-                            <a href="../../../../tag/malware/">
-                                malware
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-2">
-                            <a href="../../../../tag/attacks/">
-                                attacks
                             </a>
                         </li>
                         <li class="list-group-item tag-2">
@@ -608,163 +474,33 @@ and Security Engine (BASE) project, 2008,
                             </a>
                         </li>
                         <li class="list-group-item tag-2">
-                            <a href="../../../../tag/network/">
-                                network
+                            <a href="../../../../tag/attacks.html">
+                                attacks
                             </a>
                         </li>
                         <li class="list-group-item tag-3">
-                            <a href="../../../../tag/risk-assessment/">
-                                risk assessment
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/binary/">
-                                binary
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/log-mining/">
-                                log mining
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/gms/">
-                                gms
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/optamization/">
-                                optamization
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/network-crime/">
-                                network crime
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/port-scan/">
-                                Port scan
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/vulnerability/">
-                                vulnerability
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/threats/">
-                                threats
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/balkan/">
-                                balkan
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/information-warfare/">
-                                information warfare
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/nato/">
-                                nato
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/network-security/">
-                                network security
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/course/">
-                                course
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/malicious-code/">
-                                malicious code
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/awareness/">
-                                awareness
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/wordpress/">
-                                wordpress
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/snort/">
-                                snort
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/cyber/">
-                                cyber
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/ubuntu/">
-                                ubuntu
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/wifi/">
+                            <a href="../../../../tag/wifi.html">
                                 wifi
                             </a>
                         </li>
                         <li class="list-group-item tag-3">
-                            <a href="../../../../tag/acceleration/">
-                                acceleration
+                            <a href="../../../../tag/threats.html">
+                                threats
                             </a>
                         </li>
                         <li class="list-group-item tag-3">
-                            <a href="../../../../tag/mvr/">
-                                mvr
+                            <a href="../../../../tag/online-generations.html">
+                                online generations
                             </a>
                         </li>
                         <li class="list-group-item tag-3">
-                            <a href="../../../../tag/art-of-war/">
-                                art of war
+                            <a href="../../../../tag/wordpress.html">
+                                wordpress
                             </a>
                         </li>
                         <li class="list-group-item tag-3">
-                            <a href="../../../../tag/ids/">
-                                ids
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/testing-ids/">
-                                testing ids
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/future-of-human-communication/">
-                                future of human communication
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/teaching/">
-                                teaching
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/history/">
-                                history
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/wlan/">
-                                wlan
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/wireless/">
-                                wireless
+                            <a href="../../../../tag/unix.html">
+                                Unix
                             </a>
                         </li>
                         <li class="list-group-item tag-3">
@@ -773,13 +509,13 @@ and Security Engine (BASE) project, 2008,
                             </a>
                         </li>
                         <li class="list-group-item tag-3">
-                            <a href="../../../../tag/forum/">
-                                forum
+                            <a href="../../../../tag/history.html">
+                                history
                             </a>
                         </li>
                         <li class="list-group-item tag-3">
-                            <a href="../../../../tag/syn-flood/">
-                                SYN flood
+                            <a href="../../../../tag/network-crime.html">
+                                network crime
                             </a>
                         </li>
                         <li class="list-group-item tag-3">
@@ -788,13 +524,13 @@ and Security Engine (BASE) project, 2008,
                             </a>
                         </li>
                         <li class="list-group-item tag-3">
-                            <a href="../../../../tag/online-generations/">
-                                online generations
+                            <a href="../../../../tag/malicious-code.html">
+                                malicious code
                             </a>
                         </li>
                         <li class="list-group-item tag-3">
-                            <a href="../../../../tag/vulnerability-scanning/">
-                                vulnerability scanning
+                            <a href="../../../../tag/simmulation-of-attacks-and-defence.html">
+                                simmulation of attacks and defence
                             </a>
                         </li>
                         <li class="list-group-item tag-3">
@@ -803,18 +539,138 @@ and Security Engine (BASE) project, 2008,
                             </a>
                         </li>
                         <li class="list-group-item tag-3">
-                            <a href="../../../../tag/unix/">
-                                Unix
+                            <a href="../../../../tag/awareness/">
+                                awareness
                             </a>
                         </li>
                         <li class="list-group-item tag-3">
-                            <a href="../../../../tag/wpan/">
+                            <a href="../../../../tag/risk-assessment/">
+                                risk assessment
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/ubuntu.html">
+                                ubuntu
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/nato/">
+                                nato
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/forum/">
+                                forum
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/wireless.html">
+                                wireless
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/port-scan/">
+                                Port scan
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/teaching/">
+                                teaching
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/log-mining/">
+                                log mining
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/syn-flood/">
+                                SYN flood
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/course/">
+                                course
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/pentest-mag.html">
+                                pentest mag
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/optamization.html">
+                                optamization
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/cyber/">
+                                cyber
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/snort/">
+                                snort
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/network-security.html">
+                                network security
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/gms.html">
+                                gms
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/art-of-war.html">
+                                art of war
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/information-warfare/">
+                                information warfare
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/wpan.html">
                                 wpan
                             </a>
                         </li>
                         <li class="list-group-item tag-3">
-                            <a href="../../../../tag/simmulation-of-attacks-and-defence/">
-                                simmulation of attacks and defence
+                            <a href="../../../../tag/vulnerability.html">
+                                vulnerability
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/acceleration.html">
+                                acceleration
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/wlan.html">
+                                wlan
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/testing-ids/">
+                                testing ids
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/mvr/">
+                                mvr
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/ids/">
+                                ids
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/balkan/">
+                                balkan
                             </a>
                         </li>
                         <li class="list-group-item tag-3">
@@ -822,159 +678,19 @@ and Security Engine (BASE) project, 2008,
                                 interview
                             </a>
                         </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/security-model/">
-                                security model
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/vulnerability-scanning/">
+                                vulnerability scanning
                             </a>
                         </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/wordpress-attacks/">
-                                wordpress attacks
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/future-of-human-communication.html">
+                                future of human communication
                             </a>
                         </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/texworks/">
-                                texworks
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/non-repudation/">
-                                non-repudation
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/internet-protocol-addressing-systems/">
-                                Internet Protocol addressing systems
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/human-factor/">
-                                human factor
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/south-eastern-europe/">
-                                south eastern europe
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/program/">
-                                program
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/cyber-space/">
-                                cyber space
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/server-attack/">
-                                server attack
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/cybersecuritymk/">
-                                cybersecurity.mk
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/social-network/">
-                                social network
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/phone/">
-                                phone
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/ngo/">
-                                NGO
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/society/">
-                                society
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/group/">
-                                group
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/war-strategy/">
-                                war strategy
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/surfaj-bezbedno/">
-                                surfaj bezbedno
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/startups/">
-                                startups
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/cyber-defence/">
-                                cyber defence
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/python/">
-                                python
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/nework-crime/">
-                                nework crime
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/script-kiddie/">
-                                script kiddie
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/cyber-warfare/">
-                                cyber warfare
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/kaspersky/">
-                                kaspersky
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/linux/">
-                                linux
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/pentest/">
-                                pentest
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/malware-analysis/">
-                                malware analysis
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/eavesdropping/">
-                                eavesdropping
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/grep/">
-                                grep
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/socio-technical/">
-                                socio-technical
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/binary.html">
+                                binary
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
@@ -983,53 +699,58 @@ and Security Engine (BASE) project, 2008,
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="../../../../tag/bulgaria/">
-                                bulgaria
+                            <a href="../../../../tag/war-strategy.html">
+                                war strategy
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="../../../../tag/laptop/">
-                                laptop
+                            <a href="../../../../tag/non-repudation.html">
+                                non-repudation
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="../../../../tag/c/">
-                                C#
+                            <a href="../../../../tag/malware-analysis/">
+                                malware analysis
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="../../../../tag/psyche/">
-                                psyche
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/hci/">
-                                HCI
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/brute-force/">
+                            <a href="../../../../tag/brute-force.html">
                                 brute force
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="../../../../tag/hql/">
-                                HQL
+                            <a href="../../../../tag/hci.html">
+                                HCI
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="../../../../tag/penetration/">
-                                penetration
+                            <a href="../../../../tag/server-attack/">
+                                server attack
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="../../../../tag/snort-rules/">
-                                snort rules
+                            <a href="../../../../tag/cyber-defence/">
+                                cyber defence
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="../../../../tag/cybersecurity/">
-                                cybersecurity
+                            <a href="../../../../tag/ngo.html">
+                                NGO
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/european-round/">
+                                european round
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/phone.html">
+                                phone
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/nework-crime.html">
+                                nework crime
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
@@ -1038,23 +759,168 @@ and Security Engine (BASE) project, 2008,
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
+                            <a href="../../../../tag/human-factor/">
+                                human factor
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/laptop.html">
+                                laptop
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/eavesdropping.html">
+                                eavesdropping
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/socio-technical/">
+                                socio-technical
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/grep.html">
+                                grep
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/internet-protocol-addressing-systems.html">
+                                Internet Protocol addressing systems
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/cyber-space.html">
+                                cyber space
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/hql.html">
+                                HQL
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/script-kiddie/">
+                                script kiddie
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/texworks.html">
+                                texworks
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/surfaj-bezbedno/">
+                                surfaj bezbedno
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/social-network/">
+                                social network
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/snort-rules/">
+                                snort rules
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/python.html">
+                                python
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/startups/">
+                                startups
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/group.html">
+                                group
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/program/">
+                                program
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/cybersecuritymk.html">
+                                cybersecurity.mk
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/cybersecurity.html">
+                                cybersecurity
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/penetration.html">
+                                penetration
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/new-war.html">
+                                new war
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/south-eastern-europe.html">
+                                south eastern europe
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/linux.html">
+                                linux
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/wordpress-attacks.html">
+                                wordpress attacks
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/security-model.html">
+                                security model
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/psyche.html">
+                                psyche
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/bulgaria/">
+                                bulgaria
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
                             <a href="../../../../tag/wireshark/">
                                 wireshark
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="../../../../tag/new-war/">
-                                new war
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/rainbow-tables/">
+                            <a href="../../../../tag/rainbow-tables.html">
                                 rainbow tables
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="../../../../tag/european-round/">
-                                european round
+                            <a href="../../../../tag/kaspersky/">
+                                kaspersky
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/pentest.html">
+                                pentest
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/c.html">
+                                C#
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/cyber-warfare.html">
+                                cyber warfare
                             </a>
                         </li>
                     </ul>
@@ -1124,7 +990,7 @@ and Security Engine (BASE) project, 2008,
     <script type="text/javascript">
 
         var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-600234-3']);
+        _gaq.push(['_setAccount', 'UA-46154062-1']);
         _gaq.push(['_trackPageview']);
 
         (function () {
