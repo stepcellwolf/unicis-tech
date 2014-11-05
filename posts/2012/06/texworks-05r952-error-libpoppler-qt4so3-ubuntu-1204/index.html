@@ -32,8 +32,8 @@
               title="Predrag TASEVSKI - Pece ATOM Feed"/>
 
 
-        <link href="../../../../feeds/category/texworks.atom.xml" type="application/atom+xml" rel="alternate"
-              title="Predrag TASEVSKI - Pece texworks ATOM Feed"/>
+        <link href="../../../../feeds/category/misc.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Predrag TASEVSKI - Pece misc ATOM Feed"/>
 
 </head>
 <body>
@@ -70,8 +70,8 @@ Predrag TASEVSKI - Pece            </a>
                          <li><a href="../../../../pages/talks.html">
                              Talks
                           </a></li>
-                         <li><a href="../../../../pages/teaching.html">
-                             Teaching
+                         <li><a href="../../../../pages/teachings.html">
+                             Teachings
                           </a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -103,101 +103,121 @@ Predrag TASEVSKI - Pece            </a>
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2012-06-19T00:00:00"> mar., 19 juin 2012</time>
+        <i class="fa fa-calendar"></i><time datetime="2012-06-18T23:00:00"> lun., 18 juin 2012</time>
     </span>
 
 
 
 <span class="label label-default">Tags</span>
-	<a href="../../../../tag/libpoppler.html">libpoppler</a>
+	<a href="../../../../tag/libpoppler/">libpoppler</a>
         /
-	<a href="../../../../tag/texworks.html">texworks</a>
+	<a href="../../../../tag/texworks/">texworks</a>
         /
-	<a href="../../../../tag/ubuntu.html">ubuntu</a>
+	<a href="../../../../tag/ubuntu/">ubuntu</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p>I had to use the texworks to do some changes in my LaTeX CV template, and in the previous version of Ubuntu I had not issues at all. But unfortunately in the new latest version of Ubuntu 12.04 LTS (Precise Pangolin) I had to do some tricks to get it started. It is therefore, I will provide the readers and solution of how to fix this issue. But before we continue I would like to mention that this issue has never been posted before, anywhere else.</p>
-<p>Installation of <a title="Texworks" href="http://tug.org/texworks/" target="_blank"> Texworks </a></p>
+                <p>I had to use the texworks to do some changes in my LaTeX CV template,
+and in the previous version of Ubuntu I had not issues at all. But
+unfortunately in the new latest version of Ubuntu 12.04 LTS (Precise
+Pangolin) I had to do some tricks to get it started. It is therefore, I
+will provide the readers and solution of how to fix this issue. But
+before we continue I would like to mention that this issue has never
+been posted before, anywhere else.</p>
+</p>
+
+<p>Installation of <a href="http://tug.org/texworks/" title="Texworks">Texworks</a></p>
+</p>
+
 <p>In the shell command we install the texworks with the following script:</p>
+</p>
+
 <p><code>sudo apt-get install texworks</code></p>
+</p>
+
 <h1>Issue / Error</h1>
-<p>After the installation is finished, then if we try to run the program from Unity or even from the terminal, it will give us an error:&lt;</p>
-<div class="highlight"><pre><span class="n">texworks</span><span class="o">:</span> <span class="n">error</span> <span class="k">while</span> <span class="n">loading</span> <span class="n">shared</span> <span class="n">libraries</span><span class="o">:</span> <span class="n">libpoppler</span><span class="o">-</span><span class="n">qt4</span><span class="o">.</span><span class="na">so</span><span class="o">.</span><span class="mi">3</span><span class="o">:</span> <span class="n">cannot</span> <span class="n">open</span> <span class="n">shared</span> <span class="n">object</span> <span class="n">file</span><span class="o">:</span> <span class="n">No</span> <span class="n">such</span> <span class="n">file</span> <span class="n">or</span> <span class="n">directory</span><span class="err">```</span>
+</p>
 
-<span class="n">So</span> <span class="n">now</span> <span class="n">we</span> <span class="n">know</span> <span class="n">that</span> <span class="n">there</span> <span class="k">is</span> <span class="n">some</span> <span class="n">issue</span> <span class="k">with</span> <span class="n">the</span> <span class="err">```</span><span class="n">libpoppler</span><span class="o">-</span><span class="n">qt4</span><span class="err">```</span> <span class="n">library</span><span class="o">.</span> <span class="n">To</span> <span class="n">determine</span> <span class="k">if</span> <span class="n">we</span> <span class="n">miss</span> <span class="n">any</span> <span class="n">other</span> <span class="n">dependency</span> <span class="n">libraries</span> <span class="n">we</span> <span class="n">can</span> <span class="n">double</span> <span class="n">check</span> <span class="k">with</span> <span class="n">the</span> <span class="n">following</span> <span class="n">command</span><span class="o">:</span>
+<p>After the installation is finished, then if we try to run the program
+from Unity or even from the terminal, it will give us an error:\&lt;</p>
+</p>
 
-<span class="err">```</span><span class="n">ldd</span> <span class="sr">/usr/bin/</span><span class="n">texworks</span><span class="err">```</span>
+<div class="highlight">
 
-<span class="n">And</span> <span class="n">the</span> <span class="n">following</span> <span class="n">output</span> <span class="n">should</span> <span class="n">look</span> <span class="n">like</span> <span class="k">this</span><span class="o">:</span>
-</pre></div>
+    texworks: error while loading shared libraries: libpoppler-qt4.so.3: cannot open shared object file: No such file or directory```So now we know that there is some issue with the ```libpoppler-qt4``` library. To determine if we miss any other dependency libraries we can double check with the following command:```ldd /usr/bin/texworks```And the following output should look like this:
 
+</div>
 
-<p>linux-gate.so.1 = (0xb76f2000)
-libhunspell-1.3.so.0 =&gt; /usr/lib/i386-linux-gnu/libhunspell-1.3.so.0 (0xb7682000)
-libpoppler-qt4.so.3 =&gt; not found
-libz.so.1 =&gt; /lib/i386-linux-gnu/libz.so.1 (0xb766b000)
-libQtDBus.so.4 =&gt; /usr/lib/i386-linux-gnu/libQtDBus.so.4 (0xb75eb000)
-libQtScript.so.4 =&gt; /usr/lib/i386-linux-gnu/libQtScript.so.4 (0xb7367000)
-libQtScriptTools.so.4 =&gt; /usr/lib/i386-linux-gnu/libQtScriptTools.so.4 (0xb72b2000)
-libQtXml.so.4 =&gt; /usr/lib/i386-linux-gnu/libQtXml.so.4 (0xb7272000)
-libQtGui.so.4 =&gt; /usr/lib/i386-linux-gnu/libQtGui.so.4 (0xb679e000)
-libQtCore.so.4 =&gt; /usr/lib/i386-linux-gnu/libQtCore.so.4 (0xb64c1000)
-libpthread.so.0 =&gt; /lib/i386-linux-gnu/libpthread.so.0 (0xb64a6000)
-libstdc++.so.6 =&gt; /usr/lib/i386-linux-gnu/libstdc++.so.6 (0xb63c1000)
-libgcc_s.so.1 =&gt; /lib/i386-linux-gnu/libgcc_s.so.1 (0xb63a3000)
-libc.so.6 =&gt; /lib/i386-linux-gnu/libc.so.6 (0xb61fd000)
-libdbus-1.so.3 =&gt; /lib/i386-linux-gnu/libdbus-1.so.3 (0xb61b4000)
-libm.so.6 =&gt; /lib/i386-linux-gnu/libm.so.6 (0xb6188000)
-libfontconfig.so.1 =&gt; /usr/lib/i386-linux-gnu/libfontconfig.so.1 (0xb6154000)
-libaudio.so.2 =&gt; /usr/lib/i386-linux-gnu/libaudio.so.2 (0xb613b000)
-libglib-2.0.so.0 =&gt; /lib/i386-linux-gnu/libglib-2.0.so.0 (0xb6041000)
-libpng12.so.0 =&gt; /lib/i386-linux-gnu/libpng12.so.0 (0xb6017000)
-libfreetype.so.6 =&gt; /usr/lib/i386-linux-gnu/libfreetype.so.6 (0xb5f7d000)
-libgobject-2.0.so.0 =&gt; /usr/lib/i386-linux-gnu/libgobject-2.0.so.0 (0xb5f2e000)
-libSM.so.6 =&gt; /usr/lib/i386-linux-gnu/libSM.so.6 (0xb5f25000)
-libICE.so.6 =&gt; /usr/lib/i386-linux-gnu/libICE.so.6 (0xb5f0a000)
-libXi.so.6 =&gt; /usr/lib/i386-linux-gnu/libXi.so.6 (0xb5efa000)
-libXrender.so.1 =&gt; /usr/lib/i386-linux-gnu/libXrender.so.1 (0xb5ef0000)
-libXext.so.6 =&gt; /usr/lib/i386-linux-gnu/libXext.so.6 (0xb5ede000)
-libX11.so.6 =&gt; /usr/lib/i386-linux-gnu/libX11.so.6 (0xb5daa000)
-libdl.so.2 =&gt; /lib/i386-linux-gnu/libdl.so.2 (0xb5da4000)
-librt.so.1 =&gt; /lib/i386-linux-gnu/librt.so.1 (0xb5d9b000)
-/lib/ld-linux.so.2 (0xb76f3000)
-libexpat.so.1 =&gt; /lib/i386-linux-gnu/libexpat.so.1 (0xb5d71000)
-libXt.so.6 =&gt; /usr/lib/i386-linux-gnu/libXt.so.6 (0xb5d15000)
-libXau.so.6 =&gt; /usr/lib/i386-linux-gnu/libXau.so.6 (0xb5d11000)
-libpcre.so.3 =&gt; /lib/i386-linux-gnu/libpcre.so.3 (0xb5cd4000)
-libffi.so.6 =&gt; /usr/lib/i386-linux-gnu/libffi.so.6 (0xb5ccd000)
-libuuid.so.1 =&gt; /lib/i386-linux-gnu/libuuid.so.1 (0xb5cc7000)
-libxcb.so.1 =&gt; /usr/lib/i386-linux-gnu/libxcb.so.1 (0xb5ca6000)
-libXdmcp.so.6 =&gt; /usr/lib/i386-linux-gnu/libXdmcp.so.6 (0xb5c9e000)</p>
-<div class="highlight"><pre><span class="n">Where</span> <span class="n">we</span> <span class="n">can</span> <span class="n">see</span> <span class="n">from</span> <span class="n">the</span> <span class="n">above</span> <span class="n">output</span> <span class="n">that</span> <span class="n">the</span> <span class="err">```</span><span class="n">libpoppler</span><span class="o">-</span><span class="n">qt4</span><span class="p">.</span><span class="n">so</span><span class="mf">.3</span> <span class="o">=</span> <span class="n">not</span> <span class="n">found</span> <span class="err">```</span> <span class="n">is</span> <span class="n">missing</span><span class="p">.</span>
+</p>
 
-<span class="n">The</span> <span class="n">best</span> <span class="n">way</span> <span class="n">to</span> <span class="n">solve</span> <span class="n">this</span> <span class="n">issue</span><span class="p">,</span> <span class="n">first</span> <span class="n">we</span> <span class="n">have</span> <span class="n">to</span> <span class="n">locate</span> <span class="n">where</span> <span class="n">are</span> <span class="n">the</span> <span class="n">other</span> <span class="n">libraries</span> <span class="n">of</span> <span class="n">QT4</span><span class="p">.</span> <span class="n">This</span> <span class="n">is</span> <span class="n">very</span> <span class="n">simple</span> <span class="n">approach</span><span class="p">,</span> <span class="n">because</span> <span class="n">the</span> <span class="n">other</span> <span class="n">libraries</span> <span class="n">links</span><span class="p">,</span> <span class="n">location</span> <span class="n">is</span> <span class="n">provided</span> <span class="n">from</span> <span class="n">the</span> <span class="n">above</span> <span class="n">output</span><span class="p">.</span> <span class="n">Therefore</span><span class="p">,</span> <span class="n">we</span> <span class="n">can</span> <span class="n">see</span> <span class="n">that</span> <span class="n">in</span> <span class="n">the</span> <span class="n">path</span> <span class="err">```</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">i386</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">gnu</span><span class="o">/</span><span class="err">```</span> <span class="n">there</span> <span class="n">is</span> <span class="n">an</span> <span class="n">library</span> <span class="n">called</span><span class="o">:</span> <span class="err">```</span><span class="n">libpoppler</span><span class="o">-</span><span class="n">qt4</span><span class="p">.</span><span class="n">so</span><span class="mf">.4</span><span class="err">```</span><span class="p">.</span>
+<p>linux-gate.so.1 = (0xb76f2000)</p>
+<p>libhunspell-1.3.so.0 => /usr/lib/i386-linux-gnu/libhunspell-1.3.so.0
+(0xb7682000)</p>
+<p>libpoppler-qt4.so.3 => not found</p>
+<p>libz.so.1 => /lib/i386-linux-gnu/libz.so.1 (0xb766b000)</p>
+<p>libQtDBus.so.4 => /usr/lib/i386-linux-gnu/libQtDBus.so.4 (0xb75eb000)</p>
+<p>libQtScript.so.4 => /usr/lib/i386-linux-gnu/libQtScript.so.4
+(0xb7367000)</p>
+<p>libQtScriptTools.so.4 => /usr/lib/i386-linux-gnu/libQtScriptTools.so.4
+(0xb72b2000)</p>
+<p>libQtXml.so.4 => /usr/lib/i386-linux-gnu/libQtXml.so.4 (0xb7272000)</p>
+<p>libQtGui.so.4 => /usr/lib/i386-linux-gnu/libQtGui.so.4 (0xb679e000)</p>
+<p>libQtCore.so.4 => /usr/lib/i386-linux-gnu/libQtCore.so.4 (0xb64c1000)</p>
+<p>libpthread.so.0 => /lib/i386-linux-gnu/libpthread.so.0 (0xb64a6000)</p>
+<p>libstdc++.so.6 => /usr/lib/i386-linux-gnu/libstdc++.so.6 (0xb63c1000)</p>
+<p>libgcc_s.so.1 => /lib/i386-linux-gnu/libgcc_s.so.1 (0xb63a3000)</p>
+<p>libc.so.6 => /lib/i386-linux-gnu/libc.so.6 (0xb61fd000)</p>
+<p>libdbus-1.so.3 => /lib/i386-linux-gnu/libdbus-1.so.3 (0xb61b4000)</p>
+<p>libm.so.6 => /lib/i386-linux-gnu/libm.so.6 (0xb6188000)</p>
+<p>libfontconfig.so.1 => /usr/lib/i386-linux-gnu/libfontconfig.so.1
+(0xb6154000)</p>
+<p>libaudio.so.2 => /usr/lib/i386-linux-gnu/libaudio.so.2 (0xb613b000)</p>
+<p>libglib-2.0.so.0 => /lib/i386-linux-gnu/libglib-2.0.so.0 (0xb6041000)</p>
+<p>libpng12.so.0 => /lib/i386-linux-gnu/libpng12.so.0 (0xb6017000)</p>
+<p>libfreetype.so.6 => /usr/lib/i386-linux-gnu/libfreetype.so.6
+(0xb5f7d000)</p>
+<p>libgobject-2.0.so.0 => /usr/lib/i386-linux-gnu/libgobject-2.0.so.0
+(0xb5f2e000)</p>
+<p>libSM.so.6 => /usr/lib/i386-linux-gnu/libSM.so.6 (0xb5f25000)</p>
+<p>libICE.so.6 => /usr/lib/i386-linux-gnu/libICE.so.6 (0xb5f0a000)</p>
+<p>libXi.so.6 => /usr/lib/i386-linux-gnu/libXi.so.6 (0xb5efa000)</p>
+<p>libXrender.so.1 => /usr/lib/i386-linux-gnu/libXrender.so.1 (0xb5ef0000)</p>
+<p>libXext.so.6 => /usr/lib/i386-linux-gnu/libXext.so.6 (0xb5ede000)</p>
+<p>libX11.so.6 => /usr/lib/i386-linux-gnu/libX11.so.6 (0xb5daa000)</p>
+<p>libdl.so.2 => /lib/i386-linux-gnu/libdl.so.2 (0xb5da4000)</p>
+<p>librt.so.1 => /lib/i386-linux-gnu/librt.so.1 (0xb5d9b000)</p>
+<p>/lib/ld-linux.so.2 (0xb76f3000)</p>
+<p>libexpat.so.1 => /lib/i386-linux-gnu/libexpat.so.1 (0xb5d71000)</p>
+<p>libXt.so.6 => /usr/lib/i386-linux-gnu/libXt.so.6 (0xb5d15000)</p>
+<p>libXau.so.6 => /usr/lib/i386-linux-gnu/libXau.so.6 (0xb5d11000)</p>
+<p>libpcre.so.3 => /lib/i386-linux-gnu/libpcre.so.3 (0xb5cd4000)</p>
+<p>libffi.so.6 => /usr/lib/i386-linux-gnu/libffi.so.6 (0xb5ccd000)</p>
+<p>libuuid.so.1 => /lib/i386-linux-gnu/libuuid.so.1 (0xb5cc7000)</p>
+<p>libxcb.so.1 => /usr/lib/i386-linux-gnu/libxcb.so.1 (0xb5ca6000)</p>
+<p>libXdmcp.so.6 => /usr/lib/i386-linux-gnu/libXdmcp.so.6 (0xb5c9e000)</p>
+</p>
 
-<span class="cp"># Resolution</span>
+<div class="highlight">
 
-<span class="n">From</span> <span class="n">the</span> <span class="n">above</span> <span class="n">output</span><span class="p">,</span> <span class="n">and</span> <span class="n">the</span> <span class="n">path</span> <span class="n">that</span> <span class="n">we</span> <span class="n">have</span> <span class="n">found</span> <span class="n">of</span> <span class="n">the</span> <span class="n">missing</span> <span class="n">library</span><span class="p">,</span> <span class="n">there</span> <span class="n">is</span> <span class="n">an</span> <span class="n">simple</span> <span class="n">and</span> <span class="n">easy</span> <span class="n">way</span> <span class="n">of</span> <span class="n">fixing</span> <span class="n">this</span> <span class="n">issue</span><span class="p">,</span> <span class="n">shown</span> <span class="n">below</span><span class="p">.</span>
+    Where we can see from the above output that the ```libpoppler-qt4.so.3 = not found ``` is missing.The best way to solve this issue, first we have to locate where are the other libraries of QT4. This is very simple approach, because the other libraries links, location is provided from the above output. Therefore, we can see that in the path ```/usr/lib/i386-linux-gnu/``` there is an library called: ```libpoppler-qt4.so.4```.# ResolutionFrom the above output, and the path that we have found of the missing library, there is an simple and easy way of fixing this issue, shown below.Therefore, in the terminal we can make an soft link with the missing library from the already existing one, with the following:```sudo ln -s /usr/lib/i386-linux-gnu/libpoppler-qt4.so.4 /usr/lib/i386-linux-gnu/libpoppler-qt4.so.3```And now the texworks works perfectly!# Details
 
-<span class="n">Therefore</span><span class="p">,</span> <span class="n">in</span> <span class="n">the</span> <span class="n">terminal</span> <span class="n">we</span> <span class="n">can</span> <span class="n">make</span> <span class="n">an</span> <span class="n">soft</span> <span class="n">link</span> <span class="n">with</span> <span class="n">the</span> <span class="n">missing</span> <span class="n">library</span> <span class="n">from</span> <span class="n">the</span> <span class="n">already</span> <span class="n">existing</span> <span class="n">one</span><span class="p">,</span> <span class="n">with</span> <span class="n">the</span> <span class="n">following</span><span class="o">:</span>
+</div>
 
-<span class="err">```</span><span class="n">sudo</span> <span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">i386</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">gnu</span><span class="o">/</span><span class="n">libpoppler</span><span class="o">-</span><span class="n">qt4</span><span class="p">.</span><span class="n">so</span><span class="mf">.4</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">i386</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">gnu</span><span class="o">/</span><span class="n">libpoppler</span><span class="o">-</span><span class="n">qt4</span><span class="p">.</span><span class="n">so</span><span class="mf">.3</span><span class="err">```</span>
+</p>
 
-<span class="n">And</span> <span class="n">now</span> <span class="n">the</span> <span class="n">texworks</span> <span class="n">works</span> <span class="n">perfectly</span><span class="o">!</span>
+<p>\$ texworks --version</p>
+<p>TeXworks 0.5r952 (Debian)</p>
+<p>Copyright (C) 2007-2011 Jonathan Kew, Stefan Löffler</p>
+<p>License GPLv2+: GNU GPL (version 2 or later)
+http://gnu.org/licenses/gpl.html</p>
+<p>This is free software: you are free to change and redistribute it.</p>
+<p>There is NO WARRANTY, to the extent permitted by law.</p>
+<p>```</p>
+</p>
 
-<span class="cp"># Details</span>
-</pre></div>
-
-
-<p>$ texworks --version
-TeXworks 0.5r952 (Debian)
-Copyright (C) 2007-2011 Jonathan Kew, Stefan LÃ¶ffler 
-License GPLv2+: GNU GPL (version 2 or later) http://gnu.org/licenses/gpl.html
-This is free software: you are free to change and redistribute it.
-There is NO WARRANTY, to the extent permitted by law.
-```</p>
-<p>Also this bug/issue has been reported in&nbsp; <a title="Launchpad Bug" href="https://bugs.launchpad.net/ubuntu/+source/texworks/+bug/1015193" target="_blank">Launchpad.net</a>.</p>
+<p>Also this bug/issue has been reported in 
+<a href="https://bugs.launchpad.net/ubuntu/+source/texworks/+bug/1015193" title="Launchpad Bug">Launchpad.net</a>.</p>
+</p>
             </div>
             <!-- /.entry-content -->
     <hr/>
@@ -255,22 +275,22 @@ There is NO WARRANTY, to the extent permitted by law.
                 <li class="list-group-item"><a href="../../../../"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                     <ul class="list-group " id="tags">
                         <li class="list-group-item tag-1">
-                            <a href="../../../../tag/internet/">
-                                internet
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-1">
-                            <a href="../../../../tag/security.html">
-                                security
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-1">
                             <a href="../../../../tag/cyber-security/">
                                 cyber security
                             </a>
                         </li>
                         <li class="list-group-item tag-1">
-                            <a href="../../../../tag/online.html">
+                            <a href="../../../../tag/internet/">
+                                internet
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-1">
+                            <a href="../../../../tag/security/">
+                                security
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-1">
+                            <a href="../../../../tag/online/">
                                 online
                             </a>
                         </li>
@@ -280,23 +300,23 @@ There is NO WARRANTY, to the extent permitted by law.
                             </a>
                         </li>
                         <li class="list-group-item tag-2">
-                            <a href="../../../../tag/malware.html">
-                                malware
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-2">
-                            <a href="../../../../tag/network.html">
-                                network
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-2">
                             <a href="../../../../tag/macedonia/">
                                 macedonia
                             </a>
                         </li>
                         <li class="list-group-item tag-2">
-                            <a href="../../../../tag/ddos.html">
+                            <a href="../../../../tag/ddos/">
                                 DDoS
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-2">
+                            <a href="../../../../tag/malware/">
+                                malware
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-2">
+                            <a href="../../../../tag/attacks/">
+                                attacks
                             </a>
                         </li>
                         <li class="list-group-item tag-2">
@@ -305,73 +325,8 @@ There is NO WARRANTY, to the extent permitted by law.
                             </a>
                         </li>
                         <li class="list-group-item tag-2">
-                            <a href="../../../../tag/attacks.html">
-                                attacks
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/wifi.html">
-                                wifi
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/threats.html">
-                                threats
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/online-generations.html">
-                                online generations
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/wordpress.html">
-                                wordpress
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/unix.html">
-                                Unix
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/risk-management/">
-                                risk management
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/history.html">
-                                history
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/network-crime.html">
-                                network crime
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/freedom/">
-                                freedom
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/malicious-code.html">
-                                malicious code
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/simmulation-of-attacks-and-defence.html">
-                                simmulation of attacks and defence
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/digital-divide/">
-                                digital divide
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/awareness/">
-                                awareness
+                            <a href="../../../../tag/network/">
+                                network
                             </a>
                         </li>
                         <li class="list-group-item tag-3">
@@ -380,33 +335,8 @@ There is NO WARRANTY, to the extent permitted by law.
                             </a>
                         </li>
                         <li class="list-group-item tag-3">
-                            <a href="../../../../tag/ubuntu.html">
-                                ubuntu
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/nato/">
-                                nato
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/forum/">
-                                forum
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/wireless.html">
-                                wireless
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/port-scan/">
-                                Port scan
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/teaching/">
-                                teaching
+                            <a href="../../../../tag/binary/">
+                                binary
                             </a>
                         </li>
                         <li class="list-group-item tag-3">
@@ -415,88 +345,33 @@ There is NO WARRANTY, to the extent permitted by law.
                             </a>
                         </li>
                         <li class="list-group-item tag-3">
-                            <a href="../../../../tag/syn-flood/">
-                                SYN flood
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/course/">
-                                course
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/pentest-mag.html">
-                                pentest mag
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/optamization.html">
-                                optamization
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/cyber/">
-                                cyber
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/snort/">
-                                snort
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/network-security.html">
-                                network security
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/gms.html">
+                            <a href="../../../../tag/gms/">
                                 gms
                             </a>
                         </li>
                         <li class="list-group-item tag-3">
-                            <a href="../../../../tag/art-of-war.html">
-                                art of war
+                            <a href="../../../../tag/optamization/">
+                                optamization
                             </a>
                         </li>
                         <li class="list-group-item tag-3">
-                            <a href="../../../../tag/information-warfare/">
-                                information warfare
+                            <a href="../../../../tag/network-crime/">
+                                network crime
                             </a>
                         </li>
                         <li class="list-group-item tag-3">
-                            <a href="../../../../tag/wpan.html">
-                                wpan
+                            <a href="../../../../tag/port-scan/">
+                                Port scan
                             </a>
                         </li>
                         <li class="list-group-item tag-3">
-                            <a href="../../../../tag/vulnerability.html">
+                            <a href="../../../../tag/vulnerability/">
                                 vulnerability
                             </a>
                         </li>
                         <li class="list-group-item tag-3">
-                            <a href="../../../../tag/acceleration.html">
-                                acceleration
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/wlan.html">
-                                wlan
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/testing-ids/">
-                                testing ids
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/mvr/">
-                                mvr
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/ids/">
-                                ids
+                            <a href="../../../../tag/threats/">
+                                threats
                             </a>
                         </li>
                         <li class="list-group-item tag-3">
@@ -505,8 +380,133 @@ There is NO WARRANTY, to the extent permitted by law.
                             </a>
                         </li>
                         <li class="list-group-item tag-3">
-                            <a href="../../../../tag/interview/">
-                                interview
+                            <a href="../../../../tag/information-warfare/">
+                                information warfare
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/nato/">
+                                nato
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/network-security/">
+                                network security
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/course/">
+                                course
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/malicious-code/">
+                                malicious code
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/awareness/">
+                                awareness
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/wordpress/">
+                                wordpress
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/snort/">
+                                snort
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/cyber/">
+                                cyber
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/ubuntu/">
+                                ubuntu
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/wifi/">
+                                wifi
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/acceleration/">
+                                acceleration
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/mvr/">
+                                mvr
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/art-of-war/">
+                                art of war
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/ids/">
+                                ids
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/testing-ids/">
+                                testing ids
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/future-of-human-communication/">
+                                future of human communication
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/teaching/">
+                                teaching
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/history/">
+                                history
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/wlan/">
+                                wlan
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/wireless/">
+                                wireless
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/risk-management/">
+                                risk management
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/forum/">
+                                forum
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/syn-flood/">
+                                SYN flood
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/freedom/">
+                                freedom
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/online-generations/">
+                                online generations
                             </a>
                         </li>
                         <li class="list-group-item tag-3">
@@ -515,78 +515,53 @@ There is NO WARRANTY, to the extent permitted by law.
                             </a>
                         </li>
                         <li class="list-group-item tag-3">
-                            <a href="../../../../tag/future-of-human-communication.html">
-                                future of human communication
+                            <a href="../../../../tag/digital-divide/">
+                                digital divide
                             </a>
                         </li>
                         <li class="list-group-item tag-3">
-                            <a href="../../../../tag/binary.html">
-                                binary
+                            <a href="../../../../tag/unix/">
+                                Unix
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/wpan/">
+                                wpan
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/simmulation-of-attacks-and-defence/">
+                                simmulation of attacks and defence
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/interview/">
+                                interview
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="../../../../tag/cyber-risk/">
-                                cyber risk
+                            <a href="../../../../tag/security-model/">
+                                security model
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="../../../../tag/war-strategy.html">
-                                war strategy
+                            <a href="../../../../tag/wordpress-attacks/">
+                                wordpress attacks
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="../../../../tag/non-repudation.html">
+                            <a href="../../../../tag/texworks/">
+                                texworks
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/non-repudation/">
                                 non-repudation
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="../../../../tag/malware-analysis/">
-                                malware analysis
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/brute-force.html">
-                                brute force
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/hci.html">
-                                HCI
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/server-attack/">
-                                server attack
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/cyber-defence/">
-                                cyber defence
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/ngo.html">
-                                NGO
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/european-round/">
-                                european round
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/phone.html">
-                                phone
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/nework-crime.html">
-                                nework crime
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/hack/">
-                                hack
+                            <a href="../../../../tag/internet-protocol-addressing-systems/">
+                                Internet Protocol addressing systems
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
@@ -595,78 +570,8 @@ There is NO WARRANTY, to the extent permitted by law.
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="../../../../tag/laptop.html">
-                                laptop
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/eavesdropping.html">
-                                eavesdropping
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/socio-technical/">
-                                socio-technical
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/grep.html">
-                                grep
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/internet-protocol-addressing-systems.html">
-                                Internet Protocol addressing systems
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/cyber-space.html">
-                                cyber space
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/hql.html">
-                                HQL
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/script-kiddie/">
-                                script kiddie
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/texworks.html">
-                                texworks
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/surfaj-bezbedno/">
-                                surfaj bezbedno
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/social-network/">
-                                social network
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/snort-rules/">
-                                snort rules
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/python.html">
-                                python
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/startups/">
-                                startups
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/group.html">
-                                group
+                            <a href="../../../../tag/south-eastern-europe/">
+                                south eastern europe
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
@@ -675,63 +580,83 @@ There is NO WARRANTY, to the extent permitted by law.
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="../../../../tag/cybersecuritymk.html">
+                            <a href="../../../../tag/cyber-space/">
+                                cyber space
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/server-attack/">
+                                server attack
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/cybersecuritymk/">
                                 cybersecurity.mk
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="../../../../tag/cybersecurity.html">
-                                cybersecurity
+                            <a href="../../../../tag/social-network/">
+                                social network
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="../../../../tag/penetration.html">
-                                penetration
+                            <a href="../../../../tag/phone/">
+                                phone
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="../../../../tag/new-war.html">
-                                new war
+                            <a href="../../../../tag/ngo/">
+                                NGO
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="../../../../tag/south-eastern-europe.html">
-                                south eastern europe
+                            <a href="../../../../tag/society/">
+                                society
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="../../../../tag/linux.html">
-                                linux
+                            <a href="../../../../tag/group/">
+                                group
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="../../../../tag/wordpress-attacks.html">
-                                wordpress attacks
+                            <a href="../../../../tag/war-strategy/">
+                                war strategy
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="../../../../tag/security-model.html">
-                                security model
+                            <a href="../../../../tag/surfaj-bezbedno/">
+                                surfaj bezbedno
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="../../../../tag/psyche.html">
-                                psyche
+                            <a href="../../../../tag/startups/">
+                                startups
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="../../../../tag/bulgaria/">
-                                bulgaria
+                            <a href="../../../../tag/cyber-defence/">
+                                cyber defence
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="../../../../tag/wireshark/">
-                                wireshark
+                            <a href="../../../../tag/python/">
+                                python
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="../../../../tag/rainbow-tables.html">
-                                rainbow tables
+                            <a href="../../../../tag/nework-crime/">
+                                nework crime
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/script-kiddie/">
+                                script kiddie
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/cyber-warfare/">
+                                cyber warfare
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
@@ -740,18 +665,113 @@ There is NO WARRANTY, to the extent permitted by law.
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="../../../../tag/pentest.html">
+                            <a href="../../../../tag/linux/">
+                                linux
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/pentest/">
                                 pentest
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="../../../../tag/c.html">
+                            <a href="../../../../tag/malware-analysis/">
+                                malware analysis
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/eavesdropping/">
+                                eavesdropping
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/grep/">
+                                grep
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/socio-technical/">
+                                socio-technical
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/cyber-risk/">
+                                cyber risk
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/bulgaria/">
+                                bulgaria
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/laptop/">
+                                laptop
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/c/">
                                 C#
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="../../../../tag/cyber-warfare.html">
-                                cyber warfare
+                            <a href="../../../../tag/psyche/">
+                                psyche
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/hci/">
+                                HCI
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/brute-force/">
+                                brute force
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/hql/">
+                                HQL
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/penetration/">
+                                penetration
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/snort-rules/">
+                                snort rules
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/cybersecurity/">
+                                cybersecurity
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/hack/">
+                                hack
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/wireshark/">
+                                wireshark
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/new-war/">
+                                new war
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/rainbow-tables/">
+                                rainbow tables
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/european-round/">
+                                european round
                             </a>
                         </li>
                     </ul>
@@ -821,7 +841,7 @@ There is NO WARRANTY, to the extent permitted by law.
     <script type="text/javascript">
 
         var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-46154062-1']);
+        _gaq.push(['_setAccount', 'UA-600234-3']);
         _gaq.push(['_trackPageview']);
 
         (function () {
