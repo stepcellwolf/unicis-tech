@@ -32,8 +32,8 @@
               title="Predrag TASEVSKI - Pece ATOM Feed"/>
 
 
-        <link href="../../../../feeds/category/honeypot.atom.xml" type="application/atom+xml" rel="alternate"
-              title="Predrag TASEVSKI - Pece honeypot ATOM Feed"/>
+        <link href="../../../../feeds/category/misc.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Predrag TASEVSKI - Pece misc ATOM Feed"/>
 
 </head>
 <body>
@@ -70,8 +70,8 @@ Predrag TASEVSKI - Pece            </a>
                          <li><a href="../../../../pages/talks.html">
                              Talks
                           </a></li>
-                         <li><a href="../../../../pages/teaching.html">
-                             Teaching
+                         <li><a href="../../../../pages/teachings.html">
+                             Teachings
                           </a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -109,80 +109,187 @@ Predrag TASEVSKI - Pece            </a>
 
 
 <span class="label label-default">Tags</span>
-	<a href="../../../../tag/honeypot-document.html">honeypot document</a>
+	<a href="../../../../tag/honeypot-document/">honeypot document</a>
         /
-	<a href="../../../../tag/cyber-security.html">cyber security</a>
+	<a href="../../../../tag/cyber-security/">cyber security</a>
         /
-	<a href="../../../../tag/honeypot.html">honeypot</a>
+	<a href="../../../../tag/honeypot/">honeypot</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
                 <h1>INTRODUCTION</h1>
-<p>The main goal of laboratory report is to identify possible leaked/stolen information, documents from our system without recognising that attacker had an access. Thus access of the document will inform us immediately with the information of the burglar. The report should highlight the following aspects:</p>
+</p>
+
+<p>The main goal of laboratory report is to identify possible leaked/stolen
+information, documents from our system without recognising that attacker
+had an access. Thus access of the document will inform us immediately
+with the information of the burglar. The report should highlight the
+following aspects:</p>
+</p>
+
 <ul>
-<li>Constructed an document as non malicious code, for instance honey document that will help us to track from where, who, information about the system, etc. is using our document.</li>
-<li>Detail description of process, how did we build the document and the idea behind the tracking system.</li>
+<li>Constructed an document as non malicious code, for instance honey
+    document that will help us to track from where, who, information
+    about the system, etc. is using our document.</li>
+<li>Detail description of process, how did we build the document and the
+    idea behind the tracking system.</li>
 <li>Description of needed infrastructure that is tracking the document.</li>
 </ul>
-<p>The laboratory report is created by a team of 7 members. Where each member had own task to accomplish. Moreover, to be more contingent the unknown person has gain access to our computer/laptop. Thereby he is looking for interesting name of file, folder, etc. that most likely will have a content of interesting data, information for his purpose. After he downloaded file/folder from our system the intruder will open this file in his system assuming that contains very important personal/corporate information. However, by opening this file/folder, document it will send us immediately leaked information about his system to our server and additionally an e-mail. This process and procedures that are behind the honeypot document, or with other words trap set to detect, deflect, or in some manner counteract attempts at unauthorized use of information systems [1] is described in following sections. Furthermore, the coding of the honeypot document is done in HTML file with additional java script queries, where detail information and construction are displayed in Honeypot section. Meanwhile in Appendix section we provide the code of the honeypot document and additional what is the leaked/collected information of the intruder system, with other word, content illustration of mail and server logs.</p>
-<p>Finally the conclusion made of the laboratory report will be concise in summary section.</p>
+</p>
+
+<p>The laboratory report is created by a team of 7 members. Where each
+member had own task to accomplish. Moreover, to be more contingent the
+unknown person has gain access to our computer/laptop. Thereby he is
+looking for interesting name of file, folder, etc. that most likely will
+have a content of interesting data, information for his purpose. After
+he downloaded file/folder from our system the intruder will open this
+file in his system assuming that contains very important
+personal/corporate information. However, by opening this file/folder,
+document it will send us immediately leaked information about his system
+to our server and additionally an e-mail. This process and procedures
+that are behind the honeypot document, or with other words trap set to
+detect, deflect, or in some manner counteract attempts at unauthorized
+use of information systems [1] is described in following sections.
+Furthermore, the coding of the honeypot document is done in HTML file
+with additional java script queries, where detail information and
+construction are displayed in Honeypot section. Meanwhile in Appendix
+section we provide the code of the honeypot document and additional what
+is the leaked/collected information of the intruder system, with other
+word, content illustration of mail and server logs.</p>
+</p>
+
+<p>Finally the conclusion made of the laboratory report will be concise in
+summary section.</p>
+</p>
+
 <h1>HONEYPOT IDEA</h1>
-<p>HTML file We can name the file online banking or etc. cause it is html and it is more convincing way that the attacker will assume that this is an not only a online banking link but yet an the stored cookies and other leaked information. The honeypot file has inline javascript that will collect as much information as it can from the users browser, make it into a JSON object and create a request to our server using that information. The request will return an image, so nothing will be broken, however on our server we decode the information and send ourselves an alert email, that someone has accessed that document and where the accessing came from. There is also an image embedded that requests it from our server- these requests are logged and we see the IP address of the opener. This is as a backup in case the user doesn’t allow javascript to execute.</p>
+</p>
+
+<p>HTML file We can name the file online banking or etc. cause it is html
+and it is more convincing way that the attacker will assume that this is
+an not only a online banking link but yet an the stored cookies and
+other leaked information. The honeypot file has inline javascript that
+will collect as much information as it can from the users browser, make
+it into a JSON object and create a request to our server using that
+information. The request will return an image, so nothing will be
+broken, however on our server we decode the information and send
+ourselves an alert email, that someone has accessed that document and
+where the accessing came from. There is also an image embedded that
+requests it from our server- these requests are logged and we see the IP
+address of the opener. This is as a backup in case the user doesn’t
+allow javascript to execute.</p>
+</p>
+
 <p><strong>How we lure an attacker into trap</strong></p>
-<p>To discover the identity of attacker and get information, she/he has to open html file. Besides setting up honeypot from technical point of view, we have to make document attractive. On our system all the documents will be protected by (different) passwords. We can have same password for files with same extensions (for example, for PDFs or for MS Word documents). In html file, we store these passwords. The name of html document should be corresponding (“file passwords” for example). Attacker will need additional time to crack the passwords, so we are offering easy, quick way to get over additional obstacles. Actually, in html file passwords should be correct not no make the attacker suspicious. Attacker may be suspicious why we stored this kind of information in html file, but it can be explained with the following reasons: a) to open html (with notepad or browser for example) is quicker than opening .pdf and .doc (by Adobe Reader and MS Word respectively) b) html has different extension (.html) that PDF or MS Word documents, so it has different icon in GUI. If you put a lot of different files in a folder, html is much easier to find with a glance among PDFs and DOCs.</p>
+</p>
+
+<p>To discover the identity of attacker and get information, she/he has to
+open html file. Besides setting up honeypot from technical point of
+view, we have to make document attractive. On our system all the
+documents will be protected by (different) passwords. We can have same
+password for files with same extensions (for example, for PDFs or for MS
+Word documents). In html file, we store these passwords. The name of
+html document should be corresponding (“file passwords” for example).
+Attacker will need additional time to crack the passwords, so we are
+offering easy, quick way to get over additional obstacles. Actually, in
+html file passwords should be correct not no make the attacker
+suspicious. Attacker may be suspicious why we stored this kind of
+information in html file, but it can be explained with the following
+reasons: a) to open html (with notepad or browser for example) is
+quicker than opening .pdf and .doc (by Adobe Reader and MS Word
+respectively) b) html has different extension (.html) that PDF or MS
+Word documents, so it has different icon in GUI. If you put a lot of
+different files in a folder, html is much easier to find with a glance
+among PDFs and DOCs.</p>
+</p>
+
 <p><strong>What information we get</strong></p>
-<p>The honeypot is scripted to give us the following information about the attacker: first of all IP address. Time, hen the attacker accessed the honeypot file. Except that, we also get information about user agent, OS, language and other details about attacker’s system. For this concrete task that should be enough. The script is configurable to get some additional information too. As our plan is to simply gather information on our infiltrator, it is essential to avoid being malicious with our code. It will not alter target’s system or bypass any restrictions of it. The solution will not announce itself and will be as stealthy as possible.
-The information is sent to mail. For the example of sent e-mail, please refer to Appendix 2.</p>
+</p>
+
+<p>The honeypot is scripted to give us the following information about the
+attacker: first of all IP address. Time, hen the attacker accessed the
+honeypot file. Except that, we also get information about user agent,
+OS, language and other details about attacker’s system. For this
+concrete task that should be enough. The script is configurable to get
+some additional information too. As our plan is to simply gather
+information on our infiltrator, it is essential to avoid being malicious
+with our code. It will not alter target’s system or bypass any
+restrictions of it. The solution will not announce itself and will be as
+stealthy as possible.</p>
+<p>The information is sent to mail. For the example of sent e-mail, please
+refer to Appendix 2.</p>
+</p>
+
 <h1>HONEYPOT INFRASTRUCTURE</h1>
-<p>We need a Web server running PHP. The PHP script will collect the JSON data received<br>
-from the attacker, format it nicely and send via email to people who will process it. If<br>
-JavaScript is not enabled on the attacker’s side we rely on the fact that a picture is<br>
-accessed from the honeypot html file. The server has to serve this image and the request<br>
-for it of course appears in the web server access logs. This information again is processed by the same PHP script mentioned above and forwarded to analysts. Another alternative way to inform security personnel about this honeypot image being accessed is the Simple Event Corelator (SEC) written by Risto Vaarandi [2]. This software is freely available under GPL license. We could write a rule for SEC that would monitor the web server access log file for the specific image file request and send an email with the IP address from which the image was accessed. The rule that is used for SEC can be found in Appendix 3. The content we are looking for in the log file may look like this:
+</p>
 
-```192.168.1.34 - - [07/Dec/2011:19:16:07 +0200] "GET /honey.png HTTP/1.1" 200 1932```
-
-# SUMMARY
-
-Nowadays the most common vector in unauthorized access into the system is followed by stealing important data, either is from personal computer or corporate network. Therefore, solution of implementing a trap for detecting, and deflecting the attacker of collecting valuable information is important. This laboratory report consists solution for future detection, by creating an honeypot document that will help us to collect data from the attacker. The document it self it is not an malicious code, likewise does not corrupt or infect the attacker system. Solution provided above is designed with an simple infrastructure which help us to identify identity of attacker in different operation system.
-
-Moreover, the honeypot document provides us an information of what is the attacker or user of this document operation system, which browser he is using, what plugins are installed in the browser and additional the time of accessing the file and attached IP address. Thereby, by identifying the above information will guide us in further steps. For instance by identifying his IP address we can find his location, ISP, etc. However, is this above provided information enough? The answer to the question is simple, indeed it is, cause we don’t need more. The idea in this laboratory is not to find or assail the attacker, but it is just to identify, and realize that someone had an unauthorized access to the system and to distinguish his identity. Consequently, from the above we can conclude that we rather gather the information from the attacker then to attack him back.
-
-# APPENDICES
-
-Appendix 1 is the HTML and Java script code presented and in addition in Appendix 2 we present the e-mail received after the attacker has open the document. SEC are described in Appendix 3.
-
-# Appendix 1
-
-HTML + Java script code presented below:
-
-
-wzxhzdk:0
-
-
-## Appendix 2
-
-What we receive via email:
-
-
-wzxhzdk:1
-
-
-## Appendix 3
-
-SEC rule file for web server log monitoring (will work only for IPv4). Alerts the root user via email and suppresses alerts for one hours for the same IP address
-
-
-wzxhzdk:2
-
-
-# Bibliography
-
-[1] Wikipedia, Honeypot (computing), 4 December 2011, <a href="http://en.wikipedia.org/wiki/Honeypot_(computing)" target="_blank">http://en.wikipedia.org/wiki/Honeypot_(computing)</a>
-
-[2] Risto Vaarandi, SEC man page, NA, <a href="/web/20120310213401/http://simple-evcorr.sourceforge.net/man.html"  target="_blank">http://simple-evcorr.sourceforge.net/man.html</a>
-
-The above post is written by: Predrag Tasevski, Robert Pallas, Kuuno Pärnoja, Mikheil Basilaia, Karl Düüna, Roman Stepanenko and Heliand Dema.
+<p>We need a Web server running PHP. The PHP script will collect the JSON
+data received  </p>
+<p>from the attacker, format it nicely and send via email to people who
+will process it. If  </p>
+<p>JavaScript is not enabled on the attacker’s side we rely on the fact
+that a picture is  </p>
+<p>accessed from the honeypot html file. The server has to serve this image
+and the request  </p>
+<p>for it of course appears in the web server access logs. This information
+again is processed by the same PHP script mentioned above and forwarded
+to analysts. Another alternative way to inform security personnel about
+this honeypot image being accessed is the Simple Event Corelator (SEC)
+written by Risto Vaarandi [2]. This software is freely available under
+GPL license. We could write a rule for SEC that would monitor the web
+server access log file for the specific image file request and send an
+email with the IP address from which the image was accessed. The rule
+that is used for SEC can be found in Appendix 3. The content we are
+looking for in the log file may look like this:</p>
+<p>```192.168.1.34 - - [07/Dec/2011:19:16:07 +0200] "GET /honey.png
+HTTP/1.1" 200 1932```</p>
+<p># SUMMARY</p>
+<p>Nowadays the most common vector in unauthorized access into the system
+is followed by stealing important data, either is from personal computer
+or corporate network. Therefore, solution of implementing a trap for
+detecting, and deflecting the attacker of collecting valuable
+information is important. This laboratory report consists solution for
+future detection, by creating an honeypot document that will help us to
+collect data from the attacker. The document it self it is not an
+malicious code, likewise does not corrupt or infect the attacker system.
+Solution provided above is designed with an simple infrastructure which
+help us to identify identity of attacker in different operation system.</p>
+<p>Moreover, the honeypot document provides us an information of what is
+the attacker or user of this document operation system, which browser he
+is using, what plugins are installed in the browser and additional the
+time of accessing the file and attached IP address. Thereby, by
+identifying the above information will guide us in further steps. For
+instance by identifying his IP address we can find his location, ISP,
+etc. However, is this above provided information enough? The answer to
+the question is simple, indeed it is, cause we don’t need more. The idea
+in this laboratory is not to find or assail the attacker, but it is just
+to identify, and realize that someone had an unauthorized access to the
+system and to distinguish his identity. Consequently, from the above we
+can conclude that we rather gather the information from the attacker
+then to attack him back.</p>
+<p># APPENDICES</p>
+<p>Appendix 1 is the HTML and Java script code presented and in addition in
+Appendix 2 we present the e-mail received after the attacker has open
+the document. SEC are described in Appendix 3.</p>
+<p># Appendix 1</p>
+<p>HTML + Java script code presented below:</p>
+<p>wzxhzdk:0</p>
+<p>## Appendix 2</p>
+<p>What we receive via email:</p>
+<p>wzxhzdk:1</p>
+<p>## Appendix 3</p>
+<p>SEC rule file for web server log monitoring (will work only for IPv4).
+Alerts the root user via email and suppresses alerts for one hours for
+the same IP address</p>
+<p>wzxhzdk:2</p>
+<p># Bibliography</p>
+<p>[1] Wikipedia, Honeypot (computing), 4 December 2011,
+<a href="http://en.wikipedia.org/wiki/Honeypot_(computing)">http://en.wikipedia.org/wiki/Honeypot_(computing)</a></p>
+<p>[2] Risto Vaarandi, SEC man page, NA,
+<a href="/web/20120310213401/http://simple-evcorr.sourceforge.net/man.html">http://simple-evcorr.sourceforge.net/man.html</a></p>
+<p>The above post is written by: Predrag Tasevski, Robert Pallas, Kuuno
+Pärnoja, Mikheil Basilaia, Karl Düüna, Roman Stepanenko and Heliand
+Dema.</p>
             </div>
             <!-- /.entry-content -->
     <hr/>
@@ -245,8 +352,8 @@ The above post is written by: Predrag Tasevski, Robert Pallas, Kuuno Pärnoja, M
                             </a>
                         </li>
                         <li class="list-group-item tag-1">
-                            <a href="../../../../tag/security.html">
-                                security
+                            <a href="../../../../tag/online/">
+                                online
                             </a>
                         </li>
                         <li class="list-group-item tag-1">
@@ -255,33 +362,8 @@ The above post is written by: Predrag Tasevski, Robert Pallas, Kuuno Pärnoja, M
                             </a>
                         </li>
                         <li class="list-group-item tag-1">
-                            <a href="../../../../tag/online.html">
-                                online
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-2">
-                            <a href="../../../../tag/networking/">
-                                networking
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-2">
-                            <a href="../../../../tag/malware.html">
-                                malware
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-2">
-                            <a href="../../../../tag/network.html">
-                                network
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-2">
-                            <a href="../../../../tag/macedonia/">
-                                macedonia
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-2">
-                            <a href="../../../../tag/ddos.html">
-                                DDoS
+                            <a href="../../../../tag/security/">
+                                security
                             </a>
                         </li>
                         <li class="list-group-item tag-2">
@@ -290,108 +372,33 @@ The above post is written by: Predrag Tasevski, Robert Pallas, Kuuno Pärnoja, M
                             </a>
                         </li>
                         <li class="list-group-item tag-2">
-                            <a href="../../../../tag/attacks.html">
+                            <a href="../../../../tag/network/">
+                                network
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-2">
+                            <a href="../../../../tag/ddos/">
+                                DDoS
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-2">
+                            <a href="../../../../tag/macedonia/">
+                                macedonia
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-2">
+                            <a href="../../../../tag/networking/">
+                                networking
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-2">
+                            <a href="../../../../tag/attacks/">
                                 attacks
                             </a>
                         </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/wifi.html">
-                                wifi
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/threats.html">
-                                threats
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/online-generations.html">
-                                online generations
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/wordpress.html">
-                                wordpress
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/unix.html">
-                                Unix
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/risk-management/">
-                                risk management
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/history.html">
-                                history
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/network-crime.html">
-                                network crime
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/freedom/">
-                                freedom
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/malicious-code.html">
-                                malicious code
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/simmulation-of-attacks-and-defence.html">
-                                simmulation of attacks and defence
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/digital-divide/">
-                                digital divide
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/awareness/">
-                                awareness
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/risk-assessment/">
-                                risk assessment
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/ubuntu.html">
-                                ubuntu
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/nato/">
-                                nato
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/forum/">
-                                forum
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/wireless.html">
-                                wireless
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/port-scan/">
-                                Port scan
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/teaching/">
-                                teaching
+                        <li class="list-group-item tag-2">
+                            <a href="../../../../tag/malware/">
+                                malware
                             </a>
                         </li>
                         <li class="list-group-item tag-3">
@@ -400,72 +407,42 @@ The above post is written by: Predrag Tasevski, Robert Pallas, Kuuno Pärnoja, M
                             </a>
                         </li>
                         <li class="list-group-item tag-3">
-                            <a href="../../../../tag/syn-flood/">
-                                SYN flood
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
                             <a href="../../../../tag/course/">
                                 course
                             </a>
                         </li>
                         <li class="list-group-item tag-3">
-                            <a href="../../../../tag/pentest-mag.html">
-                                pentest mag
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/optamization.html">
-                                optamization
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/cyber/">
-                                cyber
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/snort/">
-                                snort
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/network-security.html">
-                                network security
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/gms.html">
-                                gms
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/art-of-war.html">
-                                art of war
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/information-warfare/">
-                                information warfare
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/wpan.html">
-                                wpan
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-3">
-                            <a href="../../../../tag/vulnerability.html">
+                            <a href="../../../../tag/vulnerability/">
                                 vulnerability
                             </a>
                         </li>
                         <li class="list-group-item tag-3">
-                            <a href="../../../../tag/acceleration.html">
-                                acceleration
+                            <a href="../../../../tag/wordpress/">
+                                wordpress
                             </a>
                         </li>
                         <li class="list-group-item tag-3">
-                            <a href="../../../../tag/wlan.html">
+                            <a href="../../../../tag/ubuntu/">
+                                ubuntu
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/interview/">
+                                interview
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/threats/">
+                                threats
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/future-of-human-communication/">
+                                future of human communication
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/wlan/">
                                 wlan
                             </a>
                         </li>
@@ -475,13 +452,13 @@ The above post is written by: Predrag Tasevski, Robert Pallas, Kuuno Pärnoja, M
                             </a>
                         </li>
                         <li class="list-group-item tag-3">
-                            <a href="../../../../tag/mvr/">
-                                mvr
+                            <a href="../../../../tag/awareness/">
+                                awareness
                             </a>
                         </li>
                         <li class="list-group-item tag-3">
-                            <a href="../../../../tag/ids/">
-                                ids
+                            <a href="../../../../tag/binary/">
+                                binary
                             </a>
                         </li>
                         <li class="list-group-item tag-3">
@@ -490,8 +467,28 @@ The above post is written by: Predrag Tasevski, Robert Pallas, Kuuno Pärnoja, M
                             </a>
                         </li>
                         <li class="list-group-item tag-3">
-                            <a href="../../../../tag/interview/">
-                                interview
+                            <a href="../../../../tag/optamization/">
+                                optamization
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/malicious-code/">
+                                malicious code
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/wireless/">
+                                wireless
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/cyber/">
+                                cyber
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/network-security/">
+                                network security
                             </a>
                         </li>
                         <li class="list-group-item tag-3">
@@ -500,148 +497,123 @@ The above post is written by: Predrag Tasevski, Robert Pallas, Kuuno Pärnoja, M
                             </a>
                         </li>
                         <li class="list-group-item tag-3">
-                            <a href="../../../../tag/future-of-human-communication.html">
-                                future of human communication
+                            <a href="../../../../tag/nato/">
+                                nato
                             </a>
                         </li>
                         <li class="list-group-item tag-3">
-                            <a href="../../../../tag/binary.html">
-                                binary
+                            <a href="../../../../tag/port-scan/">
+                                Port scan
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/acceleration/">
+                                acceleration
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/wpan/">
+                                wpan
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/digital-divide/">
+                                digital divide
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/network-crime/">
+                                network crime
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/syn-flood/">
+                                SYN flood
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/snort/">
+                                snort
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/risk-assessment/">
+                                risk assessment
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/ids/">
+                                ids
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/mvr/">
+                                mvr
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/online-generations/">
+                                online generations
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/unix/">
+                                Unix
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/wifi/">
+                                wifi
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/art-of-war/">
+                                art of war
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/gms/">
+                                gms
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/risk-management/">
+                                risk management
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/simmulation-of-attacks-and-defence/">
+                                simmulation of attacks and defence
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/teaching/">
+                                teaching
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/freedom/">
+                                freedom
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/forum/">
+                                forum
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/history/">
+                                history
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-3">
+                            <a href="../../../../tag/information-warfare/">
+                                information warfare
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="../../../../tag/cyber-risk/">
-                                cyber risk
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/war-strategy.html">
-                                war strategy
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/non-repudation.html">
-                                non-repudation
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/malware-analysis/">
-                                malware analysis
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/brute-force.html">
-                                brute force
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/hci.html">
-                                HCI
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/server-attack/">
-                                server attack
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/cyber-defence/">
-                                cyber defence
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/ngo.html">
-                                NGO
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/european-round/">
-                                european round
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/phone.html">
-                                phone
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/nework-crime.html">
+                            <a href="../../../../tag/nework-crime/">
                                 nework crime
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/hack/">
-                                hack
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/human-factor/">
-                                human factor
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/laptop.html">
-                                laptop
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/eavesdropping.html">
-                                eavesdropping
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/socio-technical/">
-                                socio-technical
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/grep.html">
-                                grep
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/internet-protocol-addressing-systems.html">
-                                Internet Protocol addressing systems
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/cyber-space.html">
-                                cyber space
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/hql.html">
-                                HQL
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/script-kiddie/">
-                                script kiddie
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/texworks.html">
-                                texworks
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/surfaj-bezbedno/">
-                                surfaj bezbedno
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/social-network/">
-                                social network
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/snort-rules/">
-                                snort rules
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/python.html">
-                                python
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
@@ -650,73 +622,23 @@ The above post is written by: Predrag Tasevski, Robert Pallas, Kuuno Pärnoja, M
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="../../../../tag/group.html">
-                                group
+                            <a href="../../../../tag/hci/">
+                                HCI
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="../../../../tag/program/">
-                                program
+                            <a href="../../../../tag/cyber-space/">
+                                cyber space
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="../../../../tag/cybersecuritymk.html">
-                                cybersecurity.mk
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/cybersecurity.html">
-                                cybersecurity
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/penetration.html">
-                                penetration
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/new-war.html">
-                                new war
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/south-eastern-europe.html">
-                                south eastern europe
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/linux.html">
-                                linux
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/wordpress-attacks.html">
+                            <a href="../../../../tag/wordpress-attacks/">
                                 wordpress attacks
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="../../../../tag/security-model.html">
-                                security model
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/psyche.html">
-                                psyche
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/bulgaria/">
-                                bulgaria
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/wireshark/">
-                                wireshark
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="../../../../tag/rainbow-tables.html">
-                                rainbow tables
+                            <a href="../../../../tag/brute-force/">
+                                brute force
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
@@ -725,18 +647,203 @@ The above post is written by: Predrag Tasevski, Robert Pallas, Kuuno Pärnoja, M
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="../../../../tag/pentest.html">
+                            <a href="../../../../tag/script-kiddie/">
+                                script kiddie
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/linux/">
+                                linux
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/hack/">
+                                hack
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/psyche/">
+                                psyche
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/rainbow-tables/">
+                                rainbow tables
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/hql/">
+                                HQL
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/cyber-warfare/">
+                                cyber warfare
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/human-factor/">
+                                human factor
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/pentest/">
                                 pentest
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="../../../../tag/c.html">
+                            <a href="../../../../tag/grep/">
+                                grep
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/eavesdropping/">
+                                eavesdropping
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/snort-rules/">
+                                snort rules
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/penetration/">
+                                penetration
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/security-model/">
+                                security model
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/cybersecuritymk/">
+                                cybersecurity.mk
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/ngo/">
+                                NGO
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/socio-technical/">
+                                socio-technical
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/wireshark/">
+                                wireshark
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/new-war/">
+                                new war
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/group/">
+                                group
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/surfaj-bezbedno/">
+                                surfaj bezbedno
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/war-strategy/">
+                                war strategy
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/european-round/">
+                                european round
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/texworks/">
+                                texworks
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/c/">
                                 C#
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="../../../../tag/cyber-warfare.html">
-                                cyber warfare
+                            <a href="../../../../tag/cyber-risk/">
+                                cyber risk
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/malware-analysis/">
+                                malware analysis
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/cyber-defence/">
+                                cyber defence
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/program/">
+                                program
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/laptop/">
+                                laptop
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/server-attack/">
+                                server attack
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/phone/">
+                                phone
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/society/">
+                                society
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/bulgaria/">
+                                bulgaria
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/cybersecurity/">
+                                cybersecurity
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/south-eastern-europe/">
+                                south eastern europe
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/social-network/">
+                                social network
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/python/">
+                                python
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/non-repudation/">
+                                non-repudation
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../../../../tag/internet-protocol-addressing-systems/">
+                                Internet Protocol addressing systems
                             </a>
                         </li>
                     </ul>
@@ -806,7 +913,7 @@ The above post is written by: Predrag Tasevski, Robert Pallas, Kuuno Pärnoja, M
     <script type="text/javascript">
 
         var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-46154062-1']);
+        _gaq.push(['_setAccount', 'UA-600234-3']);
         _gaq.push(['_trackPageview']);
 
         (function () {
