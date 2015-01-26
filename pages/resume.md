@@ -11,25 +11,34 @@ _Nationality_: Macedonian and Bulgarian (EU Citizen)
 
 ## OBJECTIVE RESEARCH INTERESTS
 
-In the field of of cyber security as part of national security awareness, risk assessment, identity/risk management, cyber risk, cyber-insurance, cyber security awareness and socio-technical aspects, hacktivist and so on.
+In the field of cyber security as part of national security awareness,
+risk assessment, identity/risk management, cyber risk,
+cyber-insurance, cyber security awareness and socio-technical aspects,
+data scientist, hacktivist and so on.
 
 ## EXPERIENCE
 
-### July 2014 - _Present, until December 2014_
+### July 2014 - December 2014
 
 **Intern: Cyber Security Researcher**, iWE, Sophia Antipolis, France
 
-My work involves design and development cyber security services for
- insurance customers. Such design process are: Incident Response,
- Digital Forensics, Audit and Cyber Risk Assessment, Cyber Insurance,
- penetration testing and research about cyber security and risks assessment.
+ My work involves design and development cyber security services
+    for insurance customers. Such design process are: Incident Response,
+    Digital Forensics, Audit and Cyber Risk Assessment, Cyber Insurance,
+    penetration testing and research about cyber security and risks
+    assessment.
 
 I have been closely involved with industry by constructing a
-comprehensive approach for cyber insurance and risk assessment, as well as conducting forensics investigations and participate in incident response, delivering a technical security assessment, and perform penetration testing.
+    comprehensive approach for cyber insurance and risk assessment, as
+    well as conducting forensics investigations and participate in
+    incident response, delivering a technical security assessment, and
+    perform penetration testing.
 
 I have developed cornerstone approach and method for assessing the
-risk in private companies and elsewhere. Also design Incident Response
-Handling Process and Flow. And establishing private CERT team. The team  works within Scrum - software development process.
+    risk in private companies and elsewhere. Also design Incident
+    Response Handling Process and Flow. And build security
+    architecture for client-side based application - Zero knowledge
+    data at REST. The team works within Scrum - software development process.
 
 ### Feb 2014 - _Present_
 
@@ -138,10 +147,6 @@ ICSAP is prototype web based application for the management of the syllabus. CMS
 
 Is an awareness wizard application to deliver to any end-users, companies, mobile providers, etc. security solution for their mobile and portable devices that run Android.
 
-### Training
-
-Designed and delivered training in Macedonian Court Houses for Digital Signing and Digital Certifications.
-
 ## PUBLICATIONS
 
 ### Books
@@ -194,7 +199,8 @@ French, Russian, Estonian, German
 
 ### Languages &amp; Libraries
 
-*   Proficient: Python (Numpy, Scipy, Matplotlib, Beautiful Soup), Emacs Lisp, C++, Bash, HTML, Javascript, CSS, PHP, MySQL, R
+*   Proficient: Python (Numpy, Scipy, Matplotlib, Beautiful Soup),
+    Emacs Lisp, C++, Bash, HTML, Java, Javascript, CSS, PHP, MySQL, R
 
 ### Authoring
 
@@ -263,7 +269,16 @@ Topic: _Methodological Approach to Security Awareness_, Kaspersky - CyberSecurit
 
 #### Oct 2014
 
-NATO ARW, Strengthening Cyber Defense for Critical Infrastructure, Kiev, Ukraine. Presented topic: _Standards for Information Security are inappropriate fashion to assess the risk in private companies and elsewhere_.
+NATO ARW, Strengthening Cyber Defense for Critical Infrastructure,
+Kiev, Ukraine. Presented topic: _Standards for Information Security
+are inappropriate fashion to assess the risk in private companies and
+elsewhere_.
+
+#### Dec 2014
+
+DCAF Young Faces Network 2014. _Young Faces Network Cybersecurity
+Winter School for the Western Balkans_. Petnica, Serbia, 1 to 5
+December 2014. Delivering lectures on two topics: **How the Internet works and Introduction to cybersecurity threats and risks**.
 
 ### Participant
 

@@ -3,21 +3,36 @@ Date: 05/11/2014
 
 ## Short Bio
 
-Predrag Tasevski MSc holds a Master of Science in Engineering in the field of Cyber Security, where currently is obtaining Post-Master in Communication and Security in France. His objective research interests are in the field of cyber security as part of national security awareness, risk assessment, identity/risk management, cyber risk, cyber-insurance, cyber security awareness and socio-technical aspects, hacktivist and so on. Predrag is the author of two [paperback books](/pages/publications.html): Messenger-Pigeon and Interactive Cyber Security Awareness Program, as well as being published in the magazines PenTest, Hackin9 and Nova Makedonija. He is also a Microsoft Certified Trainer and a Lead/External Auditor for ISMS. Today, he is an intern as Cyber Security Researcher based in Sophia Antipolis, France. 
+Predrag TASEVSKI holds a Master of Science in Engineering in the field
+of Cyber Security, where currently is obtaining Post-Master in
+Communication and Security in France. His objective research interests
+are in the field of cyber security, security awareness, risk
+assessment, identity/risk management, cyber risk, cyber insurance,
+cyber security awareness, socio-technical aspects, data scientist and
+hacktivist and so on. Predrag is the author of two
+[paperback books](/pages/publications.html): Messenger-Pigeon and
+Interactive Cyber Security Awareness Program, as well as being
+published in the magazines PenTest, Hackin9 and Nova Makedonija. He is
+also a Microsoft Certified Trainer and a Lead/External Auditor for
+ISMS. Today, he is an independent researcher and seeking for a term job. 
 
 ## Long Bio
 
-I study Post-Master (Diplôme d’Ingénieur de specialisation) in [Security in Computer Systems and Communications](http://www.eurecom.fr/en/teaching/post-master-degree/security-computer-systems-and-communications) at [EURECOM](http://www.eurecom.fr/en).
+I'm studying Post-Master (Diplôme d’Ingénieur de specialisation) in [Security in Computer Systems and Communications](http://www.eurecom.fr/en/teaching/post-master-degree/security-computer-systems-and-communications) at [EURECOM](http://www.eurecom.fr/en).
 
-I am Visiting/Remote Lecture in [Faculty Humanistic Studies](http://udgedu.me/hs/master). I’m affiliated with Master of Cyber Security Studies at the [University of Donja Gorica](http://www.udgedu.me/en/#.VFeo6vnF-JE), Podgorica, Montenegro.
+As well as,  visiting/remote lecture in [Faculty Humanistic Studies](http://udgedu.me/hs/master). I’m affiliated with Master of Cyber Security Studies at the [University of Donja Gorica](http://www.udgedu.me/en/#.VFeo6vnF-JE), Podgorica, Montenegro.
 
 [My Vita -&gt;](/pages/cv.html) 
 
-Much of my [research](/pages/publications.html) has been about cyber security as part of national security awareness, risk assessment, identity/risk management, cyber risk, cyber-insurance, cyber security awareness, socio-technical aspects and hacktivist. My current work focuses on the cyber risk and cyber insurance, defining correlation between threats vs. vulnerabilities, and likelihood of impact loss. I’m also interested in techniques and methods for data analysis and data science / mining.
+Much of my [research](/pages/publications.html) has been about cyber
+security as part of national security awareness, risk assessment,
+identity/risk management, cyber risk, cyber insurance, cyber crime,
+socio-technical aspects, methodological approach to awareness,
+password attacks, frequently occurring security incidents, threats, etc. My current work focuses on **cyber risk** and **cyber insurance**, defining correlation between threats vs. vulnerabilities, and likelihood of impact loss. I’m also interested in techniques and methods for data analysis and data science / mining.
 
 Moreover, for everyday tasks usually I use:
 [Emacs](http://www.gnu.org/software/emacs/),
-[org-mode](http://orgmode.org/), Linux
+[org-mode](http://orgmode.org/), LaTeX, Linux
 ([Lubuntu](http://lubuntu.net/)) &amp; windows 7,
 [FreeMind](http://freemind.sourceforge.net/wiki/index.php/Main_Page),
 [GIMP](http://www.gimp.org/), and many other open
@@ -29,7 +44,10 @@ mining the following:
 [IPython](http://ipython.org/) and many others.
 
 I am very interested in [photographing](/pages/photography.html) and I own
-Nikon 80 DSLR, cooking, traveling and skiing. Sometimes, I go to yoga class, DJing here is the [music](http://www.last.fm/user/stepcellwolf) that I love and that I can not live without it, and so forth.
+Nikon 80 DSLR, cooking, traveling and skiing. Sometimes, I go to yoga
+class, DJing - here is the
+[music](http://www.last.fm/user/stepcellwolf) that I love and that I
+can not live without it, and many other things.
 
 ## PGP key
 
