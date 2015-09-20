@@ -33,7 +33,8 @@
         <link rel="stylesheet" href="../../../../theme/css/bootstrap.min.css" type="text/css"/>
     <link href="../../../../theme/css/font-awesome.min.css" rel="stylesheet">
 
-    <link href="../../../../theme/css/pygments/native.css" rel="stylesheet">
+    <link href="../../../../theme/css/pygments/emacs.css" rel="stylesheet">
+    <link href="../../../../theme/tipuesearch/tipuesearch.css" rel="stylesheet">
     <link rel="stylesheet" href="../../../../theme/css/style.css" type="text/css"/>
 
         <link href="../../../../feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
@@ -82,6 +83,11 @@ Predrag TASEVSKI - Pece            </a>
                         </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+              <li><span>
+                <form class="navbar-search" action="/search">
+                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                </form></span>
+              </li>
               <li><a href="../../../../archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
             </ul>
         </div>
@@ -228,6 +234,12 @@ http://gnu.org/licenses/gpl.html</p>
 </p>
             </div>
             <!-- /.entry-content -->
+<section class="well" id="related-posts">
+    <h4>Related Posts:</h4>
+    <ul>
+        <li><a href="../../../../posts/2013/10/first-time-lenovo-hopefully-for-sure-the-last-time/">First time Lenovo, hopefully for sure the last time</a></li>
+    </ul>
+</section>
 
         </article>
     </section>
@@ -236,18 +248,20 @@ http://gnu.org/licenses/gpl.html</p>
       <div id="comments"></div>
     </div>
     
-    <script src="https://apis.google.com/js/plusone.js"></script>
-    <script>
-        $(document).ready(function () {
-            gapi.comments.render('comments', {
-                href: window.location,
-                width: '600',
-                first_party_property: 'BLOGGER',
-                view_type: 'FILTERED_POSTMOD'
-            });
-    });
-    </script>
 
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES * * */
+        var disqus_shortname = 'predragtasevskipece';
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 
         </div>
         <div class="col-sm-3" id="sidebar">
@@ -271,18 +285,13 @@ http://gnu.org/licenses/gpl.html</p>
             <li class="list-group-item"><a href="../../../../"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                 <ul class="list-group " id="tags">
                     <li class="list-group-item tag-1">
-                        <a href="../../../../tag/internet/">
-                            internet
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-1">
-                        <a href="../../../../tag/online/">
-                            online
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-1">
                         <a href="../../../../tag/cyber-security/">
                             cyber security
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-1">
+                        <a href="../../../../tag/internet/">
+                            internet
                         </a>
                     </li>
                     <li class="list-group-item tag-1">
@@ -290,9 +299,24 @@ http://gnu.org/licenses/gpl.html</p>
                             security
                         </a>
                     </li>
+                    <li class="list-group-item tag-1">
+                        <a href="../../../../tag/online/">
+                            online
+                        </a>
+                    </li>
                     <li class="list-group-item tag-2">
                         <a href="../../../../tag/macedonia/">
                             Macedonia
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="../../../../tag/malware/">
+                            malware
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="../../../../tag/attacks/">
+                            attacks
                         </a>
                     </li>
                     <li class="list-group-item tag-2">
@@ -306,48 +330,13 @@ http://gnu.org/licenses/gpl.html</p>
                         </a>
                     </li>
                     <li class="list-group-item tag-2">
-                        <a href="../../../../tag/attacks/">
-                            attacks
+                        <a href="../../../../tag/ddos/">
+                            DDoS
                         </a>
                     </li>
                     <li class="list-group-item tag-2">
                         <a href="../../../../tag/networking/">
                             networking
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-2">
-                        <a href="../../../../tag/malware/">
-                            malware
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-2">
-                        <a href="../../../../tag/ddos/">
-                            DDoS
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-3">
-                        <a href="../../../../tag/threats/">
-                            threats
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-3">
-                        <a href="../../../../tag/online-generations/">
-                            online generations
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-3">
-                        <a href="../../../../tag/vulnerability/">
-                            vulnerability
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-3">
-                        <a href="../../../../tag/binary/">
-                            binary
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-3">
-                        <a href="../../../../tag/wpan/">
-                            wpan
                         </a>
                     </li>
                     <li class="list-group-item tag-3">
@@ -356,18 +345,18 @@ http://gnu.org/licenses/gpl.html</p>
                         </a>
                     </li>
                     <li class="list-group-item tag-3">
-                        <a href="../../../../tag/cyber/">
-                            cyber
+                        <a href="../../../../tag/binary/">
+                            binary
                         </a>
                     </li>
                     <li class="list-group-item tag-3">
-                        <a href="../../../../tag/digital-divide/">
-                            digital divide
+                        <a href="../../../../tag/freedom/">
+                            freedom
                         </a>
                     </li>
                     <li class="list-group-item tag-3">
-                        <a href="../../../../tag/malicious-code/">
-                            malicious code
+                        <a href="../../../../tag/online-generations/">
+                            online generations
                         </a>
                     </li>
                     <li class="list-group-item tag-3">
@@ -376,13 +365,23 @@ http://gnu.org/licenses/gpl.html</p>
                         </a>
                     </li>
                     <li class="list-group-item tag-3">
-                        <a href="../../../../tag/wordpress/">
-                            wordpress
+                        <a href="../../../../tag/log-mining/">
+                            log mining
                         </a>
                     </li>
                     <li class="list-group-item tag-3">
-                        <a href="../../../../tag/risk-assessment/">
-                            risk assessment
+                        <a href="../../../../tag/forum/">
+                            forum
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="../../../../tag/wlan/">
+                            wlan
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="../../../../tag/digital-divide/">
+                            digital divide
                         </a>
                     </li>
                     <li class="list-group-item tag-3">
@@ -391,13 +390,8 @@ http://gnu.org/licenses/gpl.html</p>
                         </a>
                     </li>
                     <li class="list-group-item tag-3">
-                        <a href="../../../../tag/history/">
-                            history
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-3">
-                        <a href="../../../../tag/snort/">
-                            snort
+                        <a href="../../../../tag/art-of-war/">
+                            art of war
                         </a>
                     </li>
                     <li class="list-group-item tag-3">
@@ -406,33 +400,8 @@ http://gnu.org/licenses/gpl.html</p>
                         </a>
                     </li>
                     <li class="list-group-item tag-3">
-                        <a href="../../../../tag/risk-management/">
-                            risk management
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-3">
-                        <a href="../../../../tag/log-mining/">
-                            log mining
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-3">
-                        <a href="../../../../tag/future-of-human-communication/">
-                            future of human communication
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-3">
-                        <a href="../../../../tag/gms/">
-                            gms
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-3">
-                        <a href="../../../../tag/ids/">
-                            ids
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-3">
-                        <a href="../../../../tag/course/">
-                            course
+                        <a href="../../../../tag/cyber/">
+                            cyber
                         </a>
                     </li>
                     <li class="list-group-item tag-3">
@@ -446,6 +415,71 @@ http://gnu.org/licenses/gpl.html</p>
                         </a>
                     </li>
                     <li class="list-group-item tag-3">
+                        <a href="../../../../tag/port-scan/">
+                            Port scan
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="../../../../tag/ids/">
+                            ids
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="../../../../tag/snort/">
+                            snort
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="../../../../tag/testing-ids/">
+                            testing ids
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="../../../../tag/unix/">
+                            Unix
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="../../../../tag/syn-flood/">
+                            SYN flood
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="../../../../tag/threats/">
+                            threats
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="../../../../tag/vulnerability/">
+                            vulnerability
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="../../../../tag/gms/">
+                            gms
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="../../../../tag/wpan/">
+                            wpan
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="../../../../tag/awareness/">
+                            awareness
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="../../../../tag/risk-management/">
+                            risk management
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="../../../../tag/malicious-code/">
+                            malicious code
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
                         <a href="../../../../tag/teaching/">
                             teaching
                         </a>
@@ -456,38 +490,8 @@ http://gnu.org/licenses/gpl.html</p>
                         </a>
                     </li>
                     <li class="list-group-item tag-3">
-                        <a href="../../../../tag/optamization/">
-                            optamization
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-3">
-                        <a href="../../../../tag/forum/">
-                            forum
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-3">
-                        <a href="../../../../tag/network-crime/">
-                            network crime
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-3">
-                        <a href="../../../../tag/awareness/">
-                            awareness
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-3">
-                        <a href="../../../../tag/testing-ids/">
-                            testing ids
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-3">
-                        <a href="../../../../tag/syn-flood/">
-                            SYN flood
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-3">
-                        <a href="../../../../tag/freedom/">
-                            freedom
+                        <a href="../../../../tag/history/">
+                            history
                         </a>
                     </li>
                     <li class="list-group-item tag-3">
@@ -496,33 +500,18 @@ http://gnu.org/licenses/gpl.html</p>
                         </a>
                     </li>
                     <li class="list-group-item tag-3">
-                        <a href="../../../../tag/vulnerability-scanning/">
-                            vulnerability scanning
+                        <a href="../../../../tag/risk-assessment/">
+                            risk assessment
                         </a>
                     </li>
                     <li class="list-group-item tag-3">
-                        <a href="../../../../tag/unix/">
-                            Unix
+                        <a href="../../../../tag/network-crime/">
+                            network crime
                         </a>
                     </li>
                     <li class="list-group-item tag-3">
-                        <a href="../../../../tag/mvr/">
-                            mvr
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-3">
-                        <a href="../../../../tag/port-scan/">
-                            Port scan
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-3">
-                        <a href="../../../../tag/wlan/">
-                            wlan
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-3">
-                        <a href="../../../../tag/interview/">
-                            interview
+                        <a href="../../../../tag/future-of-human-communication/">
+                            future of human communication
                         </a>
                     </li>
                     <li class="list-group-item tag-3">
@@ -531,8 +520,33 @@ http://gnu.org/licenses/gpl.html</p>
                         </a>
                     </li>
                     <li class="list-group-item tag-3">
-                        <a href="../../../../tag/art-of-war/">
-                            art of war
+                        <a href="../../../../tag/course/">
+                            course
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="../../../../tag/interview/">
+                            interview
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="../../../../tag/wordpress/">
+                            wordpress
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="../../../../tag/vulnerability-scanning/">
+                            vulnerability scanning
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="../../../../tag/optamization/">
+                            optamization
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="../../../../tag/mvr/">
+                            mvr
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -541,28 +555,8 @@ http://gnu.org/licenses/gpl.html</p>
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="../../../../tag/group/">
-                            group
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="../../../../tag/laptop/">
-                            laptop
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="../../../../tag/ngo/">
-                            NGO
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="../../../../tag/hack/">
-                            hack
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="../../../../tag/cybersecuritymk/">
-                            cybersecurity.mk
+                        <a href="../../../../tag/nework-crime/">
+                            nework crime
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -571,28 +565,8 @@ http://gnu.org/licenses/gpl.html</p>
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="../../../../tag/c/">
-                            C#
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
                         <a href="../../../../tag/malware-analysis/">
                             malware analysis
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="../../../../tag/brute-force/">
-                            brute force
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="../../../../tag/script-kiddie/">
-                            script kiddie
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="../../../../tag/south-eastern-europe/">
-                            south eastern europe
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -601,8 +575,13 @@ http://gnu.org/licenses/gpl.html</p>
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="../../../../tag/nework-crime/">
-                            nework crime
+                        <a href="../../../../tag/psyche/">
+                            psyche
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="../../../../tag/south-eastern-europe/">
+                            south eastern europe
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -611,8 +590,13 @@ http://gnu.org/licenses/gpl.html</p>
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="../../../../tag/psyche/">
-                            psyche
+                        <a href="../../../../tag/script-kiddie/">
+                            script kiddie
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="../../../../tag/group/">
+                            group
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -620,8 +604,46 @@ http://gnu.org/licenses/gpl.html</p>
                             human factor
                         </a>
                     </li>
+                    <li class="list-group-item tag-4">
+                        <a href="../../../../tag/laptop/">
+                            laptop
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="../../../../tag/cybersecuritymk/">
+                            cybersecurity.mk
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="../../../../tag/brute-force/">
+                            brute force
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="../../../../tag/c/">
+                            C#
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="../../../../tag/hack/">
+                            hack
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="../../../../tag/ngo/">
+                            NGO
+                        </a>
+                    </li>
                 </ul>
             </li>
+
+    <li class="list-group-item"><h4><i class="fa fa-twitter fa-lg"></i><span class="icon-label">Latest Tweets</span></h4></li>
+    <div id="twitter_timeline">
+        <a class="twitter-timeline" data-chrome="noheader" href="https://twitter.com/stepcellwolf" data-widget-id="645620628771504129">Tweets by stepcellwolf</a>
+    </div>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
     <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
       <ul class="list-group" id="links">
         <li class="list-group-item">
@@ -659,7 +681,11 @@ http://gnu.org/licenses/gpl.html</p>
          <div class="col-xs-10">&copy; 2015 Predrag TASEVSKI - Pece
             &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
-            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>  <a rel="license" href="http://creativecommons.org/licenses/by-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by-nd/4.0/80x15.png" /></a>
+    Content
+  licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nd/4.0/">Creative Commons Attribution 4.0 International License</a>, except where indicated otherwise.
+</small></p>
+         </div>
          <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
       </div>
    </div>
