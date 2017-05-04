@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Predrag TASEVSKI - Pece</title><link href="http://predragtasevski.com/" rel="alternate"></link><link href="http://predragtasevski.com/feeds/tag/aspnet.atom.xml" rel="self"></link><id>http://predragtasevski.com/</id><updated>2012-02-21T00:00:00+01:00</updated><entry><title>Security Programing Techniques</title><link href="http://predragtasevski.com/posts/2012/02/security-programing-techniques/" rel="alternate"></link><updated>2012-02-21T00:00:00+01:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-02-21:posts/2012/02/security-programing-techniques/</id><summary type="html">&lt;h1&gt;INTRODUCTION&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Predrag TASEVSKI - Pece - ASP.NET</title><link href="http://predragtasevski.com/" rel="alternate"></link><link href="http://predragtasevski.com/feeds/tag/aspnet.atom.xml" rel="self"></link><id>http://predragtasevski.com/</id><updated>2012-02-21T00:00:00+01:00</updated><entry><title>Security Programing Techniques</title><link href="http://predragtasevski.com/posts/2012/02/security-programing-techniques/" rel="alternate"></link><published>2012-02-21T00:00:00+01:00</published><updated>2012-02-21T00:00:00+01:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-02-21:/posts/2012/02/security-programing-techniques/</id><summary type="html">&lt;h1&gt;INTRODUCTION&lt;/h1&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The main goal of this post is to introduce the reader with the security
+programing techniques into deferent program languages and operating
+system security models. The post is introducing four following topics:&lt;/p&gt;
+&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Session storage’s in Ruby on Rail&lt;/li&gt;
+&lt;li&gt;Parameterized statements into Java with JDBC, C# with ASP.NET …&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;h1&gt;INTRODUCTION&lt;/h1&gt;
 &lt;/p&gt;
 
 &lt;p&gt;The main goal of this post is to introduce the reader with the security
@@ -316,10 +326,10 @@ following bash script:&lt;/p&gt;
 | &lt;div class="linenodiv"&gt;              | &lt;div class="highlight"&gt;              |
 |                                      |                                      |
 |      1 2 3 4 5 6 7 8 910111213141516 |     #!/bin/sh# remove files with nam |
-| 17181920212223                       | e pattern matching regexpif [ x&lt;span class="math"&gt;\(1 =  |
-|                                      | x ]; then# if [[ x\)&lt;/span&gt;1 = x ]]echo -n " |
+| 17181920212223                       | e pattern matching regexpif [ x$1 =  |
+|                                      | x ]; then# if [[ x$1 = x ]]echo -n " |
 | &lt;/div&gt;                               | Please enter directory name: "read d |
-|                                      | irelsedir=&lt;span class="math"&gt;\(1fiif [ x\)&lt;/span&gt;2 = x ]; then#  |
+|                                      | irelsedir=$1fiif [ x$2 = x ]; then#  |
 |                                      | if [[ x$2 = x ]]echo -n "Please ente |
 |                                      | r pattern: "read patternelsepattern= |
 |                                      | $2fifind $dir &amp;amp;amp;amp;amp;amp;g |
@@ -366,62 +376,4 @@ in-depth exploration of the art of shell scripting. Retrieved from:
 
 &lt;p&gt;[2] Lecture 8 slides Scripting, Meelis Roos. Retrieved from file:
 08-scripting.pdf&lt;/p&gt;
-&lt;/p&gt;
-
-&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width &lt; 768) ? "left" : align;
-        indent = (screen.width &lt; 768) ? "0em" : indent;
-        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    var location_protocol = (false) ? 'https' : document.location.protocol;
-    if (location_protocol !== 'http' &amp;&amp; location_protocol !== 'https') location_protocol = 'https:';
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-&lt;/script&gt;</summary><category term="ASP.NET"></category><category term="bash"></category><category term="C#"></category><category term="cyber security"></category><category term="HQL"></category><category term="java"></category><category term="JDBC"></category><category term="Perl"></category><category term="PHP5"></category><category term="python"></category><category term="Ruby on Rail"></category><category term="security"></category><category term="security model"></category><category term="Unix"></category><category term="windows 7"></category></entry></feed>
+&lt;/p&gt;</content><category term="ASP.NET"></category><category term="bash"></category><category term="C#"></category><category term="cyber security"></category><category term="HQL"></category><category term="java"></category><category term="JDBC"></category><category term="Perl"></category><category term="PHP5"></category><category term="python"></category><category term="Ruby on Rail"></category><category term="security"></category><category term="security model"></category><category term="Unix"></category><category term="windows 7"></category></entry></feed>

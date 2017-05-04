@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Predrag TASEVSKI - Pece</title><link href="http://predragtasevski.com/" rel="alternate"></link><link href="http://predragtasevski.com/feeds/tag/honeypot.atom.xml" rel="self"></link><id>http://predragtasevski.com/</id><updated>2012-02-16T00:00:00+01:00</updated><entry><title>Honeypot document</title><link href="http://predragtasevski.com/posts/2012/02/honeypot-document/" rel="alternate"></link><updated>2012-02-16T00:00:00+01:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-02-16:posts/2012/02/honeypot-document/</id><summary type="html">&lt;h1&gt;INTRODUCTION&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Predrag TASEVSKI - Pece - honeypot</title><link href="http://predragtasevski.com/" rel="alternate"></link><link href="http://predragtasevski.com/feeds/tag/honeypot.atom.xml" rel="self"></link><id>http://predragtasevski.com/</id><updated>2012-02-16T00:00:00+01:00</updated><entry><title>Honeypot document</title><link href="http://predragtasevski.com/posts/2012/02/honeypot-document/" rel="alternate"></link><published>2012-02-16T00:00:00+01:00</published><updated>2012-02-16T00:00:00+01:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-02-16:/posts/2012/02/honeypot-document/</id><summary type="html">&lt;h1&gt;INTRODUCTION&lt;/h1&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The main goal of laboratory report is to identify possible leaked/stolen
+information, documents from our system without recognising that attacker
+had an access. Thus access of the document will inform us immediately
+with the information of the burglar. The report should highlight the
+following aspects:&lt;/p&gt;
+&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Constructed an document …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;h1&gt;INTRODUCTION&lt;/h1&gt;
 &lt;/p&gt;
 
 &lt;p&gt;The main goal of laboratory report is to identify possible leaked/stolen
@@ -171,4 +182,4 @@ the same IP address&lt;/p&gt;
 &lt;a href="/web/20120310213401/http://simple-evcorr.sourceforge.net/man.html"&gt;http://simple-evcorr.sourceforge.net/man.html&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;The above post is written by: Predrag Tasevski, Robert Pallas, Kuuno
 Pärnoja, Mikheil Basilaia, Karl Düüna, Roman Stepanenko and Heliand
-Dema.&lt;/p&gt;</summary><category term="honeypot document"></category><category term="cyber security"></category><category term="honeypot"></category></entry></feed>
+Dema.&lt;/p&gt;</content><category term="honeypot document"></category><category term="cyber security"></category><category term="honeypot"></category></entry></feed>

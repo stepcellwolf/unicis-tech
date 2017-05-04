@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Predrag TASEVSKI - Pece</title><link href="http://predragtasevski.com/" rel="alternate"></link><link href="http://predragtasevski.com/feeds/tag/clever-solution.atom.xml" rel="self"></link><id>http://predragtasevski.com/</id><updated>2012-03-23T00:00:00+01:00</updated><entry><title>Clever solution by making site more resilient by optimization</title><link href="http://predragtasevski.com/posts/2012/03/clever-solution-by-making-site-more-resilient-by-optimization/" rel="alternate"></link><updated>2012-03-23T00:00:00+01:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-03-23:posts/2012/03/clever-solution-by-making-site-more-resilient-by-optimization/</id><summary type="html">&lt;h1&gt;PURPOSE &amp;amp; SCENARIO&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Predrag TASEVSKI - Pece - clever solution</title><link href="http://predragtasevski.com/" rel="alternate"></link><link href="http://predragtasevski.com/feeds/tag/clever-solution.atom.xml" rel="self"></link><id>http://predragtasevski.com/</id><updated>2012-03-23T00:00:00+01:00</updated><entry><title>Clever solution by making site more resilient by optimization</title><link href="http://predragtasevski.com/posts/2012/03/clever-solution-by-making-site-more-resilient-by-optimization/" rel="alternate"></link><published>2012-03-23T00:00:00+01:00</published><updated>2012-03-23T00:00:00+01:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-03-23:/posts/2012/03/clever-solution-by-making-site-more-resilient-by-optimization/</id><summary type="html">&lt;h1&gt;PURPOSE &amp;amp; SCENARIO&lt;/h1&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The objective of this laboratory test, scenario is to make explore
+alternative “clever” solutions (as opposed to making the site more
+resilient by optimizing it) to protect your site against attacks.
+Moreover, DDoS [1] attacks, malicious code, etc.&lt;/p&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Therefore, we need to develop countermeasures for the &lt;strong&gt;working&lt;/strong&gt;
+attacks …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;PURPOSE &amp;amp; SCENARIO&lt;/h1&gt;
 &lt;/p&gt;
 
 &lt;p&gt;The objective of this laboratory test, scenario is to make explore
@@ -240,4 +250,4 @@ mod_rewrite, Feb 2009,
 &lt;/p&gt;
 
 &lt;p&gt;[2] AB - &lt;a href="http://httpd.apache.org/docs/2.0/programs/ab.html"&gt;http://httpd.apache.org/docs/2.0/programs/ab.html&lt;/a&gt;&lt;/p&gt;
-&lt;/p&gt;</summary><category term="ab"></category><category term="attacks"></category><category term="clever solution"></category><category term="cyber security"></category><category term="DDoS"></category><category term="internet"></category><category term="jmeter"></category><category term="malicious code"></category><category term="wordpress"></category></entry></feed>
+&lt;/p&gt;</content><category term="ab"></category><category term="attacks"></category><category term="clever solution"></category><category term="cyber security"></category><category term="DDoS"></category><category term="internet"></category><category term="jmeter"></category><category term="malicious code"></category><category term="wordpress"></category></entry></feed>

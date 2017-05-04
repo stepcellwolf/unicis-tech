@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Predrag TASEVSKI - Pece</title><link href="http://predragtasevski.com/" rel="alternate"></link><link href="http://predragtasevski.com/feeds/tag/virtual-machine-analysis.atom.xml" rel="self"></link><id>http://predragtasevski.com/</id><updated>2012-03-02T00:00:00+01:00</updated><entry><title>Virtual Machine Malware / Malicious Analysis</title><link href="http://predragtasevski.com/posts/2012/03/virtual-machine-malware-malicious-analysis/" rel="alternate"></link><updated>2012-03-02T00:00:00+01:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-03-02:posts/2012/03/virtual-machine-malware-malicious-analysis/</id><summary type="html">&lt;h1&gt;INTRODUCTION&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Predrag TASEVSKI - Pece - virtual machine analysis</title><link href="http://predragtasevski.com/" rel="alternate"></link><link href="http://predragtasevski.com/feeds/tag/virtual-machine-analysis.atom.xml" rel="self"></link><id>http://predragtasevski.com/</id><updated>2012-03-02T00:00:00+01:00</updated><entry><title>Virtual Machine Malware / Malicious Analysis</title><link href="http://predragtasevski.com/posts/2012/03/virtual-machine-malware-malicious-analysis/" rel="alternate"></link><published>2012-03-02T00:00:00+01:00</published><updated>2012-03-02T00:00:00+01:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-03-02:/posts/2012/03/virtual-machine-malware-malicious-analysis/</id><summary type="html">&lt;h1&gt;INTRODUCTION&lt;/h1&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The main goal of laboratory report is to identify possible infection of
+two Windows 7 virtual machine. Virtual machines presented by the
+lecture:&lt;/p&gt;
+&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Win 1&lt;/li&gt;
+&lt;li&gt;Win 2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The assignment is following:&lt;/p&gt;
+&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Find out what is infecting the machine win1&lt;/li&gt;
+&lt;li&gt;Understand which way is the current malware dangerous to “your …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;h1&gt;INTRODUCTION&lt;/h1&gt;
 &lt;/p&gt;
 
 &lt;p&gt;The main goal of laboratory report is to identify possible infection of
@@ -899,4 +918,4 @@ System Folders, 2005,
 &lt;/p&gt;
 
 &lt;p&gt;The above post is written by Predrag Tasevski and Mikheil Basilaia.&lt;/p&gt;
-&lt;/p&gt;</summary><category term="malicious analysis"></category><category term="malware"></category><category term="malware analysis"></category><category term="virtual machine"></category><category term="virtual machine analysis"></category></entry></feed>
+&lt;/p&gt;</content><category term="malicious analysis"></category><category term="malware"></category><category term="malware analysis"></category><category term="virtual machine"></category><category term="virtual machine analysis"></category></entry></feed>

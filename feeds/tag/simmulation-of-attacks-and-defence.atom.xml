@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Predrag TASEVSKI - Pece</title><link href="http://predragtasevski.com/" rel="alternate"></link><link href="http://predragtasevski.com/feeds/tag/simmulation-of-attacks-and-defence.atom.xml" rel="self"></link><id>http://predragtasevski.com/</id><updated>2011-10-12T23:00:00+02:00</updated><entry><title>Cost of DDoS, leak of credit card numbers, infected machine and spam</title><link href="http://predragtasevski.com/posts/2011/10/cost-of-ddos-leak-of-credit-card-numbers-infected-machine-and-spam/" rel="alternate"></link><updated>2011-10-12T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2011-10-12:posts/2011/10/cost-of-ddos-leak-of-credit-card-numbers-infected-machine-and-spam/</id><summary type="html">&lt;h1&gt;PURPOSE&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Predrag TASEVSKI - Pece - simmulation of attacks and defence</title><link href="http://predragtasevski.com/" rel="alternate"></link><link href="http://predragtasevski.com/feeds/tag/simmulation-of-attacks-and-defence.atom.xml" rel="self"></link><id>http://predragtasevski.com/</id><updated>2011-10-12T23:00:00+02:00</updated><entry><title>Cost of DDoS, leak of credit card numbers, infected machine and spam</title><link href="http://predragtasevski.com/posts/2011/10/cost-of-ddos-leak-of-credit-card-numbers-infected-machine-and-spam/" rel="alternate"></link><published>2011-10-12T23:00:00+02:00</published><updated>2011-10-12T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2011-10-12:/posts/2011/10/cost-of-ddos-leak-of-credit-card-numbers-infected-machine-and-spam/</id><summary type="html">&lt;h1&gt;PURPOSE&lt;/h1&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The main goal of laboratory report is to identify the costs of nowadays
+most known attack  DDOS, leak of credit card numbers, infected machine
+and never the less sending spam for 1 000 000 (one million) people.
+There are few points that should be presented:&lt;/p&gt;
+&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Where did we discovered …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;h1&gt;PURPOSE&lt;/h1&gt;
 &lt;/p&gt;
 
 &lt;p&gt;The main goal of laboratory report is to identify the costs of nowadays
@@ -77,8 +87,8 @@ found are with&lt;/p&gt;
 &lt;a href="http://www.hackzone.ru/forum/open/id/17187/"&gt;http://www.hackzone.ru/forum/open/id/17187/&lt;/a&gt;&lt;/p&gt;
 &lt;/p&gt;
 
-&lt;p&gt;As we stated above that the price is from \&lt;span class="math"&gt;\(50 per day and it goes until
-\\)&lt;/span&gt;350 per month and so on.&lt;/p&gt;
+&lt;p&gt;As we stated above that the price is from \$50 per day and it goes until
+\$350 per month and so on.&lt;/p&gt;
 &lt;/p&gt;
 
 &lt;h2&gt;TASK 2&lt;/h2&gt;
@@ -211,65 +221,13 @@ http://spins.fedoraproject.org/security/&lt;/p&gt;
 &lt;p&gt;QuinStreet Inc: Paul Rubens, Understanding the Russian Hacker
 Underground, Aug 13, 2010,
 &lt;a href="http://www.enterprisenetworkingplanet.com/netsecur/article.php/3898601/Understanding-the-Russian-Hacker-Underground.htm"&gt;http://www.enterprisenetworkingplanet.com/netsecur/article.php/3898601/Understanding-the-Russian-Hacker-Underground.htm&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;</content><category term="acceleration"></category><category term="optamization"></category><category term="simmulation of attacks and defence"></category><category term="wordpress attacks"></category><category term="credit card numbers"></category><category term="cyber security"></category><category term="DDoS"></category><category term="defence"></category><category term="infected machine"></category><category term="internet"></category><category term="malware"></category><category term="network"></category><category term="online"></category><category term="security"></category><category term="spam"></category></entry><entry><title>WordPress CMS acceleration and optamization</title><link href="http://predragtasevski.com/posts/2011/04/wordpress-cms-acceleration-and-optamization/" rel="alternate"></link><published>2011-04-09T23:00:00+02:00</published><updated>2011-04-09T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2011-04-09:/posts/2011/04/wordpress-cms-acceleration-and-optamization/</id><summary type="html">&lt;h1&gt;PURPOSE&lt;/h1&gt;
 &lt;/p&gt;
 
-&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width &lt; 768) ? "left" : align;
-        indent = (screen.width &lt; 768) ? "0em" : indent;
-        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    var location_protocol = (false) ? 'https' : document.location.protocol;
-    if (location_protocol !== 'http' &amp;&amp; location_protocol !== 'https') location_protocol = 'https:';
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-&lt;/script&gt;</summary><category term="acceleration"></category><category term="optamization"></category><category term="simmulation of attacks and defence"></category><category term="wordpress attacks"></category><category term="credit card numbers"></category><category term="cyber security"></category><category term="DDoS"></category><category term="defence"></category><category term="infected machine"></category><category term="internet"></category><category term="malware"></category><category term="network"></category><category term="online"></category><category term="security"></category><category term="spam"></category></entry><entry><title>WordPress CMS acceleration and optamization</title><link href="http://predragtasevski.com/posts/2011/04/wordpress-cms-acceleration-and-optamization/" rel="alternate"></link><updated>2011-04-09T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2011-04-09:posts/2011/04/wordpress-cms-acceleration-and-optamization/</id><summary type="html">&lt;h1&gt;PURPOSE&lt;/h1&gt;
+&lt;p&gt;The goal of this laboratory test is to evaluate speed-up solution for
+already mounted clean, by default wordpress CMS platform. The measures
+were made by custom script for Linux operating system, in our case the
+server side is Ubuntu server 10.04 LTS running on 32 bit system with …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;PURPOSE&lt;/h1&gt;
 &lt;/p&gt;
 
 &lt;p&gt;The goal of this laboratory test is to evaluate speed-up solution for
@@ -753,20 +711,21 @@ adapter,„VirtualBox Host- Only Enternet Adapter“)&lt;/p&gt;
 |                                      |                                      |
 |      1 2 3 4 5 6 7 8 910111213141516 |     #!/bin/bash#Author Margus Ernits |
 | 1718192021222324                     | #License GPLCONCURENCY=10RESULTS_FIL |
-|                                      | E=results.txtif [ &lt;span class="math"&gt;\(# -ne 1 ]; thenec |
-| &amp;lt;/div&amp;gt;                               | ho "Use $0 http://yourwordpressIP/yo |
+|                                      | E=results.txtif [ $# -ne 1 ]; thenec |
+| &lt;/div&gt;                               | ho "Use $0 http://yourwordpressIP/yo |
 |                                      | urwordpresssite/"echo "for example:" |
-|                                      | echo "\)&lt;/span&gt;0 http://192.168.56.102/wordp |
+|                                      | echo "$0 http://192.168.56.102/wordp |
 |                                      | ress/"exit 1fiecho "give name for th |
 |                                      | is test"echo "for example: wordpress |
 |                                      |  with supercache"read TEST_NAMEtest  |
-|                                      | -e &lt;span LE="LE" RESULTS_FI="RESULTS_FI" _="|" class="math"&gt;\({RESULTS_FILE} || echo "Test Nam |
-|                                      | e,Set 1,Set 2,Set 3"&amp;amp;gt;\)&lt;/span&gt;RESULTS=&lt;span class="math"&gt;\(TEST_NAMEfor setno in $( |
+|                                      | -e ${RESULTS_FILE} || echo "Test Nam |
+|                                      | e,Set 1,Set 2,Set 3"&amp;gt;${RESULTS_FI |
+|                                      | LE}RESULTS=$TEST_NAMEfor setno in $( |
 |                                      | seq 1 3); doecho "Set $setno ..."SET |
-|                                      | _RESULT=\)&lt;/span&gt;(ab -c&lt;span RESULTS="RESULTS" class="math"&gt;\(CONCURENCY -n200 $1| |
+|                                      | _RESULT=$(ab -c$CONCURENCY -n200 $1| |
 |                                      | grep "Requests per second:"|cut -f2- |
-|                                      | d:|cut -f1 -d'[')RESULTS=\)&lt;/span&gt;, |
-|                                      | &lt;span class="math"&gt;\(SET_RESULTdoneecho "\)&lt;/span&gt;RESULTS"&amp;gt;&amp;amp;g |
+|                                      | d:|cut -f1 -d'[')RESULTS=${RESULTS}, |
+|                                      | $SET_RESULTdoneecho "$RESULTS"&amp;gt;&amp;amp;g |
 |                                      | t;${RESULTS_FILE}echo "test: $TEST_N |
 |                                      | AME done"                            |
 |                                      |                                      |
@@ -808,62 +767,4 @@ ubuntu shortest setup, 2010,
 &lt;/p&gt;
 
 &lt;p&gt;[3] Nginx Inc – http://nginx.net/&lt;/p&gt;
-&lt;/p&gt;
-
-&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width &lt; 768) ? "left" : align;
-        indent = (screen.width &lt; 768) ? "0em" : indent;
-        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    var location_protocol = (false) ? 'https' : document.location.protocol;
-    if (location_protocol !== 'http' &amp;&amp; location_protocol !== 'https') location_protocol = 'https:';
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-&lt;/script&gt;</summary><category term="acceleration"></category><category term="optamization"></category><category term="simmulation of attacks and defence"></category><category term="wordpress"></category></entry></feed>
+&lt;/p&gt;</content><category term="acceleration"></category><category term="optamization"></category><category term="simmulation of attacks and defence"></category><category term="wordpress"></category></entry></feed>

@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Predrag TASEVSKI - Pece</title><link href="http://predragtasevski.com/" rel="alternate"></link><link href="http://predragtasevski.com/feeds/tag/log-mining.atom.xml" rel="self"></link><id>http://predragtasevski.com/</id><updated>2012-06-25T23:00:00+02:00</updated><entry><title>Ministry of Interior – Macedonia, website defacement: http://mvr.gov.mk</title><link href="http://predragtasevski.com/posts/2012/06/ministry-of-interior-macedonia-website-defacement-httpmvrgovmk/" rel="alternate"></link><updated>2012-06-25T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-06-25:posts/2012/06/ministry-of-interior-macedonia-website-defacement-httpmvrgovmk/</id><summary type="html">&lt;h1&gt;Purpose&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Predrag TASEVSKI - Pece - log mining</title><link href="http://predragtasevski.com/" rel="alternate"></link><link href="http://predragtasevski.com/feeds/tag/log-mining.atom.xml" rel="self"></link><id>http://predragtasevski.com/</id><updated>2012-06-25T23:00:00+02:00</updated><entry><title>Ministry of Interior – Macedonia, website defacement: http://mvr.gov.mk</title><link href="http://predragtasevski.com/posts/2012/06/ministry-of-interior-macedonia-website-defacement-httpmvrgovmk/" rel="alternate"></link><published>2012-06-25T23:00:00+02:00</published><updated>2012-06-25T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-06-25:/posts/2012/06/ministry-of-interior-macedonia-website-defacement-httpmvrgovmk/</id><summary type="html">&lt;h1&gt;Purpose&lt;/h1&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Yesterday, the 25 of June 2012, the Macedonian website of Ministry of
+Interior (MVR) was defaced by Kosovo Network Security (KNS) group, below
+figure. However, after we have noticed and some of the social networking
+sites have informed me, I was concern to find out what just have
+happened …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Purpose&lt;/h1&gt;
 &lt;/p&gt;
 
 &lt;p&gt;Yesterday, the 25 of June 2012, the Macedonian website of Ministry of
@@ -245,7 +252,20 @@ Macedonia project, developed by myself.&lt;/p&gt;
 authorities to take actions about the above described activities done by
 KNS and hope that the security awareness will boost up, and the further
 actions will be considered of securing cyber space.&lt;/p&gt;
-&lt;/p&gt;</summary><category term="Attacks"></category><category term="cyber security"></category><category term="information warfare"></category><category term="legal aspects of cyber security"></category><category term="log mining"></category><category term="DDoS"></category><category term="exploitation"></category><category term="kns"></category><category term="macedonia"></category><category term="mvr"></category><category term="online"></category><category term="security"></category><category term="vulnerability"></category><category term="expolit"></category></entry><entry><title>Regular Expression</title><link href="http://predragtasevski.com/posts/2012/01/regular-expression/" rel="alternate"></link><updated>2012-01-16T00:00:00+01:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-01-16:posts/2012/01/regular-expression/</id><summary type="html">&lt;p&gt;This post delivers solution of advance regular expression. In the
+&lt;/p&gt;</content><category term="Attacks"></category><category term="cyber security"></category><category term="information warfare"></category><category term="legal aspects of cyber security"></category><category term="log mining"></category><category term="DDoS"></category><category term="exploitation"></category><category term="kns"></category><category term="macedonia"></category><category term="mvr"></category><category term="online"></category><category term="security"></category><category term="vulnerability"></category><category term="expolit"></category></entry><entry><title>Regular Expression</title><link href="http://predragtasevski.com/posts/2012/01/regular-expression/" rel="alternate"></link><published>2012-01-16T00:00:00+01:00</published><updated>2012-01-16T00:00:00+01:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-01-16:/posts/2012/01/regular-expression/</id><summary type="html">&lt;p&gt;This post delivers solution of advance regular expression. In the
+following lines we describe the goal and the rules of the task, whereby
+follows with the working solution.&lt;/p&gt;
+&lt;/p&gt;
+
+&lt;h1&gt;Task&lt;/h1&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Write a regular expression for matching the names which follow the
+following rules:&lt;/p&gt;
+&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Each name consists of one or more parts …&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;p&gt;This post delivers solution of advance regular expression. In the
 following lines we describe the goal and the rules of the task, whereby
 follows with the working solution.&lt;/p&gt;
 &lt;/p&gt;
@@ -334,4 +354,4 @@ the expression in quotation marks).&lt;/p&gt;
 &lt;/p&gt;
 
 &lt;p&gt;The above solution is written by: Predrag Tasevski and Mikheil Basilaia&lt;/p&gt;
-&lt;/p&gt;</summary><category term="grep"></category><category term="log mining"></category><category term="regular expression"></category><category term="linux"></category><category term="unix"></category></entry></feed>
+&lt;/p&gt;</content><category term="grep"></category><category term="log mining"></category><category term="regular expression"></category><category term="linux"></category><category term="unix"></category></entry></feed>

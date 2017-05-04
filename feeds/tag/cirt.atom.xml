@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Predrag TASEVSKI - Pece</title><link href="http://predragtasevski.com/" rel="alternate"></link><link href="http://predragtasevski.com/feeds/tag/cirt.atom.xml" rel="self"></link><id>http://predragtasevski.com/</id><updated>2012-09-20T23:00:00+02:00</updated><entry><title>Company Brochure and Founder Notes, Cybersecurity.mk</title><link href="http://predragtasevski.com/posts/2012/09/company-brochure-and-founder-notes-cybersecuritymk/" rel="alternate"></link><updated>2012-09-20T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-09-20:posts/2012/09/company-brochure-and-founder-notes-cybersecuritymk/</id><summary type="html">&lt;p&gt;COMPANY BROCHURE: Cybersecurity.mk&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Predrag TASEVSKI - Pece - CIRT</title><link href="http://predragtasevski.com/" rel="alternate"></link><link href="http://predragtasevski.com/feeds/tag/cirt.atom.xml" rel="self"></link><id>http://predragtasevski.com/</id><updated>2012-09-20T23:00:00+02:00</updated><entry><title>Company Brochure and Founder Notes, Cybersecurity.mk</title><link href="http://predragtasevski.com/posts/2012/09/company-brochure-and-founder-notes-cybersecuritymk/" rel="alternate"></link><published>2012-09-20T23:00:00+02:00</published><updated>2012-09-20T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-09-20:/posts/2012/09/company-brochure-and-founder-notes-cybersecuritymk/</id><summary type="html">&lt;p&gt;COMPANY BROCHURE: Cybersecurity.mk&lt;/p&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Your IT infrastructure could be taken under the shoulder of
+professionals&lt;/p&gt;
+&lt;p&gt;September 2012&lt;/p&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Founder Notes:&lt;/p&gt;
+&lt;p&gt;Recently, Macedonian government has announced to open a CERT agency.
+This news was not only shock to us, but to everyone else, indeed.
+However, we are supporting this initiative and hope …&lt;/p&gt;</summary><content type="html">&lt;p&gt;COMPANY BROCHURE: Cybersecurity.mk&lt;/p&gt;
 &lt;/p&gt;
 
 &lt;p&gt;Your IT infrastructure could be taken under the shoulder of
@@ -39,4 +50,4 @@ posts.&lt;/p&gt;
 
 &lt;p&gt;Link to PDF version of the brochure is on the following link:
 &lt;a href="http://cybersecurity.mk/about.html"&gt;http://cybersecurity.mk/about.html&lt;/a&gt;&lt;/p&gt;
-&lt;/p&gt;</summary><category term="cert"></category><category term="CIRT"></category><category term="cyber security"></category><category term="cybersecurity"></category><category term="cybersecurity.mk"></category><category term="internet"></category><category term="macedonia"></category><category term="mkd"></category><category term="online"></category><category term="security"></category></entry></feed>
+&lt;/p&gt;</content><category term="cert"></category><category term="CIRT"></category><category term="cyber security"></category><category term="cybersecurity"></category><category term="cybersecurity.mk"></category><category term="internet"></category><category term="macedonia"></category><category term="mkd"></category><category term="online"></category><category term="security"></category></entry></feed>

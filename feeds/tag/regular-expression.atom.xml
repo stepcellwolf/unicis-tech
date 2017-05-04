@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Predrag TASEVSKI - Pece</title><link href="http://predragtasevski.com/" rel="alternate"></link><link href="http://predragtasevski.com/feeds/tag/regular-expression.atom.xml" rel="self"></link><id>http://predragtasevski.com/</id><updated>2012-01-16T00:00:00+01:00</updated><entry><title>Regular Expression</title><link href="http://predragtasevski.com/posts/2012/01/regular-expression/" rel="alternate"></link><updated>2012-01-16T00:00:00+01:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-01-16:posts/2012/01/regular-expression/</id><summary type="html">&lt;p&gt;This post delivers solution of advance regular expression. In the
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Predrag TASEVSKI - Pece - regular expression</title><link href="http://predragtasevski.com/" rel="alternate"></link><link href="http://predragtasevski.com/feeds/tag/regular-expression.atom.xml" rel="self"></link><id>http://predragtasevski.com/</id><updated>2012-01-16T00:00:00+01:00</updated><entry><title>Regular Expression</title><link href="http://predragtasevski.com/posts/2012/01/regular-expression/" rel="alternate"></link><published>2012-01-16T00:00:00+01:00</published><updated>2012-01-16T00:00:00+01:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-01-16:/posts/2012/01/regular-expression/</id><summary type="html">&lt;p&gt;This post delivers solution of advance regular expression. In the
+following lines we describe the goal and the rules of the task, whereby
+follows with the working solution.&lt;/p&gt;
+&lt;/p&gt;
+
+&lt;h1&gt;Task&lt;/h1&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Write a regular expression for matching the names which follow the
+following rules:&lt;/p&gt;
+&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Each name consists of one or more parts …&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;p&gt;This post delivers solution of advance regular expression. In the
 following lines we describe the goal and the rules of the task, whereby
 follows with the working solution.&lt;/p&gt;
 &lt;/p&gt;
@@ -88,4 +101,4 @@ the expression in quotation marks).&lt;/p&gt;
 &lt;/p&gt;
 
 &lt;p&gt;The above solution is written by: Predrag Tasevski and Mikheil Basilaia&lt;/p&gt;
-&lt;/p&gt;</summary><category term="grep"></category><category term="log mining"></category><category term="regular expression"></category><category term="linux"></category><category term="unix"></category></entry></feed>
+&lt;/p&gt;</content><category term="grep"></category><category term="log mining"></category><category term="regular expression"></category><category term="linux"></category><category term="unix"></category></entry></feed>

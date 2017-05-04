@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Predrag TASEVSKI - Pece</title><link href="http://predragtasevski.com/" rel="alternate"></link><link href="http://predragtasevski.com/feeds/tag/attacks.atom.xml" rel="self"></link><id>http://predragtasevski.com/</id><updated>2015-12-12T18:00:00+01:00</updated><entry><title>Workshop: Cyber Security and Privacy</title><link href="http://predragtasevski.com/posts/2015/12/workshop-cs-privacy/" rel="alternate"></link><updated>2015-12-12T18:00:00+01:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2015-12-12:posts/2015/12/workshop-cs-privacy/</id><summary type="html">&lt;p&gt;Dark Moto Studio hosted me to deliver a two days workshop in the field of &lt;strong&gt;Cyber Security and Privacy&lt;/strong&gt;, between 12 - 13 of December 2015 in Verona, Italy.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="verona Workshop: Cyber Security and Privacy" src="https://scontent-vie1-1.xx.fbcdn.net/hphotos-xpl1/t31.0-8/12371120_456362121218149_5044654840342295836_o.jpg" /&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Predrag TASEVSKI - Pece - attacks</title><link href="http://predragtasevski.com/" rel="alternate"></link><link href="http://predragtasevski.com/feeds/tag/attacks.atom.xml" rel="self"></link><id>http://predragtasevski.com/</id><updated>2015-12-12T18:00:00+01:00</updated><entry><title>Workshop: Cyber Security and Privacy</title><link href="http://predragtasevski.com/posts/2015/12/workshop-cs-privacy/" rel="alternate"></link><published>2015-12-12T18:00:00+01:00</published><updated>2015-12-12T18:00:00+01:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2015-12-12:/posts/2015/12/workshop-cs-privacy/</id><summary type="html">&lt;p&gt;Dark Moto Studio hosted me to deliver a two days workshop in the field of &lt;strong&gt;Cyber Security and Privacy&lt;/strong&gt;, between 12 - 13 of December 2015 in Verona, Italy.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="verona Workshop: Cyber Security and Privacy" src="https://scontent-vie1-1.xx.fbcdn.net/hphotos-xpl1/t31.0-8/12371120_456362121218149_5044654840342295836_o.jpg"&gt;&lt;/p&gt;
+&lt;h1&gt;Agenda&lt;/h1&gt;
+&lt;h2&gt;Day 1:&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;What is cyber security and how the hackers think (4 hours)&lt;/em&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Introduction to cyber security and privacy&lt;/li&gt;
+&lt;li&gt;Attacking phases …&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;p&gt;Dark Moto Studio hosted me to deliver a two days workshop in the field of &lt;strong&gt;Cyber Security and Privacy&lt;/strong&gt;, between 12 - 13 of December 2015 in Verona, Italy.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="verona Workshop: Cyber Security and Privacy" src="https://scontent-vie1-1.xx.fbcdn.net/hphotos-xpl1/t31.0-8/12371120_456362121218149_5044654840342295836_o.jpg"&gt;&lt;/p&gt;
 &lt;h1&gt;Agenda&lt;/h1&gt;
 &lt;h2&gt;Day 1:&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;What is cyber security and how the hackers think (4 hours)&lt;/em&gt;&lt;/p&gt;
@@ -29,7 +36,14 @@
 &lt;/ol&gt;
 &lt;p&gt;&lt;a href="https://www.facebook.com/events/740993119377989/"&gt;FB Event link&lt;/a&gt;&lt;/p&gt;
 &lt;h1&gt;Photos&lt;/h1&gt;
-&lt;p&gt;&lt;img alt="Demo: network scanning" src="https://scontent-vie1-1.xx.fbcdn.net/hphotos-xpf1/t31.0-8/12487296_464598787061149_1198574937328096575_o.jpg" /&gt;&lt;/p&gt;</summary><category term="security"></category><category term="privacy"></category><category term="Italy"></category><category term="cyber security"></category><category term="attacks"></category><category term="awareness"></category></entry><entry><title>What is network security?</title><link href="http://predragtasevski.com/posts/2012/10/what-is-network-security/" rel="alternate"></link><updated>2012-10-26T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-10-26:posts/2012/10/what-is-network-security/</id><summary type="html">&lt;h1&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;&lt;img alt="Demo: network scanning" src="https://scontent-vie1-1.xx.fbcdn.net/hphotos-xpf1/t31.0-8/12487296_464598787061149_1198574937328096575_o.jpg"&gt;&lt;/p&gt;</content><category term="security"></category><category term="privacy"></category><category term="Italy"></category><category term="cyber security"></category><category term="attacks"></category><category term="awareness"></category></entry><entry><title>What is network security?</title><link href="http://predragtasevski.com/posts/2012/10/what-is-network-security/" rel="alternate"></link><published>2012-10-26T23:00:00+02:00</published><updated>2012-10-26T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-10-26:/posts/2012/10/what-is-network-security/</id><summary type="html">&lt;h1&gt;Introduction&lt;/h1&gt;
+&lt;/p&gt;
+
+&lt;p&gt;A computer network, or in other words simply a network, is a collection
+of computers and other hardware components interconnected by
+communication channels that allow sharing of data, resources and
+information [1]. Adopt for both_ private or public needs, which are
+used in everyday tasks to conduct transactions and …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Introduction&lt;/h1&gt;
 &lt;/p&gt;
 
 &lt;p&gt;A computer network, or in other words simply a network, is a collection
@@ -248,7 +262,14 @@ seriously,” Computer, vol.31, no.9, pp.24‐28, Sep 1998&lt;/p&gt;
 
 &lt;p&gt;[9] Common Types of Network Attacks. Retrieved from:
 http://technet.microsoft.com/en-us/library/cc959354.aspx&lt;/p&gt;
-&lt;/p&gt;</summary><category term="network security"></category><category term="cyber security"></category><category term="access"></category><category term="confidentiality"></category><category term="authentication"></category><category term="non-repudation"></category><category term="DDoS"></category><category term="Man-in-the-middle"></category><category term="attacks"></category><category term="address spoofing"></category><category term="eavesdropping"></category></entry><entry><title>Ministry of Interior – Macedonia, website defacement: http://mvr.gov.mk</title><link href="http://predragtasevski.com/posts/2012/06/ministry-of-interior-macedonia-website-defacement-httpmvrgovmk/" rel="alternate"></link><updated>2012-06-25T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-06-25:posts/2012/06/ministry-of-interior-macedonia-website-defacement-httpmvrgovmk/</id><summary type="html">&lt;h1&gt;Purpose&lt;/h1&gt;
+&lt;/p&gt;</content><category term="network security"></category><category term="cyber security"></category><category term="access"></category><category term="confidentiality"></category><category term="authentication"></category><category term="non-repudation"></category><category term="DDoS"></category><category term="Man-in-the-middle"></category><category term="attacks"></category><category term="address spoofing"></category><category term="eavesdropping"></category></entry><entry><title>Ministry of Interior – Macedonia, website defacement: http://mvr.gov.mk</title><link href="http://predragtasevski.com/posts/2012/06/ministry-of-interior-macedonia-website-defacement-httpmvrgovmk/" rel="alternate"></link><published>2012-06-25T23:00:00+02:00</published><updated>2012-06-25T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-06-25:/posts/2012/06/ministry-of-interior-macedonia-website-defacement-httpmvrgovmk/</id><summary type="html">&lt;h1&gt;Purpose&lt;/h1&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Yesterday, the 25 of June 2012, the Macedonian website of Ministry of
+Interior (MVR) was defaced by Kosovo Network Security (KNS) group, below
+figure. However, after we have noticed and some of the social networking
+sites have informed me, I was concern to find out what just have
+happened …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Purpose&lt;/h1&gt;
 &lt;/p&gt;
 
 &lt;p&gt;Yesterday, the 25 of June 2012, the Macedonian website of Ministry of
@@ -494,7 +515,17 @@ Macedonia project, developed by myself.&lt;/p&gt;
 authorities to take actions about the above described activities done by
 KNS and hope that the security awareness will boost up, and the further
 actions will be considered of securing cyber space.&lt;/p&gt;
-&lt;/p&gt;</summary><category term="Attacks"></category><category term="cyber security"></category><category term="information warfare"></category><category term="legal aspects of cyber security"></category><category term="log mining"></category><category term="DDoS"></category><category term="exploitation"></category><category term="kns"></category><category term="macedonia"></category><category term="mvr"></category><category term="online"></category><category term="security"></category><category term="vulnerability"></category><category term="expolit"></category></entry><entry><title>Clever solution by making site more resilient by optimization</title><link href="http://predragtasevski.com/posts/2012/03/clever-solution-by-making-site-more-resilient-by-optimization/" rel="alternate"></link><updated>2012-03-23T00:00:00+01:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-03-23:posts/2012/03/clever-solution-by-making-site-more-resilient-by-optimization/</id><summary type="html">&lt;h1&gt;PURPOSE &amp;amp; SCENARIO&lt;/h1&gt;
+&lt;/p&gt;</content><category term="Attacks"></category><category term="cyber security"></category><category term="information warfare"></category><category term="legal aspects of cyber security"></category><category term="log mining"></category><category term="DDoS"></category><category term="exploitation"></category><category term="kns"></category><category term="macedonia"></category><category term="mvr"></category><category term="online"></category><category term="security"></category><category term="vulnerability"></category><category term="expolit"></category></entry><entry><title>Clever solution by making site more resilient by optimization</title><link href="http://predragtasevski.com/posts/2012/03/clever-solution-by-making-site-more-resilient-by-optimization/" rel="alternate"></link><published>2012-03-23T00:00:00+01:00</published><updated>2012-03-23T00:00:00+01:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-03-23:/posts/2012/03/clever-solution-by-making-site-more-resilient-by-optimization/</id><summary type="html">&lt;h1&gt;PURPOSE &amp;amp; SCENARIO&lt;/h1&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The objective of this laboratory test, scenario is to make explore
+alternative “clever” solutions (as opposed to making the site more
+resilient by optimizing it) to protect your site against attacks.
+Moreover, DDoS [1] attacks, malicious code, etc.&lt;/p&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Therefore, we need to develop countermeasures for the &lt;strong&gt;working&lt;/strong&gt;
+attacks …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;PURPOSE &amp;amp; SCENARIO&lt;/h1&gt;
 &lt;/p&gt;
 
 &lt;p&gt;The objective of this laboratory test, scenario is to make explore
@@ -735,7 +766,13 @@ mod_rewrite, Feb 2009,
 &lt;/p&gt;
 
 &lt;p&gt;[2] AB - &lt;a href="http://httpd.apache.org/docs/2.0/programs/ab.html"&gt;http://httpd.apache.org/docs/2.0/programs/ab.html&lt;/a&gt;&lt;/p&gt;
-&lt;/p&gt;</summary><category term="ab"></category><category term="attacks"></category><category term="clever solution"></category><category term="cyber security"></category><category term="DDoS"></category><category term="internet"></category><category term="jmeter"></category><category term="malicious code"></category><category term="wordpress"></category></entry><entry><title>Script Kiddie</title><link href="http://predragtasevski.com/posts/2011/10/script-kiddie/" rel="alternate"></link><updated>2011-10-19T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2011-10-19:posts/2011/10/script-kiddie/</id><summary type="html">&lt;h1&gt;PURPOSE and SCENARIO&lt;/h1&gt;
+&lt;/p&gt;</content><category term="ab"></category><category term="attacks"></category><category term="clever solution"></category><category term="cyber security"></category><category term="DDoS"></category><category term="internet"></category><category term="jmeter"></category><category term="malicious code"></category><category term="wordpress"></category></entry><entry><title>Script Kiddie</title><link href="http://predragtasevski.com/posts/2011/10/script-kiddie/" rel="alternate"></link><published>2011-10-19T23:00:00+02:00</published><updated>2011-10-19T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2011-10-19:/posts/2011/10/script-kiddie/</id><summary type="html">&lt;h1&gt;PURPOSE and SCENARIO&lt;/h1&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The goal of this laboratory test is to make effort to attack server and
+to deface website. Here is the scenario: your client is worried about
+some stuff posted on a blog. They ask You to take care of it. They have
+a throwaway “script kiddie”[Script …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;PURPOSE and SCENARIO&lt;/h1&gt;
 &lt;/p&gt;
 
 &lt;p&gt;The goal of this laboratory test is to make effort to attack server and
@@ -1324,7 +1361,18 @@ wordpress, mysql installation.&lt;/p&gt;
 &lt;/p&gt;
 
 &lt;p&gt;[2] Bmon – &lt;a href="http://www.infradead.org/~tgr/bmon/"&gt;http://www.infradead.org/~tgr/bmon/&lt;/a&gt;&lt;/p&gt;
-&lt;/p&gt;</summary><category term="attacks"></category><category term="cyber security"></category><category term="DDoS"></category><category term="internet"></category><category term="script kiddie"></category><category term="security"></category><category term="server attack"></category><category term="wordpress attack"></category></entry><entry><title>IP Responsibility and abuse reporting procedure</title><link href="http://predragtasevski.com/posts/2011/03/ip-responsibility-and-abuse-reporting-procedure/" rel="alternate"></link><updated>2011-03-11T00:00:00+01:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2011-03-11:posts/2011/03/ip-responsibility-and-abuse-reporting-procedure/</id><summary type="html">&lt;h1&gt;PURPOSE&lt;/h1&gt;
+&lt;/p&gt;</content><category term="attacks"></category><category term="cyber security"></category><category term="DDoS"></category><category term="internet"></category><category term="script kiddie"></category><category term="security"></category><category term="server attack"></category><category term="wordpress attack"></category></entry><entry><title>IP Responsibility and abuse reporting procedure</title><link href="http://predragtasevski.com/posts/2011/03/ip-responsibility-and-abuse-reporting-procedure/" rel="alternate"></link><published>2011-03-11T00:00:00+01:00</published><updated>2011-03-11T00:00:00+01:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2011-03-11:/posts/2011/03/ip-responsibility-and-abuse-reporting-procedure/</id><summary type="html">&lt;h1&gt;PURPOSE&lt;/h1&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The main goal of laboratory report is to identify the responsibilities
+for the IP addresses below and how we can make connection to them. IP
+addresses are randomly chosen by the lecture.&lt;/p&gt;
+&lt;/p&gt;
+
+&lt;p&gt;IP addresses:&lt;/p&gt;
+&lt;p&gt;​1. 69.163.171.238&lt;/p&gt;
+&lt;p&gt;​2. 31.44.184.101&lt;/p&gt;
+&lt;p&gt;​3. 188.72.228.69 …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;PURPOSE&lt;/h1&gt;
 &lt;/p&gt;
 
 &lt;p&gt;The main goal of laboratory report is to identify the responsibilities
@@ -1581,4 +1629,4 @@ target="_blank"&gt;http://www.afrinic.net/cgi-bin/whois&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Changed on purpose, not to disclose the exposure&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/p&gt;</summary><category term="attacks"></category><category term="cyber security"></category><category term="DDoS"></category><category term="external IP"></category><category term="Internet Protocol addressing systems"></category><category term="IP addresses"></category><category term="malware"></category><category term="online"></category><category term="report abuse"></category><category term="security"></category><category term="security risk"></category></entry></feed>
+&lt;/p&gt;</content><category term="attacks"></category><category term="cyber security"></category><category term="DDoS"></category><category term="external IP"></category><category term="Internet Protocol addressing systems"></category><category term="IP addresses"></category><category term="malware"></category><category term="online"></category><category term="report abuse"></category><category term="security"></category><category term="security risk"></category></entry></feed>

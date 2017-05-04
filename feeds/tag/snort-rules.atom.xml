@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Predrag TASEVSKI - Pece</title><link href="http://predragtasevski.com/" rel="alternate"></link><link href="http://predragtasevski.com/feeds/tag/snort-rules.atom.xml" rel="self"></link><id>http://predragtasevski.com/</id><updated>2012-03-13T00:00:00+01:00</updated><entry><title>Testing SNORT – IDS rulesets</title><link href="http://predragtasevski.com/posts/2012/03/testing-snort-ids-rulesets/" rel="alternate"></link><updated>2012-03-13T00:00:00+01:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-03-13:posts/2012/03/testing-snort-ids-rulesets/</id><summary type="html">&lt;h1&gt;SCENARIO&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Predrag TASEVSKI - Pece - snort rules</title><link href="http://predragtasevski.com/" rel="alternate"></link><link href="http://predragtasevski.com/feeds/tag/snort-rules.atom.xml" rel="self"></link><id>http://predragtasevski.com/</id><updated>2012-03-13T00:00:00+01:00</updated><entry><title>Testing SNORT – IDS rulesets</title><link href="http://predragtasevski.com/posts/2012/03/testing-snort-ids-rulesets/" rel="alternate"></link><published>2012-03-13T00:00:00+01:00</published><updated>2012-03-13T00:00:00+01:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-03-13:/posts/2012/03/testing-snort-ids-rulesets/</id><summary type="html">&lt;h1&gt;SCENARIO&lt;/h1&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The objective of this laboratory test, scenario is to create a solution
+and instructions for testing an IDS^1^ systems usefulness for detecting
+attacks against a wordpress site. In addition, we have to
+develop/download/find/whatever a SNORT configuration (rulesets,
+preprocessors, whatever) that performs better than the default …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;SCENARIO&lt;/h1&gt;
 &lt;/p&gt;
 
 &lt;p&gt;The objective of this laboratory test, scenario is to create a solution
@@ -523,4 +530,4 @@ and Security Engine (BASE) project ,
 &lt;/p&gt;
 
 &lt;p&gt;[1] IDS – Intrusion detection system&lt;/p&gt;
-&lt;/p&gt;</summary><category term="cyber security"></category><category term="DDoS"></category><category term="ids"></category><category term="internet"></category><category term="networking"></category><category term="online"></category><category term="Port scan"></category><category term="snort"></category><category term="snort rules"></category><category term="SYN flood"></category><category term="testing ids"></category><category term="vulnerability scanning"></category></entry></feed>
+&lt;/p&gt;</content><category term="cyber security"></category><category term="DDoS"></category><category term="ids"></category><category term="internet"></category><category term="networking"></category><category term="online"></category><category term="Port scan"></category><category term="snort"></category><category term="snort rules"></category><category term="SYN flood"></category><category term="testing ids"></category><category term="vulnerability scanning"></category></entry></feed>

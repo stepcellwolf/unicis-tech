@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Predrag TASEVSKI - Pece</title><link href="http://predragtasevski.com/" rel="alternate"></link><link href="http://predragtasevski.com/feeds/tag/address-spoofing.atom.xml" rel="self"></link><id>http://predragtasevski.com/</id><updated>2012-10-26T23:00:00+02:00</updated><entry><title>What is network security?</title><link href="http://predragtasevski.com/posts/2012/10/what-is-network-security/" rel="alternate"></link><updated>2012-10-26T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-10-26:posts/2012/10/what-is-network-security/</id><summary type="html">&lt;h1&gt;Introduction&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Predrag TASEVSKI - Pece - address spoofing</title><link href="http://predragtasevski.com/" rel="alternate"></link><link href="http://predragtasevski.com/feeds/tag/address-spoofing.atom.xml" rel="self"></link><id>http://predragtasevski.com/</id><updated>2012-10-26T23:00:00+02:00</updated><entry><title>What is network security?</title><link href="http://predragtasevski.com/posts/2012/10/what-is-network-security/" rel="alternate"></link><published>2012-10-26T23:00:00+02:00</published><updated>2012-10-26T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-10-26:/posts/2012/10/what-is-network-security/</id><summary type="html">&lt;h1&gt;Introduction&lt;/h1&gt;
+&lt;/p&gt;
+
+&lt;p&gt;A computer network, or in other words simply a network, is a collection
+of computers and other hardware components interconnected by
+communication channels that allow sharing of data, resources and
+information [1]. Adopt for both_ private or public needs, which are
+used in everyday tasks to conduct transactions and …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Introduction&lt;/h1&gt;
 &lt;/p&gt;
 
 &lt;p&gt;A computer network, or in other words simply a network, is a collection
@@ -218,4 +225,4 @@ seriously,” Computer, vol.31, no.9, pp.24‐28, Sep 1998&lt;/p&gt;
 
 &lt;p&gt;[9] Common Types of Network Attacks. Retrieved from:
 http://technet.microsoft.com/en-us/library/cc959354.aspx&lt;/p&gt;
-&lt;/p&gt;</summary><category term="network security"></category><category term="cyber security"></category><category term="access"></category><category term="confidentiality"></category><category term="authentication"></category><category term="non-repudation"></category><category term="DDoS"></category><category term="Man-in-the-middle"></category><category term="attacks"></category><category term="address spoofing"></category><category term="eavesdropping"></category></entry></feed>
+&lt;/p&gt;</content><category term="network security"></category><category term="cyber security"></category><category term="access"></category><category term="confidentiality"></category><category term="authentication"></category><category term="non-repudation"></category><category term="DDoS"></category><category term="Man-in-the-middle"></category><category term="attacks"></category><category term="address spoofing"></category><category term="eavesdropping"></category></entry></feed>

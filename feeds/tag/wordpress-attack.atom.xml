@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Predrag TASEVSKI - Pece</title><link href="http://predragtasevski.com/" rel="alternate"></link><link href="http://predragtasevski.com/feeds/tag/wordpress-attack.atom.xml" rel="self"></link><id>http://predragtasevski.com/</id><updated>2011-10-19T23:00:00+02:00</updated><entry><title>Script Kiddie</title><link href="http://predragtasevski.com/posts/2011/10/script-kiddie/" rel="alternate"></link><updated>2011-10-19T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2011-10-19:posts/2011/10/script-kiddie/</id><summary type="html">&lt;h1&gt;PURPOSE and SCENARIO&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Predrag TASEVSKI - Pece - wordpress attack</title><link href="http://predragtasevski.com/" rel="alternate"></link><link href="http://predragtasevski.com/feeds/tag/wordpress-attack.atom.xml" rel="self"></link><id>http://predragtasevski.com/</id><updated>2011-10-19T23:00:00+02:00</updated><entry><title>Script Kiddie</title><link href="http://predragtasevski.com/posts/2011/10/script-kiddie/" rel="alternate"></link><published>2011-10-19T23:00:00+02:00</published><updated>2011-10-19T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2011-10-19:/posts/2011/10/script-kiddie/</id><summary type="html">&lt;h1&gt;PURPOSE and SCENARIO&lt;/h1&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The goal of this laboratory test is to make effort to attack server and
+to deface website. Here is the scenario: your client is worried about
+some stuff posted on a blog. They ask You to take care of it. They have
+a throwaway “script kiddie”[Script …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;PURPOSE and SCENARIO&lt;/h1&gt;
 &lt;/p&gt;
 
 &lt;p&gt;The goal of this laboratory test is to make effort to attack server and
@@ -588,4 +594,4 @@ wordpress, mysql installation.&lt;/p&gt;
 &lt;/p&gt;
 
 &lt;p&gt;[2] Bmon – &lt;a href="http://www.infradead.org/~tgr/bmon/"&gt;http://www.infradead.org/~tgr/bmon/&lt;/a&gt;&lt;/p&gt;
-&lt;/p&gt;</summary><category term="attacks"></category><category term="cyber security"></category><category term="DDoS"></category><category term="internet"></category><category term="script kiddie"></category><category term="security"></category><category term="server attack"></category><category term="wordpress attack"></category></entry></feed>
+&lt;/p&gt;</content><category term="attacks"></category><category term="cyber security"></category><category term="DDoS"></category><category term="internet"></category><category term="script kiddie"></category><category term="security"></category><category term="server attack"></category><category term="wordpress attack"></category></entry></feed>

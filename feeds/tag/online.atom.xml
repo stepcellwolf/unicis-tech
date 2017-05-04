@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Predrag TASEVSKI - Pece</title><link href="http://predragtasevski.com/" rel="alternate"></link><link href="http://predragtasevski.com/feeds/tag/online.atom.xml" rel="self"></link><id>http://predragtasevski.com/</id><updated>2012-09-30T23:00:00+02:00</updated><entry><title>Analyses of Malware Files</title><link href="http://predragtasevski.com/posts/2012/09/analyses-of-malware-files/" rel="alternate"></link><updated>2012-09-30T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-09-30:posts/2012/09/analyses-of-malware-files/</id><summary type="html">&lt;h1&gt;PURPOSE&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Predrag TASEVSKI - Pece - online</title><link href="http://predragtasevski.com/" rel="alternate"></link><link href="http://predragtasevski.com/feeds/tag/online.atom.xml" rel="self"></link><id>http://predragtasevski.com/</id><updated>2012-09-30T23:00:00+02:00</updated><entry><title>Analyses of Malware Files</title><link href="http://predragtasevski.com/posts/2012/09/analyses-of-malware-files/" rel="alternate"></link><published>2012-09-30T23:00:00+02:00</published><updated>2012-09-30T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-09-30:/posts/2012/09/analyses-of-malware-files/</id><summary type="html">&lt;h1&gt;PURPOSE&lt;/h1&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The main goal of laboratory report is to identify three analyses of
+malware files from the archive file send by the lecture. The archive
+contains 89 malware files. The way how we choice 3 files is by following
+algorithm:&lt;/p&gt;
+&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Soft them by name&lt;/li&gt;
+&lt;li&gt;First use last number of your …&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;h1&gt;PURPOSE&lt;/h1&gt;
 &lt;/p&gt;
 
 &lt;p&gt;The main goal of laboratory report is to identify three analyses of
@@ -539,7 +550,18 @@ Backdoor.Agent.AJU [PC Tools], 2011,
 &lt;p&gt;MalwareAnalysisToolkit: Lenny Zeltser, 5 Steps to Building a Malware
 Analysis Toolkit Using Free Tools, January 2010,
 &lt;a href="http://zeltser.com/malware-analysis-toolkit/"&gt;http://zeltser.com/malware-analysis-toolkit/&lt;/a&gt;&lt;/p&gt;
-&lt;/p&gt;</summary><category term="malware"></category><category term="online"></category><category term="security"></category><category term="binary"></category><category term="malicious code"></category></entry><entry><title>Company Brochure and Founder Notes, Cybersecurity.mk</title><link href="http://predragtasevski.com/posts/2012/09/company-brochure-and-founder-notes-cybersecuritymk/" rel="alternate"></link><updated>2012-09-20T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-09-20:posts/2012/09/company-brochure-and-founder-notes-cybersecuritymk/</id><summary type="html">&lt;p&gt;COMPANY BROCHURE: Cybersecurity.mk&lt;/p&gt;
+&lt;/p&gt;</content><category term="malware"></category><category term="online"></category><category term="security"></category><category term="binary"></category><category term="malicious code"></category></entry><entry><title>Company Brochure and Founder Notes, Cybersecurity.mk</title><link href="http://predragtasevski.com/posts/2012/09/company-brochure-and-founder-notes-cybersecuritymk/" rel="alternate"></link><published>2012-09-20T23:00:00+02:00</published><updated>2012-09-20T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-09-20:/posts/2012/09/company-brochure-and-founder-notes-cybersecuritymk/</id><summary type="html">&lt;p&gt;COMPANY BROCHURE: Cybersecurity.mk&lt;/p&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Your IT infrastructure could be taken under the shoulder of
+professionals&lt;/p&gt;
+&lt;p&gt;September 2012&lt;/p&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Founder Notes:&lt;/p&gt;
+&lt;p&gt;Recently, Macedonian government has announced to open a CERT agency.
+This news was not only shock to us, but to everyone else, indeed.
+However, we are supporting this initiative and hope …&lt;/p&gt;</summary><content type="html">&lt;p&gt;COMPANY BROCHURE: Cybersecurity.mk&lt;/p&gt;
 &lt;/p&gt;
 
 &lt;p&gt;Your IT infrastructure could be taken under the shoulder of
@@ -579,7 +601,22 @@ posts.&lt;/p&gt;
 
 &lt;p&gt;Link to PDF version of the brochure is on the following link:
 &lt;a href="http://cybersecurity.mk/about.html"&gt;http://cybersecurity.mk/about.html&lt;/a&gt;&lt;/p&gt;
-&lt;/p&gt;</summary><category term="cert"></category><category term="CIRT"></category><category term="cyber security"></category><category term="cybersecurity"></category><category term="cybersecurity.mk"></category><category term="internet"></category><category term="macedonia"></category><category term="mkd"></category><category term="online"></category><category term="security"></category></entry><entry><title>Identify Possible Infection of Malware Into the Wireshark Capture File</title><link href="http://predragtasevski.com/posts/2012/09/identify-possible-infection-of-malware-into-the-wireshark-capture-file/" rel="alternate"></link><updated>2012-09-01T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-09-01:posts/2012/09/identify-possible-infection-of-malware-into-the-wireshark-capture-file/</id><summary type="html">&lt;h1&gt;INTRODUCTION&lt;/h1&gt;
+&lt;/p&gt;</content><category term="cert"></category><category term="CIRT"></category><category term="cyber security"></category><category term="cybersecurity"></category><category term="cybersecurity.mk"></category><category term="internet"></category><category term="macedonia"></category><category term="mkd"></category><category term="online"></category><category term="security"></category></entry><entry><title>Identify Possible Infection of Malware Into the Wireshark Capture File</title><link href="http://predragtasevski.com/posts/2012/09/identify-possible-infection-of-malware-into-the-wireshark-capture-file/" rel="alternate"></link><published>2012-09-01T23:00:00+02:00</published><updated>2012-09-01T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-09-01:/posts/2012/09/identify-possible-infection-of-malware-into-the-wireshark-capture-file/</id><summary type="html">&lt;h1&gt;INTRODUCTION&lt;/h1&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The main goal of laboratory report is to identify possible infection of
+malware into the wireshark capture file. The report should highlight the
+following aspects:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Download [not avaibale anymore]&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Find malware download in this pcap and extract malware or malwares
+find out where malware was downloaded from.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;What malware …&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;h1&gt;INTRODUCTION&lt;/h1&gt;
 &lt;/p&gt;
 
 &lt;p&gt;The main goal of laboratory report is to identify possible infection of
@@ -963,7 +1000,14 @@ Techniques Training, 2011, &lt;a href="http://zeltser.com/reverse-malware/"&gt;h
 &lt;/p&gt;
 
 &lt;p&gt;The above post is written by Predrag Tasevski and Mikheil Basilaia&lt;/p&gt;
-&lt;/p&gt;</summary><category term="capture file"></category><category term="cyber security"></category><category term="infection"></category><category term="malware"></category><category term="networking"></category><category term="online"></category><category term="wireshark"></category></entry><entry><title>Ministry of Interior – Macedonia, website defacement: http://mvr.gov.mk</title><link href="http://predragtasevski.com/posts/2012/06/ministry-of-interior-macedonia-website-defacement-httpmvrgovmk/" rel="alternate"></link><updated>2012-06-25T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-06-25:posts/2012/06/ministry-of-interior-macedonia-website-defacement-httpmvrgovmk/</id><summary type="html">&lt;h1&gt;Purpose&lt;/h1&gt;
+&lt;/p&gt;</content><category term="capture file"></category><category term="cyber security"></category><category term="infection"></category><category term="malware"></category><category term="networking"></category><category term="online"></category><category term="wireshark"></category></entry><entry><title>Ministry of Interior – Macedonia, website defacement: http://mvr.gov.mk</title><link href="http://predragtasevski.com/posts/2012/06/ministry-of-interior-macedonia-website-defacement-httpmvrgovmk/" rel="alternate"></link><published>2012-06-25T23:00:00+02:00</published><updated>2012-06-25T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-06-25:/posts/2012/06/ministry-of-interior-macedonia-website-defacement-httpmvrgovmk/</id><summary type="html">&lt;h1&gt;Purpose&lt;/h1&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Yesterday, the 25 of June 2012, the Macedonian website of Ministry of
+Interior (MVR) was defaced by Kosovo Network Security (KNS) group, below
+figure. However, after we have noticed and some of the social networking
+sites have informed me, I was concern to find out what just have
+happened …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Purpose&lt;/h1&gt;
 &lt;/p&gt;
 
 &lt;p&gt;Yesterday, the 25 of June 2012, the Macedonian website of Ministry of
@@ -1209,7 +1253,14 @@ Macedonia project, developed by myself.&lt;/p&gt;
 authorities to take actions about the above described activities done by
 KNS and hope that the security awareness will boost up, and the further
 actions will be considered of securing cyber space.&lt;/p&gt;
-&lt;/p&gt;</summary><category term="Attacks"></category><category term="cyber security"></category><category term="information warfare"></category><category term="legal aspects of cyber security"></category><category term="log mining"></category><category term="DDoS"></category><category term="exploitation"></category><category term="kns"></category><category term="macedonia"></category><category term="mvr"></category><category term="online"></category><category term="security"></category><category term="vulnerability"></category><category term="expolit"></category></entry><entry><title>Testing SNORT – IDS rulesets</title><link href="http://predragtasevski.com/posts/2012/03/testing-snort-ids-rulesets/" rel="alternate"></link><updated>2012-03-13T00:00:00+01:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-03-13:posts/2012/03/testing-snort-ids-rulesets/</id><summary type="html">&lt;h1&gt;SCENARIO&lt;/h1&gt;
+&lt;/p&gt;</content><category term="Attacks"></category><category term="cyber security"></category><category term="information warfare"></category><category term="legal aspects of cyber security"></category><category term="log mining"></category><category term="DDoS"></category><category term="exploitation"></category><category term="kns"></category><category term="macedonia"></category><category term="mvr"></category><category term="online"></category><category term="security"></category><category term="vulnerability"></category><category term="expolit"></category></entry><entry><title>Testing SNORT – IDS rulesets</title><link href="http://predragtasevski.com/posts/2012/03/testing-snort-ids-rulesets/" rel="alternate"></link><published>2012-03-13T00:00:00+01:00</published><updated>2012-03-13T00:00:00+01:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-03-13:/posts/2012/03/testing-snort-ids-rulesets/</id><summary type="html">&lt;h1&gt;SCENARIO&lt;/h1&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The objective of this laboratory test, scenario is to create a solution
+and instructions for testing an IDS^1^ systems usefulness for detecting
+attacks against a wordpress site. In addition, we have to
+develop/download/find/whatever a SNORT configuration (rulesets,
+preprocessors, whatever) that performs better than the default …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;SCENARIO&lt;/h1&gt;
 &lt;/p&gt;
 
 &lt;p&gt;The objective of this laboratory test, scenario is to create a solution
@@ -1733,7 +1784,14 @@ and Security Engine (BASE) project ,
 &lt;/p&gt;
 
 &lt;p&gt;[1] IDS – Intrusion detection system&lt;/p&gt;
-&lt;/p&gt;</summary><category term="cyber security"></category><category term="DDoS"></category><category term="ids"></category><category term="internet"></category><category term="networking"></category><category term="online"></category><category term="Port scan"></category><category term="snort"></category><category term="snort rules"></category><category term="SYN flood"></category><category term="testing ids"></category><category term="vulnerability scanning"></category></entry><entry><title>Testing IDS</title><link href="http://predragtasevski.com/posts/2012/01/testing-ids/" rel="alternate"></link><updated>2012-01-03T00:00:00+01:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-01-03:posts/2012/01/testing-ids/</id><summary type="html">&lt;h1&gt;SCENARIO&lt;/h1&gt;
+&lt;/p&gt;</content><category term="cyber security"></category><category term="DDoS"></category><category term="ids"></category><category term="internet"></category><category term="networking"></category><category term="online"></category><category term="Port scan"></category><category term="snort"></category><category term="snort rules"></category><category term="SYN flood"></category><category term="testing ids"></category><category term="vulnerability scanning"></category></entry><entry><title>Testing IDS</title><link href="http://predragtasevski.com/posts/2012/01/testing-ids/" rel="alternate"></link><published>2012-01-03T00:00:00+01:00</published><updated>2012-01-03T00:00:00+01:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-01-03:/posts/2012/01/testing-ids/</id><summary type="html">&lt;h1&gt;SCENARIO&lt;/h1&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The objective of this laboratory test, scenario is to create a solution
+and instructions for testing an IDS\^1 systems usefulness for detecting
+attacks against a wordpress site. In addition, a repeatable process to
+evaluate vendor claims. Whatever passive IDS system sample delivered as
+a VM or a dedicated …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;SCENARIO&lt;/h1&gt;
 &lt;/p&gt;
 
 &lt;p&gt;The objective of this laboratory test, scenario is to create a solution
@@ -2098,7 +2156,17 @@ and Security Engine (BASE) project, 2008,
 &lt;/p&gt;
 
 &lt;p&gt;[1] IDS – Intrusion detection system&lt;/p&gt;
-&lt;/p&gt;</summary><category term="cyber security"></category><category term="DDoS"></category><category term="ids"></category><category term="internet"></category><category term="networking"></category><category term="online"></category><category term="openvas"></category><category term="port scan"></category><category term="snort"></category><category term="SYN flood"></category><category term="testing ids"></category><category term="vulnerability scanning"></category></entry><entry><title>Cost of DDoS, leak of credit card numbers, infected machine and spam</title><link href="http://predragtasevski.com/posts/2011/10/cost-of-ddos-leak-of-credit-card-numbers-infected-machine-and-spam/" rel="alternate"></link><updated>2011-10-12T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2011-10-12:posts/2011/10/cost-of-ddos-leak-of-credit-card-numbers-infected-machine-and-spam/</id><summary type="html">&lt;h1&gt;PURPOSE&lt;/h1&gt;
+&lt;/p&gt;</content><category term="cyber security"></category><category term="DDoS"></category><category term="ids"></category><category term="internet"></category><category term="networking"></category><category term="online"></category><category term="openvas"></category><category term="port scan"></category><category term="snort"></category><category term="SYN flood"></category><category term="testing ids"></category><category term="vulnerability scanning"></category></entry><entry><title>Cost of DDoS, leak of credit card numbers, infected machine and spam</title><link href="http://predragtasevski.com/posts/2011/10/cost-of-ddos-leak-of-credit-card-numbers-infected-machine-and-spam/" rel="alternate"></link><published>2011-10-12T23:00:00+02:00</published><updated>2011-10-12T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2011-10-12:/posts/2011/10/cost-of-ddos-leak-of-credit-card-numbers-infected-machine-and-spam/</id><summary type="html">&lt;h1&gt;PURPOSE&lt;/h1&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The main goal of laboratory report is to identify the costs of nowadays
+most known attack  DDOS, leak of credit card numbers, infected machine
+and never the less sending spam for 1 000 000 (one million) people.
+There are few points that should be presented:&lt;/p&gt;
+&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Where did we discovered …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;h1&gt;PURPOSE&lt;/h1&gt;
 &lt;/p&gt;
 
 &lt;p&gt;The main goal of laboratory report is to identify the costs of nowadays
@@ -2176,8 +2244,8 @@ found are with&lt;/p&gt;
 &lt;a href="http://www.hackzone.ru/forum/open/id/17187/"&gt;http://www.hackzone.ru/forum/open/id/17187/&lt;/a&gt;&lt;/p&gt;
 &lt;/p&gt;
 
-&lt;p&gt;As we stated above that the price is from \&lt;span class="math"&gt;\(50 per day and it goes until
-\\)&lt;/span&gt;350 per month and so on.&lt;/p&gt;
+&lt;p&gt;As we stated above that the price is from \$50 per day and it goes until
+\$350 per month and so on.&lt;/p&gt;
 &lt;/p&gt;
 
 &lt;h2&gt;TASK 2&lt;/h2&gt;
@@ -2310,65 +2378,16 @@ http://spins.fedoraproject.org/security/&lt;/p&gt;
 &lt;p&gt;QuinStreet Inc: Paul Rubens, Understanding the Russian Hacker
 Underground, Aug 13, 2010,
 &lt;a href="http://www.enterprisenetworkingplanet.com/netsecur/article.php/3898601/Understanding-the-Russian-Hacker-Underground.htm"&gt;http://www.enterprisenetworkingplanet.com/netsecur/article.php/3898601/Understanding-the-Russian-Hacker-Underground.htm&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;</content><category term="acceleration"></category><category term="optamization"></category><category term="simmulation of attacks and defence"></category><category term="wordpress attacks"></category><category term="credit card numbers"></category><category term="cyber security"></category><category term="DDoS"></category><category term="defence"></category><category term="infected machine"></category><category term="internet"></category><category term="malware"></category><category term="network"></category><category term="online"></category><category term="security"></category><category term="spam"></category></entry><entry><title>Influence of Virtual life</title><link href="http://predragtasevski.com/posts/2011/08/influence-of-virtual-life/" rel="alternate"></link><published>2011-08-06T23:00:00+02:00</published><updated>2011-08-06T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2011-08-06:/posts/2011/08/influence-of-virtual-life/</id><summary type="html">&lt;h1&gt;Authors: Predrag Tasevski, Marco Gavazzi and Lasse Hyyrynen&lt;/h1&gt;
 &lt;/p&gt;
 
-&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
+&lt;h1&gt;Introduction&lt;/h1&gt;
+&lt;/p&gt;
 
-    if (false) {
-        align = (screen.width &lt; 768) ? "left" : align;
-        indent = (screen.width &lt; 768) ? "0em" : indent;
-        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    var location_protocol = (false) ? 'https' : document.location.protocol;
-    if (location_protocol !== 'http' &amp;&amp; location_protocol !== 'https') location_protocol = 'https:';
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-&lt;/script&gt;</summary><category term="acceleration"></category><category term="optamization"></category><category term="simmulation of attacks and defence"></category><category term="wordpress attacks"></category><category term="credit card numbers"></category><category term="cyber security"></category><category term="DDoS"></category><category term="defence"></category><category term="infected machine"></category><category term="internet"></category><category term="malware"></category><category term="network"></category><category term="online"></category><category term="security"></category><category term="spam"></category></entry><entry><title>Influence of Virtual life</title><link href="http://predragtasevski.com/posts/2011/08/influence-of-virtual-life/" rel="alternate"></link><updated>2011-08-06T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2011-08-06:posts/2011/08/influence-of-virtual-life/</id><summary type="html">&lt;h1&gt;Authors: Predrag Tasevski, Marco Gavazzi and Lasse Hyyrynen&lt;/h1&gt;
+&lt;p&gt;Any computer user who is engaged in a virtual world has a virtual life.
+Virtual life is a catchall term used to describe the involvement and
+presence of an individual in any chosen virtual world or simulated
+digital environment. Virtual world …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Authors: Predrag Tasevski, Marco Gavazzi and Lasse Hyyrynen&lt;/h1&gt;
 &lt;/p&gt;
 
 &lt;h1&gt;Introduction&lt;/h1&gt;
@@ -2568,7 +2587,11 @@ Symposium for Young Researchers, Budapest, Hungari:
 
 &lt;p&gt;Internet world stats – usage and population statistics (2011):
 &lt;a href="http://www.internetworldstats.com/"&gt;http://www.internetworldstats.com/&lt;/a&gt;&lt;/p&gt;
-&lt;/p&gt;</summary><category term="2 life"></category><category term="online"></category><category term="online community"></category><category term="second life"></category><category term="social network"></category><category term="virtual life"></category></entry><entry><title>Future of human communication</title><link href="http://predragtasevski.com/posts/2011/06/future-of-human-communication/" rel="alternate"></link><updated>2011-06-26T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2011-06-26:posts/2011/06/future-of-human-communication/</id><summary type="html">&lt;h1&gt;On the basis of how the communication possibilities have changed (for) most people during last decades, what’s my idea of the normal human interaction in 10..20…50 years?&lt;/h1&gt;
+&lt;/p&gt;</content><category term="2 life"></category><category term="online"></category><category term="online community"></category><category term="second life"></category><category term="social network"></category><category term="virtual life"></category></entry><entry><title>Future of human communication</title><link href="http://predragtasevski.com/posts/2011/06/future-of-human-communication/" rel="alternate"></link><published>2011-06-26T23:00:00+02:00</published><updated>2011-06-26T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2011-06-26:/posts/2011/06/future-of-human-communication/</id><summary type="html">&lt;h1&gt;On the basis of how the communication possibilities have changed (for) most people during last decades, what’s my idea of the normal human interaction in 10..20…50 years?&lt;/h1&gt;
+&lt;/p&gt;
+
+&lt;p&gt;To understand the present we must first understand the past. The
+Internet has revolutionized the computer and communications world like …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;On the basis of how the communication possibilities have changed (for) most people during last decades, what’s my idea of the normal human interaction in 10..20…50 years?&lt;/h1&gt;
 &lt;/p&gt;
 
 &lt;p&gt;To understand the present we must first understand the past. The
@@ -2718,7 +2741,17 @@ We Communicate. Retrieved from Friends of Time:
 &lt;p&gt;[1] WLAN: a local area network that uses high frequency radio signals to
 transmit and receive data over distances of a few hundred feet; uses
 Ethernet protocol&lt;/p&gt;
-&lt;/p&gt;</summary><category term="communication"></category><category term="future of human communication"></category><category term="internet"></category><category term="network"></category><category term="networking"></category><category term="online"></category></entry><entry><title>Digital divide or not?</title><link href="http://predragtasevski.com/posts/2011/06/digital-divide-or-not/" rel="alternate"></link><updated>2011-06-19T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2011-06-19:posts/2011/06/digital-divide-or-not/</id><summary type="html">&lt;h1&gt;Digital divide or not?&lt;/h1&gt;
+&lt;/p&gt;</content><category term="communication"></category><category term="future of human communication"></category><category term="internet"></category><category term="network"></category><category term="networking"></category><category term="online"></category></entry><entry><title>Digital divide or not?</title><link href="http://predragtasevski.com/posts/2011/06/digital-divide-or-not/" rel="alternate"></link><published>2011-06-19T23:00:00+02:00</published><updated>2011-06-19T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2011-06-19:/posts/2011/06/digital-divide-or-not/</id><summary type="html">&lt;h1&gt;Digital divide or not?&lt;/h1&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Is there a psychological “digital divide”? Are people who often use the
+Internet psychologically different from those who do not and in what
+ways?&lt;/p&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The Internet is changing the average citizens as much as did other
+technologies, for instance: telephone, TV, computers, mobile phones etc.
+The …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Digital divide or not?&lt;/h1&gt;
 &lt;/p&gt;
 
 &lt;p&gt;Is there a psychological “digital divide”? Are people who often use the
@@ -2948,7 +2981,11 @@ Glossary. Retrieved from Information Technology Systems &amp;amp; Services:
 &lt;p&gt;Vitalari, N., Venkatesh, A., &amp;amp; Gronhaug, K. (1985). Computing in the
 home: Shifts in the time allocation patterns of households.
 Communications of the ACM, 28(5), 512-522.&lt;/p&gt;
-&lt;/p&gt;</summary><category term="digital divide"></category><category term="internet"></category><category term="net generation"></category><category term="network"></category><category term="network generation"></category><category term="online"></category><category term="online generations"></category><category term="psychological"></category></entry><entry><title>Human Computer Interaction in 2020</title><link href="http://predragtasevski.com/posts/2011/03/human-computer-interaction-in-2020/" rel="alternate"></link><updated>2011-03-17T00:00:00+01:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2011-03-17:posts/2011/03/human-computer-interaction-in-2020/</id><summary type="html">&lt;p&gt;In March 2007, Microsoft Research organised the “HCI 2020” meeting at
+&lt;/p&gt;</content><category term="digital divide"></category><category term="internet"></category><category term="net generation"></category><category term="network"></category><category term="network generation"></category><category term="online"></category><category term="online generations"></category><category term="psychological"></category></entry><entry><title>Human Computer Interaction in 2020</title><link href="http://predragtasevski.com/posts/2011/03/human-computer-interaction-in-2020/" rel="alternate"></link><published>2011-03-17T00:00:00+01:00</published><updated>2011-03-17T00:00:00+01:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2011-03-17:/posts/2011/03/human-computer-interaction-in-2020/</id><summary type="html">&lt;p&gt;In March 2007, Microsoft Research organised the “HCI 2020” meeting at
+the El Bulli Hacienda Hotel near Seville, Spain. The event’s title
+expressed its key question: what will Human-Computer Interaction (HCI)
+be like in the year 2020? (Harper, Tom, Yvonne, &amp;amp; Abigail, 2008, p. 8)
+The report that I have …&lt;/p&gt;</summary><content type="html">&lt;p&gt;In March 2007, Microsoft Research organised the “HCI 2020” meeting at
 the El Bulli Hacienda Hotel near Seville, Spain. The event’s title
 expressed its key question: what will Human-Computer Interaction (HCI)
 be like in the year 2020? (Harper, Tom, Yvonne, &amp;amp; Abigail, 2008, p. 8)
@@ -3075,7 +3112,18 @@ recommendation directories have been successfully.&lt;/p&gt;
 &lt;p&gt;Harper, R., Tom, R., Yvonne, R., &amp;amp; Abigail, S. (2008). Being Human,
 Human-Computer Interaction in the year 2020. Cambridge, CB3 0FB,
 England: Microsoft Research Ltd.&lt;/p&gt;
-&lt;/p&gt;</summary><category term="2020"></category><category term="future of human communication"></category><category term="HCI"></category><category term="HCI 2020"></category><category term="human computer interaction"></category><category term="internet"></category><category term="network"></category><category term="networking"></category><category term="online"></category><category term="online generations"></category><category term="social informatics"></category></entry><entry><title>IP Responsibility and abuse reporting procedure</title><link href="http://predragtasevski.com/posts/2011/03/ip-responsibility-and-abuse-reporting-procedure/" rel="alternate"></link><updated>2011-03-11T00:00:00+01:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2011-03-11:posts/2011/03/ip-responsibility-and-abuse-reporting-procedure/</id><summary type="html">&lt;h1&gt;PURPOSE&lt;/h1&gt;
+&lt;/p&gt;</content><category term="2020"></category><category term="future of human communication"></category><category term="HCI"></category><category term="HCI 2020"></category><category term="human computer interaction"></category><category term="internet"></category><category term="network"></category><category term="networking"></category><category term="online"></category><category term="online generations"></category><category term="social informatics"></category></entry><entry><title>IP Responsibility and abuse reporting procedure</title><link href="http://predragtasevski.com/posts/2011/03/ip-responsibility-and-abuse-reporting-procedure/" rel="alternate"></link><published>2011-03-11T00:00:00+01:00</published><updated>2011-03-11T00:00:00+01:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2011-03-11:/posts/2011/03/ip-responsibility-and-abuse-reporting-procedure/</id><summary type="html">&lt;h1&gt;PURPOSE&lt;/h1&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The main goal of laboratory report is to identify the responsibilities
+for the IP addresses below and how we can make connection to them. IP
+addresses are randomly chosen by the lecture.&lt;/p&gt;
+&lt;/p&gt;
+
+&lt;p&gt;IP addresses:&lt;/p&gt;
+&lt;p&gt;​1. 69.163.171.238&lt;/p&gt;
+&lt;p&gt;​2. 31.44.184.101&lt;/p&gt;
+&lt;p&gt;​3. 188.72.228.69 …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;PURPOSE&lt;/h1&gt;
 &lt;/p&gt;
 
 &lt;p&gt;The main goal of laboratory report is to identify the responsibilities
@@ -3332,4 +3380,4 @@ target="_blank"&gt;http://www.afrinic.net/cgi-bin/whois&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Changed on purpose, not to disclose the exposure&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/p&gt;</summary><category term="attacks"></category><category term="cyber security"></category><category term="DDoS"></category><category term="external IP"></category><category term="Internet Protocol addressing systems"></category><category term="IP addresses"></category><category term="malware"></category><category term="online"></category><category term="report abuse"></category><category term="security"></category><category term="security risk"></category></entry></feed>
+&lt;/p&gt;</content><category term="attacks"></category><category term="cyber security"></category><category term="DDoS"></category><category term="external IP"></category><category term="Internet Protocol addressing systems"></category><category term="IP addresses"></category><category term="malware"></category><category term="online"></category><category term="report abuse"></category><category term="security"></category><category term="security risk"></category></entry></feed>

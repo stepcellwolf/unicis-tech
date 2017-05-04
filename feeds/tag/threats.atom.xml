@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Predrag TASEVSKI - Pece</title><link href="http://predragtasevski.com/" rel="alternate"></link><link href="http://predragtasevski.com/feeds/tag/threats.atom.xml" rel="self"></link><id>http://predragtasevski.com/</id><updated>2012-11-15T00:00:00+01:00</updated><entry><title>Web Servers Analysis under DoS Attacks, Secure Your Mobile, Protect Your Network and Hack More with Hakin9 11/2012!</title><link href="http://predragtasevski.com/posts/2012/11/web-servers-analysis-under-dos-attacks-secure-your-mobile-protect-your-network-and-hack-more-with-hakin9-112012/" rel="alternate"></link><updated>2012-11-15T00:00:00+01:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-11-15:posts/2012/11/web-servers-analysis-under-dos-attacks-secure-your-mobile-protect-your-network-and-hack-more-with-hakin9-112012/</id><summary type="html">&lt;p&gt;Publication article in Hackin9 Magazine 11/2012.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Predrag TASEVSKI - Pece - threats</title><link href="http://predragtasevski.com/" rel="alternate"></link><link href="http://predragtasevski.com/feeds/tag/threats.atom.xml" rel="self"></link><id>http://predragtasevski.com/</id><updated>2012-11-15T00:00:00+01:00</updated><entry><title>Web Servers Analysis under DoS Attacks, Secure Your Mobile, Protect Your Network and Hack More with Hakin9 11/2012!</title><link href="http://predragtasevski.com/posts/2012/11/web-servers-analysis-under-dos-attacks-secure-your-mobile-protect-your-network-and-hack-more-with-hakin9-112012/" rel="alternate"></link><published>2012-11-15T00:00:00+01:00</published><updated>2012-11-15T00:00:00+01:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-11-15:/posts/2012/11/web-servers-analysis-under-dos-attacks-secure-your-mobile-protect-your-network-and-hack-more-with-hakin9-112012/</id><summary type="html">&lt;p&gt;Publication article in Hackin9 Magazine 11/2012.&lt;/p&gt;
+&lt;/p&gt;
+
+&lt;h1&gt;Web Servers Analysis under DoS Attacks&lt;/h1&gt;
+&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;by MSc. Predrag TaSevSki&lt;/em&gt;&lt;/p&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Examination, determination and ability of both most common and latest
+stable web servers under DoS attacks, Apache and Nginx.&lt;/p&gt;
+&lt;/p&gt;
+
+&lt;p&gt;You will learn how to perform examination of DoS attacks on different
+web servers …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Publication article in Hackin9 Magazine 11/2012.&lt;/p&gt;
 &lt;/p&gt;
 
 &lt;h1&gt;Web Servers Analysis under DoS Attacks&lt;/h1&gt;
@@ -25,7 +39,14 @@ Mobile, Protect Your Network and Hack More with Hakin9
 &lt;/p&gt;
 
 &lt;p&gt;The article is on the &lt;em&gt;page number 66&lt;/em&gt;. Enjoy your reading.&lt;/p&gt;
-&lt;/p&gt;</summary><category term="wireless"></category><category term="security"></category><category term="cyber security"></category><category term="gms"></category><category term="wlan"></category><category term="wpan"></category><category term="threats"></category><category term="wifi"></category></entry><entry><title>What is wireless network security?</title><link href="http://predragtasevski.com/posts/2012/08/what-is-wireless-network-security/" rel="alternate"></link><updated>2012-08-10T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-08-10:posts/2012/08/what-is-wireless-network-security/</id><summary type="html">&lt;h1&gt;Introduction&lt;/h1&gt;
+&lt;/p&gt;</content><category term="wireless"></category><category term="security"></category><category term="cyber security"></category><category term="gms"></category><category term="wlan"></category><category term="wpan"></category><category term="threats"></category><category term="wifi"></category></entry><entry><title>What is wireless network security?</title><link href="http://predragtasevski.com/posts/2012/08/what-is-wireless-network-security/" rel="alternate"></link><published>2012-08-10T23:00:00+02:00</published><updated>2012-08-10T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-08-10:/posts/2012/08/what-is-wireless-network-security/</id><summary type="html">&lt;h1&gt;Introduction&lt;/h1&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The first wireless telecommunications was established in early 20th
+century, within successful transmitted radio signal across Atlantic
+Ocean. And it was known as the first wireless communication across the
+ocean. However, in this time likewise the computers were not widespread,
+the inventors and developers of wireless have not had …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Introduction&lt;/h1&gt;
 &lt;/p&gt;
 
 &lt;p&gt;The first wireless telecommunications was established in early 20th
@@ -170,4 +191,4 @@ to increase the productivity and mobility. By following the above
 recommended security measures the everyday work will in fact continue
 without any interference. The key to keep up and creating a security
 wireless network is on-going running business and organization.&lt;/p&gt;
-&lt;/p&gt;</summary><category term="wireless"></category><category term="security"></category><category term="cyber security"></category><category term="gms"></category><category term="wlan"></category><category term="wpan"></category><category term="threats"></category><category term="wifi"></category></entry></feed>
+&lt;/p&gt;</content><category term="wireless"></category><category term="security"></category><category term="cyber security"></category><category term="gms"></category><category term="wlan"></category><category term="wpan"></category><category term="threats"></category><category term="wifi"></category></entry></feed>

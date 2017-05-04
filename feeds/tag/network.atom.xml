@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Predrag TASEVSKI - Pece</title><link href="http://predragtasevski.com/" rel="alternate"></link><link href="http://predragtasevski.com/feeds/tag/network.atom.xml" rel="self"></link><id>http://predragtasevski.com/</id><updated>2011-10-12T23:00:00+02:00</updated><entry><title>Cost of DDoS, leak of credit card numbers, infected machine and spam</title><link href="http://predragtasevski.com/posts/2011/10/cost-of-ddos-leak-of-credit-card-numbers-infected-machine-and-spam/" rel="alternate"></link><updated>2011-10-12T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2011-10-12:posts/2011/10/cost-of-ddos-leak-of-credit-card-numbers-infected-machine-and-spam/</id><summary type="html">&lt;h1&gt;PURPOSE&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Predrag TASEVSKI - Pece - network</title><link href="http://predragtasevski.com/" rel="alternate"></link><link href="http://predragtasevski.com/feeds/tag/network.atom.xml" rel="self"></link><id>http://predragtasevski.com/</id><updated>2011-10-12T23:00:00+02:00</updated><entry><title>Cost of DDoS, leak of credit card numbers, infected machine and spam</title><link href="http://predragtasevski.com/posts/2011/10/cost-of-ddos-leak-of-credit-card-numbers-infected-machine-and-spam/" rel="alternate"></link><published>2011-10-12T23:00:00+02:00</published><updated>2011-10-12T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2011-10-12:/posts/2011/10/cost-of-ddos-leak-of-credit-card-numbers-infected-machine-and-spam/</id><summary type="html">&lt;h1&gt;PURPOSE&lt;/h1&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The main goal of laboratory report is to identify the costs of nowadays
+most known attack  DDOS, leak of credit card numbers, infected machine
+and never the less sending spam for 1 000 000 (one million) people.
+There are few points that should be presented:&lt;/p&gt;
+&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Where did we discovered …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;h1&gt;PURPOSE&lt;/h1&gt;
 &lt;/p&gt;
 
 &lt;p&gt;The main goal of laboratory report is to identify the costs of nowadays
@@ -77,8 +87,8 @@ found are with&lt;/p&gt;
 &lt;a href="http://www.hackzone.ru/forum/open/id/17187/"&gt;http://www.hackzone.ru/forum/open/id/17187/&lt;/a&gt;&lt;/p&gt;
 &lt;/p&gt;
 
-&lt;p&gt;As we stated above that the price is from \&lt;span class="math"&gt;\(50 per day and it goes until
-\\)&lt;/span&gt;350 per month and so on.&lt;/p&gt;
+&lt;p&gt;As we stated above that the price is from \$50 per day and it goes until
+\$350 per month and so on.&lt;/p&gt;
 &lt;/p&gt;
 
 &lt;h2&gt;TASK 2&lt;/h2&gt;
@@ -211,65 +221,11 @@ http://spins.fedoraproject.org/security/&lt;/p&gt;
 &lt;p&gt;QuinStreet Inc: Paul Rubens, Understanding the Russian Hacker
 Underground, Aug 13, 2010,
 &lt;a href="http://www.enterprisenetworkingplanet.com/netsecur/article.php/3898601/Understanding-the-Russian-Hacker-Underground.htm"&gt;http://www.enterprisenetworkingplanet.com/netsecur/article.php/3898601/Understanding-the-Russian-Hacker-Underground.htm&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;</content><category term="acceleration"></category><category term="optamization"></category><category term="simmulation of attacks and defence"></category><category term="wordpress attacks"></category><category term="credit card numbers"></category><category term="cyber security"></category><category term="DDoS"></category><category term="defence"></category><category term="infected machine"></category><category term="internet"></category><category term="malware"></category><category term="network"></category><category term="online"></category><category term="security"></category><category term="spam"></category></entry><entry><title>Future of human communication</title><link href="http://predragtasevski.com/posts/2011/06/future-of-human-communication/" rel="alternate"></link><published>2011-06-26T23:00:00+02:00</published><updated>2011-06-26T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2011-06-26:/posts/2011/06/future-of-human-communication/</id><summary type="html">&lt;h1&gt;On the basis of how the communication possibilities have changed (for) most people during last decades, what’s my idea of the normal human interaction in 10..20…50 years?&lt;/h1&gt;
 &lt;/p&gt;
 
-&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width &lt; 768) ? "left" : align;
-        indent = (screen.width &lt; 768) ? "0em" : indent;
-        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    var location_protocol = (false) ? 'https' : document.location.protocol;
-    if (location_protocol !== 'http' &amp;&amp; location_protocol !== 'https') location_protocol = 'https:';
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-&lt;/script&gt;</summary><category term="acceleration"></category><category term="optamization"></category><category term="simmulation of attacks and defence"></category><category term="wordpress attacks"></category><category term="credit card numbers"></category><category term="cyber security"></category><category term="DDoS"></category><category term="defence"></category><category term="infected machine"></category><category term="internet"></category><category term="malware"></category><category term="network"></category><category term="online"></category><category term="security"></category><category term="spam"></category></entry><entry><title>Future of human communication</title><link href="http://predragtasevski.com/posts/2011/06/future-of-human-communication/" rel="alternate"></link><updated>2011-06-26T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2011-06-26:posts/2011/06/future-of-human-communication/</id><summary type="html">&lt;h1&gt;On the basis of how the communication possibilities have changed (for) most people during last decades, what’s my idea of the normal human interaction in 10..20…50 years?&lt;/h1&gt;
+&lt;p&gt;To understand the present we must first understand the past. The
+Internet has revolutionized the computer and communications world like …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;On the basis of how the communication possibilities have changed (for) most people during last decades, what’s my idea of the normal human interaction in 10..20…50 years?&lt;/h1&gt;
 &lt;/p&gt;
 
 &lt;p&gt;To understand the present we must first understand the past. The
@@ -419,7 +375,17 @@ We Communicate. Retrieved from Friends of Time:
 &lt;p&gt;[1] WLAN: a local area network that uses high frequency radio signals to
 transmit and receive data over distances of a few hundred feet; uses
 Ethernet protocol&lt;/p&gt;
-&lt;/p&gt;</summary><category term="communication"></category><category term="future of human communication"></category><category term="internet"></category><category term="network"></category><category term="networking"></category><category term="online"></category></entry><entry><title>Digital divide or not?</title><link href="http://predragtasevski.com/posts/2011/06/digital-divide-or-not/" rel="alternate"></link><updated>2011-06-19T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2011-06-19:posts/2011/06/digital-divide-or-not/</id><summary type="html">&lt;h1&gt;Digital divide or not?&lt;/h1&gt;
+&lt;/p&gt;</content><category term="communication"></category><category term="future of human communication"></category><category term="internet"></category><category term="network"></category><category term="networking"></category><category term="online"></category></entry><entry><title>Digital divide or not?</title><link href="http://predragtasevski.com/posts/2011/06/digital-divide-or-not/" rel="alternate"></link><published>2011-06-19T23:00:00+02:00</published><updated>2011-06-19T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2011-06-19:/posts/2011/06/digital-divide-or-not/</id><summary type="html">&lt;h1&gt;Digital divide or not?&lt;/h1&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Is there a psychological “digital divide”? Are people who often use the
+Internet psychologically different from those who do not and in what
+ways?&lt;/p&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The Internet is changing the average citizens as much as did other
+technologies, for instance: telephone, TV, computers, mobile phones etc.
+The …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Digital divide or not?&lt;/h1&gt;
 &lt;/p&gt;
 
 &lt;p&gt;Is there a psychological “digital divide”? Are people who often use the
@@ -649,7 +615,12 @@ Glossary. Retrieved from Information Technology Systems &amp;amp; Services:
 &lt;p&gt;Vitalari, N., Venkatesh, A., &amp;amp; Gronhaug, K. (1985). Computing in the
 home: Shifts in the time allocation patterns of households.
 Communications of the ACM, 28(5), 512-522.&lt;/p&gt;
-&lt;/p&gt;</summary><category term="digital divide"></category><category term="internet"></category><category term="net generation"></category><category term="network"></category><category term="network generation"></category><category term="online"></category><category term="online generations"></category><category term="psychological"></category></entry><entry><title>Internet and collectivistic cultures</title><link href="http://predragtasevski.com/posts/2011/06/internet-and-collectivistic-cultures/" rel="alternate"></link><updated>2011-06-06T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2011-06-06:posts/2011/06/internet-and-collectivistic-cultures/</id><summary type="html">&lt;h1&gt;Internet and collectivistic cultures. How the Internet affects the psyche of the people from collectivistic cultures?&lt;/h1&gt;
+&lt;/p&gt;</content><category term="digital divide"></category><category term="internet"></category><category term="net generation"></category><category term="network"></category><category term="network generation"></category><category term="online"></category><category term="online generations"></category><category term="psychological"></category></entry><entry><title>Internet and collectivistic cultures</title><link href="http://predragtasevski.com/posts/2011/06/internet-and-collectivistic-cultures/" rel="alternate"></link><published>2011-06-06T23:00:00+02:00</published><updated>2011-06-06T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2011-06-06:/posts/2011/06/internet-and-collectivistic-cultures/</id><summary type="html">&lt;h1&gt;Internet and collectivistic cultures. How the Internet affects the psyche of the people from collectivistic cultures?&lt;/h1&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Nowadays everyone has a computer at home, work and even a carrying
+device, example: laptop, notebook, mobile phones, IPod etc. All the
+devices that are making our life easy in everyday tasks are able …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Internet and collectivistic cultures. How the Internet affects the psyche of the people from collectivistic cultures?&lt;/h1&gt;
 &lt;/p&gt;
 
 &lt;p&gt;Nowadays everyone has a computer at home, work and even a carrying
@@ -788,7 +759,11 @@ Chinese. Thousand Oaks, CA: Sage Publications.&lt;/p&gt;
 &lt;p&gt;TRIANDIS, H. C. (2001). Individualism and Collectivism. In D. Matsumoto,
 The Handbook of CULTURE &amp;amp; PSYCHOLOGY (p. 35). Oxford: Oxfrod University
 Press.&lt;/p&gt;
-&lt;/p&gt;</summary><category term="collectivistic"></category><category term="cultures"></category><category term="informatics"></category><category term="internet"></category><category term="network"></category><category term="online people"></category><category term="psyche"></category><category term="social"></category></entry><entry><title>Human Computer Interaction in 2020</title><link href="http://predragtasevski.com/posts/2011/03/human-computer-interaction-in-2020/" rel="alternate"></link><updated>2011-03-17T00:00:00+01:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2011-03-17:posts/2011/03/human-computer-interaction-in-2020/</id><summary type="html">&lt;p&gt;In March 2007, Microsoft Research organised the “HCI 2020” meeting at
+&lt;/p&gt;</content><category term="collectivistic"></category><category term="cultures"></category><category term="informatics"></category><category term="internet"></category><category term="network"></category><category term="online people"></category><category term="psyche"></category><category term="social"></category></entry><entry><title>Human Computer Interaction in 2020</title><link href="http://predragtasevski.com/posts/2011/03/human-computer-interaction-in-2020/" rel="alternate"></link><published>2011-03-17T00:00:00+01:00</published><updated>2011-03-17T00:00:00+01:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2011-03-17:/posts/2011/03/human-computer-interaction-in-2020/</id><summary type="html">&lt;p&gt;In March 2007, Microsoft Research organised the “HCI 2020” meeting at
+the El Bulli Hacienda Hotel near Seville, Spain. The event’s title
+expressed its key question: what will Human-Computer Interaction (HCI)
+be like in the year 2020? (Harper, Tom, Yvonne, &amp;amp; Abigail, 2008, p. 8)
+The report that I have …&lt;/p&gt;</summary><content type="html">&lt;p&gt;In March 2007, Microsoft Research organised the “HCI 2020” meeting at
 the El Bulli Hacienda Hotel near Seville, Spain. The event’s title
 expressed its key question: what will Human-Computer Interaction (HCI)
 be like in the year 2020? (Harper, Tom, Yvonne, &amp;amp; Abigail, 2008, p. 8)
@@ -915,4 +890,4 @@ recommendation directories have been successfully.&lt;/p&gt;
 &lt;p&gt;Harper, R., Tom, R., Yvonne, R., &amp;amp; Abigail, S. (2008). Being Human,
 Human-Computer Interaction in the year 2020. Cambridge, CB3 0FB,
 England: Microsoft Research Ltd.&lt;/p&gt;
-&lt;/p&gt;</summary><category term="2020"></category><category term="future of human communication"></category><category term="HCI"></category><category term="HCI 2020"></category><category term="human computer interaction"></category><category term="internet"></category><category term="network"></category><category term="networking"></category><category term="online"></category><category term="online generations"></category><category term="social informatics"></category></entry></feed>
+&lt;/p&gt;</content><category term="2020"></category><category term="future of human communication"></category><category term="HCI"></category><category term="HCI 2020"></category><category term="human computer interaction"></category><category term="internet"></category><category term="network"></category><category term="networking"></category><category term="online"></category><category term="online generations"></category><category term="social informatics"></category></entry></feed>

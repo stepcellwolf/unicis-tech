@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Predrag TASEVSKI - Pece</title><link href="http://predragtasevski.com/" rel="alternate"></link><link href="http://predragtasevski.com/feeds/tag/cyber-risk.atom.xml" rel="self"></link><id>http://predragtasevski.com/</id><updated>2014-03-22T00:00:00+01:00</updated><entry><title>What is Risk Assessment?</title><link href="http://predragtasevski.com/posts/2014/03/what-is-risk-assessment/" rel="alternate"></link><updated>2014-03-22T00:00:00+01:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2014-03-22:posts/2014/03/what-is-risk-assessment/</id><summary type="html">&lt;p&gt;This post intention is to deliver to the readers an introduction to risk
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Predrag TASEVSKI - Pece - cyber risk</title><link href="http://predragtasevski.com/" rel="alternate"></link><link href="http://predragtasevski.com/feeds/tag/cyber-risk.atom.xml" rel="self"></link><id>http://predragtasevski.com/</id><updated>2014-03-22T00:00:00+01:00</updated><entry><title>What is Risk Assessment?</title><link href="http://predragtasevski.com/posts/2014/03/what-is-risk-assessment/" rel="alternate"></link><published>2014-03-22T00:00:00+01:00</published><updated>2014-03-22T00:00:00+01:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2014-03-22:/posts/2014/03/what-is-risk-assessment/</id><summary type="html">&lt;p&gt;This post intention is to deliver to the readers an introduction to risk
+assessment. Please bear in mind, that the author is conducting research
+in this field, therefore in few months there will be more articles about
+cyber-risk and so forth. Nevertheless, hope that the below will guide
+you, and …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This post intention is to deliver to the readers an introduction to risk
 assessment. Please bear in mind, that the author is conducting research
 in this field, therefore in few months there will be more articles about
 cyber-risk and so forth. Nevertheless, hope that the below will guide
@@ -107,4 +111,4 @@ Journal of Information System Security (2008), 46-6.&lt;/p&gt;
 
 &lt;p&gt;[12]: Predrag Tasevski, “Interactive Cyber Security Awareness Program”,
 LAP Lambert Academic Publishing (2012), 22-26.&lt;/p&gt;
-&lt;/p&gt;</summary><category term="risk assessment"></category><category term="risk management"></category><category term="cyber risk"></category><category term="IT risk"></category></entry></feed>
+&lt;/p&gt;</content><category term="risk assessment"></category><category term="risk management"></category><category term="cyber risk"></category><category term="IT risk"></category></entry></feed>

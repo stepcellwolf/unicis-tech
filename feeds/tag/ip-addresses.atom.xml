@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Predrag TASEVSKI - Pece</title><link href="http://predragtasevski.com/" rel="alternate"></link><link href="http://predragtasevski.com/feeds/tag/ip-addresses.atom.xml" rel="self"></link><id>http://predragtasevski.com/</id><updated>2011-03-11T00:00:00+01:00</updated><entry><title>IP Responsibility and abuse reporting procedure</title><link href="http://predragtasevski.com/posts/2011/03/ip-responsibility-and-abuse-reporting-procedure/" rel="alternate"></link><updated>2011-03-11T00:00:00+01:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2011-03-11:posts/2011/03/ip-responsibility-and-abuse-reporting-procedure/</id><summary type="html">&lt;h1&gt;PURPOSE&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Predrag TASEVSKI - Pece - IP addresses</title><link href="http://predragtasevski.com/" rel="alternate"></link><link href="http://predragtasevski.com/feeds/tag/ip-addresses.atom.xml" rel="self"></link><id>http://predragtasevski.com/</id><updated>2011-03-11T00:00:00+01:00</updated><entry><title>IP Responsibility and abuse reporting procedure</title><link href="http://predragtasevski.com/posts/2011/03/ip-responsibility-and-abuse-reporting-procedure/" rel="alternate"></link><published>2011-03-11T00:00:00+01:00</published><updated>2011-03-11T00:00:00+01:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2011-03-11:/posts/2011/03/ip-responsibility-and-abuse-reporting-procedure/</id><summary type="html">&lt;h1&gt;PURPOSE&lt;/h1&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The main goal of laboratory report is to identify the responsibilities
+for the IP addresses below and how we can make connection to them. IP
+addresses are randomly chosen by the lecture.&lt;/p&gt;
+&lt;/p&gt;
+
+&lt;p&gt;IP addresses:&lt;/p&gt;
+&lt;p&gt;​1. 69.163.171.238&lt;/p&gt;
+&lt;p&gt;​2. 31.44.184.101&lt;/p&gt;
+&lt;p&gt;​3. 188.72.228.69 …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;PURPOSE&lt;/h1&gt;
 &lt;/p&gt;
 
 &lt;p&gt;The main goal of laboratory report is to identify the responsibilities
@@ -256,4 +267,4 @@ target="_blank"&gt;http://www.afrinic.net/cgi-bin/whois&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Changed on purpose, not to disclose the exposure&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/p&gt;</summary><category term="attacks"></category><category term="cyber security"></category><category term="DDoS"></category><category term="external IP"></category><category term="Internet Protocol addressing systems"></category><category term="IP addresses"></category><category term="malware"></category><category term="online"></category><category term="report abuse"></category><category term="security"></category><category term="security risk"></category></entry></feed>
+&lt;/p&gt;</content><category term="attacks"></category><category term="cyber security"></category><category term="DDoS"></category><category term="external IP"></category><category term="Internet Protocol addressing systems"></category><category term="IP addresses"></category><category term="malware"></category><category term="online"></category><category term="report abuse"></category><category term="security"></category><category term="security risk"></category></entry></feed>

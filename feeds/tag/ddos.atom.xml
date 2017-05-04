@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Predrag TASEVSKI - Pece</title><link href="http://predragtasevski.com/" rel="alternate"></link><link href="http://predragtasevski.com/feeds/tag/ddos.atom.xml" rel="self"></link><id>http://predragtasevski.com/</id><updated>2012-10-26T23:00:00+02:00</updated><entry><title>What is network security?</title><link href="http://predragtasevski.com/posts/2012/10/what-is-network-security/" rel="alternate"></link><updated>2012-10-26T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-10-26:posts/2012/10/what-is-network-security/</id><summary type="html">&lt;h1&gt;Introduction&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Predrag TASEVSKI - Pece - DDoS</title><link href="http://predragtasevski.com/" rel="alternate"></link><link href="http://predragtasevski.com/feeds/tag/ddos.atom.xml" rel="self"></link><id>http://predragtasevski.com/</id><updated>2012-10-26T23:00:00+02:00</updated><entry><title>What is network security?</title><link href="http://predragtasevski.com/posts/2012/10/what-is-network-security/" rel="alternate"></link><published>2012-10-26T23:00:00+02:00</published><updated>2012-10-26T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-10-26:/posts/2012/10/what-is-network-security/</id><summary type="html">&lt;h1&gt;Introduction&lt;/h1&gt;
+&lt;/p&gt;
+
+&lt;p&gt;A computer network, or in other words simply a network, is a collection
+of computers and other hardware components interconnected by
+communication channels that allow sharing of data, resources and
+information [1]. Adopt for both_ private or public needs, which are
+used in everyday tasks to conduct transactions and …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Introduction&lt;/h1&gt;
 &lt;/p&gt;
 
 &lt;p&gt;A computer network, or in other words simply a network, is a collection
@@ -218,7 +225,14 @@ seriously,” Computer, vol.31, no.9, pp.24‐28, Sep 1998&lt;/p&gt;
 
 &lt;p&gt;[9] Common Types of Network Attacks. Retrieved from:
 http://technet.microsoft.com/en-us/library/cc959354.aspx&lt;/p&gt;
-&lt;/p&gt;</summary><category term="network security"></category><category term="cyber security"></category><category term="access"></category><category term="confidentiality"></category><category term="authentication"></category><category term="non-repudation"></category><category term="DDoS"></category><category term="Man-in-the-middle"></category><category term="attacks"></category><category term="address spoofing"></category><category term="eavesdropping"></category></entry><entry><title>Ministry of Interior – Macedonia, website defacement: http://mvr.gov.mk</title><link href="http://predragtasevski.com/posts/2012/06/ministry-of-interior-macedonia-website-defacement-httpmvrgovmk/" rel="alternate"></link><updated>2012-06-25T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-06-25:posts/2012/06/ministry-of-interior-macedonia-website-defacement-httpmvrgovmk/</id><summary type="html">&lt;h1&gt;Purpose&lt;/h1&gt;
+&lt;/p&gt;</content><category term="network security"></category><category term="cyber security"></category><category term="access"></category><category term="confidentiality"></category><category term="authentication"></category><category term="non-repudation"></category><category term="DDoS"></category><category term="Man-in-the-middle"></category><category term="attacks"></category><category term="address spoofing"></category><category term="eavesdropping"></category></entry><entry><title>Ministry of Interior – Macedonia, website defacement: http://mvr.gov.mk</title><link href="http://predragtasevski.com/posts/2012/06/ministry-of-interior-macedonia-website-defacement-httpmvrgovmk/" rel="alternate"></link><published>2012-06-25T23:00:00+02:00</published><updated>2012-06-25T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-06-25:/posts/2012/06/ministry-of-interior-macedonia-website-defacement-httpmvrgovmk/</id><summary type="html">&lt;h1&gt;Purpose&lt;/h1&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Yesterday, the 25 of June 2012, the Macedonian website of Ministry of
+Interior (MVR) was defaced by Kosovo Network Security (KNS) group, below
+figure. However, after we have noticed and some of the social networking
+sites have informed me, I was concern to find out what just have
+happened …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Purpose&lt;/h1&gt;
 &lt;/p&gt;
 
 &lt;p&gt;Yesterday, the 25 of June 2012, the Macedonian website of Ministry of
@@ -464,7 +478,17 @@ Macedonia project, developed by myself.&lt;/p&gt;
 authorities to take actions about the above described activities done by
 KNS and hope that the security awareness will boost up, and the further
 actions will be considered of securing cyber space.&lt;/p&gt;
-&lt;/p&gt;</summary><category term="Attacks"></category><category term="cyber security"></category><category term="information warfare"></category><category term="legal aspects of cyber security"></category><category term="log mining"></category><category term="DDoS"></category><category term="exploitation"></category><category term="kns"></category><category term="macedonia"></category><category term="mvr"></category><category term="online"></category><category term="security"></category><category term="vulnerability"></category><category term="expolit"></category></entry><entry><title>Clever solution by making site more resilient by optimization</title><link href="http://predragtasevski.com/posts/2012/03/clever-solution-by-making-site-more-resilient-by-optimization/" rel="alternate"></link><updated>2012-03-23T00:00:00+01:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-03-23:posts/2012/03/clever-solution-by-making-site-more-resilient-by-optimization/</id><summary type="html">&lt;h1&gt;PURPOSE &amp;amp; SCENARIO&lt;/h1&gt;
+&lt;/p&gt;</content><category term="Attacks"></category><category term="cyber security"></category><category term="information warfare"></category><category term="legal aspects of cyber security"></category><category term="log mining"></category><category term="DDoS"></category><category term="exploitation"></category><category term="kns"></category><category term="macedonia"></category><category term="mvr"></category><category term="online"></category><category term="security"></category><category term="vulnerability"></category><category term="expolit"></category></entry><entry><title>Clever solution by making site more resilient by optimization</title><link href="http://predragtasevski.com/posts/2012/03/clever-solution-by-making-site-more-resilient-by-optimization/" rel="alternate"></link><published>2012-03-23T00:00:00+01:00</published><updated>2012-03-23T00:00:00+01:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-03-23:/posts/2012/03/clever-solution-by-making-site-more-resilient-by-optimization/</id><summary type="html">&lt;h1&gt;PURPOSE &amp;amp; SCENARIO&lt;/h1&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The objective of this laboratory test, scenario is to make explore
+alternative “clever” solutions (as opposed to making the site more
+resilient by optimizing it) to protect your site against attacks.
+Moreover, DDoS [1] attacks, malicious code, etc.&lt;/p&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Therefore, we need to develop countermeasures for the &lt;strong&gt;working&lt;/strong&gt;
+attacks …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;PURPOSE &amp;amp; SCENARIO&lt;/h1&gt;
 &lt;/p&gt;
 
 &lt;p&gt;The objective of this laboratory test, scenario is to make explore
@@ -705,7 +729,14 @@ mod_rewrite, Feb 2009,
 &lt;/p&gt;
 
 &lt;p&gt;[2] AB - &lt;a href="http://httpd.apache.org/docs/2.0/programs/ab.html"&gt;http://httpd.apache.org/docs/2.0/programs/ab.html&lt;/a&gt;&lt;/p&gt;
-&lt;/p&gt;</summary><category term="ab"></category><category term="attacks"></category><category term="clever solution"></category><category term="cyber security"></category><category term="DDoS"></category><category term="internet"></category><category term="jmeter"></category><category term="malicious code"></category><category term="wordpress"></category></entry><entry><title>Testing SNORT – IDS rulesets</title><link href="http://predragtasevski.com/posts/2012/03/testing-snort-ids-rulesets/" rel="alternate"></link><updated>2012-03-13T00:00:00+01:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-03-13:posts/2012/03/testing-snort-ids-rulesets/</id><summary type="html">&lt;h1&gt;SCENARIO&lt;/h1&gt;
+&lt;/p&gt;</content><category term="ab"></category><category term="attacks"></category><category term="clever solution"></category><category term="cyber security"></category><category term="DDoS"></category><category term="internet"></category><category term="jmeter"></category><category term="malicious code"></category><category term="wordpress"></category></entry><entry><title>Testing SNORT – IDS rulesets</title><link href="http://predragtasevski.com/posts/2012/03/testing-snort-ids-rulesets/" rel="alternate"></link><published>2012-03-13T00:00:00+01:00</published><updated>2012-03-13T00:00:00+01:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-03-13:/posts/2012/03/testing-snort-ids-rulesets/</id><summary type="html">&lt;h1&gt;SCENARIO&lt;/h1&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The objective of this laboratory test, scenario is to create a solution
+and instructions for testing an IDS^1^ systems usefulness for detecting
+attacks against a wordpress site. In addition, we have to
+develop/download/find/whatever a SNORT configuration (rulesets,
+preprocessors, whatever) that performs better than the default …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;SCENARIO&lt;/h1&gt;
 &lt;/p&gt;
 
 &lt;p&gt;The objective of this laboratory test, scenario is to create a solution
@@ -1229,7 +1260,14 @@ and Security Engine (BASE) project ,
 &lt;/p&gt;
 
 &lt;p&gt;[1] IDS – Intrusion detection system&lt;/p&gt;
-&lt;/p&gt;</summary><category term="cyber security"></category><category term="DDoS"></category><category term="ids"></category><category term="internet"></category><category term="networking"></category><category term="online"></category><category term="Port scan"></category><category term="snort"></category><category term="snort rules"></category><category term="SYN flood"></category><category term="testing ids"></category><category term="vulnerability scanning"></category></entry><entry><title>Testing IDS</title><link href="http://predragtasevski.com/posts/2012/01/testing-ids/" rel="alternate"></link><updated>2012-01-03T00:00:00+01:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-01-03:posts/2012/01/testing-ids/</id><summary type="html">&lt;h1&gt;SCENARIO&lt;/h1&gt;
+&lt;/p&gt;</content><category term="cyber security"></category><category term="DDoS"></category><category term="ids"></category><category term="internet"></category><category term="networking"></category><category term="online"></category><category term="Port scan"></category><category term="snort"></category><category term="snort rules"></category><category term="SYN flood"></category><category term="testing ids"></category><category term="vulnerability scanning"></category></entry><entry><title>Testing IDS</title><link href="http://predragtasevski.com/posts/2012/01/testing-ids/" rel="alternate"></link><published>2012-01-03T00:00:00+01:00</published><updated>2012-01-03T00:00:00+01:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2012-01-03:/posts/2012/01/testing-ids/</id><summary type="html">&lt;h1&gt;SCENARIO&lt;/h1&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The objective of this laboratory test, scenario is to create a solution
+and instructions for testing an IDS\^1 systems usefulness for detecting
+attacks against a wordpress site. In addition, a repeatable process to
+evaluate vendor claims. Whatever passive IDS system sample delivered as
+a VM or a dedicated …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;SCENARIO&lt;/h1&gt;
 &lt;/p&gt;
 
 &lt;p&gt;The objective of this laboratory test, scenario is to create a solution
@@ -1594,7 +1632,13 @@ and Security Engine (BASE) project, 2008,
 &lt;/p&gt;
 
 &lt;p&gt;[1] IDS – Intrusion detection system&lt;/p&gt;
-&lt;/p&gt;</summary><category term="cyber security"></category><category term="DDoS"></category><category term="ids"></category><category term="internet"></category><category term="networking"></category><category term="online"></category><category term="openvas"></category><category term="port scan"></category><category term="snort"></category><category term="SYN flood"></category><category term="testing ids"></category><category term="vulnerability scanning"></category></entry><entry><title>Script Kiddie</title><link href="http://predragtasevski.com/posts/2011/10/script-kiddie/" rel="alternate"></link><updated>2011-10-19T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2011-10-19:posts/2011/10/script-kiddie/</id><summary type="html">&lt;h1&gt;PURPOSE and SCENARIO&lt;/h1&gt;
+&lt;/p&gt;</content><category term="cyber security"></category><category term="DDoS"></category><category term="ids"></category><category term="internet"></category><category term="networking"></category><category term="online"></category><category term="openvas"></category><category term="port scan"></category><category term="snort"></category><category term="SYN flood"></category><category term="testing ids"></category><category term="vulnerability scanning"></category></entry><entry><title>Script Kiddie</title><link href="http://predragtasevski.com/posts/2011/10/script-kiddie/" rel="alternate"></link><published>2011-10-19T23:00:00+02:00</published><updated>2011-10-19T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2011-10-19:/posts/2011/10/script-kiddie/</id><summary type="html">&lt;h1&gt;PURPOSE and SCENARIO&lt;/h1&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The goal of this laboratory test is to make effort to attack server and
+to deface website. Here is the scenario: your client is worried about
+some stuff posted on a blog. They ask You to take care of it. They have
+a throwaway “script kiddie”[Script …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;PURPOSE and SCENARIO&lt;/h1&gt;
 &lt;/p&gt;
 
 &lt;p&gt;The goal of this laboratory test is to make effort to attack server and
@@ -2183,7 +2227,17 @@ wordpress, mysql installation.&lt;/p&gt;
 &lt;/p&gt;
 
 &lt;p&gt;[2] Bmon – &lt;a href="http://www.infradead.org/~tgr/bmon/"&gt;http://www.infradead.org/~tgr/bmon/&lt;/a&gt;&lt;/p&gt;
-&lt;/p&gt;</summary><category term="attacks"></category><category term="cyber security"></category><category term="DDoS"></category><category term="internet"></category><category term="script kiddie"></category><category term="security"></category><category term="server attack"></category><category term="wordpress attack"></category></entry><entry><title>Cost of DDoS, leak of credit card numbers, infected machine and spam</title><link href="http://predragtasevski.com/posts/2011/10/cost-of-ddos-leak-of-credit-card-numbers-infected-machine-and-spam/" rel="alternate"></link><updated>2011-10-12T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2011-10-12:posts/2011/10/cost-of-ddos-leak-of-credit-card-numbers-infected-machine-and-spam/</id><summary type="html">&lt;h1&gt;PURPOSE&lt;/h1&gt;
+&lt;/p&gt;</content><category term="attacks"></category><category term="cyber security"></category><category term="DDoS"></category><category term="internet"></category><category term="script kiddie"></category><category term="security"></category><category term="server attack"></category><category term="wordpress attack"></category></entry><entry><title>Cost of DDoS, leak of credit card numbers, infected machine and spam</title><link href="http://predragtasevski.com/posts/2011/10/cost-of-ddos-leak-of-credit-card-numbers-infected-machine-and-spam/" rel="alternate"></link><published>2011-10-12T23:00:00+02:00</published><updated>2011-10-12T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2011-10-12:/posts/2011/10/cost-of-ddos-leak-of-credit-card-numbers-infected-machine-and-spam/</id><summary type="html">&lt;h1&gt;PURPOSE&lt;/h1&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The main goal of laboratory report is to identify the costs of nowadays
+most known attack  DDOS, leak of credit card numbers, infected machine
+and never the less sending spam for 1 000 000 (one million) people.
+There are few points that should be presented:&lt;/p&gt;
+&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Where did we discovered …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;h1&gt;PURPOSE&lt;/h1&gt;
 &lt;/p&gt;
 
 &lt;p&gt;The main goal of laboratory report is to identify the costs of nowadays
@@ -2261,8 +2315,8 @@ found are with&lt;/p&gt;
 &lt;a href="http://www.hackzone.ru/forum/open/id/17187/"&gt;http://www.hackzone.ru/forum/open/id/17187/&lt;/a&gt;&lt;/p&gt;
 &lt;/p&gt;
 
-&lt;p&gt;As we stated above that the price is from \&lt;span class="math"&gt;\(50 per day and it goes until
-\\)&lt;/span&gt;350 per month and so on.&lt;/p&gt;
+&lt;p&gt;As we stated above that the price is from \$50 per day and it goes until
+\$350 per month and so on.&lt;/p&gt;
 &lt;/p&gt;
 
 &lt;h2&gt;TASK 2&lt;/h2&gt;
@@ -2395,65 +2449,18 @@ http://spins.fedoraproject.org/security/&lt;/p&gt;
 &lt;p&gt;QuinStreet Inc: Paul Rubens, Understanding the Russian Hacker
 Underground, Aug 13, 2010,
 &lt;a href="http://www.enterprisenetworkingplanet.com/netsecur/article.php/3898601/Understanding-the-Russian-Hacker-Underground.htm"&gt;http://www.enterprisenetworkingplanet.com/netsecur/article.php/3898601/Understanding-the-Russian-Hacker-Underground.htm&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;</content><category term="acceleration"></category><category term="optamization"></category><category term="simmulation of attacks and defence"></category><category term="wordpress attacks"></category><category term="credit card numbers"></category><category term="cyber security"></category><category term="DDoS"></category><category term="defence"></category><category term="infected machine"></category><category term="internet"></category><category term="malware"></category><category term="network"></category><category term="online"></category><category term="security"></category><category term="spam"></category></entry><entry><title>IP Responsibility and abuse reporting procedure</title><link href="http://predragtasevski.com/posts/2011/03/ip-responsibility-and-abuse-reporting-procedure/" rel="alternate"></link><published>2011-03-11T00:00:00+01:00</published><updated>2011-03-11T00:00:00+01:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2011-03-11:/posts/2011/03/ip-responsibility-and-abuse-reporting-procedure/</id><summary type="html">&lt;h1&gt;PURPOSE&lt;/h1&gt;
 &lt;/p&gt;
 
-&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
+&lt;p&gt;The main goal of laboratory report is to identify the responsibilities
+for the IP addresses below and how we can make connection to them. IP
+addresses are randomly chosen by the lecture.&lt;/p&gt;
+&lt;/p&gt;
 
-    if (false) {
-        align = (screen.width &lt; 768) ? "left" : align;
-        indent = (screen.width &lt; 768) ? "0em" : indent;
-        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    var location_protocol = (false) ? 'https' : document.location.protocol;
-    if (location_protocol !== 'http' &amp;&amp; location_protocol !== 'https') location_protocol = 'https:';
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-&lt;/script&gt;</summary><category term="acceleration"></category><category term="optamization"></category><category term="simmulation of attacks and defence"></category><category term="wordpress attacks"></category><category term="credit card numbers"></category><category term="cyber security"></category><category term="DDoS"></category><category term="defence"></category><category term="infected machine"></category><category term="internet"></category><category term="malware"></category><category term="network"></category><category term="online"></category><category term="security"></category><category term="spam"></category></entry><entry><title>IP Responsibility and abuse reporting procedure</title><link href="http://predragtasevski.com/posts/2011/03/ip-responsibility-and-abuse-reporting-procedure/" rel="alternate"></link><updated>2011-03-11T00:00:00+01:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2011-03-11:posts/2011/03/ip-responsibility-and-abuse-reporting-procedure/</id><summary type="html">&lt;h1&gt;PURPOSE&lt;/h1&gt;
+&lt;p&gt;IP addresses:&lt;/p&gt;
+&lt;p&gt;​1. 69.163.171.238&lt;/p&gt;
+&lt;p&gt;​2. 31.44.184.101&lt;/p&gt;
+&lt;p&gt;​3. 188.72.228.69 …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;PURPOSE&lt;/h1&gt;
 &lt;/p&gt;
 
 &lt;p&gt;The main goal of laboratory report is to identify the responsibilities
@@ -2710,4 +2717,4 @@ target="_blank"&gt;http://www.afrinic.net/cgi-bin/whois&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Changed on purpose, not to disclose the exposure&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/p&gt;</summary><category term="attacks"></category><category term="cyber security"></category><category term="DDoS"></category><category term="external IP"></category><category term="Internet Protocol addressing systems"></category><category term="IP addresses"></category><category term="malware"></category><category term="online"></category><category term="report abuse"></category><category term="security"></category><category term="security risk"></category></entry></feed>
+&lt;/p&gt;</content><category term="attacks"></category><category term="cyber security"></category><category term="DDoS"></category><category term="external IP"></category><category term="Internet Protocol addressing systems"></category><category term="IP addresses"></category><category term="malware"></category><category term="online"></category><category term="report abuse"></category><category term="security"></category><category term="security risk"></category></entry></feed>
