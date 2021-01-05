@@ -250,7 +250,7 @@ mod_rewrite, Feb 2009,
 &lt;/p&gt;
 
 &lt;p&gt;[2] AB - &lt;a href="http://httpd.apache.org/docs/2.0/programs/ab.html"&gt;http://httpd.apache.org/docs/2.0/programs/ab.html&lt;/a&gt;&lt;/p&gt;
-&lt;/p&gt;</content><category term="ab"></category><category term="attacks"></category><category term="clever solution"></category><category term="cyber security"></category><category term="DDoS"></category><category term="internet"></category><category term="jmeter"></category><category term="malicious code"></category><category term="wordpress"></category></entry><entry><title>WordPress CMS acceleration and optamization</title><link href="https://predragtasevski.com/posts/2011/04/wordpress-cms-acceleration-and-optamization/" rel="alternate"></link><published>2011-04-09T23:00:00+02:00</published><updated>2011-04-09T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2011-04-09:/posts/2011/04/wordpress-cms-acceleration-and-optamization/</id><summary type="html">&lt;h1&gt;PURPOSE&lt;/h1&gt;
+&lt;/p&gt;</content><category term="pages"></category><category term="ab"></category><category term="attacks"></category><category term="clever solution"></category><category term="cyber security"></category><category term="DDoS"></category><category term="internet"></category><category term="jmeter"></category><category term="malicious code"></category><category term="wordpress"></category></entry><entry><title>WordPress CMS acceleration and optamization</title><link href="https://predragtasevski.com/posts/2011/04/wordpress-cms-acceleration-and-optamization/" rel="alternate"></link><published>2011-04-09T23:00:00+02:00</published><updated>2011-04-09T23:00:00+02:00</updated><author><name>Predrag TASEVSKI - Pece</name></author><id>tag:predragtasevski.com,2011-04-09:/posts/2011/04/wordpress-cms-acceleration-and-optamization/</id><summary type="html">&lt;h1&gt;PURPOSE&lt;/h1&gt;
 &lt;/p&gt;
 
 &lt;p&gt;The goal of this laboratory test is to evaluate speed-up solution for
@@ -796,4 +796,4 @@ ubuntu shortest setup, 2010,
 &lt;/p&gt;
 
 &lt;p&gt;[3] Nginx Inc – http://nginx.net/&lt;/p&gt;
-&lt;/p&gt;</content><category term="acceleration"></category><category term="optamization"></category><category term="simmulation of attacks and defence"></category><category term="wordpress"></category></entry></feed>
+&lt;/p&gt;</content><category term="pages"></category><category term="acceleration"></category><category term="optamization"></category><category term="simmulation of attacks and defence"></category><category term="wordpress"></category></entry></feed>
