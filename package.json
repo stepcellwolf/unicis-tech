@@ -40,7 +40,8 @@
     "fix": "npm run fix:lint && npm run fix:prettier",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "devDependencies": {
     "babel-eslint": "10.0.2",
@@ -57,10 +58,10 @@
   },
   "Repository": {
     "type": "git",
-    "url": "https://github.com/windedge/gatsby-tailwind-serif"
+    "url": "https://github.com/stepcellwolf/unicis-tech"
   },
   "bugs": {
-    "url": "https://github.com/windedge/gatsby-tailwind-serif/issues"
+    "url": "https://github.com/stepcellwolf/unicis-tech/issues"
   },
   "publishConfig": {
     "access": "public"

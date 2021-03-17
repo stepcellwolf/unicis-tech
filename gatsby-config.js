@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Tailwind Serif`,
+    title: `Unicis-Tech OÜ`,
     description: `Gatsby starter styled with Tailwind`,
     author: `@windedge`
+    pathPrefix: "/unicis-tech"
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
