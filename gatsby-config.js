@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Unicis-Tech OÜ`,
     description: `Gatsby starter styled with Tailwind`,
-    author: `@windedge`
+    author: `@windedge`,
     pathPrefix: "/unicis-tech"
   },
   plugins: [
