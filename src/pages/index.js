@@ -47,12 +47,10 @@ function Index({ data }) {
       >
         <div className="w-4/5 md:w-3/4 lg:w-7/12 mt-20 font-serif font-hairline self-start">
           <h1 className="text-3xl md:text-5xl text-indigo-700 leading-tight">
-            Unicis-Tech OÜ.
+            Unicis-Tech GRC.
           </h1>
           <p className="text-base">
-            Multiple content types using Markdown and JSON sources. Responsive
-            design and SCSS. This is a beautiful and artfully designed starting
-            theme.
+            One and only Governance, Risk and Compliance (GRC) tool integrated with your intraneed that you need to run your business secure and privacy.
           </p>
         </div>
 
