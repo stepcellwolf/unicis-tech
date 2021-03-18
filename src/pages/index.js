@@ -1,6 +1,6 @@
 import React from "react";
 import cx from "classnames";
-import home from "../images/undraw_taking_notes_tjaf.svg";
+import home from "../images/requirements-unicis.png";
 import branding from "../images/noun_branding_1885335.svg";
 import processing from "../images/noun_The Process_1885341.svg";
 import modeling from "../images/noun_3d modeling_1885342.svg";
@@ -50,7 +50,7 @@ function Index({ data }) {
             Unicis-Tech GRC.
           </h1>
           <p className="text-base">
-            One and only Governance, Risk and Compliance (GRC) tool integrated with your intraneed that you need to run your business secure and privacy.
+            One and only Governance, Risk and Compliance (GRC) tool integrated with your Atlassian services that you need to meet security and privacy requirements for your business.
           </p>
         </div>
 
