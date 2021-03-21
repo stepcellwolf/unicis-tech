@@ -14,7 +14,7 @@ module.exports = {
         short_name: `serif`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#4dc0b5`,
+        theme_color: `#2681FF`,
         display: `minimal-ui`,
         icon: `static/favicon.png`
       }

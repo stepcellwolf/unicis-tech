@@ -15,21 +15,19 @@ const Footer = ({ className, ...props }) => {
           <ul className="flex flex-col md:flex-row text-sm -mx-3 font-medium">
             <li className="mx-3"><Link to="/">Home</Link></li>
             <li className="mx-3"><Link to="/contact">Contact</Link></li>
-            <li className="mx-3">©2019 Gatsby Serif</li>
+            <li className="mx-3">©2021 Unicis-Tech OÜ</li>
           </ul>
         </div>
       </div>
 
       <div className="w-full px-8 py-2 text-white text-xs font-light bg-black flex flex-col sm:flex-row justify-between items-start md:items-center">
         <div>
-          <strong className="font-bold">Phone: </strong>
-          XXX XXX XXX
           <strong className="ml-3 font-bold">Email: </strong>
-          xxx@xxx.com
+          info@unicis.tech
         </div>
         <div>
           <Link to="/" className="hover:underline">
-            www.xxx.com
+            <a href="https://www.unicis-tech/">www.unicis.tech</a>
           </Link>
         </div>
       </div>
@@ -38,4 +36,3 @@ const Footer = ({ className, ...props }) => {
 };
 
 export default Footer;
-
